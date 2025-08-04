@@ -6,6 +6,7 @@ import { LoanCalculator } from "./loan-calculator"
 import { Gradient } from "./gradient"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface LoanCalculatorSectionProps {
   title?: string
@@ -62,8 +63,9 @@ export function LoanCalculatorSection({
   ctaButtonLink = "/contact"
 }: LoanCalculatorSectionProps) {
   const { ref, isInView } = useScrollAnimation()
+  const { disableOnMobile } = useAnimationControl()
 
-  const containerVariants = {
+  const containerVariants = disableOnMobile({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -72,9 +74,9 @@ export function LoanCalculatorSection({
         staggerChildren: 0.25
       }
     }
-  }
+  })
 
-  const itemVariants = {
+  const itemVariants = disableOnMobile({
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -83,9 +85,9 @@ export function LoanCalculatorSection({
         duration: 0.8
       }
     }
-  }
+  })
 
-  const featureVariants = {
+  const featureVariants = disableOnMobile({
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -94,7 +96,7 @@ export function LoanCalculatorSection({
         duration: 0.7
       }
     }
-  }
+  })
 
   return (
     <Gradient direction="top">

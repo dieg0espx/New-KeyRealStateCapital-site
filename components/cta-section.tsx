@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface CTASectionProps {
   title?: string
@@ -25,8 +26,9 @@ export function CTASection({
   backgroundColor = "bg-sky-600"
 }: CTASectionProps) {
   const { ref, isInView } = useScrollAnimation()
+  const { disableOnMobile } = useAnimationControl()
 
-  const containerVariants = {
+  const containerVariants = disableOnMobile({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -35,9 +37,9 @@ export function CTASection({
         staggerChildren: 0.25
       }
     }
-  }
+  })
 
-  const itemVariants = {
+  const itemVariants = disableOnMobile({
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -46,9 +48,9 @@ export function CTASection({
         duration: 0.8
       }
     }
-  }
+  })
 
-  const buttonVariants = {
+  const buttonVariants = disableOnMobile({
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -63,7 +65,7 @@ export function CTASection({
         duration: 0.4
       }
     }
-  }
+  })
 
   return (
     <section className={`py-24 ${backgroundColor}`}>

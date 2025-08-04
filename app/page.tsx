@@ -9,14 +9,21 @@ import { WhyChooseSection } from "@/components/why-choose-section"
 import { LoanCalculatorSection } from "@/components/loan-calculator-section"
 import { BlogPreviewSection } from "@/components/blog-preview-section"
 import { CTASection } from "@/components/cta-section"
+import { useAnimationControl } from "@/hooks/use-mobile"
 
 export default function HomePage() {
+  const { disableOnMobile } = useAnimationControl()
+
+  const pageAnimationProps = disableOnMobile({
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.5 }
+  })
+
   return (
     <motion.div 
       className="min-h-screen bg-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      {...pageAnimationProps}
     >
       <HeroSection />
       <LoanProductsSection />
