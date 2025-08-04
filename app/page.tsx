@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-            <source src="/placeholder.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dku1gnuat/video/upload/v1754308818/Untitled_design_fsosaf.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-white/20"></div>
         </div>
@@ -248,7 +248,7 @@ export default function HomePage() {
           <p className="text-xl text-gray-600 font-light mb-12">
             Serving real estate investors across the United States
           </p>
-          <div className="bg-white rounded-2xl p-8 shadow-md">
+          <div className="bg-white p-8 shadow-md">
             <Image
               src="/placeholder.svg?height=400&width=800"
               alt="US Coverage Map"

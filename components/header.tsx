@@ -57,7 +57,7 @@ export function Header() {
               <button className="flex items-center text-gray-700 hover:text-sky-600 transition-colors font-light">
                 Loan Products <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
                   {loanProducts.map((product) => (
                     <Link
@@ -130,7 +130,7 @@ export function Header() {
           <div className="px-4 py-2 space-y-1">
             <Link
               href="/"
-              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-md transition-colors font-light"
+              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
@@ -154,28 +154,28 @@ export function Header() {
 
             <Link
               href="/team"
-              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-md transition-colors font-light"
+              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Team
             </Link>
             <Link
               href="/faq"
-              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-md transition-colors font-light"
+              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               FAQ
             </Link>
             <Link
               href="/blog"
-              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-md transition-colors font-light"
+              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-md transition-colors font-light"
+              className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact

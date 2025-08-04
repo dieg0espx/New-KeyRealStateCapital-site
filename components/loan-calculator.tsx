@@ -44,7 +44,7 @@ export function LoanCalculator() {
 
   return (
     <Card className="w-full max-w-2xl mx-auto border-0 shadow-xl">
-      <CardHeader className="bg-sky-600 text-white rounded-t-lg">
+      <CardHeader className="bg-sky-600 text-white">
         <CardTitle className="flex items-center text-2xl font-light">
           <Calculator className="h-6 w-6 mr-3" />
           Loan Calculator
@@ -123,7 +123,7 @@ export function LoanCalculator() {
           </div>
 
           {/* Results */}
-          <div className="bg-gray-50 rounded-lg p-6 space-y-4">
+          <div className="bg-gray-50 p-6 space-y-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Summary</h3>
 
             <div className="grid md:grid-cols-3 gap-4">
