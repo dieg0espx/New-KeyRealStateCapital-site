@@ -1,0 +1,228 @@
+/* ===== ANIMATIONS & MOBILE OPTIMIZATIONS ===== */
+
+/* Base animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-4 {
+  animation: fadeInUp 0.6s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-5 {
+  animation: fadeInUp 0.6s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-6 {
+  animation: fadeInUp 0.6s ease-out 1.0s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-7 {
+  animation: fadeInUp 0.6s ease-out 1.1s forwards;
+  opacity: 0;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.4s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+/* Gradient animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Disable heavy transitions on mobile */
+  * {
+    transition: none !important;
+  }
+  
+  /* Disable complex animations on mobile */
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay-1,
+  .animate-fade-in-up-delay-2,
+  .animate-fade-in-up-delay-3,
+  .animate-fade-in-up-delay-4,
+  .animate-fade-in-up-delay-5,
+  .animate-fade-in-up-delay-6,
+  .animate-fade-in-up-delay-7 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Simplify hover effects on mobile */
+  .hover-lift:hover {
+    transform: none !important;
+  }
+  
+  /* Disable complex transforms on mobile */
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:-translate-y-2,
+  .hover\:transform:hover,
+  .hover\:-translate-y-2:hover {
+    transform: none !important;
+  }
+  
+  /* Optimize button interactions for mobile */
+  .hover\:scale-105:hover,
+  .active\:scale-95:active {
+    transform: none !important;
+  }
+  
+  /* Disable gradient animations on mobile */
+  .animate-gradient {
+    animation: none !important;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable all animations for users who prefer reduced motion */
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay-1,
+  .animate-fade-in-up-delay-2,
+  .animate-fade-in-up-delay-3,
+  .animate-fade-in-up-delay-4,
+  .animate-fade-in-up-delay-5,
+  .animate-fade-in-up-delay-6,
+  .animate-fade-in-up-delay-7,
+  .animate-gradient {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable hover effects */
+  .hover-lift:hover,
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:-translate-y-2,
+  .hover\:transform:hover,
+  .hover\:-translate-y-2:hover,
+  .hover\:scale-105:hover,
+  .active\:scale-95:active {
+    transform: none !important;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Hardware acceleration for smooth animations */
+.animate-fade-in-up,
+.animate-fade-in-up-delay-1,
+.animate-fade-in-up-delay-2,
+.animate-fade-in-up-delay-3,
+.animate-fade-in-up-delay-4,
+.animate-fade-in-up-delay-5,
+.animate-fade-in-up-delay-6,
+.animate-fade-in-up-delay-7 {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimize hover effects */
+.hover-lift,
+.group:hover .group-hover\:scale-105,
+.group:hover .group-hover\:-translate-y-2,
+.hover\:transform:hover,
+.hover\:-translate-y-2:hover {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+} 
