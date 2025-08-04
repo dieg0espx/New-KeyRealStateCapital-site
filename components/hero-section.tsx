@@ -85,7 +85,18 @@ export function HeroSection({
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         >
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover object-center md:object-center object-right">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            preload="auto"
+            className="w-full h-full object-cover object-center md:object-center object-right"
+          >
             <source src={videoUrl} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40"></div>
