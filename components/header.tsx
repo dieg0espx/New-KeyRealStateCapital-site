@@ -6,7 +6,11 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-export function Header() {
+interface HeaderProps {
+  isHomePage?: boolean
+}
+
+export function Header({ isHomePage = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -31,13 +35,15 @@ export function Header() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-white/80 backdrop-blur-md"
+        isScrolled || !isHomePage ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-light text-gray-900 hover:text-sky-600 transition-colors">
+            <Link href="/" className={`text-2xl font-light transition-colors ${
+              isScrolled || !isHomePage ? "text-gray-900 hover:text-sky-600" : "text-white hover:text-sky-200"
+            }`}>
               Key Real Estate Capital
             </Link>
           </div>
@@ -47,14 +53,18 @@ export function Header() {
             <Link
               href="/"
               className={`transition-colors font-light ${
-                pathname === "/" ? "text-sky-600" : "text-gray-700 hover:text-sky-600"
+                pathname === "/" 
+                  ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
+                  : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
               }`}
             >
               Home
             </Link>
 
             <div className="relative group">
-              <button className="flex items-center text-gray-700 hover:text-sky-600 transition-colors font-light">
+              <button className={`flex items-center transition-colors font-light ${
+                isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white"
+              }`}>
                 Loan Products <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -75,7 +85,9 @@ export function Header() {
             <Link
               href="/team"
               className={`transition-colors font-light ${
-                pathname === "/team" ? "text-sky-600" : "text-gray-700 hover:text-sky-600"
+                pathname === "/team" 
+                  ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
+                  : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
               }`}
             >
               Team
@@ -83,7 +95,9 @@ export function Header() {
             <Link
               href="/faq"
               className={`transition-colors font-light ${
-                pathname === "/faq" ? "text-sky-600" : "text-gray-700 hover:text-sky-600"
+                pathname === "/faq" 
+                  ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
+                  : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
               }`}
             >
               FAQ
@@ -91,7 +105,9 @@ export function Header() {
             <Link
               href="/blog"
               className={`transition-colors font-light ${
-                pathname === "/blog" ? "text-sky-600" : "text-gray-700 hover:text-sky-600"
+                pathname === "/blog" 
+                  ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
+                  : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
               }`}
             >
               Blog
@@ -99,7 +115,9 @@ export function Header() {
             <Link
               href="/contact"
               className={`transition-colors font-light ${
-                pathname === "/contact" ? "text-sky-600" : "text-gray-700 hover:text-sky-600"
+                pathname === "/contact" 
+                  ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
+                  : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
               }`}
             >
               Contact
@@ -108,14 +126,16 @@ export function Header() {
 
           <div className="flex items-center space-x-4">
             <Link href="/contact">
-              <Button className="hidden md:inline-flex bg-sky-600 hover:bg-sky-700 text-white font-light">
+              <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-sky-600 hover:bg-sky-700 text-white">
                 Get Started
               </Button>
             </Link>
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 text-gray-700 hover:text-sky-600 transition-colors"
+              className={`md:hidden p-2 transition-colors ${
+                isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white hover:text-sky-200"
+              }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

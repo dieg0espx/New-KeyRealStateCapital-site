@@ -43,15 +43,15 @@ export function LoanCalculator() {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto border-0 shadow-xl">
+    <Card className="w-full max-w-2xl mx-auto border-0 shadow h-full flex flex-col">
       <CardHeader className="bg-sky-600 text-white">
         <CardTitle className="flex items-center text-2xl font-light">
-          <Calculator className="h-6 w-6 mr-3" />
+          <Calculator className=" w-6 mr-3" />
           Loan Calculator
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-8">
-        <div className="space-y-6">
+      <CardContent className="p-8 flex-1 flex flex-col">
+        <div className="space-y-6 flex-1 flex flex-col">
           {/* Loan Type */}
           <div>
             <Label htmlFor="loanType" className="text-gray-700 font-medium mb-2 block">
@@ -123,36 +123,36 @@ export function LoanCalculator() {
           </div>
 
           {/* Results */}
-          <div className="bg-gray-50 p-6 space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Summary</h3>
+          <div className="bg-gray-50 p-6 space-y-4 flex-1">
+            <h3 className="text-base font-medium text-gray-900 mb-4">Loan Summary</h3>
 
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <DollarSign className="h-5 w-5 text-sky-600 mr-1" />
-                  <span className="text-sm text-gray-600">Monthly Payment</span>
+                  <DollarSign className="h-4 w-4 text-sky-600 mr-1" />
+                  <span className="text-xs text-gray-600">Monthly Payment</span>
                 </div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-lg font-medium text-gray-900">
                   ${Number.parseFloat(calculatePayment()).toLocaleString()}
                 </div>
               </div>
 
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Calendar className="h-5 w-5 text-sky-600 mr-1" />
-                  <span className="text-sm text-gray-600">Total Interest</span>
+                  <Calendar className="h-4 w-4 text-sky-600 mr-1" />
+                  <span className="text-xs text-gray-600">Total Interest</span>
                 </div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-lg font-medium text-gray-900">
                   ${Number.parseFloat(totalInterest()).toLocaleString()}
                 </div>
               </div>
 
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Percent className="h-5 w-5 text-sky-600 mr-1" />
-                  <span className="text-sm text-gray-600">Payment Type</span>
+                  <Percent className="h-4 w-4 text-sky-600 mr-1" />
+                  <span className="text-xs text-gray-600">Payment Type</span>
                 </div>
-                <div className="text-lg font-semibold text-gray-900">
+                <div className="text-sm font-medium text-gray-900">
                   {loanType === "fix-flip" || loanType === "bridge" ? "Interest Only" : "Principal & Interest"}
                 </div>
               </div>

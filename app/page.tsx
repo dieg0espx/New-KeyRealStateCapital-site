@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -5,17 +7,19 @@ import { Home, Building, Hammer, TrendingUp, MapPin, Star, ChevronDown, Phone, A
 import Image from "next/image"
 import { LoanCalculator } from "@/components/loan-calculator"
 import Link from "next/link"
+import { Gradient } from "@/components/gradient"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
+      <Gradient direction="bottom">
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="w-full h-full object-cover">
             <source src="https://res.cloudinary.com/dku1gnuat/video/upload/v1754308818/Untitled_design_fsosaf.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-white/20"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight">
@@ -47,6 +51,7 @@ export default function HomePage() {
           <ChevronDown className="h-6 w-6 text-white/70" />
         </div>
       </section>
+      </Gradient>
 
       {/* Loan Products */}
       <section className="py-24 bg-gray-50/30">
@@ -229,47 +234,112 @@ export default function HomePage() {
       </section>
 
       {/* Loan Calculator */}
-      <section className="py-24 bg-gray-50/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Calculate Your Loan</h2>
-            <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-              Get an instant estimate of your monthly payments and total costs with our interactive loan calculator
-            </p>
-          </div>
-          <LoanCalculator />
-        </div>
-      </section>
+      <Gradient direction="top">
+        <Gradient direction="bottom">
+          <section className="py-[200px] bg-sky-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Calculate Your Loan</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+                  Get an instant estimate of your monthly payments and total costs with our interactive loan calculator
+                </p>
+              </div>
 
-      {/* US Map */}
-      <section className="py-24 bg-gray-50/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Nationwide Coverage</h2>
-          <p className="text-xl text-gray-600 font-light mb-12">
-            Serving real estate investors across the United States
-          </p>
-          <div className="bg-white p-8 shadow-md">
-            <Image
-              src="/placeholder.svg?height=400&width=800"
-              alt="US Coverage Map"
-              width={800}
-              height={400}
-              className="mx-auto"
-            />
-            <div className="mt-8 flex justify-center space-x-8">
-              <Badge variant="secondary" className="bg-sky-100 text-sky-800 px-4 py-2">
-                California
-              </Badge>
-              <Badge variant="secondary" className="bg-sky-100 text-sky-800 px-4 py-2">
-                Florida
-              </Badge>
-              <Badge variant="secondary" className="bg-gray-100 text-gray-800 px-4 py-2">
-                + 13 More States
-              </Badge>
+              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Calculator */}
+            <div className="order-2 lg:order-1">
+              <LoanCalculator />
             </div>
-          </div>
-        </div>
-      </section>
+            
+            {/* Benefits & Features */}
+            <div className="order-1 lg:order-2 space-y-8">
+              <div className="bg-white p-8  shadow-lg border border-gray-100">
+                <h3 className="text-2xl font-light text-gray-900 mb-6">Why Use Our Calculator?</h3>
+                <div className="space-y-4">
+                  {[
+                    {
+                      icon: "⚡",
+                      title: "Instant Results",
+                      description: "Get real-time calculations as you adjust your loan parameters"
+                    },
+                    {
+                      icon: "🎯",
+                      title: "Accurate Estimates",
+                      description: "Based on current market rates and our actual loan programs"
+                    },
+                    {
+                      icon: "📊",
+                      title: "Multiple Loan Types",
+                      description: "Calculate payments for all our loan products in one place"
+                    },
+                    {
+                      icon: "💡",
+                      title: "Smart Defaults",
+                      description: "Pre-filled with typical values for each loan type"
+                    }
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="text-2xl">{feature.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
+                        <p className="text-gray-600 font-light text-sm">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-sky-600 p-8  text-white">
+                <h3 className="text-2xl font-light mb-6">Ready to Apply?</h3>
+                <p className="text-sky-100 font-light mb-6">
+                  Our loan officers are ready to help you get pre-qualified and find the perfect financing solution for your real estate investment.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center text-sky-100">
+                    <div className="w-2 h-2 bg-sky-200 rounded-full mr-3"></div>
+                    <span className="font-light">Quick 7-14 day closings</span>
+                  </div>
+                  <div className="flex items-center text-sky-100">
+                    <div className="w-2 h-2 bg-sky-200 rounded-full mr-3"></div>
+                    <span className="font-light">Competitive rates starting at 6.5%</span>
+                  </div>
+                  <div className="flex items-center text-sky-100">
+                    <div className="w-2 h-2 bg-sky-200 rounded-full mr-3"></div>
+                    <span className="font-light">Loans up to $20M available</span>
+                  </div>
+                </div>
+                <Link href="/contact" className="inline-block mt-6">
+                  <Button className="bg-white text-sky-600 hover:bg-gray-100 font-light px-6 py-3">
+                    Speak with a Loan Officer
+                  </Button>
+                </Link>
+              </div>
+            </div>
+              </div>
+
+              {/* Additional Info */}
+              <div className="mt-16 text-center">
+                <div className="inline-flex items-center space-x-8 text-sm text-gray-500">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                    <span>No application fees</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                    <span>Pre-qualification in 24 hours</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                    <span>15 states covered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Gradient>
+      </Gradient>
+
+    
 
       {/* Blog Preview */}
       <section className="py-24 bg-white">

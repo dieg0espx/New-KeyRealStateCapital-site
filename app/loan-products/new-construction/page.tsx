@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function NewConstructionPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Link href="/loan-products" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
