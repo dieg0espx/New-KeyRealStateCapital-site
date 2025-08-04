@@ -52,7 +52,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               <Link href="/" className={`text-2xl font-light transition-colors ${
                 isScrolled || !isHomePage ? "text-gray-900 hover:text-sky-600" : "text-white hover:text-sky-200"
               }`}>
-                Key Real Estate Capital
+                Key Real State Capital
               </Link>
             </motion.div>
           </div>
