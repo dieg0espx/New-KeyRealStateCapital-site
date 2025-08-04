@@ -1,8 +1,8 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Header } from "./header"
+import { Footer } from "./footer"
 
 interface LayoutContentProps {
   children: React.ReactNode
