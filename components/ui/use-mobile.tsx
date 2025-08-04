@@ -17,30 +17,3 @@ export function useIsMobile() {
 
   return !!isMobile
 }
-
-// Utility to disable animations on mobile
-export function useAnimationControl() {
-  const isMobile = useIsMobile()
-  
-  const disableOnMobile = React.useCallback((animationProps: any) => {
-    if (isMobile) {
-      return {
-        initial: false,
-        animate: false,
-        exit: false,
-        whileHover: {},
-        whileTap: {},
-        transition: { duration: 0 }
-      }
-    }
-    return animationProps
-  }, [isMobile])
-
-  const shouldAnimate = React.useCallback(() => !isMobile, [isMobile])
-
-  return {
-    isMobile,
-    disableOnMobile,
-    shouldAnimate
-  }
-}

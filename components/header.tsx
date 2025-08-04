@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface HeaderProps {
   isHomePage?: boolean
@@ -16,7 +15,6 @@ export function Header({ isHomePage = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  const { disableOnMobile, shouldAnimate } = useAnimationControl()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,33 +33,22 @@ export function Header({ isHomePage = false }: HeaderProps) {
     { name: "Multi-Family / Commercial", href: "/loan-products/commercial" },
   ]
 
-  const navAnimationProps = disableOnMobile({
-    initial: { y: -100 },
-    animate: { y: 0 },
-    transition: { duration: 0.8 }
-  })
-
-  const logoAnimationProps = disableOnMobile({
-    whileHover: { scale: 1.03 },
-    transition: { duration: 0.4 }
-  })
-
-  const linkAnimationProps = disableOnMobile({
-    whileHover: { y: -1 },
-    transition: { duration: 0.4 }
-  })
-
   return (
     <motion.nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled || !isHomePage ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
       }`}
-      {...navAnimationProps}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8 }}
     >
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <motion.div {...logoAnimationProps}>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.4 }}
+            >
               <Link href="/" className={`text-2xl font-light transition-colors ${
                 isScrolled || !isHomePage ? "text-gray-900 hover:text-sky-600" : "text-white hover:text-sky-200"
               }`}>
@@ -72,7 +59,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <motion.div {...linkAnimationProps}>
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/"
                 className={`transition-colors font-light ${
@@ -111,7 +98,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               </div>
             </div>
 
-            <motion.div {...linkAnimationProps}>
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/team"
                 className={`transition-colors font-light ${
@@ -123,7 +110,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 Team
               </Link>
             </motion.div>
-            <motion.div {...linkAnimationProps}>
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/faq"
                 className={`transition-colors font-light ${
@@ -135,7 +122,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 FAQ
               </Link>
             </motion.div>
-            <motion.div {...linkAnimationProps}>
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/blog"
                 className={`transition-colors font-light ${
@@ -147,7 +134,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 Blog
               </Link>
             </motion.div>
-            <motion.div {...linkAnimationProps}>
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/contact"
                 className={`transition-colors font-light ${
@@ -163,10 +150,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
           <div className="flex items-center space-x-4">
             <motion.div
-              {...disableOnMobile({
-                whileHover: { scale: 1.03 },
-                whileTap: { scale: 0.98 }
-              })}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Link href="/contact">
                 <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-sky-600 hover:bg-sky-700 text-white">
@@ -181,10 +166,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white hover:text-sky-200"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              {...disableOnMobile({
-                whileHover: { scale: 1.05 },
-                whileTap: { scale: 0.95 }
-              })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </motion.button>
@@ -197,20 +180,16 @@ export function Header({ isHomePage = false }: HeaderProps) {
         {isMobileMenuOpen && (
           <motion.div 
             className="md:hidden bg-white border-t border-gray-100 shadow-lg"
-            {...disableOnMobile({
-              initial: { opacity: 0, height: 0 },
-              animate: { opacity: 1, height: "auto" },
-              exit: { opacity: 0, height: 0 },
-              transition: { duration: 0.3 }
-            })}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-2 space-y-1">
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.1 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
               >
                 <Link
                   href="/"
@@ -222,11 +201,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
               </motion.div>
 
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.2 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
               >
                 <div className="px-3 py-2">
                   <div className="text-gray-700 font-medium mb-2">Loan Products</div>
@@ -234,11 +211,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     {loanProducts.map((product, index) => (
                       <motion.div
                         key={product.href}
-                        {...disableOnMobile({
-                          initial: { opacity: 0, x: -20 },
-                          animate: { opacity: 1, x: 0 },
-                          transition: { delay: 0.3 + index * 0.05 }
-                        })}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3 + index * 0.05 }}
                       >
                         <Link
                           href={product.href}
@@ -254,11 +229,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
               </motion.div>
 
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.4 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
               >
                 <Link
                   href="/team"
@@ -269,11 +242,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 </Link>
               </motion.div>
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.5 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
               >
                 <Link
                   href="/faq"
@@ -284,11 +255,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 </Link>
               </motion.div>
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.6 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
               >
                 <Link
                   href="/blog"
@@ -299,11 +268,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 </Link>
               </motion.div>
               <motion.div
-                {...disableOnMobile({
-                  initial: { opacity: 0, x: -20 },
-                  animate: { opacity: 1, x: 0 },
-                  transition: { delay: 0.7 }
-                })}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7 }}
               >
                 <Link
                   href="/contact"
@@ -316,11 +283,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
               <motion.div 
                 className="pt-4 pb-2"
-                {...disableOnMobile({
-                  initial: { opacity: 0, y: 20 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { delay: 0.8 }
-                })}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
               >
                 <Link href="/contact">
                   <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light">Get Started</Button>

@@ -8,7 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useBlog } from "@/contexts/blog-context"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface BlogPreviewSectionProps {
   title?: string
@@ -25,11 +24,10 @@ export function BlogPreviewSection({
 }: BlogPreviewSectionProps) {
   const { ref, isInView } = useScrollAnimation()
   const { getFeaturedPosts, getRecentPosts } = useBlog()
-  const { disableOnMobile } = useAnimationControl()
   
   const posts = featured ? getFeaturedPosts(limit) : getRecentPosts(limit)
 
-  const containerVariants = disableOnMobile({
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -38,9 +36,9 @@ export function BlogPreviewSection({
         staggerChildren: 0.25
       }
     }
-  })
+  }
 
-  const cardVariants = disableOnMobile({
+  const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -49,28 +47,7 @@ export function BlogPreviewSection({
         duration: 0.8
       }
     }
-  })
-
-  const titleAnimationProps = disableOnMobile({
-    initial: { opacity: 0, y: 30 },
-    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
-    transition: { duration: 0.6 }
-  })
-
-  const cardHoverVariants = disableOnMobile({
-    y: -3,
-    transition: { duration: 0.4 }
-  })
-
-  const imageHoverVariants = disableOnMobile({
-    scale: 1.01,
-    transition: { duration: 0.4 }
-  })
-
-  const arrowHoverVariants = disableOnMobile({
-    x: 3,
-    transition: { duration: 0.4 }
-  })
+  }
 
   return (
     <section className="py-24 bg-white">
@@ -78,7 +55,9 @@ export function BlogPreviewSection({
         <motion.div 
           className="text-center mb-16"
           ref={ref}
-          {...titleAnimationProps}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light">
@@ -95,12 +74,16 @@ export function BlogPreviewSection({
             <motion.div
               key={post.id}
               variants={cardVariants}
-              whileHover={cardHoverVariants}
+              whileHover={{ 
+                y: -3,
+                transition: { duration: 0.4 }
+              }}
             >
               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white overflow-hidden h-full">
                 <motion.div 
                   className="aspect-video overflow-hidden"
-                  whileHover={imageHoverVariants}
+                  whileHover={{ scale: 1.01 }}
+                  transition={{ duration: 0.4 }}
                 >
                   <Image
                     src={post.image || "/placeholder.svg"}
@@ -119,15 +102,15 @@ export function BlogPreviewSection({
                   <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-sky-600 transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 font-light leading-relaxed mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
+                  <p className="text-gray-600 font-light leading-relaxed">{post.excerpt}</p>
                   <Link href={`/blog/${post.slug}`}>
                     <motion.div
-                      className="inline-flex items-center text-sky-600 hover:text-sky-700 font-medium"
-                      whileHover={arrowHoverVariants}
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.4 }}
                     >
-                      Read More <ArrowRight className="ml-2 h-4 w-4" />
+                      <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
                     </motion.div>
                   </Link>
                 </CardContent>

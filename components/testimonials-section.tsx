@@ -8,7 +8,6 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRef } from "react"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface Testimonial {
   name: string
@@ -97,21 +96,20 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
   const { ref, isInView } = useScrollAnimation()
   const sliderRef = useRef<Slider>(null)
-  const { disableOnMobile } = useAnimationControl()
 
-  const containerVariants = disableOnMobile({
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         duration: 1,
-        staggerChildren: 0.2
+        staggerChildren: 0.25
       }
     }
-  })
+  }
 
-  const cardVariants = disableOnMobile({
-    hidden: { opacity: 0, y: 30 },
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
@@ -119,19 +117,7 @@ export function TestimonialsSection({
         duration: 0.8
       }
     }
-  })
-
-  const titleAnimationProps = disableOnMobile({
-    initial: { opacity: 0, y: 30 },
-    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
-    transition: { duration: 0.6 }
-  })
-
-  const testimonialAnimationProps = disableOnMobile({
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  })
+  }
 
   const sliderSettings = {
     dots: false,
@@ -175,7 +161,9 @@ export function TestimonialsSection({
         <motion.div 
           className="text-center mb-16"
           ref={ref}
-          {...titleAnimationProps}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light">{description}</p>

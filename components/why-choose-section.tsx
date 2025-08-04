@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { TrendingUp, Star, Phone, Building } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface Feature {
   icon: React.ReactNode
@@ -46,9 +45,8 @@ export function WhyChooseSection({
   features = defaultFeatures
 }: WhyChooseSectionProps) {
   const { ref, isInView } = useScrollAnimation()
-  const { disableOnMobile } = useAnimationControl()
 
-  const containerVariants = disableOnMobile({
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -57,9 +55,9 @@ export function WhyChooseSection({
         staggerChildren: 0.25
       }
     }
-  })
+  }
 
-  const featureVariants = disableOnMobile({
+  const featureVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -68,18 +66,7 @@ export function WhyChooseSection({
         duration: 0.8
       }
     }
-  })
-
-  const titleAnimationProps = disableOnMobile({
-    initial: { opacity: 0, y: 30 },
-    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
-    transition: { duration: 0.6 }
-  })
-
-  const hoverVariants = disableOnMobile({
-    scale: 1.03,
-    transition: { duration: 0.4 }
-  })
+  }
 
   return (
     <section className="py-24 bg-white">
@@ -87,7 +74,9 @@ export function WhyChooseSection({
         <motion.div 
           className="text-center mb-16"
           ref={ref}
-          {...titleAnimationProps}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
@@ -105,7 +94,10 @@ export function WhyChooseSection({
               key={index} 
               className="text-center group"
               variants={featureVariants}
-              whileHover={hoverVariants}
+              whileHover={{ 
+                scale: 1.03,
+                transition: { duration: 0.4 }
+              }}
             >
                               <motion.div 
                   className="text-sky-600 mb-4 flex justify-center"

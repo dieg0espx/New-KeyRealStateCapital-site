@@ -1,22 +1,17 @@
-"use client"
-
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, Linkedin, Mail, Phone } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Phone, Mail, Linkedin, Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 export default function TeamPage() {
-  const { shouldAnimate } = useAnimationControl()
-
   const teamMembers = [
     {
-      name: "David Thompson",
+      name: "John Smith",
       title: "CEO & Founder",
-      bio: "David has over 15 years of experience in real estate finance, having funded over $500M in loans across residential and commercial properties.",
+      bio: "With over 15 years in real estate finance, John founded Key Real Estate Capital to provide sophisticated lending solutions for investors nationwide.",
       phone: "(555) 123-4567",
-      email: "david@keyrec.com",
+      email: "john@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
@@ -48,20 +43,20 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className={`text-center mb-16 ${shouldAnimate() ? 'animate-fade-in-up' : ''}`}>
-          <h1 className={`text-4xl md:text-5xl font-light text-gray-900 mb-6 ${shouldAnimate() ? 'animate-fade-in-up-delay-1' : ''}`}>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 animate-fade-in-up-delay-1">
             Our Team
           </h1>
-          <p className={`text-xl text-gray-600 font-light max-w-3xl mx-auto ${shouldAnimate() ? 'animate-fade-in-up-delay-2' : ''}`}>
+          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto animate-fade-in-up-delay-2">
             Meet the experienced professionals dedicated to your real estate financing success
           </p>
         </div>
 
-        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 ${shouldAnimate() ? 'animate-fade-in-up-delay-3' : ''}`}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-up-delay-3">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`${shouldAnimate() ? `animate-fade-in-up-delay-${4 + index} hover:transform hover:-translate-y-2 transition-all duration-300` : ''}`}
+              className={`animate-fade-in-up-delay-${4 + index} hover:transform hover:-translate-y-2 transition-all duration-300`}
             >
               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white overflow-hidden flex flex-col h-full">
                 <div className="aspect-square overflow-hidden group-hover:scale-105 transition-transform duration-300">

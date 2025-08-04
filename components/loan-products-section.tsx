@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Home, Building, Hammer, TrendingUp, MapPin, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface LoanProduct {
   icon: React.ReactNode
@@ -66,9 +65,8 @@ export function LoanProductsSection({
   products = defaultProducts
 }: LoanProductsSectionProps) {
   const { ref, isInView } = useScrollAnimation()
-  const { disableOnMobile } = useAnimationControl()
 
-  const containerVariants = disableOnMobile({
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -77,9 +75,9 @@ export function LoanProductsSection({
         staggerChildren: 0.15
       }
     }
-  })
+  }
 
-  const cardVariants = disableOnMobile({
+  const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -88,29 +86,7 @@ export function LoanProductsSection({
         duration: 0.8
       }
     }
-  })
-
-  const titleAnimationProps = disableOnMobile({
-    initial: { opacity: 0, y: 30 },
-    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
-    transition: { duration: 0.6 }
-  })
-
-  const cardHoverVariants = disableOnMobile({
-    scale: 1.02,
-    transition: { duration: 0.4 }
-  })
-
-  const iconHoverVariants = disableOnMobile({
-    rotate: 3,
-    scale: 1.1,
-    transition: { duration: 0.4 }
-  })
-
-  const arrowHoverVariants = disableOnMobile({
-    x: 3,
-    transition: { duration: 0.4 }
-  })
+  }
 
   return (
     <section className="py-24 bg-gray-50/30">
@@ -118,7 +94,9 @@ export function LoanProductsSection({
         <motion.div 
           className="text-center mb-16"
           ref={ref}
-          {...titleAnimationProps}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
@@ -135,13 +113,16 @@ export function LoanProductsSection({
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={cardHoverVariants}
+              whileHover={{ 
+                y: -3,
+                transition: { duration: 0.4 }
+              }}
             >
               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white h-full">
                 <CardContent className="p-8">
                   <motion.div 
                     className="text-sky-600 mb-4 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={iconHoverVariants}
+                    whileHover={{ rotate: 3, scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   >
                     {product.icon}
@@ -150,7 +131,7 @@ export function LoanProductsSection({
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
                   <Link href={product.link}>
                                           <motion.div
-                        whileHover={arrowHoverVariants}
+                        whileHover={{ x: 3 }}
                         transition={{ duration: 0.4 }}
                       >
                       <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { Gradient } from "./gradient"
-import { useAnimationControl } from "@/hooks/use-mobile"
 
 interface HeroSectionProps {
   title?: string
@@ -28,8 +27,6 @@ export function HeroSection({
   secondaryButtonLink = "/contact",
   videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1754308818/Untitled_design_fsosaf.mp4"
 }: HeroSectionProps) {
-  const { disableOnMobile, shouldAnimate } = useAnimationControl()
-
   const scrollToNextSection = () => {
     const nextSection = document.querySelector('section:nth-of-type(2)')
     if (nextSection) {
@@ -40,7 +37,7 @@ export function HeroSection({
     }
   }
 
-  const containerVariants = disableOnMobile({
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -49,9 +46,9 @@ export function HeroSection({
         staggerChildren: 0.3
       }
     }
-  })
+  }
 
-  const itemVariants = disableOnMobile({
+  const itemVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -60,9 +57,9 @@ export function HeroSection({
         duration: 0.8
       }
     }
-  })
+  }
 
-  const buttonVariants = disableOnMobile({
+  const buttonVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -77,20 +74,16 @@ export function HeroSection({
         duration: 0.3
       }
     }
-  })
-
-  const videoAnimationProps = disableOnMobile({
-    initial: { scale: 1.05, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    transition: { duration: 2, ease: "easeOut" }
-  })
+  }
 
   return (
     <Gradient direction="bottom">
       <section className="relative h-[calc(100vh+150px)] flex items-center justify-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0"
-          {...videoAnimationProps}
+          initial={{ scale: 1.05, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
         >
           <video autoPlay muted loop playsInline className="w-full h-full object-cover">
             <source src={videoUrl} type="video/mp4" />
