@@ -18,7 +18,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
-  title = "Luxury Real Estate",
+  title = "Luxury Real State",
   subtitle = "Capital Solutions",
   description = "Empowering your real estate investments with sophisticated financing solutions",
   primaryButtonText = "Explore Loan Products",
