@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import { Phone, Mail, MapPin, Clock, Calendar, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
@@ -177,22 +177,22 @@ export default function ContactPage() {
                   <Label htmlFor="loanType" className="text-gray-700 font-medium">
                     Loan Type of Interest
                   </Label>
-                  <Select onValueChange={(value) => register('loanType').onChange({ target: { value } })}>
-                    <SelectTrigger className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                  <select
+                    id="loanType"
+                    {...register('loanType')}
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
                       errors.loanType ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
-                    }`}>
-                      <SelectValue placeholder="Select loan type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Fix-and-Flip">Fix-and-Flip</SelectItem>
-                      <SelectItem value="Single Property Rental">Single Property Rental</SelectItem>
-                      <SelectItem value="New Construction">New Construction</SelectItem>
-                      <SelectItem value="Rental Portfolio">Rental Portfolio</SelectItem>
-                      <SelectItem value="Stabilized Bridge">Stabilized Bridge</SelectItem>
-                      <SelectItem value="Multi-Family / Commercial">Multi-Family / Commercial</SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    }`}
+                  >
+                    <option value="">Select loan type</option>
+                    <option value="Fix-and-Flip">Fix-and-Flip</option>
+                    <option value="Single Property Rental">Single Property Rental</option>
+                    <option value="New Construction">New Construction</option>
+                    <option value="Rental Portfolio">Rental Portfolio</option>
+                    <option value="Stabilized Bridge">Stabilized Bridge</option>
+                    <option value="Multi-Family / Commercial">Multi-Family / Commercial</option>
+                    <option value="Other">Other</option>
+                  </select>
                   {errors.loanType && (
                     <p className="mt-1 text-sm text-red-600">{errors.loanType.message}</p>
                   )}
@@ -202,20 +202,20 @@ export default function ContactPage() {
                   <Label htmlFor="loanAmount" className="text-gray-700 font-medium">
                     Estimated Loan Amount
                   </Label>
-                  <Select onValueChange={(value) => register('loanAmount').onChange({ target: { value } })}>
-                    <SelectTrigger className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                  <select
+                    id="loanAmount"
+                    {...register('loanAmount')}
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
                       errors.loanAmount ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
-                    }`}>
-                      <SelectValue placeholder="Select amount range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="$100K - $250K">$100K - $250K</SelectItem>
-                      <SelectItem value="$250K - $500K">$250K - $500K</SelectItem>
-                      <SelectItem value="$500K - $1M">$500K - $1M</SelectItem>
-                      <SelectItem value="$1M - $2M">$1M - $2M</SelectItem>
-                      <SelectItem value="$2M+">$2M+</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    }`}
+                  >
+                    <option value="">Select amount range</option>
+                    <option value="$100K - $250K">$100K - $250K</option>
+                    <option value="$250K - $500K">$250K - $500K</option>
+                    <option value="$500K - $1M">$500K - $1M</option>
+                    <option value="$1M - $2M">$1M - $2M</option>
+                    <option value="$2M+">$2M+</option>
+                  </select>
                   {errors.loanAmount && (
                     <p className="mt-1 text-sm text-red-600">{errors.loanAmount.message}</p>
                   )}
@@ -225,20 +225,20 @@ export default function ContactPage() {
                   <Label htmlFor="timeline" className="text-gray-700 font-medium">
                     Timeline
                   </Label>
-                  <Select onValueChange={(value) => register('timeline').onChange({ target: { value } })}>
-                    <SelectTrigger className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                  <select
+                    id="timeline"
+                    {...register('timeline')}
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
                       errors.timeline ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
-                    }`}>
-                      <SelectValue placeholder="When do you need funding?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="ASAP">ASAP</SelectItem>
-                      <SelectItem value="Within 30 days">Within 30 days</SelectItem>
-                      <SelectItem value="Within 60 days">Within 60 days</SelectItem>
-                      <SelectItem value="Within 90 days">Within 90 days</SelectItem>
-                      <SelectItem value="Just exploring options">Just exploring options</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    }`}
+                  >
+                    <option value="">When do you need funding?</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="Within 30 days">Within 30 days</option>
+                    <option value="Within 60 days">Within 60 days</option>
+                    <option value="Within 90 days">Within 90 days</option>
+                    <option value="Just exploring options">Just exploring options</option>
+                  </select>
                   {errors.timeline && (
                     <p className="mt-1 text-sm text-red-600">{errors.timeline.message}</p>
                   )}
