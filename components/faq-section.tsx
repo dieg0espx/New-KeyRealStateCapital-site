@@ -6,38 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react"
 import Link from "next/link"
 import { Gradient } from "@/components/gradient"
-
-interface FAQItem {
-  question: string
-  answer: string
-}
-
-const faqData: FAQItem[] = [
-  {
-    question: "What types of properties do you finance?",
-    answer: "We finance a wide range of investment properties including single-family homes, multi-family properties (up to 4 units), commercial buildings, mixed-use developments, and land for construction. Our focus is on income-producing properties and fix-and-flip projects across residential and light commercial sectors."
-  },
-  {
-    question: "How quickly can you close a loan?",
-    answer: "Our typical closing timeline is 7-14 days for most loan products. For complex transactions or new construction projects, the timeline may extend to 21-30 days. We pride ourselves on fast, efficient closings and can expedite for qualified borrowers."
-  },
-  {
-    question: "What are your minimum credit score requirements?",
-    answer: "Generally, we require a minimum credit score of 680 for most loan products. However, we evaluate each application holistically, considering factors like real estate experience, down payment amount, property cash flow, and overall financial strength."
-  },
-  {
-    question: "What are your interest rates?",
-    answer: "Interest rates vary by loan type and borrower qualifications: Fix-and-flip loans typically range from 8.5-12%, rental property loans from 6.5-9%, and construction loans from 9-12%. Rates are based on loan amount, borrower experience, property type, and market conditions."
-  },
-  {
-    question: "Do you offer interest-only payments?",
-    answer: "Yes, most of our loan products offer interest-only payment options, particularly beneficial for fix-and-flip and bridge loans. This helps improve cash flow during the investment period. For rental property loans, we offer both interest-only and fully amortizing payment options."
-  },
-  {
-    question: "What are your maximum loan amounts?",
-    answer: "Our maximum loan amounts vary by product: Fix-and-flip loans up to $2M, rental property loans up to $1.5M, construction loans up to $3M, and commercial loans up to $5M. Larger amounts may be available for experienced investors with strong track records."
-  }
-]
+import { homePageFAQ } from "@/data/faq-data"
 
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -65,8 +34,8 @@ export function FAQSection() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {faqData.map((item, index) => (
+                      <div className="space-y-4">
+              {homePageFAQ.map((item, index) => (
               <Card key={index} className="border-0 shadow hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
                   <button
