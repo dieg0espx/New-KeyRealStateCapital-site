@@ -77,8 +77,8 @@ export default function LoanHeroSection({
             <span className="text-gray-500 text-lg">Image Placeholder</span>
           )}
           
-          {/* Top Left Badge - Oversized and outside image */}
-          <div className="absolute -top-6 -left-6 bg-white rounded-lg shadow-xl p-4 max-w-[250px] z-10">
+          {/* Top Left Badge - Absolute positioning for overlap */}
+          <div className="absolute -top-6 -left-6 bg-white shadow-md p-4 max-w-[250px] z-10">
             <div className="flex items-center space-x-4">
               <div className="bg-sky-600 rounded-full p-2">
                 <CheckCircle className="h-6 w-6 text-white" />
@@ -90,8 +90,8 @@ export default function LoanHeroSection({
             </div>
           </div>
           
-          {/* Bottom Right Badge - Oversized and outside image */}
-          <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 max-w-[250px] z-10">
+          {/* Bottom Right Badge - Absolute positioning for overlap */}
+          <div className="absolute -bottom-6 -right-6 bg-white shadow-md p-4 max-w-[250px] z-10">
             <div className="flex items-center space-x-4">
               <div className="bg-sky-600 rounded-full p-2">
                 <DollarSign className="h-6 w-6 text-white" />
