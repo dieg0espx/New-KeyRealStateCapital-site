@@ -66,7 +66,7 @@ export default function LoanHeroSection({
             )}
           </div>
         </div>
-        <div className="aspect-square bg-gray-200 flex items-center justify-center overflow-hidden">
+        <div className="aspect-square bg-gray-200 flex items-center justify-center overflow-hidden relative">
           {image ? (
             <img 
               src={image} 
@@ -76,6 +76,26 @@ export default function LoanHeroSection({
           ) : (
             <span className="text-gray-500 text-lg">Image Placeholder</span>
           )}
+          
+          {/* Top Left Badge */}
+          <div className="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 text-sm font-medium shadow-lg">
+            Fast Approval
+          </div>
+          
+          {/* Top Right Badge */}
+          <div className="absolute top-4 right-4 bg-white text-sky-600 px-3 py-1 text-sm font-medium shadow-lg border border-sky-200">
+            Competitive Rates
+          </div>
+          
+          {/* Bottom Left Badge */}
+          <div className="absolute bottom-4 left-4 bg-white text-gray-700 px-3 py-1 text-sm font-medium shadow-lg border border-gray-200">
+            Flexible Terms
+          </div>
+          
+          {/* Bottom Right Badge */}
+          <div className="absolute bottom-4 right-4 bg-sky-600 text-white px-3 py-1 text-sm font-medium shadow-lg">
+            Expert Support
+          </div>
         </div>
       </div>
     </div>
