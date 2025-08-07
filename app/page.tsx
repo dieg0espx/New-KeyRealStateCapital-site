@@ -8,6 +8,8 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { WhyChooseSection } from "@/components/why-choose-section"
 import { LoanCalculatorSection } from "@/components/loan-calculator-section"
 import { BlogPreviewSection } from "@/components/blog-preview-section"
+import { FAQSection } from "@/components/faq-section"
+import { ContactPreviewSection } from "@/components/contact-preview-section"
 import { CTASection } from "@/components/cta-section"
 
 export default function HomePage() {
@@ -25,6 +27,8 @@ export default function HomePage() {
       <WhyChooseSection />
       <LoanCalculatorSection />
       <BlogPreviewSection limit={3} featured={true} />
+      <FAQSection />
+      <ContactPreviewSection />
       <CTASection />
     </motion.div>
   )

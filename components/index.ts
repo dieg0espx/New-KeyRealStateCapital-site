@@ -6,6 +6,8 @@ export { TestimonialsSection } from "./testimonials-section"
 export { WhyChooseSection } from "./why-choose-section"
 export { LoanCalculatorSection } from "./loan-calculator-section"
 export { BlogPreviewSection } from "./blog-preview-section"
+export { FAQSection } from "./faq-section"
+export { ContactPreviewSection } from "./contact-preview-section"
 export { CTASection } from "./cta-section"
 
 // Existing Components
