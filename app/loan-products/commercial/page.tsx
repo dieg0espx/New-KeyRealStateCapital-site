@@ -353,19 +353,21 @@ export default function CommercialPage() {
         </Card>
 
         <div className="text-center">
-          <Link href="/apply">
-            <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-4 text-lg mr-4">
-              Apply for Commercial Loan
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/apply" className="w-full sm:w-auto">
+              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
+                Apply for Commercial Loan
+              </Button>
+            </Link>
+            <Button
+              onClick={openModal}
+              size="lg"
+              variant="outline"
+              className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 text-lg bg-transparent w-full sm:w-auto"
+            >
+              Schedule Consultation
             </Button>
-          </Link>
-          <Button
-            onClick={openModal}
-            size="lg"
-            variant="outline"
-            className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 text-lg bg-transparent"
-          >
-            Schedule Consultation
-          </Button>
+          </div>
         </div>
       </div>
       
