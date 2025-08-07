@@ -192,3 +192,13 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Hide scrollbars for Calendly iframe */
+.calendly-iframe::-webkit-scrollbar {
+  display: none;
+}
+
+.calendly-iframe {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
