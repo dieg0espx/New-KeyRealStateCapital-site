@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, S
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
+import { LoanHeroSection } from "@/components"
 
 export default function CommercialPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -17,21 +18,18 @@ export default function CommercialPage() {
           Back to Loan Products
         </Link>
 
-        <div className="mb-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Multi-Family & Commercial Loans</h1>
-              <p className="text-xl text-gray-600 font-light leading-relaxed">
-                Comprehensive financing solutions for larger multi-family properties, office buildings, retail centers, and
-                mixed-use developments. Designed for experienced investors and developers seeking institutional-quality
-                financing.
-              </p>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-lg">Image Placeholder</span>
-            </div>
-          </div>
-        </div>
+        <LoanHeroSection
+          title="Multi-Family & Commercial Loans"
+          description="Comprehensive financing solutions for larger multi-family properties, office buildings, retail centers, and mixed-use developments. Designed for experienced investors and developers seeking institutional-quality financing."
+          primaryCta={{
+            text: "Apply Now",
+            href: "/apply"
+          }}
+          secondaryCta={{
+            text: "Schedule Consultation",
+            href: "#"
+          }}
+        />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="border-0 shadow-md bg-sky-50">

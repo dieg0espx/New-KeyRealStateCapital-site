@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock,
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
+import { LoanHeroSection } from "@/components"
 
 export default function SingleRentalPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -17,20 +18,18 @@ export default function SingleRentalPage() {
           Back to Loan Products
         </Link>
 
-        <div className="mb-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Single Property Rental Loans</h1>
-              <p className="text-xl text-gray-600 font-light leading-relaxed">
-                Secure financing for individual rental property acquisitions with competitive rates and flexible terms.
-                Perfect for investors looking to build their rental portfolio one property at a time.
-              </p>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-lg">Image Placeholder</span>
-            </div>
-          </div>
-        </div>
+        <LoanHeroSection
+          title="Single Property Rental Loans"
+          description="Secure financing for individual rental property acquisitions with competitive rates and flexible terms. Perfect for investors looking to build their rental portfolio one property at a time."
+          primaryCta={{
+            text: "Apply Now",
+            href: "/apply"
+          }}
+          secondaryCta={{
+            text: "Schedule Consultation",
+            href: "#"
+          }}
+        />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="border-0 shadow-md bg-sky-50">

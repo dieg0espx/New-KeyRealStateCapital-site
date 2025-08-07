@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock,
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
+import { LoanHeroSection } from "@/components"
 
 export default function FixAndFlipPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -17,20 +18,18 @@ export default function FixAndFlipPage() {
           Back to Loan Products
         </Link>
 
-        <div className="mb-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Fix-and-Flip Loans</h1>
-              <p className="text-xl text-gray-600 font-light leading-relaxed">
-                Short-term financing solutions designed specifically for property renovation and resale projects. Get the
-                capital you need to acquire, renovate, and sell properties quickly and profitably.
-              </p>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-lg">Image Placeholder</span>
-            </div>
-          </div>
-        </div>
+        <LoanHeroSection
+          title="Fix-and-Flip Loans"
+          description="Short-term financing solutions designed specifically for property renovation and resale projects. Get the capital you need to acquire, renovate, and sell properties quickly and profitably."
+          primaryCta={{
+            text: "Apply Now",
+            href: "/apply"
+          }}
+          secondaryCta={{
+            text: "Schedule Consultation",
+            href: "#"
+          }}
+        />
 
         {/* Key Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">

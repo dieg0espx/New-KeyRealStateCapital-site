@@ -9,6 +9,7 @@ export { BlogPreviewSection } from "./blog-preview-section"
 export { FAQSection } from "./faq-section"
 export { ContactPreviewSection } from "./contact-preview-section"
 export { CTASection } from "./cta-section"
+export { default as LoanHeroSection } from "./loan-hero-section"
 
 // Existing Components
 export { Gradient } from "./gradient"
