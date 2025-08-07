@@ -66,7 +66,7 @@ export default function LoanHeroSection({
             )}
           </div>
         </div>
-        <div className="aspect-square bg-gray-200 flex items-center justify-center overflow-hidden relative">
+        <div className="aspect-square bg-gray-200 flex items-center justify-center relative">
           {image ? (
             <img 
               src={image} 
