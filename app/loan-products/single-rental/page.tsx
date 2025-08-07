@@ -6,7 +6,7 @@ import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock,
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
-import { LoanHeroSection } from "@/components"
+import LoanHeroSection from "@/components/loan-hero-section"
 
 export default function SingleRentalPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
