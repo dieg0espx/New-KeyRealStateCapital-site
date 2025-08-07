@@ -30,6 +30,7 @@ export default function FixAndFlipPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          onSecondaryClick={openModal}
           badges={[
             {
               title: "Quick Turnaround",

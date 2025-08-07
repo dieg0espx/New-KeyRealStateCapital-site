@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Shield, Clock, DollarSign } from "lucide-react"
-import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 
 interface BadgeProps {
   title: string
@@ -25,6 +24,7 @@ interface LoanHeroSectionProps {
     href: string
   }
   badges?: BadgeProps[]
+  onSecondaryClick?: () => void
 }
 
 export default function LoanHeroSection({
@@ -33,13 +33,12 @@ export default function LoanHeroSection({
   image,
   primaryCta,
   secondaryCta,
-  badges = []
+  badges = [],
+  onSecondaryClick
 }: LoanHeroSectionProps) {
-  const { openModal } = useCalendlyModal()
-
   const handleSecondaryClick = () => {
-    if (secondaryCta.href === "#") {
-      openModal()
+    if (secondaryCta.href === "#" && onSecondaryClick) {
+      onSecondaryClick()
     }
   }
 

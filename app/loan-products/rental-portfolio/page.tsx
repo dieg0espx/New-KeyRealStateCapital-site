@@ -30,6 +30,7 @@ export default function RentalPortfolioPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          onSecondaryClick={openModal}
           badges={[
             {
               title: "Portfolio Scale",

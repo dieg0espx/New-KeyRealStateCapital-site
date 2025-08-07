@@ -30,6 +30,7 @@ export default function NewConstructionPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          onSecondaryClick={openModal}
           badges={[
             {
               title: "Ground Up",

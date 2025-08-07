@@ -30,6 +30,7 @@ export default function CommercialPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          onSecondaryClick={openModal}
           badges={[
             {
               title: "Institutional Quality",
