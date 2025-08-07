@@ -116,7 +116,7 @@ export default function ContactPage() {
                       className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
                         errors.firstName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                       }`}
-                      placeholder="John"
+                      placeholder="First Name"
                     />
                     {errors.firstName && (
                       <p className="mt-1 text-sm text-red-600">{errors.firstName.message}</p>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                       className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
                         errors.lastName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                       }`}
-                      placeholder="Smith"
+                      placeholder="Last Name"
                     />
                     {errors.lastName && (
                       <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
                       errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
-                    placeholder="john@example.com"
+                    placeholder="your.email@example.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
                       errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
-                    placeholder="(619) 567-1385"
+                    placeholder="(555) 123-4567"
                   />
                   {errors.phone && (
                     <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
