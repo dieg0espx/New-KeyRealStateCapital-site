@@ -66,12 +66,12 @@ export default function LoanHeroSection({
             )}
           </div>
         </div>
-        <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+        <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
           {image ? (
             <img 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover"
             />
           ) : (
             <span className="text-gray-500 text-lg">Image Placeholder</span>

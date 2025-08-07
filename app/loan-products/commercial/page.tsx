@@ -21,6 +21,7 @@ export default function CommercialPage() {
         <LoanHeroSection
           title="Multi-Family & Commercial Loans"
           description="Comprehensive financing solutions for larger multi-family properties, office buildings, retail centers, and mixed-use developments. Designed for experienced investors and developers seeking institutional-quality financing."
+          image="/loan-products/multiFamily.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"

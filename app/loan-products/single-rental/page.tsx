@@ -21,6 +21,7 @@ export default function SingleRentalPage() {
         <LoanHeroSection
           title="Single Property Rental Loans"
           description="Secure financing for individual rental property acquisitions with competitive rates and flexible terms. Perfect for investors looking to build their rental portfolio one property at a time."
+          image="/loan-products/singlePropertyRental.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"

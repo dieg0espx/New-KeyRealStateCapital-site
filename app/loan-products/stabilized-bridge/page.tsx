@@ -21,6 +21,7 @@ export default function StabilizedBridgePage() {
         <LoanHeroSection
           title="Stabilized Bridge Loans"
           description="Bridge financing for stabilized income-producing properties. Ideal for investors who need quick access to capital while arranging permanent financing or preparing for a strategic exit."
+          image="/loan-products/stabilizedBridge.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"

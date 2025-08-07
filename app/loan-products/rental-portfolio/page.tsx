@@ -21,6 +21,7 @@ export default function RentalPortfolioPage() {
         <LoanHeroSection
           title="Rental Portfolio Loans"
           description="Scale your rental property investments with portfolio financing solutions. Perfect for experienced investors looking to acquire multiple properties or refinance existing portfolios for better terms and cash flow."
+          image="/loan-products/rentalPortfolio.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"

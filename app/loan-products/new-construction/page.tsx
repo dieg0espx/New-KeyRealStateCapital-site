@@ -21,6 +21,7 @@ export default function NewConstructionPage() {
         <LoanHeroSection
           title="New Construction Loans"
           description="Finance your ground-up development projects with flexible construction loans that convert to permanent financing. Perfect for experienced developers and investors building new properties."
+          image="/loan-products/newConstruction.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"

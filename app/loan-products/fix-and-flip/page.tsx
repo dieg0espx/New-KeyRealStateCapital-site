@@ -21,6 +21,7 @@ export default function FixAndFlipPage() {
         <LoanHeroSection
           title="Fix-and-Flip Loans"
           description="Short-term financing solutions designed specifically for property renovation and resale projects. Get the capital you need to acquire, renovate, and sell properties quickly and profitably."
+          image="/loan-products/fixAndFlip.jpg"
           primaryCta={{
             text: "Apply Now",
             href: "/apply"
