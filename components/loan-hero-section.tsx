@@ -77,54 +77,28 @@ export default function LoanHeroSection({
             <span className="text-gray-500 text-lg">Image Placeholder</span>
           )}
           
-          {/* Top Left Badge */}
-          <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
-            <div className="flex items-center space-x-3">
-              <div className="bg-sky-600 rounded-full p-1">
-                <CheckCircle className="h-4 w-4 text-white" />
+          {/* Top Left Badge - Oversized and outside image */}
+          <div className="absolute -top-6 -left-6 bg-white rounded-lg shadow-xl p-4 max-w-[250px] z-10">
+            <div className="flex items-center space-x-4">
+              <div className="bg-sky-600 rounded-full p-2">
+                <CheckCircle className="h-6 w-6 text-white" />
               </div>
               <div>
-                <div className="font-semibold text-gray-900 text-sm">Fast Approval</div>
-                <div className="text-gray-600 text-xs">7-14 Days</div>
+                <div className="font-bold text-gray-900 text-base">Fast Approval</div>
+                <div className="text-gray-600 text-sm">7-14 Days</div>
               </div>
             </div>
           </div>
           
-          {/* Top Right Badge */}
-          <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
-            <div className="flex items-center space-x-3">
-              <div className="bg-sky-600 rounded-full p-1">
-                <DollarSign className="h-4 w-4 text-white" />
+          {/* Bottom Right Badge - Oversized and outside image */}
+          <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 max-w-[250px] z-10">
+            <div className="flex items-center space-x-4">
+              <div className="bg-sky-600 rounded-full p-2">
+                <DollarSign className="h-6 w-6 text-white" />
               </div>
               <div>
-                <div className="font-semibold text-gray-900 text-sm">Competitive Rates</div>
-                <div className="text-gray-600 text-xs">Starting at 8.5%</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom Left Badge */}
-          <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
-            <div className="flex items-center space-x-3">
-              <div className="bg-sky-600 rounded-full p-1">
-                <Clock className="h-4 w-4 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 text-sm">Flexible Terms</div>
-                <div className="text-gray-600 text-xs">6-30 Months</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom Right Badge */}
-          <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
-            <div className="flex items-center space-x-3">
-              <div className="bg-sky-600 rounded-full p-1">
-                <Shield className="h-4 w-4 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 text-sm">Expert Support</div>
-                <div className="text-gray-600 text-xs">24/7 Service</div>
+                <div className="font-bold text-gray-900 text-base">Competitive Rates</div>
+                <div className="text-gray-600 text-sm">Starting at 8.5%</div>
               </div>
             </div>
           </div>
