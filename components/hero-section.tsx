@@ -95,7 +95,7 @@ export function HeroSection({
             x5-video-player-type="h5"
             x5-video-player-fullscreen="true"
             preload="auto"
-            className="w-full h-full object-cover object-center md:object-center object-right"
+            className="w-full h-full object-cover object-center"
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
