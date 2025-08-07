@@ -18,11 +18,18 @@ export default function RentalPortfolioPage() {
         </Link>
 
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Rental Portfolio Loans</h1>
-          <p className="text-xl text-gray-600 font-light leading-relaxed">
-            Scale your rental property investments with portfolio financing solutions. Perfect for experienced investors
-            looking to acquire multiple properties or refinance existing portfolios for better terms and cash flow.
-          </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Rental Portfolio Loans</h1>
+              <p className="text-xl text-gray-600 font-light leading-relaxed">
+                Scale your rental property investments with portfolio financing solutions. Perfect for experienced investors
+                looking to acquire multiple properties or refinance existing portfolios for better terms and cash flow.
+              </p>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500 text-lg">Image Placeholder</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
