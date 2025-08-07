@@ -42,9 +42,9 @@ export default function LoanHeroSection({
           <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
             {description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
             <Link href={primaryCta.href} className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              <Button className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 font-medium transition-colors">
                 {primaryCta.text}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
@@ -52,21 +52,21 @@ export default function LoanHeroSection({
             {secondaryCta.href === "#" ? (
               <Button 
                 variant="outline" 
-                className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 rounded-lg font-medium transition-colors"
+                className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 font-medium transition-colors"
                 onClick={handleSecondaryClick}
               >
                 {secondaryCta.text}
               </Button>
             ) : (
               <Link href={secondaryCta.href} className="w-full sm:w-auto">
-                <Button variant="outline" className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 rounded-lg font-medium transition-colors">
+                <Button variant="outline" className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 font-medium transition-colors">
                   {secondaryCta.text}
                 </Button>
               </Link>
             )}
           </div>
         </div>
-        <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+        <div className="aspect-square bg-gray-200 flex items-center justify-center overflow-hidden">
           {image ? (
             <img 
               src={image} 
