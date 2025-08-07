@@ -101,9 +101,9 @@ export default function NewConstructionPage() {
             <h2 className="text-2xl font-medium text-gray-900 mb-6">Construction Loan Process</h2>
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
-                  1
-                </div>
+                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    1
+                  </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Pre-Approval & Planning</h4>
                   <p className="text-gray-600 font-light">
@@ -112,9 +112,9 @@ export default function NewConstructionPage() {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
-                  2
-                </div>
+                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    2
+                  </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Construction Phase</h4>
                   <p className="text-gray-600 font-light">
@@ -123,9 +123,9 @@ export default function NewConstructionPage() {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
-                  3
-                </div>
+                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    3
+                  </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Conversion or Exit</h4>
                   <p className="text-gray-600 font-light">

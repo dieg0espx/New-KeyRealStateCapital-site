@@ -111,7 +111,7 @@ export default function FixAndFlipPage() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                       1
                     </div>
                     <div>
@@ -122,7 +122,7 @@ export default function FixAndFlipPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                       2
                     </div>
                     <div>
@@ -135,7 +135,7 @@ export default function FixAndFlipPage() {
                 </div>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                       3
                     </div>
                     <div>
@@ -146,7 +146,7 @@ export default function FixAndFlipPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+                    <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                       4
                     </div>
                     <div>
