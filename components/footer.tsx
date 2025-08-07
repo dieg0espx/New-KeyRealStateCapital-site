@@ -1,8 +1,54 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Instagram, ExternalLink } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, ExternalLink, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [submitMessage, setSubmitMessage] = useState("")
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email.trim()) {
+      setSubmitStatus("error")
+      setSubmitMessage("Please enter your email address")
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+    
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setSubmitMessage("Thank you! You've been subscribed to our newsletter.")
+        setEmail("")
+      } else {
+        const errorData = await response.json()
+        setSubmitStatus("error")
+        setSubmitMessage(errorData.message || "Failed to subscribe. Please try again.")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setSubmitMessage("Network error. Please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <footer className="bg-gray-900 text-white">
       {/* Newsletter Section */}
@@ -13,15 +59,44 @@ export function Footer() {
             <p className="text-gray-400 font-light mb-6 max-w-2xl mx-auto">
               Get the latest market insights, investment strategies, and financing updates delivered to your inbox.
             </p>
-            <form className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+              {/* Status Messages */}
+              {submitStatus === "success" && (
+                <div className="w-full bg-green-50 border border-green-200 rounded-lg p-4 flex items-center mb-4">
+                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                  <p className="text-green-800 text-sm">{submitMessage}</p>
+                </div>
+              )}
+              
+              {submitStatus === "error" && (
+                <div className="w-full bg-red-50 border border-red-200 rounded-lg p-4 flex items-center mb-4">
+                  <AlertCircle className="h-5 w-5 text-red-600 mr-3 flex-shrink-0" />
+                  <p className="text-red-800 text-sm">{submitMessage}</p>
+                </div>
+              )}
+              
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent rounded-md"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
-              <Button type="submit" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-6 py-3 h-[52px] rounded-md">
-                Subscribe
+              <Button 
+                type="submit" 
+                className="bg-sky-600 hover:bg-sky-700 text-white font-light px-6 py-3 h-[52px] disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Subscribing...
+                  </>
+                ) : (
+                  "Subscribe"
+                )}
               </Button>
             </form>
           </div>
