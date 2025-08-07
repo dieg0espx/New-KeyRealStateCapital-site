@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const { firstName, lastName, email, phone, loanType, loanAmount, timeline, message } = body;
 
     // Create transporter
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: "analytics@comcreate.org",
