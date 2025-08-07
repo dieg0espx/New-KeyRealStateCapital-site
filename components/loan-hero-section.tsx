@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, CheckCircle, Shield, Clock, DollarSign } from "lucide-react"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 
 interface LoanHeroSectionProps {
@@ -78,23 +78,55 @@ export default function LoanHeroSection({
           )}
           
           {/* Top Left Badge */}
-          <div className="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 text-sm font-medium shadow-lg">
-            Fast Approval
+          <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
+            <div className="flex items-center space-x-3">
+              <div className="bg-sky-600 rounded-full p-1">
+                <CheckCircle className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900 text-sm">Fast Approval</div>
+                <div className="text-gray-600 text-xs">7-14 Days</div>
+              </div>
+            </div>
           </div>
           
           {/* Top Right Badge */}
-          <div className="absolute top-4 right-4 bg-white text-sky-600 px-3 py-1 text-sm font-medium shadow-lg border border-sky-200">
-            Competitive Rates
+          <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
+            <div className="flex items-center space-x-3">
+              <div className="bg-sky-600 rounded-full p-1">
+                <DollarSign className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900 text-sm">Competitive Rates</div>
+                <div className="text-gray-600 text-xs">Starting at 8.5%</div>
+              </div>
+            </div>
           </div>
           
           {/* Bottom Left Badge */}
-          <div className="absolute bottom-4 left-4 bg-white text-gray-700 px-3 py-1 text-sm font-medium shadow-lg border border-gray-200">
-            Flexible Terms
+          <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
+            <div className="flex items-center space-x-3">
+              <div className="bg-sky-600 rounded-full p-1">
+                <Clock className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900 text-sm">Flexible Terms</div>
+                <div className="text-gray-600 text-xs">6-30 Months</div>
+              </div>
+            </div>
           </div>
           
           {/* Bottom Right Badge */}
-          <div className="absolute bottom-4 right-4 bg-sky-600 text-white px-3 py-1 text-sm font-medium shadow-lg">
-            Expert Support
+          <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-3 max-w-[200px]">
+            <div className="flex items-center space-x-3">
+              <div className="bg-sky-600 rounded-full p-1">
+                <Shield className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900 text-sm">Expert Support</div>
+                <div className="text-gray-600 text-xs">24/7 Service</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
