@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown, Zap, Hammer } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function FixAndFlipPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Quick Turnaround",
+              subtitle: "7-14 Days",
+              icon: <Zap className="h-6 w-6 text-white" />,
+              position: "top-left"
+            },
+            {
+              title: "Renovation Funds",
+              subtitle: "Up to 90% ARV",
+              icon: <Hammer className="h-6 w-6 text-white" />,
+              position: "bottom-right"
+            }
+          ]}
         />
 
         {/* Key Stats */}

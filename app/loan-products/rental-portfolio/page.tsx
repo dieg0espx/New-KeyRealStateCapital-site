@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Layers, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function RentalPortfolioPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Portfolio Scale",
+              subtitle: "Multiple Properties",
+              icon: <Layers className="h-6 w-6 text-white" />,
+              position: "top-right"
+            },
+            {
+              title: "Cash Flow Boost",
+              subtitle: "Better Terms & Rates",
+              icon: <BarChart3 className="h-6 w-6 text-white" />,
+              position: "bottom-left"
+            }
+          ]}
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">

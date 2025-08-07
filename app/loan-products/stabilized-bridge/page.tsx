@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Bridge, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function StabilizedBridgePage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Bridge Financing",
+              subtitle: "Quick Capital Access",
+              icon: <Bridge className="h-6 w-6 text-white" />,
+              position: "top-left"
+            },
+            {
+              title: "Strategic Exit",
+              subtitle: "Permanent Financing Ready",
+              icon: <ArrowRight className="h-6 w-6 text-white" />,
+              position: "bottom-right"
+            }
+          ]}
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">

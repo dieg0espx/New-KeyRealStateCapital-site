@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, Hammer, TrendingUp } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, Hammer, TrendingUp, Wrench, Target } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function NewConstructionPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Ground Up",
+              subtitle: "From Foundation to Finish",
+              icon: <Wrench className="h-6 w-6 text-white" />,
+              position: "top-left"
+            },
+            {
+              title: "Conversion Ready",
+              subtitle: "To Permanent Financing",
+              icon: <Target className="h-6 w-6 text-white" />,
+              position: "bottom-right"
+            }
+          ]}
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">

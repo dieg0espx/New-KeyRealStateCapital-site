@@ -5,6 +5,13 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle, Shield, Clock, DollarSign } from "lucide-react"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 
+interface BadgeProps {
+  title: string
+  subtitle: string
+  icon: React.ReactNode
+  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+}
+
 interface LoanHeroSectionProps {
   title: string
   description: string
@@ -17,6 +24,7 @@ interface LoanHeroSectionProps {
     text: string
     href: string
   }
+  badges?: BadgeProps[]
 }
 
 export default function LoanHeroSection({
@@ -24,7 +32,8 @@ export default function LoanHeroSection({
   description,
   image,
   primaryCta,
-  secondaryCta
+  secondaryCta,
+  badges = []
 }: LoanHeroSectionProps) {
   const { openModal } = useCalendlyModal()
 
@@ -77,31 +86,31 @@ export default function LoanHeroSection({
             <span className="text-gray-500 text-lg">Image Placeholder</span>
           )}
           
-          {/* Top Left Badge - Absolute positioning for overlap */}
-          <div className="absolute -top-6 -left-6 bg-white shadow-md p-4 max-w-[250px] z-10">
-            <div className="flex items-center space-x-4">
-              <div className="bg-sky-600 rounded-full p-2">
-                <CheckCircle className="h-6 w-6 text-white" />
+          {badges.map((badge, index) => {
+            const positionClasses = {
+              'top-left': '-top-6 -left-6',
+              'top-right': '-top-6 -right-6',
+              'bottom-left': '-bottom-6 -left-6',
+              'bottom-right': '-bottom-6 -right-6'
+            }
+            
+            return (
+              <div 
+                key={index}
+                className={`absolute ${positionClasses[badge.position]} bg-white shadow-md p-4 max-w-[250px] z-10`}
+              >
+                <div className="flex items-center space-x-4">
+                  <div className="bg-sky-600 rounded-full p-2">
+                    {badge.icon}
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 text-base">{badge.title}</div>
+                    <div className="text-gray-600 text-sm">{badge.subtitle}</div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="font-bold text-gray-900 text-base">Fast Approval</div>
-                <div className="text-gray-600 text-sm">7-14 Days</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom Right Badge - Absolute positioning for overlap */}
-          <div className="absolute -bottom-6 -right-6 bg-white shadow-md p-4 max-w-[250px] z-10">
-            <div className="flex items-center space-x-4">
-              <div className="bg-sky-600 rounded-full p-2">
-                <DollarSign className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <div className="font-bold text-gray-900 text-base">Competitive Rates</div>
-                <div className="text-gray-600 text-sm">Starting at 8.5%</div>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </div>

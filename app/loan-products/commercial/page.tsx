@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Building2, Users2 } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function CommercialPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Institutional Quality",
+              subtitle: "Large Scale Projects",
+              icon: <Building2 className="h-6 w-6 text-white" />,
+              position: "top-right"
+            },
+            {
+              title: "Multi-Unit Focus",
+              subtitle: "Office & Retail Centers",
+              icon: <Users2 className="h-6 w-6 text-white" />,
+              position: "bottom-left"
+            }
+          ]}
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">

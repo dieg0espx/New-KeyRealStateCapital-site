@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Shield, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -30,6 +30,20 @@ export default function SingleRentalPage() {
             text: "Schedule Consultation",
             href: "#"
           }}
+          badges={[
+            {
+              title: "Stable Cash Flow",
+              subtitle: "Long-term Returns",
+              icon: <TrendingUp className="h-6 w-6 text-white" />,
+              position: "top-right"
+            },
+            {
+              title: "Portfolio Building",
+              subtitle: "One Property at a Time",
+              icon: <Shield className="h-6 w-6 text-white" />,
+              position: "bottom-left"
+            }
+          ]}
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
