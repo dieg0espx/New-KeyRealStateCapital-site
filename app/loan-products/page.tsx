@@ -14,8 +14,12 @@ import {
   Users,
 } from "lucide-react"
 import Link from "next/link"
+import CalendlyModal from "@/components/calendly-modal"
+import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 
 export default function LoanProductsPage() {
+  const { isOpen, openModal, closeModal } = useCalendlyModal()
+  
   const loanProducts = [
     {
       icon: <Hammer className="h-8 w-8" />,
@@ -105,15 +109,14 @@ export default function LoanProductsPage() {
                 Get Pre-Qualified
               </Button>
             </Link>
-            <Link href="https://calendly.com/keyan-keyrealestatecapital/30min?month=2025-08" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 bg-transparent"
-              >
-                Schedule Consultation
-              </Button>
-            </Link>
+            <Button
+              onClick={openModal}
+              size="lg"
+              variant="outline"
+              className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 bg-transparent"
+            >
+              Schedule Consultation
+            </Button>
           </div>
         </div>
       </section>
@@ -247,6 +250,9 @@ export default function LoanProductsPage() {
           </div>
         </div>
       </section>
+      
+      {/* Calendly Modal */}
+      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
     </div>
   )
 }

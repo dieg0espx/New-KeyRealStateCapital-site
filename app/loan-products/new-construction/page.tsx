@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, Hammer, TrendingUp } from "lucide-react"
 import Link from "next/link"
+import CalendlyModal from "@/components/calendly-modal"
+import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 
 export default function NewConstructionPage() {
+  const { isOpen, openModal, closeModal } = useCalendlyModal()
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -285,17 +288,19 @@ export default function NewConstructionPage() {
               Apply for Construction Loan
             </Button>
           </Link>
-          <Link href="https://calendly.com/keyan-keyrealestatecapital/30min?month=2025-08" target="_blank" rel="noopener noreferrer">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 text-lg bg-transparent"
-            >
-              Schedule Consultation
-            </Button>
-          </Link>
+          <Button
+            onClick={openModal}
+            size="lg"
+            variant="outline"
+            className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 text-lg bg-transparent"
+          >
+            Schedule Consultation
+          </Button>
         </div>
       </div>
+      
+      {/* Calendly Modal */}
+      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
     </div>
   )
 }
