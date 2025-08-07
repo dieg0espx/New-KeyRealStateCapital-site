@@ -301,7 +301,7 @@ export default function SingleRentalPage() {
               Apply for Single Rental Loan
             </Button>
           </Link>
-          <Link href="/contact">
+          <Link href="https://calendly.com/keyan-keyrealestatecapital/30min?month=2025-08" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               variant="outline"

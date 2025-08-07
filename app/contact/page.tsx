@@ -339,7 +339,7 @@ export default function ContactPage() {
                   Schedule a call with one of our loan specialists to discuss your project in detail.
                 </p>
                 <div className="space-y-3">
-                  <Link href="/contact" className="block">
+                  <Link href="https://calendly.com/keyan-keyrealestatecapital/30min?month=2025-08" target="_blank" rel="noopener noreferrer" className="block">
                     <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light">
                       <Calendar className="h-4 w-4 mr-2" />
                       Schedule a Call
