@@ -72,10 +72,10 @@ export default function PrivacyPage() {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-gray-700 font-light mb-2">Key Real Estate Capital</p>
-              <p className="text-gray-700 font-light mb-2">123 Wilshire Boulevard, Suite 1000</p>
-              <p className="text-gray-700 font-light mb-2">Los Angeles, CA 90210</p>
-              <p className="text-gray-700 font-light mb-2">Email: privacy@keyrec.com</p>
-              <p className="text-gray-700 font-light">Phone: (555) 123-4567</p>
+              <p className="text-gray-700 font-light mb-2">401 W A St Ste 200</p>
+              <p className="text-gray-700 font-light mb-2">San Diego, CA 92101</p>
+              <p className="text-gray-700 font-light mb-2">Email: loans@keyrealestatecapital.com</p>
+              <p className="text-gray-700 font-light">Phone: (619) 567-1385</p>
             </div>
           </CardContent>
         </Card>

@@ -68,7 +68,7 @@ export default function ContactPage() {
                   id="phone"
                   type="tel"
                   className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
-                  placeholder="(555) 123-4567"
+                  placeholder="(619) 567-1385"
                 />
               </div>
 
@@ -150,31 +150,16 @@ export default function ContactPage() {
             {/* Office Locations */}
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Office Locations</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Office Location</h3>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-sky-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Los Angeles Headquarters</h4>
+                      <h4 className="font-semibold text-gray-900">San Diego Headquarters</h4>
                       <p className="text-gray-600 font-light mt-1">
-                        123 Wilshire Boulevard
+                        401 W A St Ste 200
                         <br />
-                        Suite 1000
-                        <br />
-                        Los Angeles, CA 90210
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-sky-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Florida Office</h4>
-                      <p className="text-gray-600 font-light mt-1">
-                        456 Ocean Drive
-                        <br />
-                        Suite 500
-                        <br />
-                        Miami, FL 33139
+                        San Diego, CA 92101
                       </p>
                     </div>
                   </div>
@@ -190,22 +175,22 @@ export default function ContactPage() {
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-sky-600 mr-4" />
                     <div>
-                      <div className="font-medium text-gray-900">(555) 123-4567</div>
+                      <div className="font-medium text-gray-900">(619) 567-1385</div>
                       <div className="text-gray-600 font-light text-sm">Main line</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-sky-600 mr-4" />
                     <div>
-                      <div className="font-medium text-gray-900">info@keyrec.com</div>
+                      <div className="font-medium text-gray-900">loans@keyrealestatecapital.com</div>
                       <div className="text-gray-600 font-light text-sm">General inquiries</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 text-sky-600 mr-4" />
                     <div>
-                      <div className="font-medium text-gray-900">Mon-Fri: 8AM-6PM PST</div>
-                      <div className="text-gray-600 font-light text-sm">Business hours</div>
+                      <div className="font-medium text-gray-900">24/7 Service | Monday - Sunday</div>
+                      <div className="text-gray-600 font-light text-sm">Always available</div>
                     </div>
                   </div>
                 </div>
@@ -226,7 +211,7 @@ export default function ContactPage() {
                       Schedule a Call
                     </Button>
                   </Link>
-                  <Link href="tel:(555) 123-4567">
+                  <Link href="tel:(619) 567-1385">
                     <Button
                       variant="outline"
                       className="w-full border-sky-600 text-sky-600 hover:bg-sky-50 bg-transparent"

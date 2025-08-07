@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -40,14 +40,21 @@ export function Footer() {
                 flexible lending options and expert guidance.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="h-5 w-5" />
+                <a 
+                  href="https://www.instagram.com/investwithkey/?hl=en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Facebook className="h-5 w-5" />
+                <a 
+                  href="https://www.skool.com/investwithkey/about" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <ExternalLink className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -56,24 +63,25 @@ export function Footer() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Contact</h4>
               <div className="space-y-4">
-                <Link href="tel:(555) 123-4567" className="flex items-start">
+                <Link href="tel:(619) 567-1385" className="flex items-start">
                   <Phone className="h-5 w-5 mr-3 mt-0.5 text-sky-600 flex-shrink-0" />
                   <div>
-                    <div className="text-gray-300 font-light">(555) 123-4567</div>
-                    <div className="text-gray-400 text-sm">Mon-Fri 8AM-6PM PST</div>
+                    <div className="text-gray-300 font-light">(619) 567-1385</div>
+                    <div className="text-gray-400 text-sm">24/7 Service | Monday - Sunday</div>
                   </div>
                 </Link>
-                <Link href="mailto:info@keyrec.com" className="flex items-start">
+                <Link href="mailto:loans@keyrealestatecapital.com" className="flex items-start">
                   <Mail className="h-5 w-5 mr-3 mt-0.5 text-sky-600 flex-shrink-0" />
                   <div>
-                    <div className="text-gray-300 font-light">info@keyrec.com</div>
+                    <div className="text-gray-300 font-light">loans@keyrealestatecapital.com</div>
                     <div className="text-gray-400 text-sm">24/7 support</div>
                   </div>
                 </Link>
                 <div className="flex items-start">
                   <MapPin className="h-5 w-5 mr-3 mt-0.5 text-sky-600 flex-shrink-0" />
                   <div>
-                    <div className="text-gray-300 font-light">Los Angeles, CA</div>
+                    <div className="text-gray-300 font-light">401 W A St Ste 200</div>
+                    <div className="text-gray-300 font-light">San Diego, CA 92101</div>
                     <div className="text-gray-400 text-sm">Corporate Headquarters</div>
                   </div>
                 </div>
@@ -122,9 +130,20 @@ export function Footer() {
               &copy; 2024 Key Real Estate Capital. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <span className="text-gray-400 font-light">NMLS ID: 123456</span>
+              <span className="text-gray-400 font-light">NMLS ID #2676974</span>
               <span className="text-gray-400 font-light">Equal Housing Lender</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="border-t border-gray-800 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-gray-400 font-light text-sm leading-relaxed">
+              Disclaimer: The fictitious name "Key Real Estate Capital" is registered under Keyswag Capital Inc. and is used in all states where Keyswag Capital Inc. is licensed, except California.
+            </p>
           </div>
         </div>
       </div>

@@ -118,14 +118,14 @@ export default function FAQPage() {
       title: "Call Us",
       description: "Speak with a loan officer",
       action: "Call Now",
-      href: "tel:+1-800-555-0123",
+      href: "tel:(619) 567-1385",
     },
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Us",
       description: "Send us your questions",
       action: "Send Email",
-      href: "mailto:info@keyrealestatecapital.com",
+      href: "mailto:loans@keyrealestatecapital.com",
     },
     {
       icon: <Clock className="h-5 w-5" />,

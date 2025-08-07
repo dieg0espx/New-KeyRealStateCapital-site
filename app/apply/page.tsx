@@ -83,7 +83,7 @@ export default function ApplicationPage() {
                       type="tel"
                       required
                       className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
-                      placeholder="(555) 123-4567"
+                      placeholder="(619) 567-1385"
                     />
                   </div>
                 </div>

@@ -25,7 +25,7 @@ export function HeroSection({
   primaryButtonLink = "/loan-products",
   secondaryButtonText = "Get Free Consultation",
   secondaryButtonLink = "/contact",
-  videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1754308818/Untitled_design_fsosaf.mp4"
+  videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1754592601/Untitled_design_1_gftoma.mp4"
 }: HeroSectionProps) {
   const scrollToNextSection = () => {
     const nextSection = document.querySelector('section:nth-of-type(2)')
@@ -78,7 +78,7 @@ export function HeroSection({
 
   return (
     <Gradient direction="bottom">
-      <section className="relative h-screen md:h-[calc(100vh+150px)] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen md:h-[calc(100vh+200px)] flex items-center justify-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0"
           initial={{ scale: 1.05, opacity: 0 }}
@@ -147,7 +147,7 @@ export function HeroSection({
         </motion.div>
         <motion.button 
           onClick={scrollToNextSection}
-          className="absolute bottom-[150px] left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300"
+          className="absolute bottom-[250px] left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300"
           aria-label="Scroll to next section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

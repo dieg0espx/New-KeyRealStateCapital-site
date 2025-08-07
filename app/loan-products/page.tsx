@@ -94,7 +94,7 @@ export default function LoanProductsPage() {
     <div className="min-h-screen bg-white pt-16">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-sky-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-light text-gray-900 mb-6">Loan Products</h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto mb-8">
             Comprehensive financing solutions tailored to your real estate investment strategy and goals
