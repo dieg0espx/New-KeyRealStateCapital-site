@@ -10,8 +10,8 @@ export async function POST(request: NextRequest) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: "analytics@comcreate.org",
-        pass: "wtgpgpwbtnidttpo",
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
@@ -195,7 +195,7 @@ export async function POST(request: NextRequest) {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'diego@comcreate.org',
+      to: process.env.EMAIL_TO || 'diego@comcreate.org',
       subject: `New Contact Form Submission - ${firstName} ${lastName}`,
       html: emailTemplate,
       replyTo: email,
