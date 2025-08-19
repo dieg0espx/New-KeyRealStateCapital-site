@@ -352,7 +352,7 @@ export default function ContactPage() {
                   <Link href="tel:(619) 567-1385">
                     <Button
                       variant="outline"
-                      className="w-full border-light-green text-light-green hover:bg-perry hover:text-white bg-transparent"
+                      className="w-full border-light-green text-light-green hover:bg-perry hover:text-perry bg-transparent"
                     >
                       <Phone className="h-4 w-4 mr-2" />
                       Call Now

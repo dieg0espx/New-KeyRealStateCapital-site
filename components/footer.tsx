@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Instagram, ExternalLink, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   const [email, setEmail] = useState("")
@@ -109,7 +110,15 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-light mb-6">Key Real Estate Capital</h3>
+              <div className="flex items-center mb-6">
+                <Image
+                  src="/logo-transparent.png"
+                  alt="Key Real State Capital"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </div>
               <p className="text-gray-400 font-light leading-relaxed mb-6 max-w-md">
                 Sophisticated financing solutions for real estate investors nationwide. We empower your success with
                 flexible lending options and expert guidance.

@@ -15,14 +15,27 @@ interface HeaderProps {
 export function Header({ isHomePage = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    // Set initial mobile state
+    handleResize()
+    
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleResize)
+    }
   }, [])
 
   const loanProducts = [
@@ -37,9 +50,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
   return (
     <motion.nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
+        isScrolled || !isHomePage || isMobileMenuOpen ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
       }`}
-      initial={{ y: -100 }}
+      initial={{ y: isMobile ? 0 : -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
@@ -52,7 +65,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               <Link href="/" className="flex items-center">
                 <Image
-                  src={isScrolled || !isHomePage ? "/logo-white.png" : "/logo-transparent.png"}
+                  src={isScrolled || !isHomePage || isMobileMenuOpen ? "/logo-white.png" : "/logo-transparent.png"}
                   alt="Key Real State Capital"
                   width={180}
                   height={40}
@@ -70,8 +83,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/"
                 className={`transition-colors font-light ${
                   pathname === "/" 
-                    ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
                 }`}
               >
                 Home
@@ -81,7 +94,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             <div className="relative group">
               <button 
                 className={`flex items-center transition-colors font-light ${
-                  isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white"
+                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white"
                 }`}
               >
                 Loan Products <ChevronDown className="ml-1 h-4 w-4" />
@@ -109,8 +122,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/team"
                 className={`transition-colors font-light ${
                   pathname === "/team" 
-                    ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
                 }`}
               >
                 Team
@@ -121,8 +134,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/faq"
                 className={`transition-colors font-light ${
                   pathname === "/faq" 
-                    ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
                 }`}
               >
                 FAQ
@@ -133,8 +146,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/blog"
                 className={`transition-colors font-light ${
                   pathname === "/blog" 
-                    ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
                 }`}
               >
                 Blog
@@ -145,8 +158,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/contact"
                 className={`transition-colors font-light ${
                   pathname === "/contact" 
-                    ? (isScrolled || !isHomePage ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
                 }`}
               >
                 Contact
@@ -169,7 +182,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             {/* Mobile menu button */}
             <motion.button
               className={`md:hidden p-2 transition-colors ${
-                isScrolled || !isHomePage ? "text-gray-700 hover:text-sky-600" : "text-white hover:text-sky-200"
+                isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white hover:text-sky-200"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileHover={{ scale: 1.05 }}

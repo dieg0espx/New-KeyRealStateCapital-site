@@ -78,7 +78,7 @@ export function HeroSection({
 
   return (
     <Gradient direction="bottom">
-      <section className="relative h-screen md:h-[calc(100vh+200px)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen h-screen lg:h-[calc(100vh+200px)] flex items-center justify-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0"
           initial={{ scale: 1.05, opacity: 0 }}
@@ -102,13 +102,13 @@ export function HeroSection({
           <div className="absolute inset-0 bg-black/40"></div>
         </motion.div>
         <motion.div 
-          className="relative z-10 text-center max-w-4xl mx-auto px-4 -mt-[150px]"
+          className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pt-20 lg:pt-0 lg:-mt-[150px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             {title}
@@ -116,28 +116,31 @@ export function HeroSection({
             <span className="text-sky-200">{subtitle}</span>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-2 sm:px-0"
             variants={itemVariants}
           >
             {description}
           </motion.p>
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
             variants={itemVariants}
           >
-            <motion.div variants={buttonVariants}>
-              <Link href={primaryButtonLink}>
-                <Button size="lg" className="bg-sky-600 hover:bg-light-green text-white font-light px-8 py-4 text-lg">
+            <motion.div variants={buttonVariants} className="w-full sm:w-auto">
+              <Link href={primaryButtonLink} className="block w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-sky-600 hover:bg-light-green text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+                >
                   {primaryButtonText}
                 </Button>
               </Link>
             </motion.div>
-            <motion.div variants={buttonVariants}>
-              <Link href={secondaryButtonLink}>
+            <motion.div variants={buttonVariants} className="w-full sm:w-auto">
+              <Link href={secondaryButtonLink} className="block w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-gray-900 font-light px-8 py-4 text-lg bg-transparent"
+                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent"
                 >
                   {secondaryButtonText}
                 </Button>
@@ -147,7 +150,7 @@ export function HeroSection({
         </motion.div>
         <motion.button 
           onClick={scrollToNextSection}
-          className="absolute bottom-[250px] left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300"
+          className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-[250px] left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300"
           aria-label="Scroll to next section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -155,7 +158,7 @@ export function HeroSection({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >
-          <ChevronDown className="h-6 w-6 text-white/70" />
+          <ChevronDown className="h-5 w-5 sm:h-6 sm:w-6 text-white/70" />
         </motion.button>
       </section>
     </Gradient>

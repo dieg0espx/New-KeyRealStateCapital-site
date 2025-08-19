@@ -186,7 +186,7 @@ export function TestimonialsSection({
                   variants={cardVariants}
                   className="px-3 py-5"
                 >
-                  <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+                  <Card className="bg-white border-0 shadow-md hover:shadow-custom transition-shadow duration-300 h-full">
                     <CardContent className="p-8">
                       <motion.div 
                         className="flex mb-4"
