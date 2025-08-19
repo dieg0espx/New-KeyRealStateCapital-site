@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.',
     images: [
       {
-        url: '/miniature.png',
+        url: 'https://keyrealstatecapital.com/miniature.png',
         width: 1200,
         height: 630,
         alt: 'Key Real State Capital - Luxury Real State Financing',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: '@keyrealstatecapital',
     title: 'Key Real State Capital - Luxury Real State Financing',
     description: 'Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.',
-    images: ['/miniature.png'],
+    images: ['https://keyrealstatecapital.com/miniature.png'],
   },
   other: {
     'facebook-domain-verification': 'your-facebook-domain-verification-code',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
     'msapplication-TileColor': '#ffffff',
     'msapplication-config': '/favicon/browserconfig.xml',
     'theme-color': '#ffffff',
-    'apple-mobile-web-app-capable': 'standalone',
-    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black',
     'apple-mobile-web-app-title': 'Key Real State Capital',
     'application-name': 'Key Real State Capital',
     'msapplication-TileImage': '/favicon/mstile-144x144.png',
@@ -75,6 +75,7 @@ export const metadata: Metadata = {
     'apple-touch-fullscreen': 'yes',
     'apple-mobile-web-app-orientations': 'portrait',
     'mobile-web-app-capable': 'yes',
+    'format-detection': 'telephone=no,email=no,address=no',
   },
   icons: {
     icon: [
