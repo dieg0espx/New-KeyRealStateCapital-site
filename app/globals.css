@@ -111,7 +111,18 @@ html {
   display: none !important;
 }
 
-/* Custom scrollbar */
+/* Hide scrollbars globally */
+* {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Custom scrollbar - commented out to hide scrollbars */
+/*
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -128,6 +139,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+*/
 
 /* Hide scrollbars for Calendly iframe */
 .calendly-iframe::-webkit-scrollbar {
