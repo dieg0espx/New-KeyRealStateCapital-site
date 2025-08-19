@@ -130,7 +130,7 @@ export default function LoanProductsPage() {
             {loanProducts.map((product, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg bg-white relative overflow-hidden"
+                className="group hover:shadow-custom transition-all duration-300 border-0 shadow-lg bg-white relative overflow-hidden"
               >
                 {product.popular && (
                   <div className="absolute top-4 right-4">

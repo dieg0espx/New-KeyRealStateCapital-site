@@ -118,7 +118,7 @@ export function LoanProductsSection({
                 transition: { duration: 0.4 }
               }}
             >
-              <Card className="group hover:shadow-custom  duration-300 border-0 shadow-md bg-white h-full">
+              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
                 <CardContent className="p-8">
                   <div className="text-light-green mb-4">
                     {product.icon}

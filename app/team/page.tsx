@@ -58,7 +58,7 @@ export default function TeamPage() {
               key={index}
               className={`animate-fade-in-up-delay-${4 + index} hover:transform hover:-translate-y-2 transition-all duration-300`}
             >
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white overflow-hidden flex flex-col h-full">
+              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white overflow-hidden flex flex-col h-full">
                 <div className="aspect-square overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <Image
                     src={member.image || "/placeholder.svg"}

@@ -79,7 +79,7 @@ export function BlogPreviewSection({
                 transition: { duration: 0.4 }
               }}
             >
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white overflow-hidden h-full">
+              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white overflow-hidden h-full">
                 <motion.div 
                   className="aspect-video overflow-hidden"
                   whileHover={{ scale: 1.01 }}
