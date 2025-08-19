@@ -209,12 +209,12 @@ export function LoanCalculatorSection({
 
             {/* Additional Info */}
             <motion.div 
-              className="mt-16 text-center"
+              className="mt-16 text-left md:text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <div className="inline-flex items-center space-x-8 text-sm text-gray-500">
+              <div className="flex flex-col md:inline-flex md:flex-row md:items-center md:space-x-8 space-y-2 md:space-y-0 text-sm text-perry md:text-gray-500">
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
