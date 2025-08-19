@@ -36,7 +36,7 @@ export function FAQSection() {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-4">
               {homePageFAQ.map((item, index) => (
-              <Card key={index} className="border-0 shadow  transition-shadow">
+              <Card key={index} className="border-0 shadow hover:shadow-custom transition-shadow">
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggleItem(index)}
@@ -84,7 +84,7 @@ export function FAQSection() {
             </div>
           </div>
         </section>
-      </Gradient>
+    </Gradient>
     </Gradient>
   )
 } 

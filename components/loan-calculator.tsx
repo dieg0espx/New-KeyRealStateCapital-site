@@ -44,7 +44,7 @@ export function LoanCalculator() {
 
   return (
     <Card className="w-full max-w-2xl mx-auto border-0 shadow h-full flex flex-col">
-      <CardHeader className="bg-sky-600 text-white">
+      <CardHeader className="bg-perry text-white">
         <CardTitle className="flex items-center text-2xl font-light">
           <Calculator className=" w-6 mr-3" />
           Loan Calculator
@@ -58,7 +58,7 @@ export function LoanCalculator() {
               Loan Type
             </Label>
             <Select value={loanType} onValueChange={setLoanType}>
-              <SelectTrigger className="border-gray-200 focus:border-sky-600">
+              <SelectTrigger className="border-gray-200 focus:border-light-green">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -116,7 +116,7 @@ export function LoanCalculator() {
               type="number"
               value={loanTerm}
               onChange={(e) => setLoanTerm(Number.parseInt(e.target.value) || 12)}
-              className="border-gray-200 focus:border-sky-600"
+              className="border-gray-200 focus:border-light-green"
               min="6"
               max="360"
             />
@@ -129,7 +129,7 @@ export function LoanCalculator() {
             <div className="grid md:grid-cols-3 gap-4">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <DollarSign className="h-4 w-4 text-sky-600 mr-1" />
+                  <DollarSign className="h-4 w-4 text-light-green mr-1" />
                   <span className="text-xs text-gray-600">Monthly Payment</span>
                 </div>
                 <div className="text-lg font-medium text-gray-900">
@@ -139,7 +139,7 @@ export function LoanCalculator() {
 
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Calendar className="h-4 w-4 text-sky-600 mr-1" />
+                  <Calendar className="h-4 w-4 text-light-green mr-1" />
                   <span className="text-xs text-gray-600">Total Interest</span>
                 </div>
                 <div className="text-lg font-medium text-gray-900">
@@ -149,7 +149,7 @@ export function LoanCalculator() {
 
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Percent className="h-4 w-4 text-sky-600 mr-1" />
+                  <Percent className="h-4 w-4 text-light-green mr-1" />
                   <span className="text-xs text-gray-600">Payment Type</span>
                 </div>
                 <div className="text-sm font-medium text-gray-900">

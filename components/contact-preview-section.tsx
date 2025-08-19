@@ -27,15 +27,15 @@ export function ContactPreviewSection() {
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Phone className="h-8 w-8 text-sky-600" />
+                <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Phone className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Call Us</h3>
                 <p className="text-gray-600 font-light mb-4">
                   Speak directly with our loan specialists
                 </p>
                 <Link href="tel:(619) 567-1385">
-                  <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light w-full">
+                  <Button className="bg-light-green hover:bg-perry text-white font-light w-full">
                     (619) 567-1385
                   </Button>
                 </Link>
@@ -47,15 +47,15 @@ export function ContactPreviewSection() {
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Mail className="h-8 w-8 text-sky-600" />
+                <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Mail className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Email Us</h3>
                 <p className="text-gray-600 font-light mb-4">
                   Send us your questions or loan requirements
                 </p>
                 <Link href="mailto:loans@keyrealestatecapital.com">
-                  <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light w-full">
+                  <Button className="bg-light-green hover:bg-perry text-white font-light w-full">
                     Send Email
                   </Button>
                 </Link>
@@ -67,8 +67,8 @@ export function ContactPreviewSection() {
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Calendar className="h-8 w-8 text-sky-600" />
+                <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Calendar className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Schedule a Call</h3>
                 <p className="text-gray-600 font-light mb-4">
@@ -76,7 +76,7 @@ export function ContactPreviewSection() {
                 </p>
                 <Button 
                   onClick={openModal}
-                  className="bg-sky-600 hover:bg-sky-700 text-white font-light w-full"
+                  className="bg-light-green hover:bg-perry text-white font-light w-full"
                 >
                   Schedule Now
                 </Button>
@@ -94,21 +94,21 @@ export function ContactPreviewSection() {
                   <h3 className="text-2xl font-semibold text-gray-900 mb-6">Visit Our Office</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <MapPin className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <MapPin className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-gray-900">Key Real Estate Capital</p>
                         <p className="text-gray-600 font-light">401 W A St Ste 200, San Diego, CA 92101</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <Clock className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-gray-900">Service Hours</p>
                         <p className="text-gray-600 font-light">24/7 Service | Monday - Sunday</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Phone className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <Phone className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-gray-900">NMLS ID</p>
                         <p className="text-gray-600 font-light">#2676974</p>

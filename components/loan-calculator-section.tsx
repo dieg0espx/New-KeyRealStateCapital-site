@@ -6,12 +6,13 @@ import { LoanCalculator } from "./loan-calculator"
 import { Gradient } from "./gradient"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { Zap, Target, BarChart3, Lightbulb, LucideIcon } from "lucide-react"
 
 interface LoanCalculatorSectionProps {
   title?: string
   description?: string
   benefits?: Array<{
-    icon: string
+    icon: LucideIcon
     title: string
     description: string
   }>
@@ -24,22 +25,22 @@ interface LoanCalculatorSectionProps {
 
 const defaultBenefits = [
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Instant Results",
     description: "Get real-time calculations as you adjust your loan parameters"
   },
   {
-    icon: "🎯",
+    icon: Target,
     title: "Accurate Estimates",
     description: "Based on current market rates and our actual loan programs"
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Multiple Loan Types",
     description: "Calculate payments for all our loan products in one place"
   },
   {
-    icon: "💡",
+    icon: Lightbulb,
     title: "Smart Defaults",
     description: "Pre-filled with typical values for each loan type"
   }
@@ -99,7 +100,7 @@ export function LoanCalculatorSection({
   return (
     <Gradient direction="top">
       <Gradient direction="bottom">
-        <section className="py-[200px] bg-sky-100">
+        <section className="py-[200px] bg-light-green/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-16"
@@ -108,8 +109,8 @@ export function LoanCalculatorSection({
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">{title}</h2>
+              <p className="text-xl text-perry font-light max-w-3xl mx-auto">
                 {description}
               </p>
             </motion.div>
@@ -156,7 +157,7 @@ export function LoanCalculatorSection({
                           whileHover={{ scale: 1.2, rotate: 5 }}
                           transition={{ duration: 0.2 }}
                         >
-                          {feature.icon}
+                          <feature.icon className="w-6 h-6 text-light-green" />
                         </motion.div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
@@ -168,26 +169,26 @@ export function LoanCalculatorSection({
                 </motion.div>
                 
                 <motion.div 
-                  className="bg-sky-600 p-8 text-white"
+                  className="bg-perry p-8 text-white"
                   whileHover={{ 
                     y: -5,
                     transition: { duration: 0.2 }
                   }}
                 >
                   <h3 className="text-2xl font-light mb-6">{ctaTitle}</h3>
-                  <p className="text-sky-100 font-light mb-6">
+                  <p className="text-white font-light mb-6">
                     {ctaDescription}
                   </p>
                   <div className="space-y-3">
                     {ctaFeatures.map((feature, index) => (
                       <motion.div 
                         key={index} 
-                        className="flex items-center text-sky-100"
+                        className="flex items-center text-white"
                         initial={{ opacity: 0, x: -10 }}
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                         transition={{ delay: 0.5 + index * 0.1 }}
                       >
-                        <div className="w-2 h-2 bg-sky-200 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-light-green rounded-full mr-3"></div>
                         <span className="font-light">{feature}</span>
                       </motion.div>
                     ))}
@@ -197,7 +198,7 @@ export function LoanCalculatorSection({
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button className="bg-white text-sky-600 hover:bg-gray-100 font-light px-6 py-3">
+                      <Button className="bg-white text-light-green hover:bg-gray-100 font-light px-6 py-3">
                         {ctaButtonText}
                       </Button>
                     </motion.div>
@@ -218,21 +219,21 @@ export function LoanCalculatorSection({
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                  <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
                   <span>No application fees</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                  <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
                   <span>Pre-qualification in 24 hours</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-2 h-2 bg-sky-600 rounded-full mr-2"></div>
+                  <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
                   <span>15 states covered</span>
                 </motion.div>
               </div>

@@ -99,7 +99,7 @@ export function BlogPreviewSection({
                     <span className="mx-2">•</span>
                     <span>{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-light-green transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-perry transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 font-light leading-relaxed">{post.excerpt}</p>
@@ -108,7 +108,7 @@ export function BlogPreviewSection({
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">
+                      <Button variant="ghost" className="mt-4 p-0 text-light-green hover:text-perry font-light">
                         Read More <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </motion.div>
