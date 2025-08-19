@@ -126,7 +126,7 @@ export function LoanProductsSection({
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
                   <Link href={product.link}>
-                    <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">
+                    <Button variant="ghost" className="mt-4 p-0 text-perry hover:text-light-green font-light">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
