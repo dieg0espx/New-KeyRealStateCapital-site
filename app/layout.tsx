@@ -14,47 +14,43 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Key Real State Capital - Luxury Real State Financing",
+  title: "Key Real Estate Capital - Luxury Real Estate Financing",
   description:
-    "Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.",
+    "Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.",
   generator: 'v0.dev',
-  keywords: ['real state financing', 'fix and flip loans', 'rental property loans', 'construction loans', 'commercial real state', 'investment financing'],
-  authors: [{ name: 'Key Real State Capital' }],
-  creator: 'Key Real State Capital',
-  publisher: 'Key Real State Capital',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://keyrealstatecapital.com'),
+  keywords: ['real estate financing', 'fix and flip loans', 'rental property loans', 'construction loans', 'commercial real estate', 'investment financing'],
+  authors: [{ name: 'Key Real Estate Capital' }],
+  creator: 'Key Real Estate Capital',
+  publisher: 'Key Real Estate Capital',
+
+  metadataBase: new URL('https://new-key-real-state-capital-site.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://keyrealstatecapital.com',
-    siteName: 'Key Real State Capital',
-    title: 'Key Real State Capital - Luxury Real State Financing',
-    description: 'Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.',
+    url: 'https://new-key-real-state-capital-site.vercel.app',
+    siteName: 'Key Real Estate Capital',
+    title: 'Key Real Estate Capital - Luxury Real Estate Financing',
+    description: 'Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.',
     images: [
       {
-        url: 'https://keyrealstatecapital.com/miniature.png',
+        url: '/miniature.png',
         width: 1200,
         height: 630,
-        alt: 'Key Real State Capital - Luxury Real State Financing',
+        alt: 'Key Real Estate Capital - Luxury Real Estate Financing',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@keyrealstatecapital',
-    creator: '@keyrealstatecapital',
-    title: 'Key Real State Capital - Luxury Real State Financing',
-    description: 'Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.',
-    images: ['https://keyrealstatecapital.com/miniature.png'],
+    site: '@keyrealestatecapital',
+    creator: '@keyrealestatecapital',
+    title: 'Key Real Estate Capital - Luxury Real Estate Financing',
+    description: 'Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.',
+    images: ['/miniature.png'],
   },
   other: {
     'facebook-domain-verification': 'your-facebook-domain-verification-code',
@@ -64,8 +60,8 @@ export const metadata: Metadata = {
     'theme-color': '#ffffff',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black',
-    'apple-mobile-web-app-title': 'Key Real State Capital',
-    'application-name': 'Key Real State Capital',
+    'apple-mobile-web-app-title': 'Key Real Estate Capital',
+    'application-name': 'Key Real Estate Capital',
     'msapplication-TileImage': '/favicon/mstile-144x144.png',
     'msapplication-square70x70logo': '/favicon/mstile-70x70.png',
     'msapplication-square150x150logo': '/favicon/mstile-150x150.png',
@@ -95,14 +91,13 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Key Real State Capital',
+    title: 'Key Real Estate Capital',
   },
   viewport: {
     width: 'device-width',
     initialScale: 1,
     maximumScale: 1,
   },
-  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
