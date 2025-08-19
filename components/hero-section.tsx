@@ -25,7 +25,7 @@ export function HeroSection({
   primaryButtonLink = "/loan-products",
   secondaryButtonText = "Get Free Consultation",
   secondaryButtonLink = "/contact",
-  videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1754592601/Untitled_design_1_gftoma.mp4"
+  videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4"
 }: HeroSectionProps) {
   const scrollToNextSection = () => {
     const nextSection = document.querySelector('section:nth-of-type(2)')
@@ -127,7 +127,7 @@ export function HeroSection({
           >
             <motion.div variants={buttonVariants}>
               <Link href={primaryButtonLink}>
-                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-4 text-lg">
+                <Button size="lg" className="bg-sky-600 hover:bg-light-green text-white font-light px-8 py-4 text-lg">
                   {primaryButtonText}
                 </Button>
               </Link>

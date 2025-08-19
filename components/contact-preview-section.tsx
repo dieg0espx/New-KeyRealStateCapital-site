@@ -122,7 +122,7 @@ export function ContactPreviewSection() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link href="/apply">
-                      <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-3">
+                      <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
                         Apply Now
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>

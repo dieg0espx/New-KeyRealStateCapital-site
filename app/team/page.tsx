@@ -73,7 +73,7 @@ export default function TeamPage() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors duration-300">
                       {member.name}
                     </h3>
-                    <p className="text-sky-600 font-medium mb-4">{member.title}</p>
+                    <p className="text-light-green font-medium mb-4">{member.title}</p>
                     <p className="text-gray-600 font-light leading-relaxed mb-6 text-sm line-clamp-4">{member.bio}</p>
                     <div className="space-y-2 mb-6">
                       <div className="flex items-center text-gray-600 text-sm group-hover:translate-x-1 transition-transform duration-200">

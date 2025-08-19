@@ -118,26 +118,17 @@ export function LoanProductsSection({
                 transition: { duration: 0.4 }
               }}
             >
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white h-full">
+              <Card className="group hover:shadow-custom  duration-300 border-0 shadow-md bg-white h-full">
                 <CardContent className="p-8">
-                  <motion.div 
-                    className="text-sky-600 mb-4 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 3, scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                  >
+                  <div className="text-light-green mb-4">
                     {product.icon}
-                  </motion.div>
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
                   <Link href={product.link}>
-                                          <motion.div
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                      <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </motion.div>
+                    <Button variant="ghost" className="mt-4 p-0 text-sky-600 hover:text-sky-700 font-light">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </Link>
                 </CardContent>
               </Card>

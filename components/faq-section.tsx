@@ -70,7 +70,7 @@ export function FAQSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/faq">
-                <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-3">
+                <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
                   View All FAQs
                 </Button>
               </Link>

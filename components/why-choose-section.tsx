@@ -100,7 +100,7 @@ export function WhyChooseSection({
               }}
             >
                               <motion.div 
-                  className="text-sky-600 mb-4 flex justify-center"
+                  className="text-light-green mb-4 flex justify-center"
                   whileHover={{ 
                     scale: 1.05,
                     rotate: 3,

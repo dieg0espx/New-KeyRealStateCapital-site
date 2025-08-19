@@ -42,11 +42,16 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        perry: "#31716C",
+        "light-green": "#57BF87",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        custom: "-4px 5px 0px 1px #57BF87",
       },
     },
   },

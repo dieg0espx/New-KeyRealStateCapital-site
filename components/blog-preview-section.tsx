@@ -99,7 +99,7 @@ export function BlogPreviewSection({
                     <span className="mx-2">•</span>
                     <span>{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-sky-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-light-green transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 font-light leading-relaxed">{post.excerpt}</p>

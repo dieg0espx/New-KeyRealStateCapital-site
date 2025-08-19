@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 interface HeaderProps {
   isHomePage?: boolean
@@ -49,10 +50,15 @@ export function Header({ isHomePage = false }: HeaderProps) {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.4 }}
             >
-              <Link href="/" className={`text-2xl font-light transition-colors ${
-                isScrolled || !isHomePage ? "text-gray-900 hover:text-sky-600" : "text-white hover:text-sky-200"
-              }`}>
-                Key Real State Capital
+              <Link href="/" className="flex items-center">
+                <Image
+                  src={isScrolled || !isHomePage ? "/logo-white.png" : "/logo-transparent.png"}
+                  alt="Key Real State Capital"
+                  width={180}
+                  height={40}
+                  className="h-10 w-auto"
+                  priority
+                />
               </Link>
             </motion.div>
           </div>
@@ -154,7 +160,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               whileTap={{ scale: 0.98 }}
             >
               <Link href="/contact">
-                <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-sky-600 hover:bg-sky-700 text-white">
+                <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-sky-600 hover:bg-light-green text-white">
                   Get Started
                 </Button>
               </Link>

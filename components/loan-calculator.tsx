@@ -161,7 +161,7 @@ export function LoanCalculator() {
 
           <div className="text-center pt-4">
             <Link href="/contact">
-              <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-3">Get Pre-Qualified</Button>
+              <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">Get Pre-Qualified</Button>
             </Link>
             <p className="text-sm text-gray-500 mt-2">
               *This calculator provides estimates only. Actual rates and terms may vary.

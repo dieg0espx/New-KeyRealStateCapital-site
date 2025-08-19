@@ -113,7 +113,7 @@ export default function ContactPage() {
                     <Input
                       id="firstName"
                       {...register('firstName')}
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.firstName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                       }`}
                       placeholder="First Name"
@@ -129,7 +129,7 @@ export default function ContactPage() {
                     <Input
                       id="lastName"
                       {...register('lastName')}
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.lastName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                       }`}
                       placeholder="Last Name"
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     id="email"
                     type="email"
                     {...register('email')}
-                    className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                    className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                       errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                     placeholder="your.email@example.com"
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     id="phone"
                     type="tel"
                     {...register('phone')}
-                    className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                    className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                       errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                     placeholder="(555) 123-4567"
@@ -183,7 +183,7 @@ export default function ContactPage() {
                   <select
                     id="loanType"
                     {...register('loanType')}
-                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                       errors.loanType ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                   >
@@ -208,7 +208,7 @@ export default function ContactPage() {
                   <select
                     id="loanAmount"
                     {...register('loanAmount')}
-                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                       errors.loanAmount ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                   >
@@ -231,7 +231,7 @@ export default function ContactPage() {
                   <select
                     id="timeline"
                     {...register('timeline')}
-                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                    className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                       errors.timeline ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                   >
@@ -254,7 +254,7 @@ export default function ContactPage() {
                   <Textarea
                     id="message"
                     {...register('message')}
-                    className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 min-h-[120px] ${
+                    className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green min-h-[120px] ${
                       errors.message ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
                     placeholder="Tell us about your project and financing needs..."
@@ -267,7 +267,7 @@ export default function ContactPage() {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-light-green hover:bg-perry text-white font-light py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -290,7 +290,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Office Location</h3>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-sky-600 mr-4 mt-1 flex-shrink-0" />
+                    <MapPin className="h-6 w-6 text-light-green mr-4 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">San Diego Headquarters</h4>
                       <p className="text-gray-600 font-light mt-1">
@@ -310,21 +310,21 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-sky-600 mr-4" />
+                    <Phone className="h-5 w-5 text-light-green mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">(619) 567-1385</div>
                       <div className="text-gray-600 font-light text-sm">Main line</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <Mail className="h-5 w-5 text-sky-600 mr-4" />
+                    <Mail className="h-5 w-5 text-light-green mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">loans@keyrealestatecapital.com</div>
                       <div className="text-gray-600 font-light text-sm">General inquiries</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-sky-600 mr-4" />
+                    <Clock className="h-5 w-5 text-light-green mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">24/7 Service | Monday - Sunday</div>
                       <div className="text-gray-600 font-light text-sm">Always available</div>
@@ -335,7 +335,7 @@ export default function ContactPage() {
             </Card>
 
             {/* Quick Actions */}
-            <Card className="border-0 shadow-lg bg-sky-50">
+            <Card className="border-0 shadow-lg bg-white">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Need Immediate Assistance?</h3>
                 <p className="text-gray-600 font-light mb-6">
@@ -344,7 +344,7 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <Button 
                     onClick={openModal}
-                    className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light"
+                    className="w-full bg-light-green hover:bg-perry text-white font-light"
                   >
                     <Calendar className="h-4 w-4 mr-2" />
                     Schedule a Call
@@ -352,7 +352,7 @@ export default function ContactPage() {
                   <Link href="tel:(619) 567-1385">
                     <Button
                       variant="outline"
-                      className="w-full border-sky-600 text-sky-600 hover:bg-sky-50 bg-transparent"
+                      className="w-full border-light-green text-light-green hover:bg-perry hover:text-white bg-transparent"
                     >
                       <Phone className="h-4 w-4 mr-2" />
                       Call Now

@@ -22,7 +22,7 @@ export function CTASection({
   primaryButtonLink = "/contact",
   secondaryButtonText = "View Loan Products",
   secondaryButtonLink = "/loan-products",
-  backgroundColor = "bg-sky-600"
+  backgroundColor = "bg-light-green"
 }: CTASectionProps) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -92,7 +92,7 @@ export function CTASection({
         >
           <motion.div variants={buttonVariants}>
             <Link href={primaryButtonLink}>
-              <Button size="lg" className="bg-white text-sky-600 hover:bg-gray-100 font-light px-8 py-4 text-lg">
+              <Button size="lg" className="bg-white text-light-green hover:bg-gray-100 font-light px-8 py-4 text-lg">
                 {primaryButtonText}
               </Button>
             </Link>
@@ -102,7 +102,7 @@ export function CTASection({
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-sky-600 font-light px-8 py-4 text-lg bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-perry font-light px-8 py-4 text-lg bg-transparent"
               >
                 {secondaryButtonText}
               </Button>

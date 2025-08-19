@@ -14,10 +14,36 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Key Real Estate Capital - Luxury Real Estate Financing",
+  title: "Key Real State Capital - Luxury Real State Financing",
   description:
-    "Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.",
-    generator: 'v0.dev'
+    "Sophisticated financing solutions for real state investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real state.",
+  generator: 'v0.dev',
+  icons: {
+    icon: [
+      { url: '/favicon/favicon.ico', sizes: 'any' },
+      { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { url: '/favicon/web-app-manifest-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon/web-app-manifest-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
+  manifest: '/favicon/site.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Key Real State Capital',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
