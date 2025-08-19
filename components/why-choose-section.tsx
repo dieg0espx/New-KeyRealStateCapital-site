@@ -92,7 +92,7 @@ export function WhyChooseSection({
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
-              className="text-center group"
+              className="text-left md:text-center group"
               variants={featureVariants}
               whileHover={{ 
                 scale: 1.03,
@@ -100,7 +100,7 @@ export function WhyChooseSection({
               }}
             >
                               <motion.div 
-                  className="text-light-green mb-4 flex justify-center"
+                  className="text-light-green mb-4 flex justify-start md:justify-center"
                   whileHover={{ 
                     scale: 1.05,
                     rotate: 3,
