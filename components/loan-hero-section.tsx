@@ -52,7 +52,7 @@ export default function LoanHeroSection({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
             <Link href={primaryCta.href} className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 font-medium transition-colors">
+              <Button className="w-full sm:w-auto bg-light-green hover:bg-perry text-white px-8 py-3 font-medium transition-colors">
                 {primaryCta.text}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
@@ -60,14 +60,14 @@ export default function LoanHeroSection({
             {secondaryCta.href === "#" ? (
               <Button 
                 variant="outline" 
-                className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 font-medium transition-colors"
+                className="w-full sm:w-auto border-light-green text-light-green hover:bg-perry/50 px-8 py-3 font-medium transition-colors"
                 onClick={handleSecondaryClick}
               >
                 {secondaryCta.text}
               </Button>
             ) : (
               <Link href={secondaryCta.href} className="w-full sm:w-auto">
-                <Button variant="outline" className="w-full sm:w-auto border-sky-600 text-sky-600 hover:bg-sky-50 px-8 py-3 font-medium transition-colors">
+                <Button variant="outline" className="w-full sm:w-auto border-light-green text-light-green hover:bg-perry/50 px-8 py-3 font-medium transition-colors">
                   {secondaryCta.text}
                 </Button>
               </Link>
@@ -99,7 +99,7 @@ export default function LoanHeroSection({
                 className={`absolute ${positionClasses[badge.position]} bg-white shadow-md p-4 max-w-[250px] z-10`}
               >
                 <div className="flex items-center space-x-4">
-                  <div className="bg-sky-600 rounded-full p-2">
+                  <div className="bg-light-green rounded-full p-2">
                     {badge.icon}
                   </div>
                   <div>

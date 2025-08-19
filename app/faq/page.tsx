@@ -50,7 +50,7 @@ export default function FAQPage() {
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-16">
               <div className="flex items-center gap-3 mb-8">
-                <div className="text-sky-600">
+                <div className="text-light-green">
                   {category.icon === "Building" && <Building className="h-6 w-6" />}
                   {category.icon === "Home" && <Home className="h-6 w-6" />}
                   {category.icon === "CheckCircle" && <CheckCircle className="h-6 w-6" />}
@@ -66,7 +66,7 @@ export default function FAQPage() {
                     value={`item-${categoryIndex}-${index}`}
                     className="border border-gray-200 px-6  bg-white transition-shadow"
                   >
-                    <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-sky-600 py-6">
+                    <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-light-green py-6">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-600 font-light leading-relaxed pb-6">
@@ -94,11 +94,11 @@ export default function FAQPage() {
             {contactInfo.map((contact, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
                 <CardContent className="p-8">
-                  <div className="text-sky-600 mb-4 flex justify-center">{contact.icon}</div>
+                  <div className="text-light-green mb-4 flex justify-center">{contact.icon}</div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{contact.title}</h3>
                   <p className="text-gray-600 font-light mb-6">{contact.description}</p>
                   <Link href={contact.href}>
-                    <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light">
+                    <Button className="bg-light-green hover:bg-perry text-white font-light">
                       {contact.action}
                     </Button>
                   </Link>
@@ -120,7 +120,7 @@ export default function FAQPage() {
               { number: "500+", label: "Loans Funded" },
             ].map((stat, index) => (
               <div key={index} className="group">
-                <div className="text-3xl md:text-4xl font-light text-sky-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-light text-light-green mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <div className="text-gray-600 font-light">{stat.label}</div>

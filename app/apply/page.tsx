@@ -82,7 +82,7 @@ export default function ApplicationPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/loan-products" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-8">
+        <Link href="/loan-products" className="inline-flex items-center text-light-green hover:text-perry mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Loan Products
         </Link>
@@ -95,7 +95,7 @@ export default function ApplicationPage() {
         </div>
 
         <Card className="border-0 shadow-xl">
-          <CardHeader className="bg-sky-600 text-white">
+          <CardHeader className="bg-light-green text-white">
             <CardTitle className="text-2xl font-light flex items-center">
               <FileText className="h-6 w-6 mr-3" />
               Loan Application Form
@@ -120,7 +120,7 @@ export default function ApplicationPage() {
               {/* Personal Information */}
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <User className="h-5 w-5 mr-2 text-sky-600" />
+                  <User className="h-5 w-5 mr-2 text-light-green" />
                   Personal Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -130,7 +130,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("firstName")}
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.firstName ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                       placeholder="First Name"
@@ -145,7 +145,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("lastName")}
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.lastName ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                       placeholder="Last Name"
@@ -161,7 +161,7 @@ export default function ApplicationPage() {
                     <Input
                       {...register("email")}
                       type="email"
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.email ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                       placeholder="your.email@example.com"
@@ -177,7 +177,7 @@ export default function ApplicationPage() {
                     <Input
                       {...register("phone")}
                       type="tel"
-                      className={`mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 ${
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.phone ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                       placeholder="(555) 123-4567"
@@ -192,7 +192,7 @@ export default function ApplicationPage() {
               {/* Loan Information */}
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <DollarSign className="h-5 w-5 mr-2 text-sky-600" />
+                  <DollarSign className="h-5 w-5 mr-2 text-light-green" />
                   Loan Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -202,7 +202,7 @@ export default function ApplicationPage() {
                     </Label>
                     <select
                       {...register("loanType")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                         errors.loanType ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                     >
@@ -224,7 +224,7 @@ export default function ApplicationPage() {
                     </Label>
                     <select
                       {...register("loanAmount")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                         errors.loanAmount ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                     >
@@ -246,7 +246,7 @@ export default function ApplicationPage() {
                     </Label>
                     <select
                       {...register("timeline")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
+                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
                         errors.timeline ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
                     >
@@ -267,7 +267,7 @@ export default function ApplicationPage() {
                     </Label>
                     <select
                       {...register("experience")}
-                      className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600"
+                      className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green"
                     >
                       <option value="">Select experience level</option>
                       <option value="first-time">First-time investor</option>
@@ -283,7 +283,7 @@ export default function ApplicationPage() {
               {/* Property Information */}
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <Home className="h-5 w-5 mr-2 text-sky-600" />
+                  <Home className="h-5 w-5 mr-2 text-light-green" />
                   Property Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -293,7 +293,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("propertyAddress")}
-                      className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
+                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
                       placeholder="123 Main St, City, State"
                     />
                   </div>
@@ -303,7 +303,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("propertyValue")}
-                      className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
+                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
                       placeholder="$500,000"
                     />
                   </div>
@@ -313,7 +313,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("purchasePrice")}
-                      className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
+                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
                       placeholder="$400,000"
                     />
                   </div>
@@ -323,7 +323,7 @@ export default function ApplicationPage() {
                     </Label>
                     <Input
                       {...register("downPayment")}
-                      className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600"
+                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
                       placeholder="$100,000"
                     />
                   </div>
@@ -337,7 +337,7 @@ export default function ApplicationPage() {
                 </Label>
                 <Textarea
                   {...register("additionalInfo")}
-                  className="mt-2 border-gray-200 focus:border-sky-600 focus:ring-sky-600 min-h-[120px]"
+                  className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green min-h-[120px]"
                   placeholder="Tell us more about your project, timeline, or any specific requirements..."
                 />
               </div>
@@ -348,7 +348,7 @@ export default function ApplicationPage() {
                   <input
                     type="checkbox"
                     {...register("consent")}
-                    className="mt-1 h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300 rounded"
+                    className="mt-1 h-4 w-4 text-light-green focus:ring-light-green border-gray-300 rounded"
                   />
                   <Label htmlFor="consent" className="text-sm text-gray-600 font-light leading-relaxed">
                     I consent to Key Real Estate Capital contacting me about my loan application via phone, email, or
@@ -362,7 +362,7 @@ export default function ApplicationPage() {
                   <input
                     type="checkbox"
                     {...register("creditCheck")}
-                    className="mt-1 h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300 rounded"
+                    className="mt-1 h-4 w-4 text-light-green focus:ring-light-green border-gray-300 rounded"
                   />
                   <Label htmlFor="creditCheck" className="text-sm text-gray-600 font-light leading-relaxed">
                     I authorize Key Real Estate Capital to obtain my credit report and verify information provided in
@@ -380,7 +380,7 @@ export default function ApplicationPage() {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="bg-sky-600 hover:bg-sky-700 text-white font-light px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-light-green hover:bg-perry text-white font-light px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -408,21 +408,21 @@ export default function ApplicationPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">What Happens Next?</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="bg-sky-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
+                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
                   1
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Application Review</h4>
                 <p className="text-gray-600 font-light text-sm">Our team reviews your application within 24 hours</p>
               </div>
               <div className="text-center">
-                <div className="bg-sky-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
+                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
                   2
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Initial Consultation</h4>
                 <p className="text-gray-600 font-light text-sm">We schedule a call to discuss your project in detail</p>
               </div>
               <div className="text-center">
-                <div className="bg-sky-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-semibred mx-auto mb-4">
+                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
                   3
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Pre-Approval</h4>

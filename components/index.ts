@@ -10,6 +10,7 @@ export { FAQSection } from "./faq-section"
 export { ContactPreviewSection } from "./contact-preview-section"
 export { CTASection } from "./cta-section"
 export { default as LoanHeroSection } from "./loan-hero-section"
+export { default as SuccessStoryCard } from "./success-story-card"
 
 // Existing Components
 export { Gradient } from "./gradient"

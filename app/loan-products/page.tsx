@@ -107,7 +107,7 @@ export default function LoanProductsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-4">
+              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4">
                 Get Pre-Qualified
               </Button>
             </Link>
@@ -115,7 +115,7 @@ export default function LoanProductsPage() {
               onClick={openModal}
               size="lg"
               variant="outline"
-              className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 bg-transparent"
+              className="border-light-green text-light-green hover:bg-perry/50 font-light px-8 py-4 bg-transparent"
             >
               Schedule Consultation
             </Button>
@@ -134,11 +134,11 @@ export default function LoanProductsPage() {
               >
                 {product.popular && (
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-sky-600 text-white">Most Popular</Badge>
+                    <Badge className="bg-light-green text-white">Most Popular</Badge>
                   </div>
                 )}
                 <CardContent className="p-8">
-                  <div className="text-sky-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-light-green mb-6 group-hover:scale-110 transition-transform duration-300">
                     {product.icon}
                   </div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">{product.title}</h3>
@@ -156,7 +156,7 @@ export default function LoanProductsPage() {
                     </div>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-500">Rate:</span>
-                      <span className="font-medium text-sky-600">{product.rate}</span>
+                      <span className="font-medium text-light-green">{product.rate}</span>
                     </div>
                   </div>
 
@@ -164,14 +164,14 @@ export default function LoanProductsPage() {
                   <div className="space-y-2 mb-8">
                     {product.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-sky-600 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-light-green mr-2 flex-shrink-0" />
                         {feature}
                       </div>
                     ))}
                   </div>
 
                   <Link href={product.href}>
-                    <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light group-hover:bg-sky-700 transition-colors">
+                    <Button className="w-full bg-light-green hover:bg-perry text-white font-light group-hover:bg-perry transition-colors">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -216,7 +216,7 @@ export default function LoanProductsPage() {
               },
             ].map((benefit, index) => (
               <div key={index} className="text-center group">
-                <div className="text-sky-600 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="text-light-green mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
@@ -228,7 +228,7 @@ export default function LoanProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-sky-600">
+      <section className="py-24 bg-light-green">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-sky-100 font-light mb-8 max-w-2xl mx-auto">
@@ -236,7 +236,7 @@ export default function LoanProductsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply">
-              <Button size="lg" className="bg-white text-sky-600 hover:bg-gray-100 font-light px-8 py-4 text-lg">
+              <Button size="lg" className="bg-white text-light-green hover:bg-gray-100 font-light px-8 py-4 text-lg">
                 Apply Now
               </Button>
             </Link>
@@ -244,7 +244,7 @@ export default function LoanProductsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-sky-600 font-light px-8 py-4 text-lg bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-light-green font-light px-8 py-4 text-lg bg-transparent"
               >
                 Schedule Call
               </Button>

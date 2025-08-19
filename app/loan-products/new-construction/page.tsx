@@ -7,13 +7,14 @@ import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 import LoanHeroSection from "@/components/loan-hero-section"
+import SuccessStoryCard from "@/components/success-story-card"
 
 export default function NewConstructionPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/loan-products" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-8">
+        <Link href="/loan-products" className="inline-flex items-center text-light-green hover:text-perry mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Loan Products
         </Link>
@@ -48,23 +49,23 @@ export default function NewConstructionPage() {
         />
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="border-0 shadow-md bg-sky-50">
+          <Card className="border-0 shadow-md bg-perry/50">
             <CardContent className="p-6 text-center">
-              <DollarSign className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+              <DollarSign className="h-8 w-8 text-light-green mx-auto mb-3" />
               <div className="text-2xl font-semibold text-gray-900 mb-1">$200K - $5M</div>
               <div className="text-gray-600 font-light">Loan Amount</div>
             </CardContent>
           </Card>
-          <Card className="border-0 shadow-md bg-sky-50">
+          <Card className="border-0 shadow-md bg-perry/50">
             <CardContent className="p-6 text-center">
-              <Calendar className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+              <Calendar className="h-8 w-8 text-light-green mx-auto mb-3" />
               <div className="text-2xl font-semibold text-gray-900 mb-1">12-24 Months</div>
               <div className="text-gray-600 font-light">Construction Term</div>
             </CardContent>
           </Card>
-          <Card className="border-0 shadow-md bg-sky-50">
+          <Card className="border-0 shadow-md bg-perry/50">
             <CardContent className="p-6 text-center">
-              <Building className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+              <Building className="h-8 w-8 text-light-green mx-auto mb-3" />
               <div className="text-2xl font-semibold text-gray-900 mb-1">80% LTC</div>
               <div className="text-gray-600 font-light">Max Financing</div>
             </CardContent>
@@ -89,7 +90,7 @@ export default function NewConstructionPage() {
                     "Site inspection services",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -109,7 +110,7 @@ export default function NewConstructionPage() {
                     "Market feasibility study",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       {requirement}
                     </li>
                   ))}
@@ -125,7 +126,7 @@ export default function NewConstructionPage() {
             <h2 className="text-2xl font-medium text-gray-900 mb-6">Construction Loan Process</h2>
             <div className="space-y-6">
               <div className="flex items-start">
-                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                     1
                   </div>
                 <div>
@@ -136,7 +137,7 @@ export default function NewConstructionPage() {
                 </div>
               </div>
               <div className="flex items-start">
-                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                     2
                   </div>
                 <div>
@@ -147,7 +148,7 @@ export default function NewConstructionPage() {
                 </div>
               </div>
               <div className="flex items-start">
-                                  <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                     3
                   </div>
                 <div>
@@ -162,47 +163,16 @@ export default function NewConstructionPage() {
         </Card>
 
         {/* Success Story */}
-        <Card className="mb-12 border-0 shadow-lg bg-gradient-to-r from-sky-50 to-blue-50">
-          <CardContent className="p-8">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Success Story</h2>
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-              </div>
-              <div>
-                <div className="flex items-center mb-2">
-                  <h4 className="font-medium text-gray-900 mr-2">Maria Rodriguez Development</h4>
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-600 font-light mb-4">
-                  "We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month 
-                  construction period went smoothly with regular draws, and we converted to permanent financing 
-                  upon completion. The project generated $45,000 in annual cash flow after conversion."
-                </p>
-                <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-500">Construction Cost:</span>
-                    <div className="font-medium text-gray-900">$1.2M</div>
-                  </div>
-                  <div>
-                    <span className="text-gray-500">Construction Time:</span>
-                    <div className="font-medium text-gray-900">18 Months</div>
-                  </div>
-                  <div>
-                    <span className="text-gray-500">Annual Cash Flow:</span>
-                    <div className="font-medium text-gray-900">$45,000</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <SuccessStoryCard
+          title="Success Story"
+          name="Maria Rodriguez Development"
+          testimonial="We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month construction period went smoothly with regular draws, and we converted to permanent financing upon completion. The project generated $45,000 in annual cash flow after conversion."
+          metrics={[
+            { label: "Construction Cost", value: "$1.2M" },
+            { label: "Construction Time", value: "18 Months" },
+            { label: "Annual Cash Flow", value: "$45,000" }
+          ]}
+        />
 
         {/* FAQ Section */}
         <Card className="mb-12 border-0 shadow-lg">
@@ -247,7 +217,7 @@ export default function NewConstructionPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <div className="flex items-center mb-4">
-                  <Building className="h-6 w-6 text-sky-600 mr-3" />
+                  <Building className="h-6 w-6 text-light-green mr-3" />
                   <h4 className="font-medium text-gray-900">Residential Construction</h4>
                 </div>
                 <ul className="space-y-2 text-gray-600 font-light">
@@ -259,7 +229,7 @@ export default function NewConstructionPage() {
               </div>
               <div>
                 <div className="flex items-center mb-4">
-                  <Hammer className="h-6 w-6 text-sky-600 mr-3" />
+                  <Hammer className="h-6 w-6 text-light-green mr-3" />
                   <h4 className="font-medium text-gray-900">Commercial Construction</h4>
                 </div>
                 <ul className="space-y-2 text-gray-600 font-light">
@@ -309,7 +279,7 @@ export default function NewConstructionPage() {
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/apply" className="w-full sm:w-auto">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
+              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
                 Apply for Construction Loan
               </Button>
             </Link>
@@ -317,7 +287,7 @@ export default function NewConstructionPage() {
               onClick={openModal}
               size="lg"
               variant="outline"
-              className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-4 text-lg bg-transparent w-full sm:w-auto"
+              className="border-light-green text-light-green hover:bg-perry/50 font-light px-8 py-4 text-lg bg-transparent w-full sm:w-auto"
             >
               Schedule Consultation
             </Button>

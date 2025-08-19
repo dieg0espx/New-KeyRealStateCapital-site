@@ -8,7 +8,7 @@ export default function FixFlipStrategiesPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/blog" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-8">
+        <Link href="/blog" className="inline-flex items-center text-light-green hover:text-perry mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Blog
         </Link>
@@ -45,7 +45,7 @@ export default function FixFlipStrategiesPage() {
               </span>
               <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Fix-and-Flip</span>
             </div>
-            <Button variant="outline" size="sm" className="border-sky-600 text-sky-600 hover:bg-sky-50 bg-transparent">
+            <Button variant="outline" size="sm" className="border-light-green text-light-green hover:bg-perry/50 bg-transparent">
               <Share2 className="h-4 w-4 mr-2" />
               Share
             </Button>
@@ -77,7 +77,7 @@ export default function FixFlipStrategiesPage() {
             margin for unexpected expenses and ensures adequate profit potential.
           </p>
 
-          <Card className="my-8 border-l-4 border-l-sky-600 bg-sky-50">
+          <Card className="my-8 border-l-4 border-l-light-green bg-perry/50">
             <CardContent className="p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Example Calculation</h3>
               <p className="text-gray-700 font-light mb-2">ARV: $300,000</p>
@@ -164,7 +164,7 @@ export default function FixFlipStrategiesPage() {
                 Our fix-and-flip loans provide the fast, flexible financing you need to capitalize on opportunities.
               </p>
               <Link href="/apply">
-                <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-3">
+                <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
                   Get Pre-Approved Today
                 </Button>
               </Link>

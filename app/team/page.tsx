@@ -70,7 +70,7 @@ export default function TeamPage() {
                 </div>
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-light-green transition-colors duration-300">
                       {member.name}
                     </h3>
                     <p className="text-light-green font-medium mb-4">{member.title}</p>
@@ -89,7 +89,7 @@ export default function TeamPage() {
                   <div className="flex space-x-2 mt-auto">
                     <div className="hover:scale-105 active:scale-95 transition-transform duration-200">
                       <Link href="/contact">
-                        <Button size="sm" className="bg-sky-600 hover:bg-sky-700 text-white font-light flex-1">
+                        <Button size="sm" className="bg-light-green hover:bg-perry text-white font-light flex-1">
                           <Calendar className="h-4 w-4 mr-2" />
                           Book Call
                         </Button>
@@ -99,7 +99,7 @@ export default function TeamPage() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-sky-600 text-sky-600 hover:bg-sky-50 bg-transparent"
+                        className="border-light-green text-light-green hover:bg-perry/50 bg-transparent"
                       >
                         <Linkedin className="h-4 w-4" />
                       </Button>

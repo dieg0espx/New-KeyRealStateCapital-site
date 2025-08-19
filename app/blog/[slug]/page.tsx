@@ -57,7 +57,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           transition={{ duration: 0.6 }}
         >
           <Link href="/blog">
-            <Button variant="ghost" className="mb-8 text-sky-600 hover:text-sky-700 font-light">
+            <Button variant="ghost" className="mb-8 text-light-green hover:text-perry font-light">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Blog
             </Button>
@@ -164,7 +164,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-light-green transition-colors">
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-600 font-light line-clamp-2">

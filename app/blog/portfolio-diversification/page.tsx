@@ -8,7 +8,7 @@ export default function PortfolioDiversificationPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/blog" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-8">
+        <Link href="/blog" className="inline-flex items-center text-light-green hover:text-perry mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Blog
         </Link>
@@ -48,7 +48,7 @@ export default function PortfolioDiversificationPage() {
                 Investment Strategy
               </span>
             </div>
-            <Button variant="outline" size="sm" className="border-sky-600 text-sky-600 hover:bg-sky-50 bg-transparent">
+            <Button variant="outline" size="sm" className="border-light-green text-light-green hover:bg-perry/50 bg-transparent">
               <Share2 className="h-4 w-4 mr-2" />
               Share
             </Button>
@@ -81,7 +81,7 @@ export default function PortfolioDiversificationPage() {
             strategies, you can reduce overall portfolio risk while maintaining strong return potential.
           </p>
 
-          <Card className="my-8 border-l-4 border-l-sky-600 bg-sky-50">
+          <Card className="my-8 border-l-4 border-l-light-green bg-perry/50">
             <CardContent className="p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Key Benefit</h3>
               <p className="text-gray-700 font-light">
@@ -96,7 +96,7 @@ export default function PortfolioDiversificationPage() {
           <div className="grid md:grid-cols-3 gap-6 my-8">
             <Card className="border-0 shadow-md">
               <CardContent className="p-6 text-center">
-                <Home className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+                <Home className="h-8 w-8 text-light-green mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-3">Residential</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>Single-family rentals</li>
@@ -107,7 +107,7 @@ export default function PortfolioDiversificationPage() {
             </Card>
             <Card className="border-0 shadow-md">
               <CardContent className="p-6 text-center">
-                <Building className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+                <Building className="h-8 w-8 text-light-green mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-3">Commercial</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>Office buildings</li>
@@ -118,7 +118,7 @@ export default function PortfolioDiversificationPage() {
             </Card>
             <Card className="border-0 shadow-md">
               <CardContent className="p-6 text-center">
-                <TrendingUp className="h-8 w-8 text-sky-600 mx-auto mb-3" />
+                <TrendingUp className="h-8 w-8 text-light-green mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-3">Specialty</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>Self-storage</li>
@@ -137,19 +137,19 @@ export default function PortfolioDiversificationPage() {
 
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
-              <div className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2"></div>
+              <div className="w-2 h-2 bg-light-green rounded-full mr-3 mt-2"></div>
               <span className="text-gray-700 font-light">
                 <strong>Primary markets:</strong> Major metropolitan areas with stable economies
               </span>
             </li>
             <li className="flex items-start">
-              <div className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2"></div>
+              <div className="w-2 h-2 bg-light-green rounded-full mr-3 mt-2"></div>
               <span className="text-gray-700 font-light">
                 <strong>Secondary markets:</strong> Smaller cities with growth potential
               </span>
             </li>
             <li className="flex items-start">
-              <div className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2"></div>
+              <div className="w-2 h-2 bg-light-green rounded-full mr-3 mt-2"></div>
               <span className="text-gray-700 font-light">
                 <strong>Different regions:</strong> Various climate zones and economic bases
               </span>
@@ -196,7 +196,7 @@ export default function PortfolioDiversificationPage() {
 
           <div className="space-y-6 my-8">
             <div className="flex items-start">
-              <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+              <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
                 1
               </div>
               <div>
@@ -207,7 +207,7 @@ export default function PortfolioDiversificationPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+              <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
                 2
               </div>
               <div>
@@ -218,7 +218,7 @@ export default function PortfolioDiversificationPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-sky-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
+              <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">
                 3
               </div>
               <div>
@@ -244,7 +244,7 @@ export default function PortfolioDiversificationPage() {
                 efficiently.
               </p>
               <Link href="/loan-products/rental-portfolio">
-                <Button className="bg-sky-600 hover:bg-sky-700 text-white font-light px-8 py-3">
+                <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
                   Explore Portfolio Loans
                 </Button>
               </Link>
@@ -270,7 +270,7 @@ export default function PortfolioDiversificationPage() {
               />
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Michael Chen</h4>
-                <p className="text-sky-600 font-medium mb-3">Senior Loan Officer</p>
+                <p className="text-light-green font-medium mb-3">Senior Loan Officer</p>
                 <p className="text-gray-600 font-light text-sm leading-relaxed">
                   Michael specializes in construction and development loans, with extensive experience in project
                   financing and risk assessment. He has successfully funded over $150M in construction projects across

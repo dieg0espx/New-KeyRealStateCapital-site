@@ -85,7 +85,7 @@ export default function BlogPage() {
                     </Badge>
                     <span className="text-sm text-gray-500">5 min read</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-sky-600 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-light-green transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 font-light leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
@@ -104,7 +104,7 @@ export default function BlogPage() {
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <Button variant="ghost" className="p-0 text-sky-600 hover:text-sky-700 font-light">
+                      <Button variant="ghost" className="p-0 text-light-green hover:text-perry font-light">
                         Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </motion.div>
@@ -123,7 +123,7 @@ export default function BlogPage() {
         >
           <Button
             variant="outline"
-            className="border-sky-600 text-sky-600 hover:bg-sky-50 font-light px-8 py-3 bg-transparent"
+            className="border-light-green text-light-green hover:bg-perry/50 font-light px-8 py-3 bg-transparent"
           >
             Load More Articles
           </Button>
