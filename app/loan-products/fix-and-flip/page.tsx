@@ -8,6 +8,7 @@ import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 import LoanHeroSection from "@/components/loan-hero-section"
 import SuccessStoryCard from "@/components/success-story-card"
+import LoanParameterCards from "@/components/loan-parameter-cards"
 
 export default function FixAndFlipPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -49,36 +50,31 @@ export default function FixAndFlipPage() {
         />
 
         {/* Key Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <DollarSign className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">$100K - $2M</div>
-              <div className="text-gray-600 font-light">Loan Amount</div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <Calendar className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">6-18 Months</div>
-              <div className="text-gray-600 font-light">Loan Term</div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <TrendingUp className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">8.5%</div>
-              <div className="text-gray-600 font-light">Starting Rate</div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <Clock className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">7-14 Days</div>
-              <div className="text-gray-600 font-light">Close Time</div>
-            </CardContent>
-          </Card>
-        </div>
+        <LoanParameterCards
+          columns={4}
+          parameters={[
+            {
+              icon: DollarSign,
+              value: "$100K - $2M",
+              label: "Loan Amount"
+            },
+            {
+              icon: Calendar,
+              value: "6-18 Months",
+              label: "Loan Term"
+            },
+            {
+              icon: TrendingUp,
+              value: "8.5%",
+              label: "Starting Rate"
+            },
+            {
+              icon: Clock,
+              value: "7-14 Days",
+              label: "Close Time"
+            }
+          ]}
+        />
 
         <Card className="mb-12 border-0 shadow-lg">
           <CardContent className="p-8">

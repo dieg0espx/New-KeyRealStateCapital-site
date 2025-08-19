@@ -51,9 +51,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-perry text-white">
+    <footer className="bg-black text-white">
       {/* Newsletter Section */}
-      <div className="border-b border-gray-900">
+      <div className="border-b border-light-green/20 bg-perry">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h3 className="text-2xl font-light mb-4">Stay Informed</h3>
@@ -207,7 +207,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800 py-8">
+      <div className="border-t border-gray-800 py-8 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white font-light text-sm mb-4 md:mb-0">
@@ -222,7 +222,7 @@ export function Footer() {
       </div>
 
       {/* Disclaimer */}
-      <div className="border-t border-gray-800 py-6">
+      <div className="border-t border-gray-800 py-6 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-white font-light text-sm leading-relaxed">

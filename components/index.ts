@@ -11,6 +11,7 @@ export { ContactPreviewSection } from "./contact-preview-section"
 export { CTASection } from "./cta-section"
 export { default as LoanHeroSection } from "./loan-hero-section"
 export { default as SuccessStoryCard } from "./success-story-card"
+export { default as LoanParameterCards } from "./loan-parameter-cards"
 
 // Existing Components
 export { Gradient } from "./gradient"

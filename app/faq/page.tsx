@@ -46,7 +46,7 @@ export default function FAQPage() {
 
       {/* FAQ Categories */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-16">
               <div className="flex items-center gap-3 mb-8">
@@ -64,7 +64,7 @@ export default function FAQPage() {
                   <AccordionItem
                     key={index}
                     value={`item-${categoryIndex}-${index}`}
-                    className="border border-gray-200 px-6  bg-white transition-shadow"
+                    className="border border-gray-200 px-6 bg-white transition-shadow last:border-b"
                   >
                     <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-light-green py-6">
                       {faq.question}

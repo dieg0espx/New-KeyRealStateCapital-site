@@ -8,6 +8,7 @@ import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
 import LoanHeroSection from "@/components/loan-hero-section"
 import SuccessStoryCard from "@/components/success-story-card"
+import LoanParameterCards from "@/components/loan-parameter-cards"
 
 export default function RentalPortfolioPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -48,29 +49,25 @@ export default function RentalPortfolioPage() {
           ]}
         />
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <DollarSign className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">$500K - $10M</div>
-              <div className="text-gray-600 font-light">Loan Amount</div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <Calendar className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">5-30 Years</div>
-              <div className="text-gray-600 font-light">Loan Term</div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-md bg-perry/50">
-            <CardContent className="p-6 text-center">
-              <Building className="h-8 w-8 text-light-green mx-auto mb-3" />
-              <div className="text-2xl font-semibold text-gray-900 mb-1">4+ Properties</div>
-              <div className="text-gray-600 font-light">Minimum Portfolio</div>
-            </CardContent>
-          </Card>
-        </div>
+        <LoanParameterCards
+          parameters={[
+            {
+              icon: DollarSign,
+              value: "$500K - $10M",
+              label: "Loan Amount"
+            },
+            {
+              icon: Calendar,
+              value: "5-30 Years",
+              label: "Loan Term"
+            },
+            {
+              icon: Building,
+              value: "4+ Properties",
+              label: "Minimum Portfolio"
+            }
+          ]}
+        />
 
         <Card className="mb-12 border-0 shadow-lg">
           <CardContent className="p-8">
