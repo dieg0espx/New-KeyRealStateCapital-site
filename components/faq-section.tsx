@@ -36,14 +36,14 @@ export function FAQSection() {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-4">
               {homePageFAQ.map((item, index) => (
-              <Card key={index} className="border-0 shadow hover:shadow-custom transition-shadow">
+              <Card key={index} className="border-0 shadow  transition-shadow">
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggleItem(index)}
                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex items-center">
-                      <HelpCircle className="h-5 w-5 text-sky-600 mr-3 flex-shrink-0" />
+                      <HelpCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       <span className="font-medium text-gray-900">{item.question}</span>
                     </div>
                     {openItems.includes(index) ? (
