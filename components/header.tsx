@@ -83,8 +83,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/"
                 className={`transition-colors font-light ${
                   pathname === "/" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
                 Home
@@ -94,7 +94,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             <div className="relative group">
               <button 
                 className={`flex items-center transition-colors font-light ${
-                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white"
+                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white"
                 }`}
               >
                 Loan Products <ChevronDown className="ml-1 h-4 w-4" />
@@ -107,7 +107,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     <div key={product.href}>
                       <Link
                         href={product.href}
-                        className="block px-4 py-3 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                        className="block px-4 py-3 text-gray-700 hover:text-light-green hover:bg-perry transition-colors font-light"
                       >
                         {product.name}
                       </Link>
@@ -122,8 +122,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/team"
                 className={`transition-colors font-light ${
                   pathname === "/team" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
                 Team
@@ -134,8 +134,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/faq"
                 className={`transition-colors font-light ${
                   pathname === "/faq" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
                 FAQ
@@ -146,8 +146,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/blog"
                 className={`transition-colors font-light ${
                   pathname === "/blog" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
                 Blog
@@ -158,8 +158,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 href="/contact"
                 className={`transition-colors font-light ${
                   pathname === "/contact" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-sky-600" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white/90 hover:text-white")
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
                 Contact
@@ -173,7 +173,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               whileTap={{ scale: 0.98 }}
             >
               <Link href="/contact">
-                <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-sky-600 hover:bg-light-green text-white">
+                <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-light-green hover:bg-perry text-white">
                   Get Started
                 </Button>
               </Link>
@@ -182,7 +182,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             {/* Mobile menu button */}
             <motion.button
               className={`md:hidden p-2 transition-colors ${
-                isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-sky-600" : "text-white hover:text-sky-200"
+                isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white hover:text-sky-200"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileHover={{ scale: 1.05 }}
@@ -212,7 +212,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <Link
                   href="/"
-                  className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
@@ -236,7 +236,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                       >
                         <Link
                           href={product.href}
-                          className="block py-1 text-gray-600 hover:text-sky-600 transition-colors font-light text-sm"
+                          className="block py-1 text-gray-600 hover:text-light-green transition-colors font-light text-sm"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {product.name}
@@ -254,7 +254,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <Link
                   href="/team"
-                  className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Team
@@ -267,7 +267,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <Link
                   href="/faq"
-                  className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   FAQ
@@ -280,7 +280,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <Link
                   href="/blog"
-                  className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
@@ -293,7 +293,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <Link
                   href="/contact"
-                  className="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 transition-colors font-light"
+                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
@@ -307,7 +307,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 transition={{ delay: 0.8 }}
               >
                 <Link href="/contact">
-                  <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white font-light">Get Started</Button>
+                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Get Started</Button>
                 </Link>
               </motion.div>
             </div>

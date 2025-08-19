@@ -113,7 +113,7 @@ export function HeroSection({
           >
             {title}
             <br />
-            <span className="text-sky-200">{subtitle}</span>
+            <span className="text-light-green/50">{subtitle}</span>
           </motion.h1>
           <motion.p 
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-2 sm:px-0"
@@ -129,7 +129,7 @@ export function HeroSection({
               <Link href={primaryButtonLink} className="block w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-sky-600 hover:bg-light-green text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+                  className="w-full sm:w-auto bg-light-green hover:bg-perry text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                 >
                   {primaryButtonText}
                 </Button>
