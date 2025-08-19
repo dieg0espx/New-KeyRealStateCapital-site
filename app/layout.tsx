@@ -62,8 +62,8 @@ export const metadata: Metadata = {
     'msapplication-TileColor': '#ffffff',
     'msapplication-config': '/favicon/browserconfig.xml',
     'theme-color': '#ffffff',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-capable': 'standalone',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'Key Real State Capital',
     'application-name': 'Key Real State Capital',
     'msapplication-TileImage': '/favicon/mstile-144x144.png',
@@ -71,6 +71,10 @@ export const metadata: Metadata = {
     'msapplication-square150x150logo': '/favicon/mstile-150x150.png',
     'msapplication-wide310x150logo': '/favicon/mstile-310x150.png',
     'msapplication-square310x310logo': '/favicon/mstile-310x310.png',
+    // iOS specific meta tags for better sharing
+    'apple-touch-fullscreen': 'yes',
+    'apple-mobile-web-app-orientations': 'portrait',
+    'mobile-web-app-capable': 'yes',
   },
   icons: {
     icon: [
