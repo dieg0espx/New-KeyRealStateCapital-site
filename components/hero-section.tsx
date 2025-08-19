@@ -129,7 +129,7 @@ export function HeroSection({
               <Link href={primaryButtonLink} className="block w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-light-green hover:bg-perry text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+                  className="w-full sm:w-auto bg-light-green text-white hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                 >
                   {primaryButtonText}
                 </Button>
@@ -140,7 +140,7 @@ export function HeroSection({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent"
+                  className="w-full sm:w-auto border-white bg-white text-white  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg "
                 >
                   {secondaryButtonText}
                 </Button>
