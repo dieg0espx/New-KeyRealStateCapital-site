@@ -22,21 +22,21 @@ export function FAQSection() {
   return (
     <Gradient direction="top">
       <Gradient direction="bottom">
-    <section className="py-[200px] bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-            Get answers to common questions about our loan programs and application process.
-          </p>
-        </div>
+        <section className="py-[200px] bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+                Get answers to common questions about our loan programs and application process.
+              </p>
+            </div>
 
-        <div className="max-w-4xl mx-auto">
-                      <div className="space-y-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-4">
               {homePageFAQ.map((item, index) => (
-              <Card key={index} className="border-0 shadow hover:shadow-custom transition-shadow">
+              <Card key={index} className="border-0 shadow  transition-shadow">
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggleItem(index)}
@@ -62,29 +62,29 @@ export function FAQSection() {
                 </CardContent>
               </Card>
             ))}
-          </div>
+              </div>
 
-          <div className="text-center mt-12">
-            <p className="text-gray-600 font-light mb-6">
-              Still have questions? Our team is here to help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/faq">
-                <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                  View All FAQs
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 font-light px-8 py-3">
-                  Contact Us
-                </Button>
-              </Link>
+              <div className="text-center mt-12">
+                <p className="text-gray-600 font-light mb-6">
+                  Still have questions? Our team is here to help.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/faq">
+                    <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
+                      View All FAQs
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 font-light px-8 py-3">
+                      Contact Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    </Gradient>
+        </section>
+      </Gradient>
     </Gradient>
   )
 } 
