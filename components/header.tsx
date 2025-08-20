@@ -138,7 +138,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
-                Calculator
+                FAQ
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
@@ -270,7 +270,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                   className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Calculator
+                  FAQ
                 </Link>
               </motion.div>
               <motion.div
