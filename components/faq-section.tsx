@@ -26,7 +26,7 @@ export function FAQSection() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-                Frequently Asked Questions
+                Still have questions about our lending options?
               </h2>
               <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
                 Get answers to common questions about our loan programs and application process.
@@ -65,18 +65,19 @@ export function FAQSection() {
               </div>
 
               <div className="text-center mt-12">
+                <h3 className="text-2xl font-light text-gray-900 mb-4">Ready to go?</h3>
                 <p className="text-gray-600 font-light mb-6">
-                  Still have questions? Our team is here to help.
+                  We're here to help.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/faq">
+                  <Link href="/contact">
                     <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                      View All FAQs
+                      Talk to an expert
                     </Button>
                   </Link>
-                  <Link href="/contact">
+                  <Link href="/faq">
                     <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 font-light px-8 py-3">
-                      Contact Us
+                      View All FAQs
                     </Button>
                   </Link>
                 </div>

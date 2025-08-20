@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Layers, BarChart3 } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Layers, BarChart3, Percent } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function RentalPortfolioPage() {
         </Link>
 
         <LoanHeroSection
-          title="Rental Portfolio Loans"
-          description="Scale your rental property investments with portfolio financing solutions. Perfect for experienced investors looking to acquire multiple properties or refinance existing portfolios for better terms and cash flow."
+          title="Rental Portfolio Loan"
+          description="A fix-and-flip loan is a short-term financing option for real estate investors to purchase and renovate non-owner occupied residential investment property."
           image="/loan-products/rentalPortfolio.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -53,7 +53,7 @@ export default function RentalPortfolioPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$500K - $10M",
+              value: "$100K - $5M",
               label: "Loan Amount"
             },
             {
@@ -63,8 +63,8 @@ export default function RentalPortfolioPage() {
             },
             {
               icon: Building,
-              value: "4+ Properties",
-              label: "Minimum Portfolio"
+              value: "80% LTV",
+              label: "Max Financing"
             }
           ]}
         />
@@ -77,14 +77,14 @@ export default function RentalPortfolioPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Cross-collateralized financing",
-                    "Blanket loan options available",
-                    "Portfolio cash-out refinancing",
-                    "Streamlined underwriting process",
-                    "Competitive portfolio rates",
-                    "Flexible amortization schedules",
-                    "Interest-only payment options",
-                    "Portfolio management tools",
+                    "Loan Amounts: $100,000 to $2,000,000 (up to $5MM for 30-year FRM loans)",
+                    "1-4 Unit, PUDs, Warrantable Condos, Townhomes (No vacation rentals)",
+                    "Loan Terms: 5/6 ARM, 10/6 ARM, or Fixed Rate Mortgage (5, 10, or 30 years)",
+                    "Purchase/Rate & Term Refinance Maximum LTV: Up to 80%",
+                    "Cash-Out Refinance Maximum LTV: Up to 75%",
+                    "Minimum DSCR: 1.0x",
+                    "Minimum FICO: 680",
+                    "Additional Perks: Free or Waived Appraisals",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -97,14 +97,14 @@ export default function RentalPortfolioPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 4 rental properties",
-                    "700+ credit score preferred",
-                    "Strong portfolio performance",
-                    "Experienced property management",
+                    "Minimum 680 credit score",
+                    "DSCR-based underwriting",
+                    "Property appraisal required",
+                    "Title insurance and survey",
                     "Adequate cash reserves",
-                    "Comprehensive rent rolls",
-                    "Property inspection reports",
-                    "Portfolio financial statements",
+                    "Exit strategy documentation",
+                    "Property management plan",
+                    "Insurance coverage verification",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

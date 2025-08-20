@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Shield } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Shield, Percent, Clock3, FileText } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function SingleRentalPage() {
         </Link>
 
         <LoanHeroSection
-          title="Single Property Rental Loans"
-          description="Secure financing for individual rental property acquisitions with competitive rates and flexible terms. Perfect for investors looking to build their rental portfolio one property at a time."
+          title="Rental Properties"
+          description="Want to finance a new purchase, refinance a flip, or free up some equity? Let's build your portfolio."
           image="/loan-products/singlePropertyRental.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -49,11 +49,57 @@ export default function SingleRentalPage() {
           ]}
         />
 
+        {/* Rates & Terms */}
+        <Card className="mb-12 border-0 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Rates & Terms</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-3">
+                <Percent className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Rates as low as 6.25%</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Loans from $75K - $4M</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Shield className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Low or no prepayment penalty</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <TrendingUp className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 85% Purchase or Refinance (LTV)</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 80% Cash-out - no seasoning required</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">30-year fixed rates</p>
+                  <p className="text-sm text-gray-600">Interest only options available</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         <LoanParameterCards
           parameters={[
             {
               icon: DollarSign,
-              value: "$75K - $1.5M",
+              value: "$75K - $4M",
               label: "Loan Amount"
             },
             {
@@ -63,7 +109,7 @@ export default function SingleRentalPage() {
             },
             {
               icon: TrendingUp,
-              value: "7.25%",
+              value: "6.25%",
               label: "Starting Rate"
             }
           ]}
@@ -77,13 +123,13 @@ export default function SingleRentalPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Up to 80% LTV financing",
-                    "30-year amortization available",
-                    "Competitive interest rates",
-                    "Cash-out refinancing options",
-                    "No prepayment penalties",
-                    "DSCR-based underwriting",
-                    "Interest-only options available",
+                    "Rates as low as 6.25%",
+                    "Loans from $75K - $4M",
+                    "Low or no prepayment penalty",
+                    "Up to 85% Purchase or Refinance (LTV)",
+                    "Up to 80% Cash-out - no seasoning required",
+                    "30-year fixed rates",
+                    "Interest only options available",
                     "Streamlined application process",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
@@ -98,13 +144,13 @@ export default function SingleRentalPage() {
                 <ul className="space-y-3">
                   {[
                     "Minimum 680 credit score",
-                    "1.2x debt service coverage ratio",
+                    "DSCR-based underwriting",
                     "Property appraisal required",
-                    "Rent roll documentation",
-                    "Property management experience",
-                    "Adequate cash reserves",
                     "Title insurance and survey",
-                    "Property inspection report",
+                    "Adequate cash reserves",
+                    "Exit strategy documentation",
+                    "Property management plan",
+                    "Insurance coverage verification",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

@@ -17,7 +17,7 @@ interface BlogPreviewSectionProps {
 }
 
 export function BlogPreviewSection({
-  title = "Latest Insights",
+  title = "Insights and Tips for Homebuyers",
   description = "Stay informed with our latest market insights and investment strategies",
   limit = 3,
   featured = true

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Building2, Users2 } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, TrendingUp, Home, Building2, Users2, Percent } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function CommercialPage() {
         </Link>
 
         <LoanHeroSection
-          title="Multi-Family & Commercial Loans"
-          description="Comprehensive financing solutions for larger multi-family properties, office buildings, retail centers, and mixed-use developments. Designed for experienced investors and developers seeking institutional-quality financing."
+          title="Multi-Family, Mixed-Use & Commercial"
+          description="We offer the most aggressive terms on a variety of scenarios ranging from multi-family value-add to long term commercial DSCR."
           image="/loan-products/multiFamily.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -53,12 +53,12 @@ export default function CommercialPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$1M - $20M",
+              value: "$15K - $10M",
               label: "Loan Amount"
             },
             {
               icon: Calendar,
-              value: "5-30 Years",
+              value: "6-30 Years",
               label: "Loan Term"
             },
             {
@@ -77,14 +77,14 @@ export default function CommercialPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Up to $20M loan amounts",
+                    "Loan Amounts: $15,000 to $10,000,000",
+                    "Multi-Family (5-20+ units), Mixed-Use and All Commercial asset types",
+                    "Loan Terms: 6, 12 and 24 month bridge; 25 and 30 year FRM",
+                    "Purchase/Rate & Term Refinance Maximum LTV: Up to 80%",
+                    "Cash-Out Refinance Maximum LTV: Up to 75%",
+                    "Minimum DSCR: 1.0x",
+                    "Minimum FICO: 660",
                     "Competitive institutional rates",
-                    "Flexible amortization terms",
-                    "Interest-only options available",
-                    "Experienced underwriting team",
-                    "Recourse and non-recourse options",
-                    "Fast approval process",
-                    "Portfolio management tools",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -97,14 +97,14 @@ export default function CommercialPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum $1M loan amount",
-                    "Strong sponsor experience",
-                    "Stabilized cash flow preferred",
-                    "Comprehensive financial analysis",
-                    "Professional property management",
-                    "Market-rate debt service coverage",
-                    "Property inspection reports",
-                    "Environmental assessments",
+                    "Minimum 660 credit score",
+                    "DSCR-based underwriting",
+                    "Property appraisal required",
+                    "Title insurance and survey",
+                    "Adequate cash reserves",
+                    "Exit strategy documentation",
+                    "Property management plan",
+                    "Insurance coverage verification",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

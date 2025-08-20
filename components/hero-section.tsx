@@ -18,12 +18,12 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
-  title = "Luxury Real State",
-  subtitle = "Capital Solutions",
-  description = "Empowering your real estate investments with sophisticated financing solutions",
-  primaryButtonText = "Explore Loan Products",
+  title = "Unlock Freedom",
+  subtitle = "",
+  description = "Flexible, creative lending to help you scale.",
+  primaryButtonText = "Explore our loan programs",
   primaryButtonLink = "/loan-products",
-  secondaryButtonText = "Get Free Consultation",
+  secondaryButtonText = "Contact us",
   secondaryButtonLink = "/contact",
   videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4"
 }: HeroSectionProps) {
@@ -116,10 +116,16 @@ export function HeroSection({
             <span className="text-light-green/50">{subtitle}</span>
           </motion.h1>
           <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-2 sm:px-0"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-4 sm:mb-6 font-light max-w-2xl mx-auto px-2 sm:px-0"
             variants={itemVariants}
           >
             {description}
+          </motion.p>
+          <motion.p 
+            className="text-sm sm:text-base md:text-lg text-white/80 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-2 sm:px-0"
+            variants={itemVariants}
+          >
+            Work with a human being, not a robot.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"

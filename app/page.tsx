@@ -4,13 +4,14 @@ import { motion } from "framer-motion"
 import { HeroSection } from "@/components/hero-section"
 import { LoanProductsSection } from "@/components/loan-products-section"
 import { StatsSection } from "@/components/stats-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { WhyChooseSection } from "@/components/why-choose-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { WhereWeLendSection } from "@/components/where-we-lend-section"
 import { LoanCalculatorSection } from "@/components/loan-calculator-section"
+import { CTASection } from "@/components/cta-section"
 import { BlogPreviewSection } from "@/components/blog-preview-section"
 import { FAQSection } from "@/components/faq-section"
 import { ContactPreviewSection } from "@/components/contact-preview-section"
-import { CTASection } from "@/components/cta-section"
 
 export default function HomePage() {
   return (
@@ -23,13 +24,14 @@ export default function HomePage() {
       <HeroSection />
       <LoanProductsSection />
       <StatsSection />
-      <TestimonialsSection />
       <WhyChooseSection />
+      <TestimonialsSection />
+      <WhereWeLendSection />
       <LoanCalculatorSection />
+      <CTASection />
       <BlogPreviewSection limit={3} featured={true} />
       <FAQSection />
       <ContactPreviewSection />
-      <CTASection />
     </motion.div>
   )
 }

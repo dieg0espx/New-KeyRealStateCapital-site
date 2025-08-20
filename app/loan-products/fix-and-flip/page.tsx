@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown, Zap, Hammer } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown, Zap, Hammer, Percent, Clock3, Shield, FileText } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function FixAndFlipPage() {
         </Link>
 
         <LoanHeroSection
-          title="Fix-and-Flip Loans"
-          description="Short-term financing solutions designed specifically for property renovation and resale projects. Get the capital you need to acquire, renovate, and sell properties quickly and profitably."
+          title="Fix and Flip Loans"
+          description="Fix and Flip loans that move as fast as you do. Get Maximum Leverage with Minimal Money Down."
           image="/loan-products/fixAndFlip.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -41,13 +41,95 @@ export default function FixAndFlipPage() {
               position: "top-left"
             },
             {
-              title: "Renovation Funds",
-              subtitle: "Up to 90% ARV",
+              title: "Maximum Leverage",
+              subtitle: "95% Purchase Price",
               icon: <Hammer className="h-6 w-6 text-white" />,
               position: "bottom-right"
             }
           ]}
         />
+
+        {/* First-time investor message */}
+        <Card className="mb-8 border-0 shadow-lg bg-gradient-to-r from-light-green/10 to-perry/10">
+          <CardContent className="p-6 text-center">
+            <p className="text-lg text-gray-800 font-medium">
+              First-time investor or seasoned pro – we're at your side.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Rates & Terms */}
+        <Card className="mb-12 border-0 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Rates & Terms</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-3">
+                <Percent className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Rates as low as 8.9%</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 95% of purchase price</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">6, 12, 18 + 24 month terms</p>
+                  <p className="text-sm text-gray-600">Interest only, no prepayment penalty</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Loans from $50K - $10M</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <TrendingUp className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 75% of after-repair value</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Hammer className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">100% of rehab covered</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Additional Perks */}
+        <Card className="mb-12 border-0 shadow-lg bg-gray-50">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Additional Perks</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-3">
+                <Shield className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">No up front fees</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FileText className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">No appraisal</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Users className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">No income verification</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Key Stats */}
         <LoanParameterCards
@@ -55,17 +137,17 @@ export default function FixAndFlipPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$100K - $2M",
+              value: "$50K - $10M",
               label: "Loan Amount"
             },
             {
               icon: Calendar,
-              value: "6-18 Months",
+              value: "6-24 Months",
               label: "Loan Term"
             },
             {
               icon: TrendingUp,
-              value: "8.5%",
+              value: "8.9%",
               label: "Starting Rate"
             },
             {
@@ -84,14 +166,14 @@ export default function FixAndFlipPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Loan amounts up to $2M",
-                    "Terms from 6-18 months",
-                    "Interest-only payments",
-                    "No prepayment penalties",
-                    "Fast 7-14 day closings",
-                    "Up to 90% ARV financing",
-                    "Renovation funds included",
-                    "Flexible draw schedules",
+                    "Rates as low as 8.9%",
+                    "Up to 95% of purchase price",
+                    "6, 12, 18 + 24 month terms",
+                    "Interest only, no prepayment penalty",
+                    "Loans from $50K - $10M",
+                    "Up to 75% of after-repair value",
+                    "100% of rehab covered",
+                    "No up front fees",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -104,12 +186,12 @@ export default function FixAndFlipPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 680 credit score",
+                    "No income verification required",
+                    "No appraisal required",
+                    "No up front fees",
                     "Proof of renovation experience",
                     "Detailed renovation budget",
                     "Exit strategy documentation",
-                    "Property appraisal required",
-                    "Title insurance and survey",
                     "Contractor licensing verification",
                     "Adequate cash reserves",
                   ].map((requirement, index) => (

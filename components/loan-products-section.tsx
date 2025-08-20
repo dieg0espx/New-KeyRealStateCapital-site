@@ -23,38 +23,38 @@ interface LoanProductsSectionProps {
 const defaultProducts: LoanProduct[] = [
   {
     icon: <Hammer className="h-8 w-8" />,
-    title: "Fix-and-Flip",
-    description: "Short-term financing for property renovation and resale projects",
+    title: "Bridge | Fix & Flip",
+    description: "Up to 100% leverage. Competitive terms and fast closings.",
     link: "/loan-products/fix-and-flip"
   },
   {
     icon: <Home className="h-8 w-8" />,
-    title: "Single Property Rental",
-    description: "Financing for individual rental property acquisitions",
+    title: "DSCR | Short/Long-term Rental",
+    description: "Rock-bottom rates, flexible terms. Easy processes to scale your portfolio.",
     link: "/loan-products/single-rental"
   },
   {
     icon: <Building className="h-8 w-8" />,
     title: "New Construction",
-    description: "Construction loans for ground-up development projects",
+    description: "High leverage, competitive rates & easy draws – even for first timers.",
     link: "/loan-products/new-construction"
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,
-    title: "Rental Portfolio",
-    description: "Portfolio financing for multiple rental properties",
+    title: "Multi-Family | Commercial",
+    description: "Stabilized term, value add, ground up – we've got you covered.",
     link: "/loan-products/rental-portfolio"
   },
   {
     icon: <MapPin className="h-8 w-8" />,
-    title: "Stabilized Bridge",
-    description: "Bridge financing for stabilized income-producing properties",
+    title: "Conventional | Primary Loans",
+    description: "Keyan copy",
     link: "/loan-products/stabilized-bridge"
   },
   {
     icon: <Building className="h-8 w-8" />,
-    title: "Multi-Family / Commercial",
-    description: "Financing for larger multi-family and commercial properties",
+    title: "0% Interest Business Funding",
+    description: "Keyan copy",
     link: "/loan-products/commercial"
   }
 ]

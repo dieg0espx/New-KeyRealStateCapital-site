@@ -91,7 +91,7 @@ const defaultTestimonials: Testimonial[] = [
 
 export function TestimonialsSection({
   title = "Client Testimonials",
-  description = "What our clients say about working with us",
+  description = "From first-time investors to seasoned vets, we take care of our people.",
   testimonials = defaultTestimonials
 }: TestimonialsSectionProps) {
   const { ref, isInView } = useScrollAnimation()

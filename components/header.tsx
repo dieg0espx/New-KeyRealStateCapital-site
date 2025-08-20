@@ -39,12 +39,12 @@ export function Header({ isHomePage = false }: HeaderProps) {
   }, [])
 
   const loanProducts = [
-    { name: "Fix-and-Flip", href: "/loan-products/fix-and-flip" },
-    { name: "Single Property Rental", href: "/loan-products/single-rental" },
+    { name: "Bridge | Fix & Flip", href: "/loan-products/fix-and-flip" },
+    { name: "DSCR | Short/Long-term Rental", href: "/loan-products/single-rental" },
     { name: "New Construction", href: "/loan-products/new-construction" },
-    { name: "Rental Portfolio", href: "/loan-products/rental-portfolio" },
-    { name: "Stabilized Bridge", href: "/loan-products/stabilized-bridge" },
-    { name: "Multi-Family / Commercial", href: "/loan-products/commercial" },
+    { name: "Multi-Family | Commercial", href: "/loan-products/rental-portfolio" },
+    { name: "Conventional | Primary Loans", href: "/loan-products/stabilized-bridge" },
+    { name: "0% Interest Business Funding", href: "/loan-products/commercial" },
   ]
 
   return (
@@ -66,7 +66,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               <Link href="/" className="flex items-center">
                 <Image
                   src={isScrolled || !isHomePage || isMobileMenuOpen ? "/logo-white.png" : "/logo-transparent.png"}
-                  alt="Key Real State Capital"
+                  alt="Key Real Estate Capital"
                   width={180}
                   height={40}
                   className="h-10 w-auto"
@@ -126,7 +126,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
-                Team
+                About Us
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
@@ -138,7 +138,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
-                FAQ
+                Calculator
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
@@ -257,7 +257,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                   className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Team
+                  About Us
                 </Link>
               </motion.div>
               <motion.div
@@ -270,7 +270,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                   className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  FAQ
+                  Calculator
                 </Link>
               </motion.div>
               <motion.div

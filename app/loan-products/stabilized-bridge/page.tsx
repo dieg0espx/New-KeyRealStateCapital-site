@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Zap, ArrowRight } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, Building, Home, Zap, ArrowRight, Percent } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function StabilizedBridgePage() {
         </Link>
 
         <LoanHeroSection
-          title="Stabilized Bridge Loans"
-          description="Bridge financing for stabilized income-producing properties. Ideal for investors who need quick access to capital while arranging permanent financing or preparing for a strategic exit."
+          title="Stabilized Bridge"
+          description="A fix-and-flip loan is a short-term financing option for real estate investors on non-owner occupied investment property."
           image="/loan-products/stabilizedBridge.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -53,18 +53,18 @@ export default function StabilizedBridgePage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$250K - $3M",
+              value: "$75k - $4MM",
               label: "Loan Amount"
             },
             {
               icon: Calendar,
-              value: "12-36 Months",
+              value: "6-24 Months",
               label: "Loan Term"
             },
             {
               icon: TrendingUp,
-              value: "8.0%",
-              label: "Starting Rate"
+              value: "85% LTC",
+              label: "Max Financing"
             }
           ]}
         />
@@ -77,14 +77,14 @@ export default function StabilizedBridgePage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Interest-only payments",
-                    "Quick 10-14 day closings",
-                    "Up to 75% LTV financing",
-                    "No prepayment penalties",
-                    "Flexible exit strategies",
-                    "Experienced underwriting",
-                    "Fast approval process",
-                    "Competitive bridge rates",
+                    "Loan Amounts: $75k to $4MM (higher on exception)",
+                    "Loan Terms: 6 or 12 months, extendable up to 24 months",
+                    "Single-Family, 2-4 Unit, Townhomes, PUDs, Warrantable Condos",
+                    "Max LTC: 85% of purchase price + verified completed CAPEX",
+                    "Max LTV: Up to 70% (based on DSCR Exit or No DSCR terms)",
+                    "Minimum FICO: 660",
+                    "DSCR Requirement: 1.10 Exit DSCR for rental-ready properties",
+                    "Additional Perks: Free or Waived Appraisals",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -97,14 +97,14 @@ export default function StabilizedBridgePage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Stabilized income property",
-                    "Minimum 680 credit score",
-                    "Strong debt service coverage",
-                    "Clear exit strategy",
+                    "Minimum 660 credit score",
+                    "DSCR-based underwriting",
                     "Property appraisal required",
+                    "Title insurance and survey",
                     "Adequate cash reserves",
-                    "Property inspection report",
-                    "Market analysis documentation",
+                    "Exit strategy documentation",
+                    "Property management plan",
+                    "Insurance coverage verification",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

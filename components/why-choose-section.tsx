@@ -19,23 +19,33 @@ interface WhyChooseSectionProps {
 const defaultFeatures: Feature[] = [
   {
     icon: <TrendingUp className="h-8 w-8" />,
-    title: "Expertise",
-    description: "Deep market knowledge and industry experience"
+    title: "Compassionate Lending",
+    description: "Work with a capital partner who wants to see you win."
   },
   {
     icon: <Star className="h-8 w-8" />,
-    title: "Speed",
-    description: "Quick decisions and fast funding timelines"
+    title: "Competitive Terms",
+    description: "Make the most out of your investments."
   },
   {
     icon: <Phone className="h-8 w-8" />,
-    title: "Service",
-    description: "Personalized attention and dedicated support"
+    title: "Creative Solutions",
+    description: "Flexible underwriting to get your deals across the finish line."
   },
   {
     icon: <Building className="h-8 w-8" />,
-    title: "Solutions",
-    description: "Flexible financing tailored to your needs"
+    title: "Streamlined Process",
+    description: "We take the headache and hassle out of the equation."
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    title: "Dedicated Support",
+    description: "Leverage our team of experts to make your life easier."
+  },
+  {
+    icon: <Star className="h-8 w-8" />,
+    title: "Fast Closing",
+    description: "In days, not weeks – we'll get it done."
   }
 ]
 
@@ -84,7 +94,7 @@ export function WhyChooseSection({
           </p>
         </motion.div>
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}

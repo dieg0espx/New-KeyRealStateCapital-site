@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, Hammer, TrendingUp, Wrench, Target } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, Building, Users, Clock, Star, Hammer, TrendingUp, Wrench, Target, Percent, Clock3, Shield } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,11 +21,11 @@ export default function NewConstructionPage() {
         </Link>
 
         <LoanHeroSection
-          title="New Construction Loans"
-          description="Finance your ground-up development projects with flexible construction loans that convert to permanent financing. Perfect for experienced developers and investors building new properties."
+          title="New Construction"
+          description="Your partner in development – without the hassle. Flexible financing for new construction projects: designed for investors, builders and developers ready to bring vision to life."
           image="/loan-products/newConstruction.jpg"
           primaryCta={{
-            text: "Apply Now",
+            text: "Get a Quote",
             href: "/apply"
           }}
           secondaryCta={{
@@ -49,11 +49,60 @@ export default function NewConstructionPage() {
           ]}
         />
 
+        {/* Rates & Terms */}
+        <Card className="mb-12 border-0 shadow-lg">
+          <CardContent className="p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Rates & Terms</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-3">
+                <Percent className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Rates as low as 9.5%</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 90% of total cost</p>
+                  <p className="text-sm text-gray-600">Purchase price + construction cost</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">12 or 24 month terms</p>
+                  <p className="text-sm text-gray-600">Interest only, no prepayment penalty</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <DollarSign className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Loan Amounts: $150k to $20MM</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Shield className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Non-Dutch Interest</p>
+                  <p className="text-sm text-gray-600">Only on funds disbursed</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <TrendingUp className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Up to 75% of ARV</p>
+                  <p className="text-sm text-gray-600">After-repair value</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         <LoanParameterCards
           parameters={[
             {
               icon: DollarSign,
-              value: "$200K - $5M",
+              value: "$150K - $20M",
               label: "Loan Amount"
             },
             {
@@ -63,7 +112,7 @@ export default function NewConstructionPage() {
             },
             {
               icon: Building,
-              value: "80% LTC",
+              value: "90% LTC",
               label: "Max Financing"
             }
           ]}
@@ -77,14 +126,14 @@ export default function NewConstructionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Interest-only during construction",
+                    "Rates as low as 9.5%",
+                    "Up to 90% of total cost",
+                    "12 or 24 month terms",
+                    "Interest only, no prepayment penalty",
+                    "Loan Amounts: $150k to $20MM",
+                    "Non-Dutch Interest (Only on funds disbursed)",
+                    "Up to 75% of ARV (after-repair value)",
                     "Flexible draw schedule",
-                    "Convert to permanent financing",
-                    "Up to 80% loan-to-cost ratio",
-                    "Experienced construction team",
-                    "Fast approval process",
-                    "Builder's risk insurance included",
-                    "Site inspection services",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -99,12 +148,12 @@ export default function NewConstructionPage() {
                   {[
                     "Minimum 700 credit score",
                     "Construction experience required",
-                    "Detailed construction plans",
-                    "Licensed general contractor",
+                    "Detailed construction budget",
                     "Builder's risk insurance",
-                    "20% down payment minimum",
-                    "Comprehensive project budget",
-                    "Market feasibility study",
+                    "Site inspection services",
+                    "Experienced construction team",
+                    "Adequate cash reserves",
+                    "Exit strategy documentation",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
