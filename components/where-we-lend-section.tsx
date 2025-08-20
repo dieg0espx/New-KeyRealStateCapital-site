@@ -83,7 +83,7 @@ export function WhereWeLendSection({
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div 
           className="text-center mb-16"
           ref={ref}
@@ -92,9 +92,37 @@ export function WhereWeLendSection({
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto mb-8">
             {description}
           </p>
+          
+          {/* <div className="flex items-center justify-center mb-8">
+            <Globe className="h-8 w-8 mr-3 text-light-green" />
+            <h3 className="text-3xl font-light text-gray-900">Nationwide Coverage</h3>
+          </div>
+          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+            We lend in <span className="font-semibold text-light-green">48 states</span> across the country
+          </p> */}
+          
+          {/* Coverage Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mt-12">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-light-green">48</div>
+              <div className="text-sm text-gray-600">States Covered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-gray-400">2</div>
+              <div className="text-sm text-gray-600">Not Available</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-light-green">96%</div>
+              <div className="text-sm text-gray-600">Coverage</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-light-green">24/7</div>
+              <div className="text-sm text-gray-600">Support</div>
+            </div>
+          </div>
         </motion.div>
         
         <motion.div 
@@ -105,42 +133,12 @@ export function WhereWeLendSection({
         >
           {/* US Map Section */}
           <motion.div 
-            className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12"
+            className=""
             variants={itemVariants}
           >
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-light text-gray-900 mb-4 flex items-center justify-center">
-                <Globe className="h-8 w-8 mr-3 text-light-green" />
-                Nationwide Coverage
-              </h3>
-              <p className="text-xl text-gray-600 font-light mb-8">
-                We lend in <span className="font-semibold text-light-green">48 states</span> across the country
-              </p>
-              
-              {/* Coverage Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-12">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-light-green">48</div>
-                  <div className="text-sm text-gray-600">States Covered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-400">2</div>
-                  <div className="text-sm text-gray-600">Not Available</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-light-green">96%</div>
-                  <div className="text-sm text-gray-600">Coverage</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-light-green">24/7</div>
-                  <div className="text-sm text-gray-600">Support</div>
-                </div>
-              </div>
-            </div>
-
             {/* Interactive US Map */}
-            <div className="relative max-w-5xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div className="relative  mx-auto">
+              <div className="">
                 <div className="relative">
                   <USAMap
                     defaultState={{
@@ -204,7 +202,7 @@ export function WhereWeLendSection({
                     }}
                     mapSettings={{
                       width: "100%",
-                      height: 500
+                      height: 650
                     }}
                   />
                   
