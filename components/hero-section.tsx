@@ -140,7 +140,7 @@ export function HeroSection({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white bg-white text-white  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg "
+                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg "
                 >
                   {secondaryButtonText}
                 </Button>
