@@ -109,7 +109,7 @@ export function LoanCalculatorSection({
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">{title}</h2>
+              <h2 className="text-4xl md:text-5xl font-light text-perry mb-6">{title}</h2>
               <p className="text-xl text-perry font-light max-w-3xl mx-auto">
                 {description}
               </p>
