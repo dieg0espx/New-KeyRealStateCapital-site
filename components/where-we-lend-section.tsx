@@ -125,13 +125,13 @@ export function WhereWeLendSection({
         >
           {/* US Map Section */}
           <motion.div 
-            className="-mt-[230px] md:-mt-0"
+            className=""
             variants={itemVariants}
           >
             {/* Interactive US Map */}
             <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
               <div className="overflow-hidden rounded-lg">
-                <div className="relative h-[400px] sm:h-[500px] lg:h-[650px]">
+                <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] xl:h-[650px]">
                   <USAMap
                     defaultState={{
                       fill: '#f3f4f6',
@@ -194,7 +194,7 @@ export function WhereWeLendSection({
                     }}
                     mapSettings={{
                       width: "100%",
-                      height: 650
+                      height: "100%"
                     }}
                   />
                   
