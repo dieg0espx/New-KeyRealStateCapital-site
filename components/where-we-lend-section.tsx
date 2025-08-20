@@ -82,64 +82,56 @@ export function WhereWeLendSection({
   }
 
   return (
-    <section className="py-24 bg-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">{title}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             {description}
           </p>
           
-          {/* <div className="flex items-center justify-center mb-8">
-            <Globe className="h-8 w-8 mr-3 text-light-green" />
-            <h3 className="text-3xl font-light text-gray-900">Nationwide Coverage</h3>
-          </div>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-            We lend in <span className="font-semibold text-light-green">48 states</span> across the country
-          </p> */}
-          
           {/* Coverage Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mt-12">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto mt-6 sm:mt-8 px-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-light-green">48</div>
-              <div className="text-sm text-gray-600">States Covered</div>
+              <div className="text-2xl sm:text-3xl font-bold text-light-green">48</div>
+              <div className="text-xs sm:text-sm text-gray-600">States Covered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gray-400">2</div>
-              <div className="text-sm text-gray-600">Not Available</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-400">2</div>
+              <div className="text-xs sm:text-sm text-gray-600">Not Available</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-light-green">96%</div>
-              <div className="text-sm text-gray-600">Coverage</div>
+              <div className="text-2xl sm:text-3xl font-bold text-light-green">96%</div>
+              <div className="text-xs sm:text-sm text-gray-600">Coverage</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-light-green">24/7</div>
-              <div className="text-sm text-gray-600">Support</div>
+              <div className="text-2xl sm:text-3xl font-bold text-light-green">24/7</div>
+              <div className="text-xs sm:text-sm text-gray-600">Support</div>
             </div>
           </div>
         </motion.div>
         
         <motion.div 
-          className="relative"
+          className="relative mt-4 sm:mt-6"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           {/* US Map Section */}
           <motion.div 
-            className=""
+            className="-mt-[230px] md:-mt-0"
             variants={itemVariants}
           >
             {/* Interactive US Map */}
-            <div className="relative  mx-auto">
-              <div className="">
-                <div className="relative">
+            <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="overflow-hidden rounded-lg">
+                <div className="relative h-[400px] sm:h-[500px] lg:h-[650px]">
                   <USAMap
                     defaultState={{
                       fill: '#f3f4f6',
@@ -209,7 +201,7 @@ export function WhereWeLendSection({
                   {/* Tooltip */}
                   {hoveredState && (
                     <div 
-                      className="absolute bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium shadow-lg z-10"
+                      className="absolute bg-gray-900 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-lg z-10"
                       style={{
                         left: '50%',
                         top: '10px',
@@ -231,37 +223,37 @@ export function WhereWeLendSection({
             </div>
 
             {/* Legend */}
-            <div className="mt-8 flex justify-center">
-              <div className="flex items-center space-x-6 text-sm">
+            <div className="mt-4 sm:mt-6 flex justify-center px-4">
+              <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-light-green"></div>
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-light-green"></div>
                   <span className="text-gray-700">Available (48 states)</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-300"></div>
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gray-300"></div>
                   <span className="text-gray-700">Not Available (ND, SD)</span>
                 </div>
               </div>
             </div>
 
-            <div className="text-center mt-8 text-sm text-gray-500 font-light">
+            <div className="text-center mt-2 sm:mt-4 text-xs sm:text-sm text-gray-500 font-light px-4">
               * Not available in North Dakota and South Dakota
             </div>
           </motion.div>
 
           {/* Headquarters Section */}
           <motion.div 
-            className="mt-16"
+            className="mt-12 sm:mt-16"
             variants={itemVariants}
           >
-            <div className="text-center mb-16">
-              <h3 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Headquarters</h3>
-              <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">Headquarters</h3>
+              <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto">
                 Strategic locations coast to coast to serve you better
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4">
               <motion.div 
                 className="group"
                 initial={{ opacity: 0, y: 40 }}
@@ -273,13 +265,13 @@ export function WhereWeLendSection({
                 }}
               >
                 <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
-                  <CardContent className="p-8">
+                  <CardContent className="p-6 sm:p-8">
                     <div className="text-light-green mb-4">
-                      <MapPin className="h-8 w-8" />
+                      <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-3">San Diego, CA</h4>
-                    <p className="text-gray-600 font-light leading-relaxed mb-4">Corporate Headquarters</p>
-                    <div className="space-y-2 text-sm text-gray-500">
+                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">San Diego, CA</h4>
+                    <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm sm:text-base">Corporate Headquarters</p>
+                    <div className="space-y-2 text-xs sm:text-sm text-gray-500">
                       <div className="flex items-center">
                         <div className="w-2 h-2 bg-light-green mr-3"></div>
                         <span>Main Operations Center</span>
@@ -294,7 +286,7 @@ export function WhereWeLendSection({
                       </div>
                     </div>
                     <div className="mt-6 pt-4 border-t border-gray-100">
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
                         <span className="text-gray-500">Pacific Time Zone</span>
                         <span className="text-light-green font-medium">Primary Office</span>
                       </div>
@@ -314,13 +306,13 @@ export function WhereWeLendSection({
                 }}
               >
                 <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
-                  <CardContent className="p-8">
+                  <CardContent className="p-6 sm:p-8">
                     <div className="text-perry mb-4">
-                      <MapPin className="h-8 w-8" />
+                      <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-3">Delray Beach, FL</h4>
-                    <p className="text-gray-600 font-light leading-relaxed mb-4">East Coast Office</p>
-                    <div className="space-y-2 text-sm text-gray-500">
+                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Delray Beach, FL</h4>
+                    <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm sm:text-base">East Coast Office</p>
+                    <div className="space-y-2 text-xs sm:text-sm text-gray-500">
                       <div className="flex items-center">
                         <div className="w-2 h-2 bg-perry mr-3"></div>
                         <span>Regional Operations</span>
@@ -335,7 +327,7 @@ export function WhereWeLendSection({
                       </div>
                     </div>
                     <div className="mt-6 pt-4 border-t border-gray-100">
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
                         <span className="text-gray-500">Eastern Time Zone</span>
                         <span className="text-perry font-medium">Regional Hub</span>
                       </div>
