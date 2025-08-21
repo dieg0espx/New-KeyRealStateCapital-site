@@ -98,7 +98,7 @@ export function LoanProductsSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
+          <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
             {description}
           </p>
@@ -118,20 +118,21 @@ export function LoanProductsSection({
                 transition: { duration: 0.4 }
               }}
             >
+            <Link href={product.link}>
               <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
                 <CardContent className="p-8">
                   <div className="text-light-green mb-4">
                     {product.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{product.title}</h3>
+                  <h3 className="text-xl font-light text-gray-900 mb-3">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
-                  <Link href={product.link}>
+                  
                     <Button variant="ghost" className="mt-4 p-0 text-perry hover:text-light-green font-light">
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                  </Link>
                 </CardContent>
               </Card>
+            </Link>
             </motion.div>
           ))}
         </motion.div>
