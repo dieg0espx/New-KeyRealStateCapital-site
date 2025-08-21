@@ -106,7 +106,7 @@ export function Footer() {
 
       {/* Main Footer */}
       <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="md:col-span-2">
@@ -159,8 +159,8 @@ export function Footer() {
                 </Link>
                 <Link href="mailto:loans@keyrealestatecapital.com" className="flex items-start">
                   <Mail className="h-5 w-5 mr-3 mt-0.5 text-light-green flex-shrink-0" />
-                  <div>
-                    <div className="text-gray-300 font-light">loans@keyrealestatecapital.com</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-gray-300 font-light break-words">loans@keyrealestatecapital.com</div>
                     <div className="text-white text-sm">24/7 support</div>
                   </div>
                 </Link>
