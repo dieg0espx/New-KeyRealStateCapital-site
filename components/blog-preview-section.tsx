@@ -50,7 +50,7 @@ export function BlogPreviewSection({
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gradient-to-b from-light-green/10 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -59,7 +59,7 @@ export function BlogPreviewSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
+                     <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light">
             {description}
           </p>
@@ -99,7 +99,7 @@ export function BlogPreviewSection({
                     <span className="mx-2">•</span>
                     <span>{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-perry transition-colors">
+                                     <h3 className="text-xl font-medium text-gray-900 mb-3">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 font-light leading-relaxed">{post.excerpt}</p>
@@ -108,7 +108,7 @@ export function BlogPreviewSection({
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <Button variant="ghost" className="mt-4 p-0 text-light-green hover:text-perry font-light">
+                      <Button variant="ghost" className="mt-4 p-0 text-light-green font-light">
                         Read More <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </motion.div>

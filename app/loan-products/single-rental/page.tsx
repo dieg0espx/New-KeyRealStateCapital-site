@@ -13,7 +13,7 @@ import LoanParameterCards from "@/components/loan-parameter-cards"
 export default function SingleRentalPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-white pt-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Link href="/loan-products" className="inline-flex items-center text-light-green hover:text-perry mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />
@@ -52,7 +52,7 @@ export default function SingleRentalPage() {
         {/* Rates & Terms */}
         <Card className="mb-12 border-0 shadow-lg">
           <CardContent className="p-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Rates & Terms</h2>
+            <h2 className="text-2xl font-medium text-gray-900 mb-6">Rates & Terms</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex items-center space-x-3">
                 <Percent className="h-6 w-6 text-light-green" />
@@ -338,9 +338,9 @@ export default function SingleRentalPage() {
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/apply" className="w-full sm:w-auto">
-              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
-                Apply for Single Rental Loan
-              </Button>
+                              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
+                  Free Consultation
+                </Button>
             </Link>
             <Button
               onClick={openModal}

@@ -44,6 +44,7 @@ const config: Config = {
         },
         perry: "#31716C",
         "light-green": "#57BF87",
+        "dark-green": "#2D5A4A",
       },
       borderRadius: {
         lg: "var(--radius)",

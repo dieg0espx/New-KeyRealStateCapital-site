@@ -14,7 +14,7 @@ export function ContactPreviewSection() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+                     <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
@@ -30,7 +30,7 @@ export function ContactPreviewSection() {
                 <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Phone className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Call Us</h3>
+                                 <h3 className="text-xl font-medium text-gray-900 mb-4">Call Us</h3>
                 <p className="text-gray-600 font-light mb-4">
                   Speak directly with our loan specialists
                 </p>
@@ -50,7 +50,7 @@ export function ContactPreviewSection() {
                 <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Mail className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Email Us</h3>
+                                 <h3 className="text-xl font-medium text-gray-900 mb-4">Email Us</h3>
                 <p className="text-gray-600 font-light mb-4">
                   Send us your questions or loan requirements
                 </p>
@@ -70,7 +70,7 @@ export function ContactPreviewSection() {
                 <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Schedule a Call</h3>
+                                 <h3 className="text-xl font-medium text-gray-900 mb-4">Schedule a Call</h3>
                 <p className="text-gray-600 font-light mb-4">
                   Book a consultation with our team
                 </p>
@@ -91,7 +91,7 @@ export function ContactPreviewSection() {
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Visit Our Office</h3>
+                                     <h3 className="text-2xl font-medium text-gray-900 mb-6">Visit Our Office</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <MapPin className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -123,7 +123,7 @@ export function ContactPreviewSection() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link href="/apply">
                       <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                        Apply Now
+                        Free Consultation
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>

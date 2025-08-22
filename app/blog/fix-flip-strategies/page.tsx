@@ -165,7 +165,7 @@ export default function FixFlipStrategiesPage() {
               </p>
               <Link href="/apply">
                 <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                  Get Pre-Approved Today
+                  Free Consultation
                 </Button>
               </Link>
             </CardContent>

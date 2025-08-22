@@ -389,7 +389,7 @@ export default function ApplicationPage() {
                     </>
                   ) : (
                     <>
-                      Submit Application
+                      Free Consultation
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </>
                   )}

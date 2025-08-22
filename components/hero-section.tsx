@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Phone } from "lucide-react"
 import Link from "next/link"
 import { Gradient } from "./gradient"
 
@@ -21,10 +21,10 @@ export function HeroSection({
   title = "Unlock Freedom",
   subtitle = "",
   description = "Flexible, creative lending to help you scale.",
-  primaryButtonText = "Explore our loan programs",
+  primaryButtonText = "Free Consultation",
   primaryButtonLink = "/loan-products",
-  secondaryButtonText = "Contact us",
-  secondaryButtonLink = "/contact",
+  secondaryButtonText = "(555) 123-4567",
+  secondaryButtonLink = "tel:5551234567",
   videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4"
 }: HeroSectionProps) {
   const scrollToNextSection = () => {
@@ -108,7 +108,7 @@ export function HeroSection({
           animate="visible"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             {title}
@@ -146,8 +146,9 @@ export function HeroSection({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg "
+                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center gap-2"
                 >
+                  <Phone className="h-4 w-4" />
                   {secondaryButtonText}
                 </Button>
               </Link>

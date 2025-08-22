@@ -245,7 +245,7 @@ export default function PortfolioDiversificationPage() {
               </p>
               <Link href="/loan-products/rental-portfolio">
                 <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                  Explore Portfolio Loans
+                  Free Consultation
                 </Button>
               </Link>
             </CardContent>

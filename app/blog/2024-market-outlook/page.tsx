@@ -166,7 +166,7 @@ export default function BlogPostPage() {
               </p>
               <Link href="/apply">
                 <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                  Get Pre-Qualified Today
+                  Free Consultation
                 </Button>
               </Link>
             </CardContent>

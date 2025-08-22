@@ -22,7 +22,7 @@ export function CTASection({
   primaryButtonLink = "/contact",
   secondaryButtonText = "View Loan Products",
   secondaryButtonLink = "/loan-products",
-  backgroundColor = "bg-light-green"
+  backgroundColor = "bg-perry"
 }: CTASectionProps) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -75,7 +75,7 @@ export function CTASection({
         animate={isInView ? "visible" : "hidden"}
       >
         <motion.h2 
-          className="text-4xl md:text-5xl font-light text-white mb-6"
+          className="text-4xl md:text-5xl font-medium text-white mb-6"
           variants={itemVariants}
         >
           {title}

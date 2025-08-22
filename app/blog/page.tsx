@@ -43,7 +43,7 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Real Estate Insights</h1>
+          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Real Estate Insights</h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
             Stay informed with expert analysis, market trends, and investment strategies from our team
           </p>
@@ -85,7 +85,7 @@ export default function BlogPage() {
                     </Badge>
                     <span className="text-sm text-gray-500">5 min read</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-light-green transition-colors line-clamp-2">
+                  <h3 className="text-xl font-medium text-gray-900 mb-3 line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 font-light leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
@@ -104,7 +104,7 @@ export default function BlogPage() {
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <Button variant="ghost" className="p-0 text-light-green hover:text-perry font-light">
+                      <Button variant="ghost" className="p-0 text-light-green font-light">
                         Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </motion.div>

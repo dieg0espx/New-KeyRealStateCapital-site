@@ -111,6 +111,58 @@ html {
   display: none !important;
 }
 
+/* Custom navigation arrows */
+.testimonials-carousel .custom-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonials-carousel .custom-nav-button:hover {
+  background: #f9fafb;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Enable touch gestures for swipe */
+.testimonials-carousel {
+  touch-action: pan-x;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure swipe functionality works */
+.testimonials-carousel .slick-track {
+  cursor: grab;
+  touch-action: pan-x;
+}
+
+.testimonials-carousel .slick-track:active {
+  cursor: grabbing;
+}
+
+.testimonials-carousel .slick-slide {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: pan-x;
+}
+
 /* Hide scrollbars globally */
 * {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

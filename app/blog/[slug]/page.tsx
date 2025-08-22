@@ -164,7 +164,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-light-green transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-600 font-light line-clamp-2">

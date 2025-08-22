@@ -16,10 +16,10 @@ export default function LoanParameterCards({
   parameters, 
   columns = 3 
 }: LoanParameterCardsProps) {
-  const gridCols = columns === 4 ? "md:grid-cols-4" : "md:grid-cols-3"
+  const gridCols = columns === 4 ? "grid-cols-2 md:grid-cols-4" : "grid-cols-2 md:grid-cols-3"
   
   return (
-    <div className={`grid ${gridCols} gap-6 mb-12`}>
+    <div className={`grid ${gridCols} gap-4 md:gap-6 mb-12`}>
       {parameters.map((param, index) => {
         const IconComponent = param.icon
         return (

@@ -29,8 +29,8 @@ export default function HomePage() {
       <WhereWeLendSection />
       <LoanCalculatorSection />
       <CTASection />
-      <BlogPreviewSection limit={3} featured={true} />
       <FAQSection />
+      <BlogPreviewSection limit={3} featured={true} />
       <ContactPreviewSection />
     </motion.div>
   )
