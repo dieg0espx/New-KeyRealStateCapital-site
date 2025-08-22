@@ -80,7 +80,7 @@ export default function BlogPage() {
                 </motion.div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <Badge variant="secondary" className="bg-sky-100 text-sky-800">
+                    <Badge variant="secondary" className="bg-light-green/10 text-light-green">
                       {post.category}
                     </Badge>
                     <span className="text-sm text-gray-500">5 min read</span>
