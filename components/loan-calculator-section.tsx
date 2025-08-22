@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { LoanCalculator } from "./loan-calculator"
-import { Gradient } from "./gradient"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Zap, Target, BarChart3, Lightbulb, LucideIcon } from "lucide-react"
@@ -98,9 +97,7 @@ export function LoanCalculatorSection({
   }
 
   return (
-    <Gradient direction="top">
-      <Gradient direction="bottom">
-        <section className="py-[200px] bg-light-green/20">
+    <section className="py-[200px] bg-gradient-to-b from-light-green/20 via-light-green/30 to-perry">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-16"
@@ -109,8 +106,8 @@ export function LoanCalculatorSection({
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-light text-perry mb-6">{title}</h2>
-              <p className="text-xl text-perry font-light max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
+              <p className="text-xl text-gray-900 font-light max-w-3xl mx-auto">
                 {description}
               </p>
             </motion.div>
@@ -141,7 +138,7 @@ export function LoanCalculatorSection({
                     transition: { duration: 0.4 }
                   }}
                 >
-                  <h3 className="text-2xl font-light text-gray-900 mb-6">Why Use Our Calculator?</h3>
+                  <h3 className="text-2xl font-medium text-gray-900 mb-6">Why Use Our Calculator?</h3>
                   <div className="space-y-4">
                     {benefits.map((feature, index) => (
                       <motion.div 
@@ -160,7 +157,7 @@ export function LoanCalculatorSection({
                           <feature.icon className="w-6 h-6 text-light-green" />
                         </motion.div>
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
+                          <h4 className="font-medium text-gray-900 mb-1">{feature.title}</h4>
                           <p className="text-gray-600 font-light text-sm">{feature.description}</p>
                         </div>
                       </motion.div>
@@ -175,7 +172,7 @@ export function LoanCalculatorSection({
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <h3 className="text-2xl font-light mb-6">{ctaTitle}</h3>
+                  <h3 className="text-2xl font-medium mb-6">{ctaTitle}</h3>
                   <p className="text-white font-light mb-6">
                     {ctaDescription}
                   </p>
@@ -214,7 +211,7 @@ export function LoanCalculatorSection({
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <div className="flex flex-col md:inline-flex md:flex-row md:items-center md:space-x-8 space-y-2 md:space-y-0 text-sm text-perry md:text-gray-500">
+              <div className="flex flex-col md:inline-flex md:flex-row md:items-center md:space-x-8 space-y-2 md:space-y-0 text-sm text-white">
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
@@ -238,9 +235,7 @@ export function LoanCalculatorSection({
                 </motion.div>
               </div>
             </motion.div>
-          </div>
-        </section>
-      </Gradient>
-    </Gradient>
-  )
-} 
+                     </div>
+         </section>
+    )
+  } 

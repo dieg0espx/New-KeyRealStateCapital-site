@@ -174,7 +174,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               <Link href="/contact">
                 <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-light-green hover:bg-perry text-white">
-                  Get Started
+                  Free Consultation
                 </Button>
               </Link>
             </motion.div>
@@ -307,7 +307,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 transition={{ delay: 0.8 }}
               >
                 <Link href="/contact">
-                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Get Started</Button>
+                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Free Consultation</Button>
                 </Link>
               </motion.div>
             </div>

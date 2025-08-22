@@ -82,7 +82,7 @@ export function WhereWeLendSection({
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-light-green/10 to-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <motion.div 
           className="text-center mb-8 sm:mb-12 lg:mb-16"
@@ -91,7 +91,7 @@ export function WhereWeLendSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">{title}</h2>
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-4 sm:mb-6">{title}</h2>
           <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             {description}
           </p>
@@ -247,13 +247,13 @@ export function WhereWeLendSection({
             variants={itemVariants}
           >
             <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">Headquarters</h3>
+                             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-4 sm:mb-6">Headquarters</h3>
               <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto">
                 Strategic locations coast to coast to serve you better
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4">
               <motion.div 
                 className="group"
                 initial={{ opacity: 0, y: 40 }}
@@ -330,6 +330,47 @@ export function WhereWeLendSection({
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
                         <span className="text-gray-500">Eastern Time Zone</span>
                         <span className="text-perry font-medium">Regional Hub</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+              
+              <motion.div 
+                className="group"
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                whileHover={{ 
+                  y: -3,
+                  transition: { duration: 0.4 }
+                }}
+              >
+                <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="text-light-green mb-4">
+                      <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
+                    </div>
+                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Miami, FL</h4>
+                    <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm sm:text-base">Lorem ipsum dolor sit amet</p>
+                    <div className="space-y-2 text-xs sm:text-sm text-gray-500">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-light-green mr-3"></div>
+                        <span>Lorem ipsum consectetur adipiscing</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-light-green mr-3"></div>
+                        <span>Sed do eiusmod tempor incididunt</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-light-green mr-3"></div>
+                        <span>Ut labore et dolore magna aliqua</span>
+                      </div>
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
+                        <span className="text-gray-500">Eastern Time Zone</span>
+                        <span className="text-light-green font-medium">Lorem ipsum</span>
                       </div>
                     </div>
                   </CardContent>

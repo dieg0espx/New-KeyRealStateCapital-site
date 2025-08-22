@@ -46,7 +46,7 @@ export default function LoanHeroSection({
     <div className="mb-12">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h1>
+          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h1>
           <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
             {description}
           </p>
@@ -87,16 +87,16 @@ export default function LoanHeroSection({
           
           {badges.map((badge, index) => {
             const positionClasses = {
-              'top-left': '-top-6 -left-6',
-              'top-right': '-top-6 -right-6',
-              'bottom-left': '-bottom-6 -left-6',
-              'bottom-right': '-bottom-6 -right-6'
+              'top-left': 'top-2 left-2 md:-top-6 md:-left-6',
+              'top-right': 'top-2 right-2 md:-top-6 md:-right-6',
+              'bottom-left': 'bottom-2 left-2 md:-bottom-6 md:-left-6',
+              'bottom-right': 'bottom-2 right-2 md:-bottom-6 md:-right-6'
             }
             
             return (
               <div 
                 key={index}
-                className={`absolute ${positionClasses[badge.position]} bg-white shadow-md p-4 max-w-[250px] z-10`}
+                className={`absolute ${positionClasses[badge.position]} bg-white shadow-md p-3 md:p-4 max-w-[200px] md:max-w-[250px] z-10`}
               >
                 <div className="flex items-center space-x-4">
                   <div className="bg-light-green rounded-full p-2">

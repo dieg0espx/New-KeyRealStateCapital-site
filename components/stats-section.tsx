@@ -65,7 +65,7 @@ export function StatsSection({ stats = defaultStats }: StatsSectionProps) {
               }}
             >
                               <motion.div 
-                  className="text-4xl md:text-5xl font-light text-light-green mb-2"
+                  className="text-4xl md:text-5xl font-medium text-light-green mb-2"
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4 }}

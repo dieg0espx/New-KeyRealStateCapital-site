@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, ChevronLeft, ChevronRight } from "lucide-react"
+import { Star } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -121,39 +121,55 @@ export function TestimonialsSection({
 
   const sliderSettings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     pauseOnHover: true,
+    swipe: true,
+    touchMove: true,
+    draggable: true,
+    swipeToSlide: true,
+    useCSS: true,
+    useTransform: true,
+    cssEase: 'ease-out',
+    touchThreshold: 10,
+    beforeChange: (current: number, next: number) => {
+      console.log('Sliding from', current, 'to', next)
+    },
+    afterChange: (current: number) => {
+      console.log('Now on slide', current)
+    },
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          swipe: true,
+          touchMove: true,
+          draggable: true,
+          swipeToSlide: true
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          swipe: true,
+          touchMove: true,
+          draggable: true,
+          swipeToSlide: true
         }
       }
     ]
   }
 
-  const next = () => {
-    sliderRef.current?.slickNext()
-  }
 
-  const previous = () => {
-    sliderRef.current?.slickPrev()
-  }
 
   return (
     <section className="py-24 bg-gray-50/30">
@@ -165,8 +181,9 @@ export function TestimonialsSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
-          <p className="text-xl text-gray-600 font-light">{description}</p>
+          <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
+          <p className="text-xl text-gray-600 font-light mb-2">{description}</p>
+                     <p className="text-sm text-gray-500">* Click and drag to see more</p>
         </motion.div>
 
         <motion.div 
@@ -177,10 +194,20 @@ export function TestimonialsSection({
         >
        
 
-          {/* Carousel */}
-          <div className="testimonials-carousel">
-            <Slider ref={sliderRef} {...sliderSettings}>
-              {testimonials.map((testimonial, index) => (
+                     {/* Carousel */}
+                       <div 
+              className="testimonials-carousel relative"
+              style={{ touchAction: 'pan-x' }}
+            >
+              <Slider 
+                ref={sliderRef} 
+                {...sliderSettings}
+                onSwipe={(direction) => console.log('Swiped', direction)}
+                onTouchStart={() => console.log('Touch started')}
+                onTouchEnd={() => console.log('Touch ended')}
+                onTouchMove={() => console.log('Touch moving')}
+              >
+               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={index}
                   variants={cardVariants}
@@ -216,9 +243,9 @@ export function TestimonialsSection({
                     </CardContent>
                   </Card>
                 </motion.div>
-              ))}
-            </Slider>
-          </div>
+                             ))}
+                           </Slider>
+            </div>
         </motion.div>
       </div>
     </section>

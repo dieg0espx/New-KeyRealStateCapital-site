@@ -101,15 +101,15 @@ export default function LoanProductsPage() {
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-sky-50 to-white">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-light text-gray-900 mb-6">Loan Products</h1>
+          <h1 className="text-4xl md:text-6xl font-medium text-gray-900 mb-6">Loan Products</h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto mb-8">
             Comprehensive financing solutions tailored to your real estate investment strategy and goals
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply">
-              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4">
-                Get Pre-Qualified
-              </Button>
+                              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4">
+                  Free Consultation
+                </Button>
             </Link>
             <Button
               onClick={openModal}
@@ -141,7 +141,7 @@ export default function LoanProductsPage() {
                   <div className="text-light-green mb-6 group-hover:scale-110 transition-transform duration-300">
                     {product.icon}
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{product.title}</h3>
+                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed mb-6">{product.description}</p>
 
                   {/* Loan Details */}
@@ -186,7 +186,7 @@ export default function LoanProductsPage() {
       <section className="py-24 bg-gray-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Why Choose Our Loans</h2>
+            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Why Choose Our Loans</h2>
             <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
               We provide more than just financing - we're your partner in real estate success
             </p>

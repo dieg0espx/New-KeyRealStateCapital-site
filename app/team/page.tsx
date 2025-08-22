@@ -44,7 +44,7 @@ export default function TeamPage() {
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 animate-fade-in-up-delay-1">
+          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6 animate-fade-in-up-delay-1">
             Our Team
           </h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto animate-fade-in-up-delay-2">
@@ -70,7 +70,7 @@ export default function TeamPage() {
                 </div>
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-light-green transition-colors duration-300">
+                    <h3 className="text-xl font-medium text-gray-900 mb-2">
                       {member.name}
                     </h3>
                     <p className="text-light-green font-medium mb-4">{member.title}</p>
@@ -91,7 +91,7 @@ export default function TeamPage() {
                       <Link href="/contact">
                         <Button size="sm" className="bg-light-green hover:bg-perry text-white font-light flex-1">
                           <Calendar className="h-4 w-4 mr-2" />
-                          Book Call
+                          Free Consultation
                         </Button>
                       </Link>
                     </div>

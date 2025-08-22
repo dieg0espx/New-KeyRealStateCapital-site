@@ -79,7 +79,7 @@ export function WhyChooseSection({
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gradient-to-b from-light-green/10 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -88,7 +88,7 @@ export function WhyChooseSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{title}</h2>
+                     <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
             {description}
           </p>
@@ -119,7 +119,7 @@ export function WhyChooseSection({
                 >
                 {feature.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                             <h3 className="text-xl font-medium text-gray-900 mb-3">{feature.title}</h3>
               <p className="text-gray-600 font-light leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
