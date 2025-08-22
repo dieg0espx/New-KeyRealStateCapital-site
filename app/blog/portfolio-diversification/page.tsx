@@ -41,10 +41,10 @@ export default function PortfolioDiversificationPage() {
 
           <div className="flex items-center justify-between">
             <div className="flex space-x-2">
-              <span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-light-green/10 text-light-green px-3 py-1 rounded-full text-sm font-medium">
                 Portfolio Management
               </span>
-              <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-light-green/10 text-light-green px-3 py-1 rounded-full text-sm font-medium">
                 Investment Strategy
               </span>
             </div>
@@ -58,11 +58,11 @@ export default function PortfolioDiversificationPage() {
         {/* Featured Image */}
         <div className="mb-12">
           <Image
-            src="/placeholder.svg?height=400&width=800&text=Real+Estate+Portfolio"
+            src="/homes/3.jpg"
             alt="Building a Diversified Real Estate Portfolio"
             width={800}
             height={400}
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg object-cover"
           />
         </div>
 
@@ -81,10 +81,10 @@ export default function PortfolioDiversificationPage() {
             strategies, you can reduce overall portfolio risk while maintaining strong return potential.
           </p>
 
-          <Card className="my-8 border-l-4 border-l-light-green bg-perry/50">
+          <Card className="my-8 border-l-4 border-l-light-green bg-perry">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-gray-900 mb-2">Key Benefit</h3>
-              <p className="text-gray-700 font-light">
+              <h3 className="font-semibold text-white mb-2">Key Benefit</h3>
+              <p className="text-white font-light">
                 A diversified portfolio can continue generating income even if one segment underperforms, providing more
                 stable and predictable returns over time.
               </p>
