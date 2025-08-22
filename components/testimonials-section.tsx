@@ -247,6 +247,9 @@ export function TestimonialsSection({
                            </Slider>
             </div>
         </motion.div>
+        <div className="text-center mt-2 sm:mt-4 text-xs sm:text-sm text-gray-500 font-light px-4">
+              * Swipe to see more
+            </div>
       </div>
     </section>
   )

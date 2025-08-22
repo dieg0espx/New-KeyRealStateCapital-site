@@ -23,7 +23,7 @@ export default function HomePage() {
     >
       <HeroSection />
       <LoanProductsSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <WhyChooseSection />
       <TestimonialsSection />
       <WhereWeLendSection />
