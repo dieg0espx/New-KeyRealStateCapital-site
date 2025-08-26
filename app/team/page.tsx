@@ -7,35 +7,75 @@ import Link from "next/link"
 export default function TeamPage() {
   const teamMembers = [
     {
-      name: "John Smith",
-      title: "CEO & Founder",
-      bio: "With over 15 years in real estate finance, John founded Key Real Estate Capital to provide sophisticated lending solutions for investors nationwide.",
+      name: "Keyan Chang",
+      title: "Founder & CEO",
+      bio: "With over 15 years in real estate finance, Keyan founded Key Real Estate Capital to provide sophisticated lending solutions for investors nationwide.",
       phone: "(555) 123-4567",
-      email: "john@keyrec.com",
+      email: "keyan@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
-      name: "Sarah Johnson",
-      title: "VP of Lending",
-      bio: "Sarah brings 12 years of commercial lending experience, specializing in fix-and-flip and rental property financing.",
+      name: "Lindsay Milano",
+      title: "President",
+      bio: "Lindsay brings 12 years of commercial lending experience, specializing in fix-and-flip and rental property financing.",
       phone: "(555) 123-4568",
-      email: "sarah@keyrec.com",
+      email: "lindsay@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
-      name: "Michael Chen",
-      title: "Senior Loan Officer",
-      bio: "Michael specializes in construction and development loans, with extensive experience in project financing and risk assessment.",
+      name: "Daniel Frank",
+      title: "Senior Vice President",
+      bio: "Daniel specializes in construction and development loans, with extensive experience in project financing and risk assessment.",
       phone: "(555) 123-4569",
-      email: "michael@keyrec.com",
+      email: "daniel@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
-      name: "Lisa Rodriguez",
-      title: "Portfolio Manager",
-      bio: "Lisa manages our rental portfolio financing division, helping investors scale their rental property portfolios efficiently.",
+      name: "Michelle Gusov",
+      title: "Lead Processor",
+      bio: "Michelle manages our loan processing division, ensuring smooth and efficient loan closings for all our clients.",
       phone: "(555) 123-4570",
-      email: "lisa@keyrec.com",
+      email: "michelle@keyrec.com",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Tommy Donuts",
+      title: "Chief Technology Officer",
+      bio: "Tommy leads our technology initiatives, ensuring our digital platforms provide seamless experiences for our clients.",
+      phone: "(555) 123-4571",
+      email: "tommy@keyrec.com",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Bailey Girouard",
+      title: "Senior Account Executive",
+      bio: "Bailey specializes in helping investors scale their portfolios with creative financing solutions and personalized service.",
+      phone: "(555) 123-4572",
+      email: "bailey@keyrec.com",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Sebastian Muendo",
+      title: "Account Executive",
+      bio: "Sebastian works closely with investors to find the perfect financing solutions for their real estate projects.",
+      phone: "(555) 123-4573",
+      email: "sebastian@keyrec.com",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Hazel Wilder",
+      title: "Account Executive",
+      bio: "Hazel provides expert guidance to investors, helping them navigate the lending process with confidence.",
+      phone: "(555) 123-4574",
+      email: "hazel@keyrec.com",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Frank Estrada",
+      title: "Account Executive",
+      bio: "Frank brings years of experience in real estate finance, offering tailored solutions for investors at every level.",
+      phone: "(555) 123-4575",
+      email: "frank@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
   ]
@@ -48,7 +88,7 @@ export default function TeamPage() {
             Our Team
           </h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto animate-fade-in-up-delay-2">
-            Meet the experienced professionals dedicated to your real estate financing success
+            Meet the experienced professionals dedicated to your real estate success
           </p>
         </div>
 
@@ -91,7 +131,7 @@ export default function TeamPage() {
                       <Link href="/contact">
                         <Button size="sm" className="bg-light-green hover:bg-perry text-white font-light flex-1">
                           <Calendar className="h-4 w-4 mr-2" />
-                          Free Consultation
+                          Book a Call
                         </Button>
                       </Link>
                     </div>

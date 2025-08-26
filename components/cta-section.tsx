@@ -16,9 +16,9 @@ interface CTASectionProps {
 }
 
 export function CTASection({
-  title = "Ready to Get Started?",
-  description = "Contact us today to learn more about our 0% business line of credit and how it can help accelerate your business growth.",
-  primaryButtonText = "Inquire Now",
+  title = "Ready to build together?",
+  description = "Let's discuss your next project.",
+  primaryButtonText = "Free Consultation",
   primaryButtonLink = "/contact",
   secondaryButtonText = "View Loan Products",
   secondaryButtonLink = "/loan-products",

@@ -218,6 +218,39 @@ export function WhereWeLendSection({
                       )}
                     </div>
                   )}
+
+                  {/* San Diego HQ Marker */}
+                  <div 
+                    className="absolute z-20"
+                    style={{
+                      left: '15%',
+                      top: '65%'
+                    }}
+                  >
+                    <div className="relative">
+                      <div className="w-3 h-3 bg-green-700 rounded-full border border-white shadow-md"></div>
+                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-90">
+                        San Diego
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Delray Beach HQ Marker */}
+                  <div 
+                    className="absolute z-20"
+                    style={{
+                      left: '75%',
+                      top: '75%'
+                    }}
+                  >
+                    <div className="relative">
+                      <div className="w-3 h-3 bg-green-700 rounded-full border border-white shadow-md"></div>
+                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-90">
+                        Delray Beach
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -233,6 +266,10 @@ export function WhereWeLendSection({
                   <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gray-300"></div>
                   <span className="text-gray-700">Not Available (ND, SD)</span>
                 </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-700 rounded-full border border-white shadow-md"></div>
+                  <span className="text-gray-700">Headquarters</span>
+                </div>
               </div>
             </div>
 
@@ -241,102 +278,7 @@ export function WhereWeLendSection({
             </div>
           </motion.div>
 
-          {/* Headquarters Section */}
-          <motion.div 
-            className="mt-12 sm:mt-16"
-            variants={itemVariants}
-          >
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
-                             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-4 sm:mb-6">Headquarters</h3>
-              <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto">
-                Strategic locations coast to coast to serve you better
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4">
-              <motion.div 
-                className="group"
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                whileHover={{ 
-                  y: -3,
-                  transition: { duration: 0.4 }
-                }}
-              >
-                <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
-                  <CardContent className="p-6 sm:p-8">
-                    <div className="text-light-green mb-4">
-                      <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">San Diego, CA</h4>
-                    <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm sm:text-base">Corporate Headquarters</p>
-                    <div className="space-y-2 text-xs sm:text-sm text-gray-500">
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-light-green mr-3"></div>
-                        <span>Main Operations Center</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-light-green mr-3"></div>
-                        <span>Underwriting & Processing</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-light-green mr-3"></div>
-                        <span>Customer Support Hub</span>
-                      </div>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-gray-100">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
-                        <span className="text-gray-500">Pacific Time Zone</span>
-                        <span className="text-light-green font-medium">Primary Office</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-              
-              <motion.div 
-                className="group"
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                whileHover={{ 
-                  y: -3,
-                  transition: { duration: 0.4 }
-                }}
-              >
-                <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
-                  <CardContent className="p-6 sm:p-8">
-                    <div className="text-perry mb-4">
-                      <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Delray Beach, FL</h4>
-                    <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm sm:text-base">East Coast Office</p>
-                    <div className="space-y-2 text-xs sm:text-sm text-gray-500">
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-perry mr-3"></div>
-                        <span>Regional Operations</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-perry mr-3"></div>
-                        <span>Client Relations</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-perry mr-3"></div>
-                        <span>Market Development</span>
-                      </div>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-gray-100">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-1 sm:space-y-0">
-                        <span className="text-gray-500">Eastern Time Zone</span>
-                        <span className="text-perry font-medium">Regional Hub</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

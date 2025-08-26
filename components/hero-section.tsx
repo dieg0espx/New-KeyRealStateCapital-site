@@ -21,10 +21,10 @@ export function HeroSection({
   title = "Unlock Freedom",
   subtitle = "",
   description = "Flexible, creative lending to help you scale.",
-  primaryButtonText = "Free Consultation",
+  primaryButtonText = "Explore our loan programs",
   primaryButtonLink = "/loan-products",
-  secondaryButtonText = "(555) 123-4567",
-  secondaryButtonLink = "tel:5551234567",
+  secondaryButtonText = "Contact us",
+  secondaryButtonLink = "/contact",
   videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4"
 }: HeroSectionProps) {
   const scrollToNextSection = () => {
@@ -146,9 +146,8 @@ export function HeroSection({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center gap-2"
+                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                 >
-                  <Phone className="h-4 w-4" />
                   {secondaryButtonText}
                 </Button>
               </Link>

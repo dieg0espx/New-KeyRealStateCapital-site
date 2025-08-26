@@ -183,7 +183,6 @@ export function TestimonialsSection({
         >
           <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h2>
           <p className="text-xl text-gray-600 font-light mb-2">{description}</p>
-                     <p className="text-sm text-gray-500">* Click and drag to see more</p>
         </motion.div>
 
         <motion.div 
@@ -248,7 +247,7 @@ export function TestimonialsSection({
             </div>
         </motion.div>
         <div className="text-center mt-2 sm:mt-4 text-xs sm:text-sm text-gray-500 font-light px-4">
-              * Swipe to see more
+              * Click and drag to see more
             </div>
       </div>
     </section>

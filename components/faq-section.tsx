@@ -26,7 +26,7 @@ export function FAQSection() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
-                Still have questions about our lending options?
+                You've got questions – we've got answers.
               </h2>
               <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
                 Get answers to common questions about our loan programs and application process.
@@ -54,9 +54,37 @@ export function FAQSection() {
                   </button>
                   {openItems.includes(index) && (
                     <div className="px-6 pb-4">
-                      <p className="text-gray-600 font-light leading-relaxed">
-                        {item.answer}
-                      </p>
+                      <div className="text-gray-600 font-light leading-relaxed">
+                        {(() => {
+                          const lines = item.answer.split('\n');
+                          const bulletIndex = lines.findIndex(line => line.trim().startsWith('•'));
+                          
+                          if (bulletIndex === -1) {
+                            // No bullet points, render as regular text
+                            return <p>{item.answer}</p>;
+                          }
+                          
+                          // Split into intro text and bullet points
+                          const introText = lines.slice(0, bulletIndex).join('\n');
+                          const bulletLines = lines.slice(bulletIndex);
+                          const listItems = bulletLines
+                            .filter(line => line.trim().startsWith('•'))
+                            .map(line => line.trim().substring(1).trim());
+                          
+                          return (
+                            <>
+                              {introText && <p className="mb-4">{introText}</p>}
+                              <ul className="list-disc list-inside space-y-2">
+                                {listItems.map((listItem, itemIndex) => (
+                                  <li key={itemIndex} className="text-gray-600 font-light">
+                                    {listItem}
+                                  </li>
+                                ))}
+                              </ul>
+                            </>
+                          );
+                        })()}
+                      </div>
                     </div>
                   )}
                 </CardContent>
@@ -69,15 +97,10 @@ export function FAQSection() {
                 <p className="text-gray-600 font-light mb-6">
                   We're here to help.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact">
+                <div className="flex justify-center">
+                  <Link href="/apply">
                     <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                      Free Consultation
-                    </Button>
-                  </Link>
-                  <Link href="/faq">
-                    <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 font-light px-8 py-3">
-                      View All FAQs
+                      Apply Now
                     </Button>
                   </Link>
                 </div>

@@ -70,7 +70,35 @@ export default function FAQPage() {
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-600 font-light leading-relaxed pb-6">
-                      {faq.answer}
+                      {(() => {
+                        const lines = faq.answer.split('\n');
+                        const bulletIndex = lines.findIndex(line => line.trim().startsWith('•'));
+                        
+                        if (bulletIndex === -1) {
+                          // No bullet points, render as regular text
+                          return <p>{faq.answer}</p>;
+                        }
+                        
+                        // Split into intro text and bullet points
+                        const introText = lines.slice(0, bulletIndex).join('\n');
+                        const bulletLines = lines.slice(bulletIndex);
+                        const listItems = bulletLines
+                          .filter(line => line.trim().startsWith('•'))
+                          .map(line => line.trim().substring(1).trim());
+                        
+                        return (
+                          <>
+                            {introText && <p className="mb-4">{introText}</p>}
+                            <ul className="list-disc list-inside space-y-2">
+                              {listItems.map((listItem, itemIndex) => (
+                                <li key={itemIndex} className="text-gray-600 font-light">
+                                  {listItem}
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        );
+                      })()}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
