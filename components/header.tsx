@@ -107,7 +107,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                     <div key={product.href}>
                       <Link
                         href={product.href}
-                        className="block px-4 py-3 text-gray-700 hover:text-light-green hover:bg-perry transition-colors font-light"
+                        className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-perry transition-colors font-light"
                       >
                         {product.name}
                       </Link>

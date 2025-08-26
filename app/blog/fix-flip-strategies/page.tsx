@@ -40,10 +40,10 @@ export default function FixFlipStrategiesPage() {
 
           <div className="flex items-center justify-between">
             <div className="flex space-x-2">
-              <span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-light-green/10 text-light-green px-3 py-1 rounded-full text-sm font-medium">
                 Investment Strategy
               </span>
-              <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Fix-and-Flip</span>
+              <span className="bg-light-green/10 text-light-green px-3 py-1 rounded-full text-sm font-medium">Fix-and-Flip</span>
             </div>
             <Button variant="outline" size="sm" className="border-light-green text-light-green hover:bg-perry/50 bg-transparent">
               <Share2 className="h-4 w-4 mr-2" />
@@ -55,11 +55,11 @@ export default function FixFlipStrategiesPage() {
         {/* Featured Image */}
         <div className="mb-12">
           <Image
-            src="/placeholder.svg?height=400&width=800&text=Fix-and-Flip+Renovation"
+            src="/homes/2.jpg"
             alt="Fix-and-Flip Success Strategies"
             width={800}
             height={400}
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg shadow-lg object-cover"
           />
         </div>
 
@@ -77,12 +77,12 @@ export default function FixFlipStrategiesPage() {
             margin for unexpected expenses and ensures adequate profit potential.
           </p>
 
-          <Card className="my-8 border-l-4 border-l-light-green bg-perry/50">
+          <Card className="my-8 border-l-4 border-l-light-green bg-perry">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-gray-900 mb-2">Example Calculation</h3>
-              <p className="text-gray-700 font-light mb-2">ARV: $300,000</p>
-              <p className="text-gray-700 font-light mb-2">Renovation costs: $50,000</p>
-              <p className="text-gray-700 font-light mb-2">
+              <h3 className="font-semibold text-white mb-2">Example Calculation</h3>
+              <p className="text-white font-light mb-2">ARV: $300,000</p>
+              <p className="text-white font-light mb-2">Renovation costs: $50,000</p>
+              <p className="text-white font-light mb-2">
                 Maximum purchase price: ($300,000 × 0.70) - $50,000 = $160,000
               </p>
             </CardContent>
