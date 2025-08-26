@@ -56,7 +56,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <motion.div

@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/hero-section"
 import { LoanProductsSection } from "@/components/loan-products-section"
 import { StatsSection } from "@/components/stats-section"
 import { WhyChooseSection } from "@/components/why-choose-section"
+import { BusinessLineCreditSection } from "@/components/business-line-credit-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { WhereWeLendSection } from "@/components/where-we-lend-section"
 import { LoanCalculatorSection } from "@/components/loan-calculator-section"
@@ -16,7 +17,7 @@ import { ContactPreviewSection } from "@/components/contact-preview-section"
 export default function HomePage() {
   return (
     <motion.div 
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-white overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -28,6 +29,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <WhereWeLendSection />
       <LoanCalculatorSection />
+      <BusinessLineCreditSection />
       <CTASection />
       <FAQSection />
       <BlogPreviewSection limit={3} featured={true} />

@@ -106,7 +106,7 @@ export function Footer() {
 
       {/* Main Footer */}
       <div className="py-16">
-        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="md:col-span-2">
@@ -122,28 +122,43 @@ export function Footer() {
               <p className="text-white font-light leading-relaxed mb-2 max-w-md">
                 Unlock Freedom
               </p>
-              <p className="text-white font-light leading-relaxed mb-6 max-w-md">
-                Sophisticated financing solutions for real estate investors nationwide. We empower your success with
-                flexible lending options and expert guidance.
-              </p>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://www.instagram.com/investwithkey/?hl=en" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white transition-colors"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a 
-                  href="https://www.skool.com/investwithkey/about" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white transition-colors"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                </a>
-              </div>
+                             <p className="text-white font-light leading-relaxed mb-6 max-w-md">
+                 Sophisticated financing solutions for real estate investors nationwide. We empower your success with
+                 flexible lending options and expert guidance.
+               </p>
+               
+                               {/* Account Executive Info */}
+                <div className="max-w-xs mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="text-light-green text-sm font-semibold">JD</div>
+                    </div>
+                    <div>
+                      <h5 className="text-white font-medium text-sm">John Doe</h5>
+                      <p className="text-gray-400 text-xs">Account Executive</p>
+                      <p className="text-gray-300 text-xs">(555) 123-4567</p>
+                    </div>
+                  </div>
+                </div>
+               
+               <div className="flex space-x-4">
+                 <a 
+                   href="https://www.instagram.com/investwithkey/?hl=en" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-white hover:text-white transition-colors"
+                 >
+                   <Instagram className="h-5 w-5" />
+                 </a>
+                 <a 
+                   href="https://www.skool.com/investwithkey/about" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-white hover:text-white transition-colors"
+                 >
+                   <ExternalLink className="h-5 w-5" />
+                 </a>
+               </div>
             </div>
 
             {/* Contact Info */}
