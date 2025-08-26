@@ -12,28 +12,28 @@ export interface FAQCategory {
 // Home page FAQ questions (6 most common questions)
 export const homePageFAQ: FAQItem[] = [
   {
-    question: "What types of properties do you finance?",
-    answer: "We finance a wide range of investment properties including single-family homes, multi-family properties (up to 4 units), commercial buildings, mixed-use developments, and land for construction. Our focus is on income-producing properties and fix-and-flip projects across residential and light commercial sectors."
+    question: "What is hard money and how does it help real estate investors?",
+    answer: "Unlike conventional bank loans, a hard money loan is based on the value of the property being used as collateral, not just your financial position. While the rates are typically higher, hard money loans are attractive for real estate investors because they tend to close much faster, provide flexible terms and you can pay them off quickly to offset costs, allowing you to scale your business faster. Here are just a few additional benefits of hard money loans:\n\n• Access to quick capital and fast turn times\n\n• Flexible terms with various repayment schedules and loan durations\n\n• Up to 90% money financed based on the property value and your renovation budget\n\n• The more you work with the same lender, the more benefits you may receive such as reduced origination fee, rate, and more"
   },
   {
-    question: "How quickly can you close a loan?",
-    answer: "Our typical closing timeline is 7-14 days for most loan products. For complex transactions or new construction projects, the timeline may extend to 21-30 days. We pride ourselves on fast, efficient closings and can expedite for qualified borrowers."
+    question: "What types of loans does Key Real Estate Capital offer?",
+    answer: "We offer bridge, fix-and-flip, rental, and new construction loans for the purchase or refinance of real estate investment properties."
   },
   {
-    question: "What are your minimum credit score requirements?",
-    answer: "Generally, we require a minimum credit score of 680 for most loan products. However, we evaluate each application holistically, considering factors like real estate experience, down payment amount, property cash flow, and overall financial strength."
+    question: "What types of properties does Key Real Estate Capital offer financing for?",
+    answer: "We provide financing on many asset classes including:\n\n• Condominiums\n\n• 2-4 Unit\n\n• Single-family\n\n• Multi-family\n\n• Short-term rental (AirBnB)\n\n• Mixed-use\n\n• Commercial"
   },
   {
-    question: "What are your interest rates?",
-    answer: "Interest rates vary by loan type and borrower qualifications: Fix-and-flip loans typically range from 8.5-12%, rental property loans from 6.5-9%, and construction loans from 9-12%. Rates are based on loan amount, borrower experience, property type, and market conditions."
+    question: "Why do real estate investors use hard money loans?",
+    answer: "Investors often use hard money for fast closing, higher leverage and more flexibility. Unlike conventional bank products, a hard money loan is based on the value of the property — not just your financial status. Borrowers use Key Real Estate Capital for these reasons, but also because of our relationship focus and reliability. Here are a few additional perks of using private capital:\n\n• No appraisal, no tax returns, no income verification\n\n• Flexible terms and underwriting guidelines for unique scenarios\n\n• Up to 100% of the purchase price financed on Fix-and-Flip deals\n\n• Up to 85% loan-to-value (LTV) on rental property purchases and rate/term refinances\n\n• Up to 80% cash out on single family 1-4 unit properties\n\n• Reduced closing costs and rates the longer you work with the same lender"
   },
   {
-    question: "Do you offer interest-only payments?",
-    answer: "Yes, most of our loan products offer interest-only payment options, particularly beneficial for fix-and-flip and bridge loans. This helps improve cash flow during the investment period. For rental property loans, we offer both interest-only and fully amortizing payment options."
+    question: "What loan terms and leverage does Key Real Estate Capital offer for fix-and-flip projects?",
+    answer: "We offer extremely competitive terms for fix-and-flip loans, providing high leverage options up to 100% of the purchase price and renovation budget, and up to 75% of the after-repair-value (ARV) — with rates starting at 7.75%. Terms range from 6-24 months, with interest-only payments and no prepayment penalty."
   },
   {
-    question: "What are your maximum loan amounts?",
-    answer: "Our maximum loan amounts vary by product: Fix-and-flip loans up to $2M, rental property loans up to $1.5M, construction loans up to $3M, and commercial loans up to $5M. Larger amounts may be available for experienced investors with strong track records."
+    question: "What loan terms and leverage do you offer on rental DSCR loans?",
+    answer: "For rental properties, we offer 30 year fixed loans with 5 year, 1 year and waived pre-payment penalties. These loans do not show up on personal credit or affect DTI, and our rates are best in class — typically landing only 0.25 - 0.5% above a full-doc conventional bank mortgage."
   }
 ]
 
@@ -44,42 +44,34 @@ export const faqCategories: FAQCategory[] = [
     icon: "Building",
     faqs: [
       {
-        question: "What types of properties do you finance?",
-        answer: "We finance a wide range of investment properties including single-family homes, multi-family properties (up to 4 units), commercial buildings, mixed-use developments, and land for construction. Our focus is on income-producing properties and fix-and-flip projects across residential and light commercial sectors."
+        question: "What is hard money and how does it help real estate investors?",
+        answer: "Unlike conventional bank loans, a hard money loan is based on the value of the property being used as collateral, not just your financial position. While the rates are typically higher, hard money loans are attractive for real estate investors because they tend to close much faster, provide flexible terms and you can pay them off quickly to offset costs, allowing you to scale your business faster. Here are just a few additional benefits of hard money loans:\n\n• Access to quick capital and fast turn times\n\n• Flexible terms with various repayment schedules and loan durations\n\n• Up to 90% money financed based on the property value and your renovation budget\n\n• The more you work with the same lender, the more benefits you may receive such as reduced origination fee, rate, and more"
       },
       {
-        question: "What states do you lend in?",
-        answer: "We currently lend in 15 states across the US, with primary focus on California, Florida, Texas, Arizona, Nevada, and Georgia. Our coverage includes major metropolitan areas and growing markets. Contact us to confirm if we lend in your target market."
+        question: "What types of loans does Key Real Estate Capital offer?",
+        answer: "We offer bridge, fix-and-flip, rental, and new construction loans for the purchase or refinance of real estate investment properties."
       },
       {
-        question: "What are your minimum credit score requirements?",
-        answer: "Generally, we require a minimum credit score of 680 for most loan products. However, we evaluate each application holistically, considering factors like real estate experience, down payment amount, property cash flow, and overall financial strength. We may consider lower scores for experienced investors with strong compensating factors."
+        question: "What types of properties does Key Real Estate Capital offer financing for?",
+        answer: "We provide financing on many asset classes including:\n\n• Condominiums\n\n• 2-4 Unit\n\n• Single-family\n\n• Multi-family\n\n• Short-term rental (AirBnB)\n\n• Mixed-use\n\n• Commercial"
       },
       {
-        question: "Do you require personal guarantees?",
-        answer: "Personal guarantees are typically required for most loan products to ensure alignment of interests. However, the specific terms depend on the loan amount, borrower experience, property type, and overall transaction structure. We can discuss alternatives during the application process."
+        question: "Why do real estate investors use hard money loans?",
+        answer: "Investors often use hard money for fast closing, higher leverage and more flexibility. Unlike conventional bank products, a hard money loan is based on the value of the property — not just your financial status. Borrowers use Key Real Estate Capital for these reasons, but also because of our relationship focus and reliability. Here are a few additional perks of using private capital:\n\n• No appraisal, no tax returns, no income verification\n\n• Flexible terms and underwriting guidelines for unique scenarios\n\n• Up to 100% of the purchase price financed on Fix-and-Flip deals\n\n• Up to 85% loan-to-value (LTV) on rental property purchases and rate/term refinances\n\n• Up to 80% cash out on single family 1-4 unit properties\n\n• Reduced closing costs and rates the longer you work with the same lender"
       }
     ]
   },
   {
-    title: "Loan Products",
-    icon: "Home",
+    title: "Loan Terms & Leverage",
+    icon: "Calculator",
     faqs: [
       {
-        question: "What is the difference between fix-and-flip and rental property loans?",
-        answer: "Fix-and-flip loans are short-term (6-18 months) designed for purchasing, renovating, and quickly selling properties. They typically have higher interest rates but faster approval. Rental property loans are longer-term (5-30 years) for properties you plan to hold and rent out, with lower rates and longer terms."
+        question: "What loan terms and leverage does Key Real Estate Capital offer for fix-and-flip projects?",
+        answer: "We offer extremely competitive terms for fix-and-flip loans, providing high leverage options up to 100% of the purchase price and renovation budget, and up to 75% of the after-repair-value (ARV) — with rates starting at 7.75%. Terms range from 6-24 months, with interest-only payments and no prepayment penalty."
       },
       {
-        question: "Do you offer construction loans?",
-        answer: "Yes, we offer construction loans for ground-up development projects. These loans typically have a 12-18 month term and are structured with interest-only payments during construction, converting to permanent financing upon completion. We require detailed construction budgets and timelines."
-      },
-      {
-        question: "Can you finance properties held in an LLC?",
-        answer: "Yes, we regularly finance properties held in LLCs and other business entities. We'll need to review the entity structure, operating agreements, and may require personal guarantees from the principals. This is common for real estate investors and we have streamlined processes for entity-based lending."
-      },
-      {
-        question: "What are your maximum loan amounts?",
-        answer: "Our maximum loan amounts vary by product: Fix-and-flip loans up to $2M, rental property loans up to $1.5M, construction loans up to $3M, and commercial loans up to $5M. Larger amounts may be available for experienced investors with strong track records."
+        question: "What loan terms and leverage do you offer on rental DSCR loans?",
+        answer: "For rental properties, we offer 30 year fixed loans with 5 year, 1 year and waived pre-payment penalties. These loans do not show up on personal credit or affect DTI, and our rates are best in class — typically landing only 0.25 - 0.5% above a full-doc conventional bank mortgage."
       }
     ]
   },
@@ -88,42 +80,20 @@ export const faqCategories: FAQCategory[] = [
     icon: "CheckCircle",
     faqs: [
       {
-        question: "How quickly can you close a loan?",
-        answer: "Our typical closing timeline is 7-14 days for most loan products. For complex transactions or new construction projects, the timeline may extend to 21-30 days. We pride ourselves on fast, efficient closings and can expedite for qualified borrowers."
+        question: "How quickly can you close?",
+        answer: "On bridge, fix-and-flip and new construction deals, we can close in as fast as 5 days. For rental and DSCR loans, we typically close in 20-25 days."
       },
       {
-        question: "What documentation do you require?",
-        answer: "Standard documentation includes: Personal tax returns (2 years), business tax returns if applicable, bank statements (3 months), property appraisal, renovation budgets (for fix-and-flip), rent rolls (for rental properties), proof of insurance, and entity documents if applicable. Our loan officers will provide a complete checklist tailored to your specific loan type."
+        question: "What states do you lend in?",
+        answer: "We lend nationwide with the exception of North and South Dakota."
       },
       {
-        question: "Do you require appraisals?",
-        answer: "Yes, we require professional appraisals for all properties. For fix-and-flip loans, we require both 'as-is' and 'after-repair' value appraisals. For rental properties, we typically require a standard appraisal. We work with approved appraisers to ensure accurate valuations."
+        question: "Will I qualify for a Key Real Estate Capital loan?",
+        answer: "The first step is to apply here. One of our experienced account executives will reach out to educate you, discuss terms and help provide the best loan option for your needs."
       },
       {
-        question: "What are your down payment requirements?",
-        answer: "Down payment requirements vary by loan type: Fix-and-flip loans typically require 20-25% down, rental property loans require 25-30% down, and construction loans require 30-35% down. Lower down payments may be available for experienced investors with strong track records."
-      }
-    ]
-  },
-  {
-    title: "Terms & Payments",
-    icon: "Calculator",
-    faqs: [
-      {
-        question: "Do you offer interest-only payments?",
-        answer: "Yes, most of our loan products offer interest-only payment options, particularly beneficial for fix-and-flip and bridge loans. This helps improve cash flow during the investment period. For rental property loans, we offer both interest-only and fully amortizing payment options."
-      },
-      {
-        question: "What are your interest rates?",
-        answer: "Interest rates vary by loan type and borrower qualifications: Fix-and-flip loans typically range from 8.5-12%, rental property loans from 6.5-9%, and construction loans from 9-12%. Rates are based on loan amount, borrower experience, property type, and market conditions."
-      },
-      {
-        question: "Are there prepayment penalties?",
-        answer: "Our loans typically have no prepayment penalties, allowing you to pay off the loan early without additional costs. This is especially beneficial for fix-and-flip investors who may sell properties quickly. Some construction loans may have minimal prepayment penalties during the first 6 months."
-      },
-      {
-        question: "How do you handle loan servicing?",
-        answer: "We service our own loans, providing direct communication and flexible payment options. You can make payments online, by phone, or by mail. We offer automatic payment options and can accommodate special payment arrangements when needed."
+        question: "Can I get pre-approved?",
+        answer: "Absolutely. Fill out our quick application here or give us a call at 111-111-1111."
       }
     ]
   }

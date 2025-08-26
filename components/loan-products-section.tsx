@@ -23,7 +23,7 @@ interface LoanProductsSectionProps {
 const defaultProducts: LoanProduct[] = [
   {
     icon: <Hammer className="h-8 w-8" />,
-    title: "Bridge | Fix & Flip",
+    title: "Fix & Flip",
     description: "Up to 100% leverage. Competitive terms and fast closings.",
     link: "/loan-products/fix-and-flip"
   },
@@ -41,20 +41,38 @@ const defaultProducts: LoanProduct[] = [
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,
-    title: "Multi-Family | Commercial",
+    title: "Multi-Family",
     description: "Stabilized term, value add, ground up – we've got you covered.",
     link: "/loan-products/rental-portfolio"
   },
   {
     icon: <MapPin className="h-8 w-8" />,
+    title: "Bridge",
+    description: "Quick, temporary financing to get you to the next step.",
+    link: "/loan-products/stabilized-bridge"
+  },
+  {
+    icon: <Building className="h-8 w-8" />,
+    title: "Commercial | Mixed-Use",
+    description: "Creative financing for experienced investors in all asset types.",
+    link: "/loan-products/commercial"
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    title: "2nd Position Cash-out",
+    description: "Keep your current low-rate mortgage in place and liquidate some equity.",
+    link: "/loan-products/stabilized-bridge"
+  },
+  {
+    icon: <Home className="h-8 w-8" />,
     title: "Conventional | Primary Loans",
-    description: "Keyan copy",
+    description: "Get the best rate on the purchase or refinance of your primary residence.",
     link: "/loan-products/stabilized-bridge"
   },
   {
     icon: <Building className="h-8 w-8" />,
     title: "0% Interest Business Funding",
-    description: "Keyan copy",
+    description: "Good credit, but short on capital? We can help you there.",
     link: "/loan-products/commercial"
   }
 ]

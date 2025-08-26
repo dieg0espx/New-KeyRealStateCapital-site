@@ -18,7 +18,7 @@ interface CTASectionProps {
 export function CTASection({
   title = "Ready to build together?",
   description = "Let's discuss your next project.",
-  primaryButtonText = "Get Free Consultation",
+  primaryButtonText = "Free Consultation",
   primaryButtonLink = "/contact",
   secondaryButtonText = "View Loan Products",
   secondaryButtonLink = "/loan-products",

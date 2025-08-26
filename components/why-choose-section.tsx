@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, Star, Phone, Building } from "lucide-react"
+import { TrendingUp, Star, Phone, Building, Lightbulb, Handshake, Wind } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface Feature {
@@ -18,40 +18,30 @@ interface WhyChooseSectionProps {
 
 const defaultFeatures: Feature[] = [
   {
-    icon: <TrendingUp className="h-8 w-8" />,
-    title: "Compassionate Lending",
-    description: "Work with a capital partner who wants to see you win."
-  },
-  {
-    icon: <Star className="h-8 w-8" />,
-    title: "Competitive Terms",
-    description: "Make the most out of your investments."
-  },
-  {
-    icon: <Phone className="h-8 w-8" />,
+    icon: <Lightbulb className="h-8 w-8" />,
     title: "Creative Solutions",
     description: "Flexible underwriting to get your deals across the finish line."
   },
   {
-    icon: <Building className="h-8 w-8" />,
+    icon: <Handshake className="h-8 w-8" />,
+    title: "Compassionate Lending",
+    description: "Work with a capital partner who wants to see you win."
+  },
+  {
+    icon: <Wind className="h-8 w-8" />,
     title: "Streamlined Process",
     description: "We take the headache and hassle out of the equation."
   },
   {
-    icon: <TrendingUp className="h-8 w-8" />,
-    title: "Dedicated Support",
-    description: "Leverage our team of experts to make your life easier."
-  },
-  {
     icon: <Star className="h-8 w-8" />,
     title: "Fast Closing",
-    description: "In days, not weeks – we'll get it done."
+    description: "In as little as 3 days - we'll get it done."
   }
 ]
 
 export function WhyChooseSection({
   title = "Why Choose Key",
-  description = "Our mission is to provide sophisticated, reliable financing solutions that empower your real estate success",
+  description = "Low rates, good communication and follow-through - We're here for the long-haul.",
   features = defaultFeatures
 }: WhyChooseSectionProps) {
   const { ref, isInView } = useScrollAnimation()
