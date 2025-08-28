@@ -235,7 +235,7 @@ export function Footer() {
                   href="/loan-products/fix-and-flip"
                   className="block text-white hover:text-white transition-colors font-light"
                 >
-                  Fix and Flip
+                  Fix & Flip
                 </Link>
                 <Link
                   href="/loan-products/single-rental"
@@ -244,7 +244,7 @@ export function Footer() {
                   DSCR Rental
                 </Link>
                 <Link
-                  href="/loan-products/fix-and-flip"
+                  href="/loan-products/stabilized-bridge"
                   className="block text-white hover:text-white transition-colors font-light"
                 >
                   Bridge

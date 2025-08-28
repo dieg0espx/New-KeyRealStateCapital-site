@@ -21,8 +21,8 @@ export default function FixAndFlipPage() {
         </Link>
 
         <LoanHeroSection
-          title="Fix and Flip Loans"
-          description="Fix and Flip loans that move as fast as you do. Get Maximum Leverage with Minimal Money Down."
+          title="Fix & Flip Loans"
+          description="Fix & Flip loans that move as fast as you do. Get Maximum Leverage with Minimal Money Down."
           image="/loan-products/fixAndFlip.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -82,12 +82,12 @@ export default function FixAndFlipPage() {
                   <p className="text-sm text-gray-600">Interest only, no prepayment penalty</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <DollarSign className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Loans from $50K - $10M</p>
-                </div>
-              </div>
+                             <div className="flex items-center space-x-3">
+                 <DollarSign className="h-6 w-6 text-light-green" />
+                 <div>
+                   <p className="font-semibold text-gray-900">Loans from $75K - $10M</p>
+                 </div>
+               </div>
               <div className="flex items-center space-x-3">
                 <TrendingUp className="h-6 w-6 text-light-green" />
                 <div>
@@ -105,27 +105,30 @@ export default function FixAndFlipPage() {
         </Card>
 
         {/* Additional Perks */}
-        <Card className="mb-12 border-0 shadow-lg bg-gray-50">
+        <Card className="mb-12 border-0 shadow-lg bg-gradient-to-r from-light-green/5 to-perry/5">
           <CardContent className="p-8">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Additional Perks</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="flex items-center space-x-3">
-                <Shield className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">No up front fees</p>
+            <h2 className="text-2xl font-medium text-gray-900 mb-8 text-center">Additional Perks</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center group">
+                <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="h-8 w-8 text-light-green" />
                 </div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">No Up Front Fees</h3>
+                <p className="text-gray-600 font-light text-sm">Start your project without any upfront costs or hidden charges</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <FileText className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">No appraisal</p>
+              <div className="text-center group">
+                <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="h-8 w-8 text-light-green" />
                 </div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">No Appraisal</h3>
+                <p className="text-gray-600 font-light text-sm">Skip the traditional appraisal process and move faster</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <Users className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">No income verification</p>
+              <div className="text-center group">
+                <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="h-8 w-8 text-light-green" />
                 </div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">No Income Verification</h3>
+                <p className="text-gray-600 font-light text-sm">Focus on the property value, not personal income requirements</p>
               </div>
             </div>
           </CardContent>
@@ -135,11 +138,11 @@ export default function FixAndFlipPage() {
         <LoanParameterCards
           columns={4}
           parameters={[
-            {
-              icon: DollarSign,
-              value: "$50K - $10M",
-              label: "Loan Amount"
-            },
+                         {
+               icon: DollarSign,
+               value: "$75K - $10M",
+               label: "Loan Amount"
+             },
             {
               icon: Calendar,
               value: "6-24 Months",
@@ -165,16 +168,15 @@ export default function FixAndFlipPage() {
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
-                  {[
-                    "Rates as low as 8.9%",
-                    "Up to 95% of purchase price",
-                    "6, 12, 18 + 24 month terms",
-                    "Interest only, no prepayment penalty",
-                    "Loans from $50K - $10M",
-                    "Up to 75% of after-repair value",
-                    "100% of rehab covered",
-                    "No up front fees",
-                  ].map((feature, index) => (
+                                     {[
+                     "Rates as low as 8.9%",
+                     "Up to 95% of purchase price",
+                     "100% of rehab covered",
+                     "6, 12, 18 + 24 month terms",
+                     "Interest only, no prepayment penalty",
+                     "Up to 75% of after-repair value",
+                     "Easy, streamlined photo rehab draws",
+                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       {feature}
@@ -184,17 +186,15 @@ export default function FixAndFlipPage() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Requirements</h3>
-                <ul className="space-y-3">
-                  {[
-                    "No income verification required",
-                    "No appraisal required",
-                    "No up front fees",
-                    "Proof of renovation experience",
-                    "Detailed renovation budget",
-                    "Exit strategy documentation",
-                    "Contractor licensing verification",
-                    "Adequate cash reserves",
-                  ].map((requirement, index) => (
+                                 <ul className="space-y-3">
+                   {[
+                     "No income verification",
+                     "No appraisal",
+                     "No up front fees",
+                     "No experience required",
+                     "Detailed renovation budget",
+                     "Planned exit strategy",
+                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
                       {requirement}
@@ -241,12 +241,12 @@ export default function FixAndFlipPage() {
                     <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
                       3
                     </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Property Sale</h4>
-                      <p className="text-gray-600 font-light">
-                        List and sell the renovated property at market value to maximize your profit.
-                      </p>
-                    </div>
+                                         <div>
+                       <h4 className="font-medium text-gray-900 mb-2">Property Sale or Refinance</h4>
+                       <p className="text-gray-600 font-light">
+                         List and sell the renovated property or easily refinance and hold it as a cash-flowing rental – with cash-out.
+                       </p>
+                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
@@ -266,16 +266,16 @@ export default function FixAndFlipPage() {
         </Card>
 
         {/* Success Story */}
-        <SuccessStoryCard
-          title="Success Story"
-          name="Sarah & Mike Johnson"
-          testimonial="We purchased a distressed 3-bedroom home for $180,000 and secured a $270,000 fix-and-flip loan covering both acquisition and renovation costs. After 4 months of renovations, we sold the property for $420,000, netting a $95,000 profit after all costs and loan repayment."
-          metrics={[
-            { label: "Purchase Price", value: "$180,000" },
-            { label: "Renovation Cost", value: "$45,000" },
-            { label: "Sale Price", value: "$420,000" }
-          ]}
-        />
+                 <SuccessStoryCard
+           title="Success Story"
+           name="Sarah & Mike Johnson"
+           testimonial="We purchased a distressed 3-bedroom home for $180,000 and secured a $220,000 fix-and-flip loan covering both acquisition and renovation costs. After 4 months of renovations, we sold the property for $360,000, netting a $95,000 profit after all costs and loan repayment."
+           metrics={[
+             { label: "Purchase Price", value: "$180,000" },
+             { label: "Renovation Cost", value: "$58,000" },
+             { label: "Sale Price", value: "$360,000" }
+           ]}
+         />
 
         {/* FAQ Section */}
         <Card className="mb-12 border-0 shadow-lg">

@@ -57,7 +57,7 @@ export default function SingleRentalPage() {
               <div className="flex items-center space-x-3">
                 <Percent className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Rates as low as 6.25%</p>
+                  <p className="font-semibold text-gray-900">Rates as low as 5.75%</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -109,7 +109,7 @@ export default function SingleRentalPage() {
             },
             {
               icon: TrendingUp,
-              value: "6.25%",
+              value: "5.75%",
               label: "Starting Rate"
             }
           ]}
@@ -123,14 +123,14 @@ export default function SingleRentalPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Rates as low as 6.25%",
-                    "Loans from $75K - $4M",
-                    "Low or no prepayment penalty",
+                    "Rates as low as 5.75%",
+                    "Minimum 680 No minimum credit score",
+                    "DSCR-based Asset-based underwriting",
                     "Up to 85% Purchase or Refinance (LTV)",
-                    "Up to 80% Cash-out - no seasoning required",
+                    "100% of rehab covered",
                     "30-year fixed rates",
                     "Interest only options available",
-                    "Streamlined application process",
+                    "Easy photo draw process",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -143,14 +143,13 @@ export default function SingleRentalPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 680 credit score",
-                    "DSCR-based underwriting",
-                    "Property appraisal required",
-                    "Title insurance and survey",
+                    "No minimum credit score",
+                    "No minimum DSCR requirement",
+                    "No experience required",
+                    "Property valuation",
+                    "Title and property insurance",
                     "Adequate cash reserves",
                     "Exit strategy documentation",
-                    "Property management plan",
-                    "Insurance coverage verification",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -163,70 +162,13 @@ export default function SingleRentalPage() {
           </CardContent>
         </Card>
 
-        {/* How It Works */}
-        <Card className="mb-12 border-0 shadow-lg">
-          <CardContent className="p-8">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">How Single Rental Financing Works</h2>
-            <div className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Property Selection</h4>
-                      <p className="text-gray-600 font-light">
-                        Choose a rental property that meets our criteria and fits your investment strategy.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Loan Application</h4>
-                      <p className="text-gray-600 font-light">
-                        Submit your application with property details, financial information, and rent roll.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Property Acquisition</h4>
-                      <p className="text-gray-600 font-light">
-                        Close on the property and begin generating rental income to cover your mortgage payments.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Portfolio Growth</h4>
-                      <p className="text-gray-600 font-light">
-                        Build equity and cash flow while preparing for your next rental property investment.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+
 
         {/* Success Story */}
         <SuccessStoryCard
           title="Success Story"
           name="David Chen"
-          testimonial="I purchased a 2-bedroom rental property for $285,000 with a $228,000 loan at 7.25%. The property generates $2,200/month in rent, providing $800/month in positive cash flow after all expenses. In just 2 years, the property has appreciated to $320,000."
+          testimonial="I purchased a 2-bedroom rental property for $285,000 with a $228,000 loan at 6.25%. The property generates $2,200/month in rent, providing $800/month in positive cash flow after all expenses. The team at Key made the process simple and kept their word from start to finish."
           metrics={[
             { label: "Purchase Price", value: "$285,000" },
             { label: "Monthly Rent", value: "$2,200" },

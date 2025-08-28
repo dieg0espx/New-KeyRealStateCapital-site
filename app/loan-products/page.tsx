@@ -25,7 +25,7 @@ export default function LoanProductsPage() {
   const loanProducts = [
     {
       icon: <Hammer className="h-8 w-8" />,
-      title: "Fix-and-Flip",
+      title: "Fix & Flip",
       description: "Short-term financing for property renovation and resale projects",
       features: ["Up to $2M loan amounts", "6-18 month terms", "Interest-only payments", "Fast 7-14 day closings"],
       loanRange: "$100K - $2M",
@@ -76,7 +76,7 @@ export default function LoanProductsPage() {
     },
     {
       icon: <MapPin className="h-8 w-8" />,
-      title: "Stabilized Bridge",
+      title: "Bridge",
       description: "Bridge financing for stabilized income-producing properties",
       features: ["Interest-only payments", "Quick closings", "Up to 75% LTV", "12-36 month terms"],
       loanRange: "$250K - $3M",

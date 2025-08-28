@@ -133,7 +133,7 @@ export default function NewConstructionPage() {
                     "Loan Amounts: $150k to $20MM",
                     "Non-Dutch Interest (Only on funds disbursed)",
                     "Up to 75% of ARV (after-repair value)",
-                    "Flexible draw schedule",
+                    "Easy photo draw process",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -146,14 +146,13 @@ export default function NewConstructionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 700 credit score",
-                    "Construction experience required",
+                    "Minimum 620 credit score",
+                    "No experience required",
                     "Detailed construction budget",
                     "Builder's risk insurance",
-                    "Site inspection services",
-                    "Experienced construction team",
+                    "GC Verification",
                     "Adequate cash reserves",
-                    "Exit strategy documentation",
+                    "Planned exit strategy",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -176,9 +175,9 @@ export default function NewConstructionPage() {
                     1
                   </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Pre-Approval & Planning</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">Pre-approval and Funding</h4>
                   <p className="text-gray-600 font-light">
-                    Submit plans, budgets, and contractor information for loan approval. Our team reviews your project feasibility and construction timeline.
+                    Submit plans and the line item budget; we'll order the appraisal and fund your loan in a timely manner.
                   </p>
                 </div>
               </div>
@@ -189,7 +188,7 @@ export default function NewConstructionPage() {
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Construction Phase</h4>
                   <p className="text-gray-600 font-light">
-                    Receive funds through scheduled draws as construction milestones are completed. Our team monitors progress and ensures quality standards.
+                    Easily request draws with your phone as construction milestones are completed.
                   </p>
                 </div>
               </div>
@@ -212,7 +211,7 @@ export default function NewConstructionPage() {
         <SuccessStoryCard
           title="Success Story"
           name="Maria Rodriguez Development"
-          testimonial="We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month construction period went smoothly with regular draws, and we converted to permanent financing upon completion. The project generated $45,000 in annual cash flow after conversion."
+          testimonial="We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month construction period went smoothly with regular draws, and we converted to permanent financing upon completion. We were able to pull out almost $100,000 in cash-out at the refinance, and the townhomes are generating around $45,000 in annual cash flow."
           metrics={[
             { label: "Construction Cost", value: "$1.2M" },
             { label: "Construction Time", value: "18 Months" },

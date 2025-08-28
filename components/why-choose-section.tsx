@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, Star, Phone, Building, Lightbulb, Handshake, Wind } from "lucide-react"
+import { TrendingUp, Star, Phone, Building, Lightbulb, Handshake, Wind, DollarSign, Users, Clock } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface Feature {
@@ -28,14 +28,24 @@ const defaultFeatures: Feature[] = [
     description: "Work with a capital partner who wants to see you win."
   },
   {
+    icon: <DollarSign className="h-8 w-8" />,
+    title: "Competitive Terms",
+    description: "Make the most out of your investments."
+  },
+  {
     icon: <Wind className="h-8 w-8" />,
     title: "Streamlined Process",
     description: "We take the headache and hassle out of the equation."
   },
   {
-    icon: <Star className="h-8 w-8" />,
+    icon: <Users className="h-8 w-8" />,
+    title: "Dedicated Support",
+    description: "Leverage our team of experts to make your life easier."
+  },
+  {
+    icon: <Clock className="h-8 w-8" />,
     title: "Fast Closing",
-    description: "In as little as 3 days - we'll get it done."
+    description: "In as little as 3 days – we'll get it done."
   }
 ]
 

@@ -46,14 +46,7 @@ export default function TeamPage() {
       email: "tommy@keyrec.com",
       image: "/placeholder.svg?height=300&width=300",
     },
-    {
-      name: "Bailey Girouard",
-      title: "Senior Account Executive",
-      bio: "Bailey specializes in helping investors scale their portfolios with creative financing solutions and personalized service.",
-      phone: "(555) 123-4572",
-      email: "bailey@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
-    },
+
     {
       name: "Sebastian Muendo",
       title: "Account Executive",
