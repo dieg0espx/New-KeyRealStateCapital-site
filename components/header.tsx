@@ -39,8 +39,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
   }, [])
 
   const loanTypes = [
-    { name: "Fix & Flip", href: "/loan-products/fix-and-flip" },
-    { name: "Bridge", href: "/loan-products/stabilized-bridge" },
+    { name: "Bridge | Fix & Flip", href: "/loan-products/fix-and-flip" },
     { name: "DSCR | Short/Long-term Rental", href: "/loan-products/single-rental" },
     { name: "New Construction", href: "/loan-products/new-construction" },
     { name: "Multi-Family | Commercial", href: "/loan-products/rental-portfolio" },

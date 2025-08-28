@@ -21,8 +21,8 @@ export default function SingleRentalPage() {
         </Link>
 
         <LoanHeroSection
-          title="Rental Properties"
-          description="Want to finance a new purchase, refinance a flip, or free up some equity? Let's build your portfolio."
+          title="Single Property Rental"
+          description="Low interest rate financing to help you purchase or refinance a short or long-term rental property."
           image="/loan-products/singlePropertyRental.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -57,38 +57,49 @@ export default function SingleRentalPage() {
               <div className="flex items-center space-x-3">
                 <Percent className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Rates as low as 5.75%</p>
+                  <p className="font-semibold text-gray-900">Rates starting at 6.00%</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <DollarSign className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Loans from $75K - $4M</p>
+                  <p className="font-semibold text-gray-900">Loans from $75K – $4M (up to $10M on exception)</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Shield className="h-6 w-6 text-light-green" />
+                <Building className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Low or no prepayment penalty</p>
+                  <p className="font-semibold text-gray-900">Eligible Property Types: SFR / Multi-Family / Condo / Commercial</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <TrendingUp className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Up to 85% Purchase or Refinance (LTV)</p>
+                  <p className="font-semibold text-gray-900">Purchase / Rate-Term Refinance: up to 85% LTV</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <DollarSign className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Up to 80% Cash-out - no seasoning required</p>
+                  <p className="font-semibold text-gray-900">Cash-out Refinance: up to 80% LTV</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">30-year fixed rates</p>
-                  <p className="text-sm text-gray-600">Interest only options available</p>
+                  <p className="font-semibold text-gray-900">Loan Terms: 30-year Fixed | Interest-only & ARM</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Users className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">Minimum FICO: 620</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Shield className="h-6 w-6 text-light-green" />
+                <div>
+                  <p className="font-semibold text-gray-900">No minimum DSCR | No seasoning required</p>
                 </div>
               </div>
             </div>
@@ -109,7 +120,7 @@ export default function SingleRentalPage() {
             },
             {
               icon: TrendingUp,
-              value: "5.75%",
+              value: "6.00%",
               label: "Starting Rate"
             }
           ]}
@@ -123,14 +134,14 @@ export default function SingleRentalPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Rates as low as 5.75%",
-                    "Minimum 680 No minimum credit score",
-                    "DSCR-based Asset-based underwriting",
-                    "Up to 85% Purchase or Refinance (LTV)",
-                    "100% of rehab covered",
-                    "30-year fixed rates",
-                    "Interest only options available",
-                    "Easy photo draw process",
+                    "Rates starting at 6.00%",
+                    "Loans from $75K – $4M (up to $10M on exception)",
+                    "Eligible Property Types: SFR / Multi-Family / Condo / Commercial",
+                    "Purchase / Rate-Term Refinance: up to 85% LTV",
+                    "Cash-out Refinance: up to 80% LTV",
+                    "Loan Terms: 30-year Fixed | Interest-only & ARM",
+                    "Minimum FICO: 620",
+                    "No minimum DSCR | No seasoning required",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -143,7 +154,7 @@ export default function SingleRentalPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "No minimum credit score",
+                    "Minimum 620 credit score",
                     "No minimum DSCR requirement",
                     "No experience required",
                     "Property valuation",

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown, Zap, Hammer, Percent, Clock3, Shield, FileText } from "lucide-react"
+import { ArrowLeft, CheckCircle, DollarSign, Calendar, TrendingUp, Users, Clock, Star, ChevronDown, Zap, Hammer, Percent, Clock3, Shield, FileText, Building } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -21,8 +21,8 @@ export default function FixAndFlipPage() {
         </Link>
 
         <LoanHeroSection
-          title="Fix & Flip Loans"
-          description="Fix & Flip loans that move as fast as you do. Get Maximum Leverage with Minimal Money Down."
+          title="Bridge | Fix & Flip Loans"
+          description="Short-term financing to purchase (or refinance) and renovate an investment property."
           image="/loan-products/fixAndFlip.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -63,43 +63,42 @@ export default function FixAndFlipPage() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-medium text-gray-900 mb-6">Rates & Terms</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="flex items-center space-x-3">
-                <Percent className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Rates as low as 8.9%</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <DollarSign className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Up to 95% of purchase price</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">6, 12, 18 + 24 month terms</p>
-                  <p className="text-sm text-gray-600">Interest only, no prepayment penalty</p>
-                </div>
-              </div>
+                             <div className="flex items-center space-x-3">
+                 <Percent className="h-6 w-6 text-light-green" />
+                 <div>
+                   <p className="font-semibold text-gray-900">Rates starting at 7.75%</p>
+                 </div>
+               </div>
                              <div className="flex items-center space-x-3">
                  <DollarSign className="h-6 w-6 text-light-green" />
                  <div>
-                   <p className="font-semibold text-gray-900">Loans from $75K - $10M</p>
+                   <p className="font-semibold text-gray-900">Up to 95% of purchase price</p>
                  </div>
                </div>
-              <div className="flex items-center space-x-3">
-                <TrendingUp className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Up to 75% of after-repair value</p>
+               <div className="flex items-center space-x-3">
+                 <Calendar className="h-6 w-6 text-light-green" />
+                 <div>
+                   <p className="font-semibold text-gray-900">Loan term: 6 / 9 / 12 / 18 / 24 months</p>
+                 </div>
+               </div>
+                                                                                                                        <div className="flex items-center space-x-3">
+                    <DollarSign className="h-6 w-6 text-light-green" />
+                    <div>
+                      <p className="font-semibold text-gray-900">Loans from $75K – $10M</p>
+                    </div>
+                  </div>
+                <div className="flex items-center space-x-3">
+                  <Building className="h-6 w-6 text-light-green" />
+                  <div>
+                    <p className="font-semibold text-gray-900">Eligible Property Types: SFR / Condo / Multi-Family</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Hammer className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">100% of rehab covered</p>
+                <div className="flex items-center space-x-3">
+                  <Users className="h-6 w-6 text-light-green" />
+                  <div>
+                    <p className="font-semibold text-gray-900">Minimum FICO: 600 – lower on exception</p>
+                  </div>
                 </div>
-              </div>
             </div>
           </CardContent>
         </Card>
@@ -148,11 +147,11 @@ export default function FixAndFlipPage() {
               value: "6-24 Months",
               label: "Loan Term"
             },
-            {
-              icon: TrendingUp,
-              value: "8.9%",
-              label: "Starting Rate"
-            },
+                         {
+               icon: TrendingUp,
+               value: "7.75%",
+               label: "Starting Rate"
+             },
             {
               icon: Clock,
               value: "7-14 Days",
@@ -168,14 +167,14 @@ export default function FixAndFlipPage() {
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
-                                     {[
-                     "Rates as low as 8.9%",
-                     "Up to 95% of purchase price",
-                     "100% of rehab covered",
-                     "6, 12, 18 + 24 month terms",
-                     "Interest only, no prepayment penalty",
-                     "Up to 75% of after-repair value",
-                     "Easy, streamlined photo rehab draws",
+                                                                                                               {[
+                     "Loans from $75K – $10M",
+                     "Eligible Property Types: SFR / Condo / Multi-Family",
+                     "Loan term: 6 / 9 / 12 / 18 / 24 months",
+                     "Loan to Cost (LTC): up to 100% of purchase + 100% of rehab",
+                     "Loan to After Repair Value (LTARV): up to 75%",
+                     "Minimum FICO: 600 – lower on exception",
+                     "Rapid Close | No Appraisal | Advanced Rehab Draws",
                    ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

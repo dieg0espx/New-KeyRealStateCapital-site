@@ -131,12 +131,13 @@ export function Footer() {
                 <div className="max-w-xs mb-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <div className="text-light-green text-sm font-semibold">JD</div>
+                      <div className="text-light-green text-sm font-semibold">DF</div>
                     </div>
                     <div>
-                      <h5 className="text-white font-medium text-sm">John Doe</h5>
-                      <p className="text-gray-400 text-xs">Account Executive</p>
-                      <p className="text-gray-300 text-xs">(555) 123-4567</p>
+                      <h5 className="text-white font-medium text-sm">Daniel Frank</h5>
+                      <p className="text-gray-400 text-xs">Senior Vice President</p>
+                      <p className="text-gray-300 text-xs">954.304.0902</p>
+                      <p className="text-gray-300 text-xs">daniel@keyrealestatecapital.com</p>
                     </div>
                   </div>
                 </div>
@@ -165,11 +166,11 @@ export function Footer() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Contact</h4>
               <div className="space-y-4">
-                <Link href="tel:(619) 567-1385" className="flex items-start">
+                <Link href="tel:(619) 649-6933" className="flex items-start">
                   <Phone className="h-5 w-5 mr-3 mt-0.5 text-light-green flex-shrink-0" />
                   <div>
-                    <div className="text-gray-300 font-light">(619) 567-1385</div>
-                    <div className="text-white text-sm">24/7 Service | Monday - Sunday</div>
+                    <div className="text-gray-300 font-light">(619) 649-6933</div>
+                    <div className="text-white text-sm">Key Real Estate Capital</div>
                   </div>
                 </Link>
                 <Link href="mailto:loans@keyrealestatecapital.com" className="flex items-start">
@@ -184,7 +185,7 @@ export function Footer() {
                   <div>
                     <div className="text-gray-300 font-light">401 W A St Ste 200</div>
                     <div className="text-gray-300 font-light">San Diego, CA 92101</div>
-                    <div className="text-white text-sm">Corporate Headquarters</div>
+                    <div className="text-white text-sm">NMLS ID #2676974</div>
                   </div>
                 </div>
               </div>
