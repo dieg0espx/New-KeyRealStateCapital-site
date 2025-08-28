@@ -319,8 +319,8 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                <Link href="/contact">
-                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Contact</Button>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full bg-light-green hover:bg-perry text-white font-light">Contact</Button>
                 </Link>
               </motion.div>
             </div>
