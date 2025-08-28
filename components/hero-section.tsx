@@ -108,7 +108,7 @@ export function HeroSection({
           animate="visible"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-8xl font-medium text-white mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             {title}
@@ -145,8 +145,7 @@ export function HeroSection({
               <Link href={secondaryButtonLink} className="block w-full sm:w-auto">
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-white bg-white text-perry  hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+                  className="w-full sm:w-auto bg-white text-perry hover:bg-perry hover:text-white font-light px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                 >
                   {secondaryButtonText}
                 </Button>
