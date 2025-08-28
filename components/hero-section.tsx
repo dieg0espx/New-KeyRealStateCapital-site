@@ -125,7 +125,7 @@ export function HeroSection({
             className="text-sm sm:text-base md:text-lg text-white/80 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-2 sm:px-0"
             variants={itemVariants}
           >
-            Work with a human being, not a robot.
+            Work with a human being – not a robot.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"

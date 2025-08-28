@@ -62,11 +62,11 @@ export function LoanCalculator() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="fix-flip">Fix-and-Flip</SelectItem>
+                <SelectItem value="fix-flip">Fix & Flip</SelectItem>
                 <SelectItem value="rental">Single Property Rental</SelectItem>
                 <SelectItem value="construction">New Construction</SelectItem>
                 <SelectItem value="portfolio">Rental Portfolio</SelectItem>
-                <SelectItem value="bridge">Stabilized Bridge</SelectItem>
+                <SelectItem value="bridge">Bridge</SelectItem>
                 <SelectItem value="commercial">Multi-Family / Commercial</SelectItem>
               </SelectContent>
             </Select>

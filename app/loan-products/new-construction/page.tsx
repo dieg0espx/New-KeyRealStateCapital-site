@@ -22,7 +22,7 @@ export default function NewConstructionPage() {
 
         <LoanHeroSection
           title="New Construction"
-          description="Your partner in development – without the hassle. Flexible financing for new construction projects: designed for investors, builders and developers ready to bring vision to life."
+          description="A new construction loan is short-term financing that covers the cost of land, labor, and materials for building a property until completion and refinancing or sale."
           image="/loan-products/newConstruction.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -57,43 +57,39 @@ export default function NewConstructionPage() {
               <div className="flex items-center space-x-3">
                 <Percent className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Rates as low as 9.5%</p>
+                  <p className="font-semibold text-gray-900">Interest Rates: Starting at 10.25% (Non-Dutch / As-Disbursed)</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <DollarSign className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Up to 90% of total cost</p>
-                  <p className="text-sm text-gray-600">Purchase price + construction cost</p>
+                  <p className="font-semibold text-gray-900">Loan to Cost (LTC): Up to 90% of Total Cost Basis</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">12 or 24 month terms</p>
-                  <p className="text-sm text-gray-600">Interest only, no prepayment penalty</p>
+                  <p className="font-semibold text-gray-900">Loan Terms: 12, 18, or 24 months</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <DollarSign className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Loan Amounts: $150k to $20MM</p>
+                  <p className="font-semibold text-gray-900">Loan Amounts: $100k to $20M</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Shield className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Non-Dutch Interest</p>
-                  <p className="text-sm text-gray-600">Only on funds disbursed</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <TrendingUp className="h-6 w-6 text-light-green" />
-                <div>
-                  <p className="font-semibold text-gray-900">Up to 75% of ARV</p>
-                  <p className="text-sm text-gray-600">After-repair value</p>
-                </div>
-              </div>
+                             <div className="flex items-center space-x-3">
+                 <TrendingUp className="h-6 w-6 text-light-green" />
+                 <div>
+                   <p className="font-semibold text-gray-900">Loan to After Repair Value (LTARV): Up to 75%</p>
+                 </div>
+               </div>
+               <div className="flex items-center space-x-3">
+                 <Users className="h-6 w-6 text-light-green" />
+                 <div>
+                   <p className="font-semibold text-gray-900">Minimum Credit Score: 660 FICO</p>
+                 </div>
+               </div>
             </div>
           </CardContent>
         </Card>
@@ -102,7 +98,7 @@ export default function NewConstructionPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$150K - $20M",
+              value: "$100K - $20M",
               label: "Loan Amount"
             },
             {
@@ -126,14 +122,14 @@ export default function NewConstructionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Rates as low as 9.5%",
-                    "Up to 90% of total cost",
-                    "12 or 24 month terms",
-                    "Interest only, no prepayment penalty",
-                    "Loan Amounts: $150k to $20MM",
-                    "Non-Dutch Interest (Only on funds disbursed)",
-                    "Up to 75% of ARV (after-repair value)",
-                    "Flexible draw schedule",
+                    "Interest Rates: Starting at 10.25% (Non-Dutch / As-Disbursed)",
+                    "Loan Amounts: $100k to $20M",
+                    "Eligible Property Types: All non-owner occupied real estate",
+                    "Loan Terms: 12, 18, or 24 months",
+                    "Loan to Cost (LTC): Up to 90% of Total Cost Basis",
+                    "Loan to After Repair Value (LTARV): Up to 75%",
+                    "Minimum Credit Score: 660 FICO",
+                    "Additional Perks: Photo Inspections | Advanced Construction Draws",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -146,14 +142,13 @@ export default function NewConstructionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 700 credit score",
-                    "Construction experience required",
+                    "Minimum 660 credit score",
+                    "No experience required",
                     "Detailed construction budget",
                     "Builder's risk insurance",
-                    "Site inspection services",
-                    "Experienced construction team",
+                    "GC Verification",
                     "Adequate cash reserves",
-                    "Exit strategy documentation",
+                    "Planned exit strategy",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -176,9 +171,9 @@ export default function NewConstructionPage() {
                     1
                   </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Pre-Approval & Planning</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">Pre-approval and Funding</h4>
                   <p className="text-gray-600 font-light">
-                    Submit plans, budgets, and contractor information for loan approval. Our team reviews your project feasibility and construction timeline.
+                    Submit plans and the line item budget; we'll order the appraisal and fund your loan in a timely manner.
                   </p>
                 </div>
               </div>
@@ -189,7 +184,7 @@ export default function NewConstructionPage() {
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Construction Phase</h4>
                   <p className="text-gray-600 font-light">
-                    Receive funds through scheduled draws as construction milestones are completed. Our team monitors progress and ensures quality standards.
+                    Easily request draws with your phone as construction milestones are completed.
                   </p>
                 </div>
               </div>
@@ -212,7 +207,7 @@ export default function NewConstructionPage() {
         <SuccessStoryCard
           title="Success Story"
           name="Maria Rodriguez Development"
-          testimonial="We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month construction period went smoothly with regular draws, and we converted to permanent financing upon completion. The project generated $45,000 in annual cash flow after conversion."
+          testimonial="We secured a $1.2M construction loan to build a 4-unit townhouse project. The 18-month construction period went smoothly with regular draws, and we converted to permanent financing upon completion. We were able to pull out almost $100,000 in cash-out at the refinance, and the townhomes are generating around $45,000 in annual cash flow."
           metrics={[
             { label: "Construction Cost", value: "$1.2M" },
             { label: "Construction Time", value: "18 Months" },

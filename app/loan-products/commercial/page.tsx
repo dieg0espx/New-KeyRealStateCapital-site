@@ -22,7 +22,7 @@ export default function CommercialPage() {
 
         <LoanHeroSection
           title="Multi-Family, Mixed-Use & Commercial"
-          description="We offer the most aggressive terms on a variety of scenarios ranging from multi-family value-add to long term commercial DSCR."
+          description="We offer aggressive terms on a variety of scenarios ranging from multi-family value-add to long term commercial DSCR."
           image="/loan-products/multiFamily.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -53,7 +53,7 @@ export default function CommercialPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$15K - $10M",
+              value: "$150K - $20M",
               label: "Loan Amount"
             },
             {
@@ -77,14 +77,13 @@ export default function CommercialPage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Loan Amounts: $15,000 to $10,000,000",
-                    "Multi-Family (5-20+ units), Mixed-Use and All Commercial asset types",
-                    "Loan Terms: 6, 12 and 24 month bridge; 25 and 30 year FRM",
-                    "Purchase/Rate & Term Refinance Maximum LTV: Up to 80%",
-                    "Cash-Out Refinance Maximum LTV: Up to 75%",
+                    "Loan Amounts: $150k to $20M",
+                    "Multi-Family (5+) | Mixed-Use | All Commercial asset types",
+                    "Loan Terms: 6, 12, 24 month bridge; 25 & 30 year FRM",
+                    "Purchase/Rate & Term Refinance Maximum: Up to 80% LTV",
+                    "Cash-Out Refinance Maximum: Up to 75% LTV",
                     "Minimum DSCR: 1.0x",
-                    "Minimum FICO: 660",
-                    "Competitive institutional rates",
+                    "Minimum FICO: 680",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -97,7 +96,7 @@ export default function CommercialPage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 660 credit score",
+                    "Minimum 680 credit score",
                     "DSCR-based underwriting",
                     "Property appraisal required",
                     "Title insurance and survey",

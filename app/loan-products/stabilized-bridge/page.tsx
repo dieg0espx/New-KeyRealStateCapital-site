@@ -21,8 +21,8 @@ export default function StabilizedBridgePage() {
         </Link>
 
         <LoanHeroSection
-          title="Stabilized Bridge"
-          description="A fix-and-flip loan is a short-term financing option for real estate investors on non-owner occupied investment property."
+          title="Bridge Loans"
+          description="Bridge financing for stabilized income-producing properties with quick capital access and strategic exit planning."
           image="/loan-products/stabilizedBridge.jpg"
           primaryCta={{
             text: "Get a Quote",
@@ -53,7 +53,7 @@ export default function StabilizedBridgePage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$75k - $4MM",
+              value: "$100k - $10M",
               label: "Loan Amount"
             },
             {
@@ -63,7 +63,7 @@ export default function StabilizedBridgePage() {
             },
             {
               icon: TrendingUp,
-              value: "85% LTC",
+              value: "85% LTV",
               label: "Max Financing"
             }
           ]}
@@ -77,13 +77,12 @@ export default function StabilizedBridgePage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Loan Features</h3>
                 <ul className="space-y-3">
                   {[
-                    "Loan Amounts: $75k to $4MM (higher on exception)",
+                    "Loan Amounts: $100k to $10M",
                     "Loan Terms: 6 or 12 months, extendable up to 24 months",
-                    "Single-Family, 2-4 Unit, Townhomes, PUDs, Warrantable Condos",
-                    "Max LTC: 85% of purchase price + verified completed CAPEX",
-                    "Max LTV: Up to 70% (based on DSCR Exit or No DSCR terms)",
-                    "Minimum FICO: 660",
-                    "DSCR Requirement: 1.10 Exit DSCR for rental-ready properties",
+                    "All asset types",
+                    "Maximum Leverage: 85% Loan-to-Value (LTV)",
+                    "Minimum FICO: None",
+                    "No minimum DSCR requirement",
                     "Additional Perks: Free or Waived Appraisals",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
@@ -97,14 +96,12 @@ export default function StabilizedBridgePage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {[
-                    "Minimum 660 credit score",
-                    "DSCR-based underwriting",
-                    "Property appraisal required",
-                    "Title insurance and survey",
+                    "No minimum credit score",
+                    "Clean background",
+                    "Property evaluation",
+                    "Title & property insurance",
                     "Adequate cash reserves",
-                    "Exit strategy documentation",
-                    "Property management plan",
-                    "Insurance coverage verification",
+                    "Planned exit strategy",
                   ].map((requirement, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -142,7 +139,7 @@ export default function StabilizedBridgePage() {
                     <div>
                       <h4 className="font-medium text-gray-900 mb-2">Quick Funding</h4>
                       <p className="text-gray-600 font-light">
-                        Access capital in 10-14 days to meet your immediate financing needs while maintaining property ownership.
+                        In 3-10 days
                       </p>
                     </div>
                   </div>
@@ -180,11 +177,11 @@ export default function StabilizedBridgePage() {
         <SuccessStoryCard
           title="Success Story"
           name="Anderson Real Estate Holdings"
-          testimonial="We needed quick capital to acquire a distressed property while our permanent financing was being processed. We secured a $1.2M bridge loan at 8.0% with interest-only payments. After 8 months, we refinanced into permanent financing at 6.5%, saving $18,000 annually in interest costs."
+          testimonial="We needed quick capital to acquire a distressed property while our permanent financing was being processed. We secured a $1.2M bridge loan at 9.0% with interest-only payments. After 6 weeks we refinanced into a 30 year fixed loan at 6.375% and the property is cash-flowing very strong."
           metrics={[
             { label: "Bridge Loan", value: "$1.2M" },
-            { label: "Bridge Term", value: "8 Months" },
-            { label: "Annual Savings", value: "$18,000" }
+            { label: "Bridge Term", value: "6 Months" },
+            { label: "Time to Close", value: "6 Days" }
           ]}
         />
 
@@ -265,38 +262,7 @@ export default function StabilizedBridgePage() {
           </CardContent>
         </Card>
 
-        {/* Property Types */}
-        <Card className="mb-12 border-0 shadow-lg">
-          <CardContent className="p-8">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Property Types We Finance</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <div className="flex items-center mb-4">
-                  <Home className="h-6 w-6 text-light-green mr-3" />
-                  <h4 className="font-medium text-gray-900">Residential Properties</h4>
-                </div>
-                <ul className="space-y-2 text-gray-600 font-light">
-                  <li>• Single-family rental homes</li>
-                  <li>• Multi-family properties</li>
-                  <li>• Student housing</li>
-                  <li>• Senior living facilities</li>
-                </ul>
-              </div>
-              <div>
-                <div className="flex items-center mb-4">
-                  <Building className="h-6 w-6 text-light-green mr-3" />
-                  <h4 className="font-medium text-gray-900">Commercial Properties</h4>
-                </div>
-                <ul className="space-y-2 text-gray-600 font-light">
-                  <li>• Office buildings</li>
-                  <li>• Retail centers</li>
-                  <li>• Industrial facilities</li>
-                  <li>• Mixed-use developments</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+
 
         {/* Additional Benefits */}
         <Card className="mb-12 border-0 shadow-lg bg-gray-50">
@@ -306,7 +272,7 @@ export default function StabilizedBridgePage() {
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Fast Closings</h4>
                 <p className="text-gray-600 font-light">
-                  Close in 10-14 days with our streamlined underwriting process and experienced team.
+                  3-14 days
                 </p>
               </div>
               <div>
@@ -318,7 +284,7 @@ export default function StabilizedBridgePage() {
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Competitive Rates</h4>
                 <p className="text-gray-600 font-light">
-                  Starting at 8.0% with interest-only payments to minimize your carrying costs during the bridge period.
+                  8.9%
                 </p>
               </div>
               <div>

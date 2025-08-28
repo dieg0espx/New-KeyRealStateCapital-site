@@ -38,13 +38,18 @@ export function Header({ isHomePage = false }: HeaderProps) {
     }
   }, [])
 
-  const loanProducts = [
+  const loanTypes = [
     { name: "Bridge | Fix & Flip", href: "/loan-products/fix-and-flip" },
     { name: "DSCR | Short/Long-term Rental", href: "/loan-products/single-rental" },
     { name: "New Construction", href: "/loan-products/new-construction" },
     { name: "Multi-Family | Commercial", href: "/loan-products/rental-portfolio" },
     { name: "Conventional | Primary Loans", href: "/loan-products/stabilized-bridge" },
     { name: "0% Interest Business Funding", href: "/loan-products/commercial" },
+  ]
+
+  const moreOptions = [
+    { name: "FAQ", href: "/faq" },
+    { name: "Blog", href: "/blog" },
   ]
 
   return (
@@ -97,19 +102,19 @@ export function Header({ isHomePage = false }: HeaderProps) {
                   isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white"
                 }`}
               >
-                Loan Products <ChevronDown className="ml-1 h-4 w-4" />
+                Loan Types <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div 
                 className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
               >
                 <div className="py-2">
-                  {loanProducts.map((product) => (
-                    <div key={product.href}>
+                  {loanTypes.map((type) => (
+                    <div key={type.href}>
                       <Link
-                        href={product.href}
+                        href={type.href}
                         className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-perry transition-colors font-light"
                       >
-                        {product.name}
+                        {type.name}
                       </Link>
                     </div>
                   ))}
@@ -129,42 +134,46 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 About Us
               </Link>
             </motion.div>
+
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
-                href="/faq"
+                href="/#calculator"
                 className={`transition-colors font-light ${
-                  pathname === "/faq" 
+                  pathname === "/#calculator" 
                     ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
                     : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
               >
-                FAQ
+                Calculator
               </Link>
             </motion.div>
-            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
-              <Link
-                href="/blog"
-                className={`transition-colors font-light ${
-                  pathname === "/blog" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+
+            {/* More Dropdown */}
+            <div className="relative group">
+              <button 
+                className={`flex items-center transition-colors font-light ${
+                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white"
                 }`}
               >
-                Blog
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
-              <Link
-                href="/contact"
-                className={`transition-colors font-light ${
-                  pathname === "/contact" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
-                }`}
+                More <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div 
+                className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
               >
-                Contact
-              </Link>
-            </motion.div>
+                <div className="py-2">
+                  {moreOptions.map((option) => (
+                    <div key={option.href}>
+                      <Link
+                        href={option.href}
+                        className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-perry transition-colors font-light"
+                      >
+                        {option.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -174,7 +183,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               <Link href="/contact">
                 <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-light-green hover:bg-perry text-white">
-                  Free Consultation
+                  Contact
                 </Button>
               </Link>
             </motion.div>
@@ -225,21 +234,21 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 transition={{ delay: 0.2 }}
               >
                 <div className="px-3 py-2">
-                  <div className="text-gray-700 font-medium mb-2">Loan Products</div>
+                  <div className="text-gray-700 font-medium mb-2">Loan Types</div>
                   <div className="pl-4 space-y-1">
-                    {loanProducts.map((product, index) => (
+                    {loanTypes.map((type, index) => (
                       <motion.div
-                        key={product.href}
+                        key={type.href}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 + index * 0.05 }}
                       >
                         <Link
-                          href={product.href}
+                          href={type.href}
                           className="block py-1 text-gray-600 hover:text-light-green transition-colors font-light text-sm"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          {product.name}
+                          {type.name}
                         </Link>
                       </motion.div>
                     ))}
@@ -260,44 +269,48 @@ export function Header({ isHomePage = false }: HeaderProps) {
                   About Us
                 </Link>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
               >
                 <Link
-                  href="/faq"
+                  href="/#calculator"
                   className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  FAQ
+                  Calculator
                 </Link>
               </motion.div>
+
+              {/* More Options */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <Link
-                  href="/blog"
-                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 }}
-              >
-                <Link
-                  href="/contact"
-                  className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
+                <div className="px-3 py-2">
+                  <div className="text-gray-700 font-medium mb-2">More</div>
+                  <div className="pl-4 space-y-1">
+                    {moreOptions.map((option, index) => (
+                      <motion.div
+                        key={option.href}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.7 + index * 0.05 }}
+                      >
+                        <Link
+                          href={option.href}
+                          className="block py-1 text-gray-600 hover:text-light-green transition-colors font-light text-sm"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {option.name}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div 
@@ -307,7 +320,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 transition={{ delay: 0.8 }}
               >
                 <Link href="/contact">
-                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Free Consultation</Button>
+                  <Button className="w-full bg-light-green hover:bg-sky-700 text-white font-light">Contact</Button>
                 </Link>
               </motion.div>
             </div>
