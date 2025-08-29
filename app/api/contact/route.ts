@@ -171,7 +171,7 @@ export async function POST(request: NextRequest) {
             </div>
             <div class="contact-item">
               <span class="contact-icon">📞</span>
-              <span>(619) 567-1385</span>
+                              <span>(619) 649-6933</span>
             </div>
             <div class="contact-item">
               <span class="contact-icon">✉️</span>

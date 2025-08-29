@@ -82,7 +82,7 @@ export function WhereWeLendSection({
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-light-green/10 to-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-light-green/40 to-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <motion.div 
           className="text-center mb-8 sm:mb-12 lg:mb-16"
@@ -91,7 +91,7 @@ export function WhereWeLendSection({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-4 sm:mb-6">{title}</h2>
+                     <h2 className="text-4xl lg:text-5xl font-medium text-gray-900 mb-4 sm:mb-6">{title}</h2>
           <p className="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
             {description}
           </p>
@@ -218,38 +218,6 @@ export function WhereWeLendSection({
                       )}
                     </div>
                   )}
-
-                  {/* San Diego HQ Marker */}
-                  <div 
-                    className="absolute z-20"
-                    style={{
-                      left: '15%',
-                      top: '65%'
-                    }}
-                  >
-                    <div className="relative">
-                      <div className="w-3 h-3 bg-green-700 rounded-full border border-white shadow-md"></div>
-                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-90">
-                        San Diego
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Delray Beach HQ Marker */}
-                  <div 
-                    className="absolute z-20"
-                    style={{
-                      left: '75%',
-                      top: '75%'
-                    }}
-                  >
-                    <div className="relative">
-                      <div className="w-3 h-3 bg-green-700 rounded-full border border-white shadow-md"></div>
-                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-90">
-                        Delray Beach
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
               </div>

@@ -194,7 +194,7 @@ export function TestimonialsSection({
        
 
                      {/* Carousel */}
-                       <div 
+            <div 
               className="testimonials-carousel relative"
               style={{ touchAction: 'pan-x' }}
             >

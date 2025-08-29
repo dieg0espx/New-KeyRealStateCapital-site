@@ -88,7 +88,7 @@ export default function ApplicationPage() {
         </Link>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Loan Application</h1>
+          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Loan Application</h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
             Start your loan application process. Our team will review your information and contact you within 24 hours.
           </p>

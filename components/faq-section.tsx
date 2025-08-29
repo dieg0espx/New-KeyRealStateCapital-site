@@ -22,7 +22,7 @@ export function FAQSection() {
   return (
     <Gradient direction="top">
       <Gradient direction="bottom">
-        <section className="py-[200px] bg-white">
+        <section className="py-[100px ] lg:py-[200px] bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">

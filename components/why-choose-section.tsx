@@ -51,7 +51,7 @@ const defaultFeatures: Feature[] = [
 
 export function WhyChooseSection({
   title = "Why Choose Key",
-  description = "Low rates, good communication and follow-through - We're here for the long-haul.",
+  description = "Low rates, good communication and follow-through. We're here for the long-haul.",
   features = defaultFeatures
 }: WhyChooseSectionProps) {
   const { ref, isInView } = useScrollAnimation()
@@ -79,7 +79,7 @@ export function WhyChooseSection({
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-light-green/10 to-white">
+    <section className="py-40 bg-gradient-to-b from-white via-light-green/10 to-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"

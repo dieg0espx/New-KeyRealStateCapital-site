@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Instagram, ExternalLink, Loader2, CheckCircle, AlertCircle } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, ExternalLink, Loader2, CheckCircle, AlertCircle, Linkedin } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -136,7 +136,7 @@ export function Footer() {
                     <div>
                       <h5 className="text-white font-medium text-sm">Daniel Frank</h5>
                       <p className="text-gray-400 text-xs">Senior Vice President</p>
-                      <p className="text-gray-300 text-xs">954.304.0902</p>
+                      <p className="text-gray-300 text-xs">(619) 649-6933</p>
                       <p className="text-gray-300 text-xs">daniel@keyrealestatecapital.com</p>
                     </div>
                   </div>
@@ -150,6 +150,14 @@ export function Footer() {
                    className="text-white hover:text-white transition-colors"
                  >
                    <Instagram className="h-5 w-5" />
+                 </a>
+                 <a 
+                   href="https://www.linkedin.com/company/keyswag/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-white hover:text-white transition-colors"
+                 >
+                   <Linkedin className="h-5 w-5" />
                  </a>
                  <a 
                    href="https://www.skool.com/investwithkey/about" 
@@ -185,7 +193,16 @@ export function Footer() {
                   <div>
                     <div className="text-gray-300 font-light">401 W A St Ste 200</div>
                     <div className="text-gray-300 font-light">San Diego, CA 92101</div>
-                    <div className="text-white text-sm">NMLS ID #2676974</div>
+                    <div className="text-white text-sm">
+                      <a 
+                        href="https://nmlsconsumeraccess.org/TuringTestPage.aspx?ReturnUrl=/EntityDetails.aspx/COMPANY/2676974" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-light-green transition-colors"
+                      >
+                        NMLS ID #2676974
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -288,7 +305,14 @@ export function Footer() {
               &copy; 2024 Key Real Estate Capital. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <span className="text-white font-light">NMLS ID #2676974</span>
+              <a 
+                href="https://nmlsconsumeraccess.org/TuringTestPage.aspx?ReturnUrl=/EntityDetails.aspx/COMPANY/2676974" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white font-light hover:text-light-green transition-colors"
+              >
+                NMLS ID #2676974
+              </a>
               <span className="text-white font-light">Equal Housing Lender</span>
             </div>
           </div>

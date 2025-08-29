@@ -312,7 +312,7 @@ export default function ContactPage() {
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-light-green mr-4" />
                     <div>
-                      <div className="font-medium text-gray-900">(619) 567-1385</div>
+                      <div className="font-medium text-gray-900">(619) 649-6933</div>
                       <div className="text-gray-600 font-light text-sm">Main line</div>
                     </div>
                   </div>
@@ -349,7 +349,7 @@ export default function ContactPage() {
                     <Calendar className="h-4 w-4 mr-2" />
                     Free Consultation
                   </Button>
-                  <Link href="tel:(619) 567-1385">
+                  <Link href="tel:(619) 649-6933">
                     <Button
                       variant="outline"
                       className="w-full border-light-green text-light-green hover:bg-perry hover:text-perry bg-transparent"

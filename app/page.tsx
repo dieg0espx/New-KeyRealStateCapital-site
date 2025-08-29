@@ -29,7 +29,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <WhereWeLendSection />
       <LoanCalculatorSection />
-      <BusinessLineCreditSection />
+      {/* <BusinessLineCreditSection /> */}
       <CTASection />
       <FAQSection />
       <BlogPreviewSection limit={3} featured={true} />
