@@ -53,6 +53,9 @@ export function WhereWeLendSection({
     if (notCoveredStates.includes(stateCode)) {
       return "#e5e7eb" // Gray for not covered
     }
+    if (stateCode === "FL" || stateCode === "CA") {
+      return "#31716C" // Perry color for FL and CA
+    }
     if (coveredStates.includes(stateCode)) {
       return "#10b981" // Light green for covered
     }
@@ -235,7 +238,7 @@ export function WhereWeLendSection({
                   <span className="text-gray-700">Not Available (ND, SD)</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-700 rounded-full border border-white shadow-md"></div>
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-perry rounded-full border border-white shadow-md"></div>
                   <span className="text-gray-700">Headquarters</span>
                 </div>
               </div>
