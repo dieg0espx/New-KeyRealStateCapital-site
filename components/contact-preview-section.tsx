@@ -144,21 +144,21 @@ export function ContactPreviewSection() {
                       <div className="flex items-start space-x-4">
                         {/* Placeholder for headshot */}
                         <div className="w-16 h-16 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                          <div className="text-light-green text-2xl font-semibold">JD</div>
+                          <div className="text-light-green text-2xl font-semibold">DF</div>
                         </div>
                         
                         <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-1 text-left">John Doe</h4>
-                          <p className="text-sm text-gray-600 mb-2 text-left">Account Executive</p>
+                          <h4 className="text-lg font-semibold text-gray-900 mb-1 text-left">Daniel Frank</h4>
+                          <p className="text-sm text-gray-600 mb-2 text-left">Senior Vice President</p>
                           
                           <div className="space-y-1 text-sm">
                             <div className="flex items-center text-gray-600">
                               <span className="font-medium">Phone:</span>
-                              <span className="ml-2">(555) 123-4567</span>
+                              <span className="ml-2">(619) 649-6933</span>
                             </div>
                             <div className="flex items-start text-gray-600">
                               <span className="font-medium flex-shrink-0">Email:</span>
-                              <span className="ml-2 break-all">john.doe@keyrealstate.com</span>
+                              <span className="ml-2 whitespace-nowrap">daniel@keyrealestatecapital.com</span>
                             </div>
                           </div>
                         </div>

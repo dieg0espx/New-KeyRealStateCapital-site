@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Key Real Estate Capital - Luxury Real Estate Financing",
   description:
-    "Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.",
+    "Capital Solutions for Real Estate Investors",
   generator: 'v0.dev',
   keywords: ['real estate financing', 'fix and flip loans', 'rental property loans', 'construction loans', 'commercial real estate', 'investment financing'],
   authors: [{ name: 'Key Real Estate Capital' }],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: 'https://new-key-real-state-capital-site.vercel.app',
     siteName: 'Key Real Estate Capital',
     title: 'Key Real Estate Capital - Luxury Real Estate Financing',
-    description: 'Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.',
+    description: 'Capital Solutions for Real Estate Investors',
     images: [
       {
         url: '/miniature.png',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     site: '@keyrealestatecapital',
     creator: '@keyrealestatecapital',
     title: 'Key Real Estate Capital - Luxury Real Estate Financing',
-    description: 'Sophisticated financing solutions for real estate investors. Specializing in fix-and-flip, rental properties, construction loans, and commercial real estate.',
+    description: 'Capital Solutions for Real Estate Investors',
     images: ['/miniature.png'],
   },
   other: {

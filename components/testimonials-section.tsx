@@ -25,66 +25,51 @@ interface TestimonialsSectionProps {
 
 const defaultTestimonials: Testimonial[] = [
   {
-    name: "Sarah Johnson",
+    name: "Kam",
     role: "Real Estate Investor",
-    company: "Johnson Properties LLC",
-    content: "Key Real Estate Capital made our fix-and-flip project seamless. Their expertise and quick turnaround time were exactly what we needed. We closed in just 10 days!",
+    content: "Lindsay was incredibly supportive and helped me close six properties in under 60 days. Their DSCR products are the best in the market. Highly recommend!",
     rating: 5
   },
   {
-    name: "Michael Chen",
-    role: "Property Developer",
-    company: "Chen Development Group",
-    content: "Outstanding service and competitive rates. They understood our vision and provided the perfect financing solution for our multi-family project. Highly recommend!",
+    name: "Daniel Kim",
+    role: "Property Investor",
+    content: "Excellent experience from start to finish. The team was responsive, knowledgeable, and made the process seamless. Their turnaround time exceeded my expectations!",
     rating: 5
   },
   {
-    name: "Lisa Rodriguez",
-    role: "Portfolio Investor",
-    company: "Rodriguez Investment Partners",
-    content: "Professional, reliable, and always available when we need them. Key Real Estate Capital has been instrumental in growing our rental portfolio from 5 to 25 properties.",
+    name: "Catricia Roberson",
+    role: "Real Estate Investor",
+    content: "Michelle was fast, responsive, and highly professional. Her communication was clear and respectful. Would definitely work with her again on future deals.",
     rating: 5
   },
   {
-    name: "David Thompson",
-    role: "Commercial Investor",
-    company: "Thompson Commercial Real Estate",
-    content: "The team at Key Real Estate Capital is exceptional. They provided us with a bridge loan that allowed us to acquire a prime commercial property before our competitors.",
+    name: "Eric Paz",
+    role: "First-Time Investor",
+    content: "10/10 experience for my first property. Michelle guided me every step of the way and exceeded my expectations. 100% chance I'll continue with them.",
     rating: 5
   },
   {
-    name: "Jennifer Park",
-    role: "Fix-and-Flip Specialist",
-    company: "Park Renovation Co.",
-    content: "I've worked with many lenders, but Key Real Estate Capital stands out. Their construction loan process is streamlined and their rates are unbeatable.",
+    name: "Adiel Tyson",
+    role: "Licensed Real Estate Agent",
+    content: "Michelle, Daisy and team were phenomenal. My client had a week to close and they got it done expeditiously! They've got my referral 100%.",
     rating: 5
   },
   {
-    name: "Robert Martinez",
-    role: "Multi-Family Developer",
-    company: "Martinez Development",
-    content: "Key Real Estate Capital financed our 24-unit apartment complex. Their understanding of multi-family projects and quick approval process made all the difference.",
+    name: "Nicholas Rossi",
+    role: "Fix & Flip Investor",
+    content: "Secured my Fix and Flip loan at the lowest rates and fastest turnaround. Michelle was exceptionally helpful and always available. Highly recommended!",
     rating: 5
   },
   {
-    name: "Amanda Foster",
-    role: "Rental Property Investor",
-    company: "Foster Property Management",
-    content: "They've helped us acquire 15 rental properties over the past 2 years. Their rental portfolio loans are perfect for scaling our business.",
+    name: "Alexis Beltran",
+    role: "Real Estate Investor",
+    content: "Lindsay did a great job from start to finish. Communication was key and she made me feel like a priority. Hope to do business again!",
     rating: 5
   },
   {
-    name: "James Wilson",
-    role: "Construction Developer",
-    company: "Wilson Construction",
-    content: "Their new construction loan program is exactly what we needed. The team is knowledgeable about construction financing and made the process smooth.",
-    rating: 5
-  },
-  {
-    name: "Maria Garcia",
-    role: "Real Estate Entrepreneur",
-    company: "Garcia Ventures",
-    content: "Key Real Estate Capital has been our go-to lender for all our projects. Their flexibility and understanding of our business model is unmatched.",
+    name: "Melissa Covarrubias",
+    role: "Local Guide",
+    content: "Keyan's expertise and dedication are unmatched. He navigates complex loan situations with confidence and secures the best terms. Highly recommended!",
     rating: 5
   }
 ]
