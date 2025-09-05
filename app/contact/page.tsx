@@ -292,10 +292,9 @@ export default function ContactPage() {
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-light-green mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-gray-900">San Diego Headquarters</h4>
-                      <p className="text-gray-600 font-light mt-1">
-                        401 W A St Ste 200
-                        <br />
+                      <h4 className="font-medium text-gray-900">San Diego Office</h4>
+                      <p className="text-gray-600 mt-1">
+                        123 Business District<br />
                         San Diego, CA 92101
                       </p>
                     </div>
@@ -307,27 +306,31 @@ export default function ContactPage() {
             {/* Contact Methods */}
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
-                <h3 className="text-xl font-medium text-gray-900 mb-6">Get in Touch</h3>
+                <h3 className="text-xl font-medium text-gray-900 mb-6">Contact Methods</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-light-green mr-4" />
+                    <Phone className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <div className="font-medium text-gray-900">(619) 649-6933</div>
-                      <div className="text-gray-600 font-light text-sm">Main line</div>
+                      <p className="font-medium text-gray-900">Phone</p>
+                      <Link href="tel:(555) 123-4567" className="text-gray-600 hover:text-light-green">
+                        (555) 123-4567
+                      </Link>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <Mail className="h-5 w-5 text-light-green mr-4" />
+                    <Mail className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <div className="font-medium text-gray-900">loans@keyrealestatecapital.com</div>
-                      <div className="text-gray-600 font-light text-sm">General inquiries</div>
+                      <p className="font-medium text-gray-900">Email</p>
+                      <Link href="mailto:info@keyrealstatecapital.com" className="text-gray-600 hover:text-light-green">
+                        info@keyrealstatecapital.com
+                      </Link>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-light-green mr-4" />
+                    <Clock className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <div className="font-medium text-gray-900">24/7 Service | Monday - Sunday</div>
-                      <div className="text-gray-600 font-light text-sm">Always available</div>
+                      <p className="font-medium text-gray-900">Business Hours</p>
+                      <p className="text-gray-600">Mon-Fri: 9:00 AM - 6:00 PM PST</p>
                     </div>
                   </div>
                 </div>

@@ -127,21 +127,6 @@ export function Footer() {
                  flexible lending options and expert guidance.
                </p>
                
-                               {/* Account Executive Info */}
-                <div className="max-w-xs mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <div className="text-light-green text-sm font-semibold">DF</div>
-                    </div>
-                    <div>
-                      <h5 className="text-white font-medium text-sm">Daniel Frank</h5>
-                      <p className="text-gray-400 text-xs">Senior Vice President</p>
-                      <p className="text-gray-300 text-xs">(619) 649-6933</p>
-                      <p className="text-gray-300 text-xs">daniel@keyrealestatecapital.com</p>
-                    </div>
-                  </div>
-                </div>
-               
                <div className="flex space-x-4">
                  <a 
                    href="https://www.instagram.com/investwithkey/?hl=en" 
@@ -302,7 +287,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white font-light text-sm mb-4 md:mb-0">
-              &copy; 2024 Key Real Estate Capital. All rights reserved.
+              &copy; 2025 Key Real Estate Capital. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <a 

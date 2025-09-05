@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Clock, Calendar, ArrowRight } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Calendar, ArrowRight, User } from "lucide-react"
 import Link from "next/link"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
@@ -89,40 +89,49 @@ export function ContactPreviewSection() {
         <div className="mt-16">
           <Card className="border-0 shadow-lg bg-gray-50">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Left Side - Office Info and Buttons */}
-                <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-medium text-gray-900 mb-6">Visit Our Office</h3>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center">
-                      <MapPin className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-gray-900">Key Real Estate Capital</p>
-                        <p className="text-gray-600 font-light">401 W A St Ste 200, San Diego, CA 92101</p>
+              <div className="max-w-4xl mx-auto">
+                {/* Centered Office Info */}
+                <div className="text-center">
+                  <h3 className="text-3xl font-medium text-gray-900 mb-8">Visit Our Office</h3>
+                  
+                  <div className="grid md:grid-cols-3 gap-8 mb-12">
+                    <div className="flex flex-col items-center">
+                      <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <MapPin className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <p className="font-medium text-gray-900 mb-1">Key Real Estate Capital</p>
+                        <p className="text-gray-600 font-light text-sm">401 W A St Ste 200, San Diego, CA 92101</p>
                       </div>
                     </div>
-                    <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-gray-900">Service Hours</p>
-                        <p className="text-gray-600 font-light">24/7 Service | Monday - Sunday</p>
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <Clock className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <p className="font-medium text-gray-900 mb-1">Service Hours</p>
+                        <p className="text-gray-600 font-light text-sm">24/7 Service | Monday - Sunday</p>
                       </div>
                     </div>
-                    <div className="flex items-center">
-                      <Phone className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-gray-900">NMLS ID</p>
-                        <p className="text-gray-600 font-light">#2676974</p>
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <User className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <p className="font-medium text-gray-900 mb-1">NMLS ID</p>
+                        <p className="text-gray-600 font-light text-sm">#2676974</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Ready to discuss section */}
-                  <div>
-                    <p className="text-gray-600 font-light mb-6">
+                  <div className="bg-white rounded-xl p-8 shadow-sm">
+                    <p className="text-gray-600 font-light mb-6 text-lg">
                       Ready to discuss your financing needs?
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Link href="/apply">
                         <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
                           Free Consultation
@@ -137,44 +146,6 @@ export function ContactPreviewSection() {
                     </div>
                   </div>
                 </div>
-
-                                                   {/* Right Side - Account Executive Info */}
-                  <div className="text-left">
-                    <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200 max-w-sm mx-auto">
-                      <div className="flex items-start space-x-4">
-                        {/* Placeholder for headshot */}
-                        <div className="w-16 h-16 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                          <div className="text-light-green text-2xl font-semibold">DF</div>
-                        </div>
-                        
-                        <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-1 text-left">Daniel Frank</h4>
-                          <p className="text-sm text-gray-600 mb-2 text-left">Senior Vice President</p>
-                          
-                          <div className="space-y-1 text-sm">
-                            <div className="flex items-center text-gray-600">
-                              <span className="font-medium">Phone:</span>
-                              <span className="ml-2">(619) 649-6933</span>
-                            </div>
-                            <div className="flex items-start text-gray-600">
-                              <span className="font-medium flex-shrink-0">Email:</span>
-                              <span className="ml-2 whitespace-nowrap">daniel@keyrealestatecapital.com</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                     
-                     {/* QR Code placeholder */}
-                     <div className="mt-4 pt-4 border-t border-gray-200">
-                       <div className="bg-gray-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto">
-                         <div className="text-gray-400 text-xs text-center">
-                           QR Code
-                         </div>
-                       </div>
-                       <p className="text-xs text-gray-500 text-center mt-2">Scan for quick contact</p>
-                     </div>
-                   </div>
-                 </div>
               </div>
             </CardContent>
           </Card>

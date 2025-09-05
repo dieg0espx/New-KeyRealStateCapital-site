@@ -1,36 +1,29 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import { ArrowLeft, ArrowRight, FileText, DollarSign, Home, User, Loader2, CheckCircle, AlertCircle } from "lucide-react"
-import Link from "next/link"
+import { FileText, User, Home, DollarSign, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
 
-// Form validation schema
 const applicationFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(1, "Phone number is required"),
-  loanType: z.string().min(1, "Loan type is required"),
+  propertyAddress: z.string().min(1, "Property address is required"),
+  propertyType: z.string().min(1, "Please select a property type"),
+  purchasePrice: z.string().min(1, "Purchase price is required"),
   loanAmount: z.string().min(1, "Loan amount is required"),
-  timeline: z.string().min(1, "Timeline is required"),
-  experience: z.string().optional(),
-  propertyAddress: z.string().optional(),
-  propertyValue: z.string().optional(),
-  purchasePrice: z.string().optional(),
-  downPayment: z.string().optional(),
+  loanPurpose: z.string().min(1, "Please select a loan purpose"),
+  annualIncome: z.string().min(1, "Annual income is required"),
+  creditScore: z.string().min(1, "Credit score is required"),
   additionalInfo: z.string().optional(),
-  consent: z.boolean().refine((val) => val === true, "You must consent to be contacted"),
-  creditCheck: z.boolean().refine((val) => val === true, "You must authorize credit check"),
 })
 
 type ApplicationFormData = z.infer<typeof applicationFormSchema>
@@ -82,20 +75,16 @@ export default function ApplicationPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link href="/loan-products" className="inline-flex items-center text-light-green hover:text-perry mb-8">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Loan Products
-        </Link>
-
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Loan Application</h1>
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Apply for a Loan</h1>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto">
-            Start your loan application process. Our team will review your information and contact you within 24 hours.
+            Ready to get started? Complete our application form and we'll get back to you within 24 hours with a personalized quote.
           </p>
         </div>
 
-        <Card className="border-0 shadow-xl">
-          <CardHeader className="bg-light-green text-white">
+        {/* Application Form */}
+        <Card className="border-0 shadow-lg">
+          <CardHeader>
             <CardTitle className="text-2xl font-light flex items-center">
               <FileText className="h-6 w-6 mr-3" />
               Loan Application Form
@@ -159,12 +148,12 @@ export default function ApplicationPage() {
                       Email Address *
                     </Label>
                     <Input
-                      {...register("email")}
                       type="email"
+                      {...register("email")}
                       className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.email ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
-                      placeholder="your.email@example.com"
+                      placeholder="your@email.com"
                     />
                     {errors.email && (
                       <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
@@ -175,8 +164,8 @@ export default function ApplicationPage() {
                       Phone Number *
                     </Label>
                     <Input
-                      {...register("phone")}
                       type="tel"
+                      {...register("phone")}
                       className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
                         errors.phone ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
                       }`}
@@ -185,97 +174,6 @@ export default function ApplicationPage() {
                     {errors.phone && (
                       <p className="text-red-600 text-sm mt-1">{errors.phone.message}</p>
                     )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Loan Information */}
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <DollarSign className="h-5 w-5 mr-2 text-light-green" />
-                  Loan Information
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="loanType" className="text-gray-700 font-medium">
-                      Loan Type *
-                    </Label>
-                    <select
-                      {...register("loanType")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
-                        errors.loanType ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
-                      }`}
-                    >
-                      <option value="">Select loan type</option>
-                      <option value="fix-flip">Fix-and-Flip</option>
-                      <option value="rental">Single Property Rental</option>
-                      <option value="construction">New Construction</option>
-                      <option value="portfolio">Rental Portfolio</option>
-                      <option value="bridge">Stabilized Bridge</option>
-                      <option value="commercial">Multi-Family / Commercial</option>
-                    </select>
-                    {errors.loanType && (
-                      <p className="text-red-600 text-sm mt-1">{errors.loanType.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <Label htmlFor="loanAmount" className="text-gray-700 font-medium">
-                      Requested Loan Amount *
-                    </Label>
-                    <select
-                      {...register("loanAmount")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
-                        errors.loanAmount ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
-                      }`}
-                    >
-                      <option value="">Select amount range</option>
-                      <option value="100k">$100K - $250K</option>
-                      <option value="250k">$250K - $500K</option>
-                      <option value="500k">$500K - $1M</option>
-                      <option value="1m">$1M - $2M</option>
-                      <option value="2m">$2M - $5M</option>
-                      <option value="5m">$5M+</option>
-                    </select>
-                    {errors.loanAmount && (
-                      <p className="text-red-600 text-sm mt-1">{errors.loanAmount.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <Label htmlFor="timeline" className="text-gray-700 font-medium">
-                      Funding Timeline *
-                    </Label>
-                    <select
-                      {...register("timeline")}
-                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
-                        errors.timeline ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
-                      }`}
-                    >
-                      <option value="">When do you need funding?</option>
-                      <option value="asap">ASAP</option>
-                      <option value="30days">Within 30 days</option>
-                      <option value="60days">Within 60 days</option>
-                      <option value="90days">Within 90 days</option>
-                      <option value="exploring">Just exploring options</option>
-                    </select>
-                    {errors.timeline && (
-                      <p className="text-red-600 text-sm mt-1">{errors.timeline.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <Label htmlFor="experience" className="text-gray-700 font-medium">
-                      Real Estate Experience
-                    </Label>
-                    <select
-                      {...register("experience")}
-                      className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green"
-                    >
-                      <option value="">Select experience level</option>
-                      <option value="first-time">First-time investor</option>
-                      <option value="1-3">1-3 properties</option>
-                      <option value="4-10">4-10 properties</option>
-                      <option value="10plus">10+ properties</option>
-                      <option value="professional">Professional developer</option>
-                    </select>
                   </div>
                 </div>
               </div>
@@ -289,109 +187,178 @@ export default function ApplicationPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="propertyAddress" className="text-gray-700 font-medium">
-                      Property Address
+                      Property Address *
                     </Label>
                     <Input
                       {...register("propertyAddress")}
-                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
-                      placeholder="123 Main St, City, State"
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                        errors.propertyAddress ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                      placeholder="123 Main St, City, State 12345"
                     />
+                    {errors.propertyAddress && (
+                      <p className="text-red-600 text-sm mt-1">{errors.propertyAddress.message}</p>
+                    )}
                   </div>
                   <div>
-                    <Label htmlFor="propertyValue" className="text-gray-700 font-medium">
-                      Estimated Property Value
+                    <Label htmlFor="propertyType" className="text-gray-700 font-medium">
+                      Property Type *
                     </Label>
-                    <Input
-                      {...register("propertyValue")}
-                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
-                      placeholder="$500,000"
-                    />
+                    <select
+                      {...register("propertyType")}
+                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
+                        errors.propertyType ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                    >
+                      <option value="">Select property type</option>
+                      <option value="Single-family">Single-family</option>
+                      <option value="2-4 unit">2-4 unit</option>
+                      <option value="5-8 unit">5-8 unit</option>
+                      <option value="Commercial">Commercial</option>
+                    </select>
+                    {errors.propertyType && (
+                      <p className="text-red-600 text-sm mt-1">{errors.propertyType.message}</p>
+                    )}
                   </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
                   <div>
                     <Label htmlFor="purchasePrice" className="text-gray-700 font-medium">
-                      Purchase Price
+                      Purchase Price *
                     </Label>
                     <Input
+                      type="number"
                       {...register("purchasePrice")}
-                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
-                      placeholder="$400,000"
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                        errors.purchasePrice ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                      placeholder="500000"
                     />
+                    {errors.purchasePrice && (
+                      <p className="text-red-600 text-sm mt-1">{errors.purchasePrice.message}</p>
+                    )}
                   </div>
                   <div>
-                    <Label htmlFor="downPayment" className="text-gray-700 font-medium">
-                      Down Payment Amount
+                    <Label htmlFor="loanAmount" className="text-gray-700 font-medium">
+                      Requested Loan Amount *
                     </Label>
                     <Input
-                      {...register("downPayment")}
-                      className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green"
-                      placeholder="$100,000"
+                      type="number"
+                      {...register("loanAmount")}
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                        errors.loanAmount ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                      placeholder="400000"
                     />
+                    {errors.loanAmount && (
+                      <p className="text-red-600 text-sm mt-1">{errors.loanAmount.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="loanPurpose" className="text-gray-700 font-medium">
+                      Loan Purpose *
+                    </Label>
+                    <select
+                      {...register("loanPurpose")}
+                      className={`mt-2 w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green ${
+                        errors.loanPurpose ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                    >
+                      <option value="">Select loan purpose</option>
+                      <option value="Purchase">Purchase</option>
+                      <option value="Refinance">Refinance</option>
+                      <option value="Cash-out Refinance">Cash-out Refinance</option>
+                    </select>
+                    {errors.loanPurpose && (
+                      <p className="text-red-600 text-sm mt-1">{errors.loanPurpose.message}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Financial Information */}
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <DollarSign className="h-5 w-5 mr-2 text-light-green" />
+                  Financial Information
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <Label htmlFor="annualIncome" className="text-gray-700 font-medium">
+                      Annual Income *
+                    </Label>
+                    <Input
+                      type="number"
+                      {...register("annualIncome")}
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                        errors.annualIncome ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                      placeholder="100000"
+                    />
+                    {errors.annualIncome && (
+                      <p className="text-red-600 text-sm mt-1">{errors.annualIncome.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="creditScore" className="text-gray-700 font-medium">
+                      Credit Score *
+                    </Label>
+                    <Input
+                      type="number"
+                      {...register("creditScore")}
+                      className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                        errors.creditScore ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
+                      placeholder="750"
+                      min="300"
+                      max="850"
+                    />
+                    {errors.creditScore && (
+                      <p className="text-red-600 text-sm mt-1">{errors.creditScore.message}</p>
+                    )}
                   </div>
                 </div>
               </div>
 
               {/* Additional Information */}
               <div>
-                <Label htmlFor="additionalInfo" className="text-gray-700 font-medium">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <FileText className="h-5 w-5 mr-2 text-light-green" />
                   Additional Information
-                </Label>
-                <Textarea
-                  {...register("additionalInfo")}
-                  className="mt-2 border-gray-200 focus:border-light-green focus:ring-light-green min-h-[120px]"
-                  placeholder="Tell us more about your project, timeline, or any specific requirements..."
-                />
-              </div>
-
-              {/* Consent */}
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    {...register("consent")}
-                    className="mt-1 h-4 w-4 text-light-green focus:ring-light-green border-gray-300 rounded"
-                  />
-                  <Label htmlFor="consent" className="text-sm text-gray-600 font-light leading-relaxed">
-                    I consent to Key Real Estate Capital contacting me about my loan application via phone, email, or
-                    text message. I understand this is not a commitment to lend.
+                </h3>
+                <div>
+                  <Label htmlFor="additionalInfo" className="text-gray-700 font-medium">
+                    Additional Information
                   </Label>
-                </div>
-                {errors.consent && (
-                  <p className="text-red-600 text-sm">{errors.consent.message}</p>
-                )}
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    {...register("creditCheck")}
-                    className="mt-1 h-4 w-4 text-light-green focus:ring-light-green border-gray-300 rounded"
+                  <Textarea
+                    {...register("additionalInfo")}
+                    className={`mt-2 border-gray-200 focus:border-light-green focus:ring-light-green ${
+                      errors.additionalInfo ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                    }`}
+                    placeholder="Please provide any additional information about your loan request..."
+                    rows={4}
                   />
-                  <Label htmlFor="creditCheck" className="text-sm text-gray-600 font-light leading-relaxed">
-                    I authorize Key Real Estate Capital to obtain my credit report and verify information provided in
-                    this application.
-                  </Label>
+                  {errors.additionalInfo && (
+                    <p className="text-red-600 text-sm mt-1">{errors.additionalInfo.message}</p>
+                  )}
                 </div>
-                {errors.creditCheck && (
-                  <p className="text-red-600 text-sm">{errors.creditCheck.message}</p>
-                )}
               </div>
 
               {/* Submit Button */}
-              <div className="text-center pt-6">
+              <div className="text-center">
                 <Button
                   type="submit"
-                  size="lg"
                   disabled={isSubmitting}
-                  className="bg-light-green hover:bg-perry text-white font-light px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-light-green hover:bg-perry text-white font-medium px-8 py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Submitting...
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      Submitting Application...
                     </>
                   ) : (
-                    <>
-                      Free Consultation
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </>
+                    "Submit Application"
                   )}
                 </Button>
                 <p className="text-sm text-gray-500 mt-4">
@@ -408,25 +375,56 @@ export default function ApplicationPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">What Happens Next?</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
-                  1
+                <div className="bg-light-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <User className="h-8 w-8 text-light-green" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Application Review</h4>
-                <p className="text-gray-600 font-light text-sm">Our team reviews your application within 24 hours</p>
+                <h4 className="font-semibold text-gray-900 mb-2">1. Review</h4>
+                <p className="text-gray-600 text-sm">
+                  Our team reviews your application and property details within 24 hours.
+                </p>
               </div>
               <div className="text-center">
-                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
-                  2
+                <div className="bg-light-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Home className="h-8 w-8 text-light-green" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Initial Consultation</h4>
-                <p className="text-gray-600 font-light text-sm">We schedule a call to discuss your project in detail</p>
+                <h4 className="font-semibold text-gray-900 mb-2">2. Property Analysis</h4>
+                <p className="text-gray-600 text-sm">
+                  We analyze your property and provide a detailed loan proposal.
+                </p>
               </div>
               <div className="text-center">
-                <div className="bg-light-green text-white rounded-full w-12 h-12 flex items-center justify-center font-semibold mx-auto mb-4">
-                  3
+                <div className="bg-light-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <DollarSign className="h-8 w-8 text-light-green" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Pre-Approval</h4>
-                <p className="text-gray-600 font-light text-sm">Receive your pre-approval letter and loan terms</p>
+                <h4 className="font-semibold text-gray-900 mb-2">3. Funding</h4>
+                <p className="text-gray-600 text-sm">
+                  Once approved, we can close in as little as 7-14 days.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Contact Information */}
+        <Card className="mt-12 border-0 shadow-lg">
+          <CardContent className="p-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Need Help?</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <div className="bg-light-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-light-green" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
+                <p className="text-gray-600 mb-2">(555) 123-4567</p>
+                <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-light-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileText className="h-8 w-8 text-light-green" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Email Us</h4>
+                <p className="text-gray-600 mb-2">info@keyrealstatecapital.com</p>
+                <p className="text-sm text-gray-500">We respond within 2 hours</p>
               </div>
             </div>
           </CardContent>
