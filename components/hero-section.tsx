@@ -108,7 +108,7 @@ export function HeroSection({
           animate="visible"
         >
           <motion.h1 
-            className="text-5xl sm:text-5xl lg:text-8xl font-medium text-white mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             {title}

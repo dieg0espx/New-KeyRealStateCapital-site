@@ -29,7 +29,7 @@ const defaultProducts: LoanProduct[] = [
   },
   {
     icon: <Home className="h-8 w-8" />,
-    title: "DSCR | Short/Long-term Rental",
+    title: "Single Property Rental",
     description: "Rock-bottom rates, flexible terms. Easy processes to scale your portfolio.",
     link: "/loan-products/single-rental"
   },
@@ -41,7 +41,7 @@ const defaultProducts: LoanProduct[] = [
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,
-    title: "Multi-Family",
+    title: "Rental Portfolio",
     description: "Stabilized term, value add, ground up – we've got you covered.",
     link: "/loan-products/rental-portfolio"
   },
@@ -53,28 +53,29 @@ const defaultProducts: LoanProduct[] = [
   },
   {
     icon: <Building className="h-8 w-8" />,
-    title: "Commercial | Mixed-Use",
+    title: "Multi-Family / Commercial",
     description: "Creative financing for experienced investors in all asset types.",
     link: "/loan-products/commercial"
   },
-  {
-    icon: <TrendingUp className="h-8 w-8" />,
-    title: "2nd Position Cash-out",
-    description: "Keep your current low-rate mortgage in place and liquidate some equity.",
-    link: "/loan-products/stabilized-bridge"
-  },
-  {
-    icon: <Home className="h-8 w-8" />,
-    title: "Conventional | Primary Loans",
-    description: "Get the best rate on the purchase or refinance of your primary residence.",
-    link: "/loan-products/stabilized-bridge"
-  },
-  {
-    icon: <Building className="h-8 w-8" />,
-    title: "0% Interest Business Funding",
-    description: "Good credit, but short on capital? We can help you there.",
-    link: "/loan-products/commercial"
-  }
+  // COMMENTED OUT - These are not in the main /loan-products page
+  // {
+  //   icon: <TrendingUp className="h-8 w-8" />,
+  //   title: "2nd Position Cash-out",
+  //   description: "Keep your current low-rate mortgage in place and liquidate some equity.",
+  //   link: "/loan-products/single-rental"
+  // },
+  // {
+  //   icon: <Home className="h-8 w-8" />,
+  //   title: "Conventional | Primary Loans",
+  //   description: "Get the best rate on the purchase or refinance of your primary residence.",
+  //   link: "/loan-products/single-rental"
+  // },
+  // {
+  //   icon: <Building className="h-8 w-8" />,
+  //   title: "0% Interest Business Funding",
+  //   description: "Good credit, but short on capital? We can help you there.",
+  //   link: "/loan-products/commercial"
+  // }
 ]
 
 export function LoanProductsSection({

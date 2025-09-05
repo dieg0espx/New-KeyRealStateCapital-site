@@ -280,7 +280,7 @@ export function Footer() {
                   Rental Portfolio
                 </Link>
                 <Link
-                  href="/loan-products/stabilized-bridge"
+                  href="/loan-products/single-rental"
                   className="block text-white hover:text-white transition-colors font-light"
                 >
                   Conventional / Primary

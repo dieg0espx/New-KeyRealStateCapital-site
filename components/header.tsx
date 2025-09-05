@@ -39,12 +39,15 @@ export function Header({ isHomePage = false }: HeaderProps) {
   }, [])
 
   const loanTypes = [
-    { name: "Bridge | Fix & Flip", href: "/loan-products/fix-and-flip" },
-    { name: "DSCR | Short/Long-term Rental", href: "/loan-products/single-rental" },
+    { name: "Fix & Flip", href: "/loan-products/fix-and-flip" },
+    { name: "Single Property Rental", href: "/loan-products/single-rental" },
     { name: "New Construction", href: "/loan-products/new-construction" },
-    { name: "Multi-Family | Commercial", href: "/loan-products/rental-portfolio" },
-    { name: "Conventional | Primary Loans", href: "/loan-products/stabilized-bridge" },
-    { name: "0% Interest Business Funding", href: "/loan-products/commercial" },
+    { name: "Rental Portfolio", href: "/loan-products/rental-portfolio" },
+    { name: "Bridge", href: "/loan-products/stabilized-bridge" },
+    { name: "Multi-Family / Commercial", href: "/loan-products/commercial" },
+    // COMMENTED OUT - These are not in the main /loan-products page
+    // { name: "Conventional | Primary Loans", href: "/loan-products/single-rental" },
+    // { name: "0% Interest Business Funding", href: "/loan-products/commercial" },
   ]
 
   const moreOptions = [
