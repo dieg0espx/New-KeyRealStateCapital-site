@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO || "diego@comcreate.org",
+      to: process.env.EMAIL_TO || "josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com",
       subject: `New Newsletter Subscription - ${validatedData.email}`,
       html: emailHtml,
     }

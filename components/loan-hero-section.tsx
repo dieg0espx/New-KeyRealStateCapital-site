@@ -43,8 +43,11 @@ export default function LoanHeroSection({
   }
 
   return (
-    <div className="mb-12">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div className="mb-12 relative">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-light-green/20 via-light-green/10 to-transparent rounded-2xl -m-4"></div>
+      <div className="relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">{title}</h1>
           <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
@@ -111,6 +114,7 @@ export default function LoanHeroSection({
             )
           })}
         </div>
+      </div>
       </div>
     </div>
   )
