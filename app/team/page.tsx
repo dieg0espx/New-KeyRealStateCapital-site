@@ -1,10 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, Linkedin, Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { TeamMemberModal } from "@/components/team-member-modal"
+import { useState } from "react"
 
 export default function TeamPage() {
+  const [selectedMember, setSelectedMember] = useState<any>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const teamMembers = [
     {
       name: "Keyan Chang",
@@ -17,18 +23,18 @@ export default function TeamPage() {
     {
       name: "Lindsay Milano",
       title: "President",
-      bio: "Lindsay brings 12 years of commercial lending experience, specializing in fix-and-flip and rental property financing.",
+      bio: "A Boston native now based in Miami, Lindsay Milano brings over 7 years of expertise in the private lending space. She combines deep industry knowledge with a hands-on approach, guiding clients through every step of the lending process with clarity and care. Lindsay is passionate about building strong relationships, delivering tailored financing solutions, and helping real estate investors achieve lasting success. Her well-rounded background ensures clients benefit from both strategic insight and seamless execution.",
       phone: "(555) 123-4568",
       email: "lindsay@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/lindsayMilano.png",
     },
     {
       name: "Daniel Frank",
       title: "Senior Vice President",
-      bio: "Daniel specializes in construction and development loans, with extensive experience in project financing and risk assessment.",
+      bio: "With nearly a decade of experience in private capital lending and real estate investment, Daniel is a relationship-focused professional dedicated to helping his clients achieve lasting success. His mission goes beyond closing loans; it's about building partnerships and empowering investors with sound advice, streamlined processes and the best possible terms on every deal. Outside of work, Daniel enjoys paddle boarding, live music, and exploring the outdoors with his dog, Sukhi.",
       phone: "(555) 123-4569",
       email: "daniel@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/danielFrank.jpeg",
     },
     {
       name: "Michelle Gusov",
@@ -39,37 +45,37 @@ export default function TeamPage() {
       image: "/placeholder.svg?height=300&width=300",
     },
     {
-      name: "Tommy Donuts",
+      name: "Tommy Loutzenheiser",
       title: "Chief Technology Officer",
-      bio: "Tommy leads our technology initiatives, ensuring our digital platforms provide seamless experiences for our clients.",
+      bio: "Tommy drives growth at Key Real Estate Capital by blending strategic lending knowledge with efficient technology integration and automation. His work focuses on building marketing systems, streamlining workflows, and creating messaging that converts—helping the company scale efficiently while facilitating smooth deal flow. By combining tech with clear communication, Tommy ensures Key Real Estate Capital operates at its highest level. Away from work, Tommy enjoys surfing, hitting the gym and spending time outdoors.",
       phone: "(555) 123-4571",
       email: "tommy@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/tommyLoutzenheiser.jpeg",
     },
 
     {
       name: "Sebastian Muendo",
       title: "Account Executive",
-      bio: "Sebastian works closely with investors to find the perfect financing solutions for their real estate projects.",
+      bio: "At Key Real Estate Capital, Sebastian blends his passion for financial empowerment with a client-first philosophy rooted in empathy, overdelivering, and unwavering commitment. He believes that clear communication and affordable financing solutions are the foundation for helping individuals and families achieve true financial freedom. Sebastian cares deeply about people growing their wealth, not just for the sake of money, but to create a life filled with more time, joy, and connection with loved ones.",
       phone: "(555) 123-4573",
       email: "sebastian@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/Sebastian Muenda headshot.png",
     },
     {
       name: "Hazel Wilder",
       title: "Account Executive",
-      bio: "Hazel provides expert guidance to investors, helping them navigate the lending process with confidence.",
+      bio: "I help people make smart moves in real estate with the right financing—whether it's a first home, a refinance, or building an investment portfolio. As a licensed Loan Originator, I offer both traditional and creative options like DSCR, fix & flip, and bridge loans. My background in case management and real estate investing taught me the value of clear, honest communication. I aim to make lending simple, transparent, and partnership-driven.",
       phone: "(555) 123-4574",
       email: "hazel@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/hazelWilder.jpeg",
     },
     {
       name: "Frank Estrada",
       title: "Account Executive",
-      bio: "Frank brings years of experience in real estate finance, offering tailored solutions for investors at every level.",
+      bio: "With over a decade in fintech and lending, Frank has built a reputation for partnerships that made capital more accessible for small businesses. Now, he applies that same expertise to real estate, bringing a technical eye to property financing and long-term value for entrepreneurs. At Key Real Estate Capital, Frank is committed to making financing simple, transparent, and relationship-driven—fueled by the same dedication he brings to his family.",
       phone: "(555) 123-4575",
       email: "frank@keyrec.com",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/team/frankEstrada.PNG",
     },
   ]
 
@@ -91,7 +97,13 @@ export default function TeamPage() {
               key={index}
               className={`animate-fade-in-up-delay-${4 + index} hover:transform hover:-translate-y-2 transition-all duration-300`}
             >
-              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white overflow-hidden flex flex-col h-full">
+              <Card 
+                className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white overflow-hidden flex flex-col h-full cursor-pointer"
+                onClick={() => {
+                  setSelectedMember(member)
+                  setIsModalOpen(true)
+                }}
+              >
                 <div className="aspect-square overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <Image
                     src={member.image || "/placeholder.svg"}
@@ -107,7 +119,9 @@ export default function TeamPage() {
                       {member.name}
                     </h3>
                     <p className="text-light-green font-medium mb-4">{member.title}</p>
-                    <p className="text-gray-600 font-light leading-relaxed mb-6 text-sm line-clamp-4">{member.bio}</p>
+                    <p className="text-gray-600 font-light leading-relaxed mb-6 text-sm line-clamp-4">
+                      {member.bio}
+                    </p>
                     <div className="space-y-2 mb-6">
                       <div className="flex items-center text-gray-600 text-sm group-hover:translate-x-1 transition-transform duration-200">
                         <Phone className="h-4 w-4 mr-2" />
@@ -144,6 +158,15 @@ export default function TeamPage() {
           ))}
         </div>
       </div>
+      
+      <TeamMemberModal
+        member={selectedMember}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false)
+          setSelectedMember(null)
+        }}
+      />
     </div>
   )
 }
