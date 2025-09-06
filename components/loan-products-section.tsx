@@ -11,7 +11,9 @@ interface LoanProduct {
   icon: React.ReactNode
   title: string
   description: string
-  link: string
+  link?: string
+  hasButton?: boolean
+  buttonText?: string
 }
 
 interface LoanProductsSectionProps {
@@ -57,25 +59,21 @@ const defaultProducts: LoanProduct[] = [
     description: "Creative financing for experienced investors in all asset types.",
     link: "/loan-products/commercial"
   },
-  // COMMENTED OUT - These are not in the main /loan-products page
-  // {
-  //   icon: <TrendingUp className="h-8 w-8" />,
-  //   title: "2nd Position Cash-out",
-  //   description: "Keep your current low-rate mortgage in place and liquidate some equity.",
-  //   link: "/loan-products/single-rental"
-  // },
-  // {
-  //   icon: <Home className="h-8 w-8" />,
-  //   title: "Conventional | Primary Loans",
-  //   description: "Get the best rate on the purchase or refinance of your primary residence.",
-  //   link: "/loan-products/single-rental"
-  // },
-  // {
-  //   icon: <Building className="h-8 w-8" />,
-  //   title: "0% Interest Business Funding",
-  //   description: "Good credit, but short on capital? We can help you there.",
-  //   link: "/loan-products/commercial"
-  // }
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    title: "2nd Position Cash-out",
+    description: "Keep your current low-rate mortgage in place and liquidate some equity."
+  },
+  {
+    icon: <Home className="h-8 w-8" />,
+    title: "Conventional | Primary Loans",
+    description: "Get the best rate on the purchase or refinance of your primary residence."
+  },
+  {
+    icon: <Building className="h-8 w-8" />,
+    title: "0% Interest Business Funding",
+    description: "Good credit, but short on capital? We can help you there."
+  }
 ]
 
 export function LoanProductsSection({
@@ -137,7 +135,6 @@ export function LoanProductsSection({
                 transition: { duration: 0.4 }
               }}
             >
-            <Link href={product.link}>
               <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
                 <CardContent className="p-8">
                   <div className="text-light-green mb-6">
@@ -146,12 +143,26 @@ export function LoanProductsSection({
                   <h3 className="text-2xl font-medium text-gray-900 mb-4">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
                   
-                    <Button variant="ghost" className="mt-4 p-0 text-perry font-light">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  {product.hasButton ? (
+                    <Button 
+                      variant="ghost" 
+                      className="mt-4 p-0 text-perry font-light"
+                      onClick={() => {
+                        // Button click handler - no navigation
+                        console.log(`Clicked on ${product.title}`)
+                      }}
+                    >
+                      {product.buttonText || "Learn More"} <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
+                  ) : product.link ? (
+                    <Link href={product.link}>
+                      <Button variant="ghost" className="mt-4 p-0 text-perry font-light">
+                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  ) : null}
                 </CardContent>
               </Card>
-            </Link>
             </motion.div>
           ))}
         </motion.div>
