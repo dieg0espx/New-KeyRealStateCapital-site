@@ -110,7 +110,11 @@ export default function TeamPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-full object-cover transition-transform duration-300"
+                    className={`w-full h-full object-cover transition-transform duration-300 ${
+                      member.name === "Tommy Loutzenheiser" 
+                        ? "object-center scale-150" 
+                        : "object-top"
+                    }`}
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col flex-1">

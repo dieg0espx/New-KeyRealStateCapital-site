@@ -39,7 +39,11 @@ export function TeamMemberModal({ member, isOpen, onClose }: TeamMemberModalProp
               alt={member.name}
               width={300}
               height={300}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover ${
+                member.name === "Tommy Loutzenheiser" 
+                  ? "object-center scale-150" 
+                  : "object-top"
+              }`}
             />
           </div>
           
