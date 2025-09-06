@@ -17,7 +17,7 @@ export default function TeamPage() {
       title: "Founder & CEO",
       bio: "With over 15 years in real estate finance, Keyan founded Key Real Estate Capital to provide sophisticated lending solutions for investors nationwide.",
       phone: "(555) 123-4567",
-      email: "keyan@keyrec.com",
+      email: "keyan@keyrealestatecapital.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
@@ -25,7 +25,7 @@ export default function TeamPage() {
       title: "President",
       bio: "A Boston native now based in Miami, Lindsay Milano brings over 7 years of expertise in the private lending space. She combines deep industry knowledge with a hands-on approach, guiding clients through every step of the lending process with clarity and care. Lindsay is passionate about building strong relationships, delivering tailored financing solutions, and helping real estate investors achieve lasting success. Her well-rounded background ensures clients benefit from both strategic insight and seamless execution.",
       phone: "(555) 123-4568",
-      email: "lindsay@keyrec.com",
+      email: "lindsay@keyrealestatecapital.com",
       image: "/team/lindsayMilano.png",
     },
     {
@@ -33,7 +33,7 @@ export default function TeamPage() {
       title: "Senior Vice President",
       bio: "With nearly a decade of experience in private capital lending and real estate investment, Daniel is a relationship-focused professional dedicated to helping his clients achieve lasting success. His mission goes beyond closing loans; it's about building partnerships and empowering investors with sound advice, streamlined processes and the best possible terms on every deal. Outside of work, Daniel enjoys paddle boarding, live music, and exploring the outdoors with his dog, Sukhi.",
       phone: "(555) 123-4569",
-      email: "daniel@keyrec.com",
+      email: "daniel@keyrealestatecapital.com",
       image: "/team/danielFrank.jpeg",
     },
     {
@@ -41,7 +41,7 @@ export default function TeamPage() {
       title: "Lead Processor",
       bio: "Michelle manages our loan processing division, ensuring smooth and efficient loan closings for all our clients.",
       phone: "(555) 123-4570",
-      email: "michelle@keyrec.com",
+      email: "michelle@keyrealestatecapital.com",
       image: "/placeholder.svg?height=300&width=300",
     },
     {
@@ -49,7 +49,7 @@ export default function TeamPage() {
       title: "Chief Technology Officer",
       bio: "Tommy drives growth at Key Real Estate Capital by blending strategic lending knowledge with efficient technology integration and automation. His work focuses on building marketing systems, streamlining workflows, and creating messaging that converts—helping the company scale efficiently while facilitating smooth deal flow. By combining tech with clear communication, Tommy ensures Key Real Estate Capital operates at its highest level. Away from work, Tommy enjoys surfing, hitting the gym and spending time outdoors.",
       phone: "(555) 123-4571",
-      email: "tommy@keyrec.com",
+      email: "tommy@keyrealestatecapital.com",
       image: "/team/tommyLoutzenheiser.jpeg",
     },
 
@@ -58,7 +58,7 @@ export default function TeamPage() {
       title: "Account Executive",
       bio: "At Key Real Estate Capital, Sebastian blends his passion for financial empowerment with a client-first philosophy rooted in empathy, overdelivering, and unwavering commitment. He believes that clear communication and affordable financing solutions are the foundation for helping individuals and families achieve true financial freedom. Sebastian cares deeply about people growing their wealth, not just for the sake of money, but to create a life filled with more time, joy, and connection with loved ones.",
       phone: "(555) 123-4573",
-      email: "sebastian@keyrec.com",
+      email: "sebastian@keyrealestatecapital.com",
       image: "/team/Sebastian Muenda headshot.png",
     },
     {
@@ -66,7 +66,7 @@ export default function TeamPage() {
       title: "Account Executive",
       bio: "I help people make smart moves in real estate with the right financing—whether it's a first home, a refinance, or building an investment portfolio. As a licensed Loan Originator, I offer both traditional and creative options like DSCR, fix & flip, and bridge loans. My background in case management and real estate investing taught me the value of clear, honest communication. I aim to make lending simple, transparent, and partnership-driven.",
       phone: "(555) 123-4574",
-      email: "hazel@keyrec.com",
+      email: "hazel@keyrealestatecapital.com",
       image: "/team/hazelWilder.jpeg",
     },
     {
@@ -74,7 +74,7 @@ export default function TeamPage() {
       title: "Account Executive",
       bio: "With over a decade in fintech and lending, Frank has built a reputation for partnerships that made capital more accessible for small businesses. Now, he applies that same expertise to real estate, bringing a technical eye to property financing and long-term value for entrepreneurs. At Key Real Estate Capital, Frank is committed to making financing simple, transparent, and relationship-driven—fueled by the same dedication he brings to his family.",
       phone: "(555) 123-4575",
-      email: "frank@keyrec.com",
+      email: "frank@keyrealestatecapital.com",
       image: "/team/frankEstrada.PNG",
     },
   ]
@@ -110,7 +110,11 @@ export default function TeamPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-full object-cover transition-transform duration-300"
+                    className={`w-full h-full object-cover transition-transform duration-300 ${
+                      member.name === "Tommy Loutzenheiser" 
+                        ? "object-center scale-150" 
+                        : "object-top"
+                    }`}
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col flex-1">

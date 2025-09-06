@@ -113,14 +113,14 @@ export function LoanCalculatorSection({
             </motion.div>
 
             <motion.div 
-              className="grid lg:grid-cols-2 gap-12 items-stretch"
+              className="grid lg:grid-cols-3 gap-12 items-stretch"
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
               {/* Calculator */}
               <motion.div 
-                className="order-2 lg:order-1"
+                className="order-2 lg:order-1 lg:col-span-2"
                 variants={itemVariants}
               >
                 <LoanCalculator />
@@ -128,7 +128,7 @@ export function LoanCalculatorSection({
               
               {/* Benefits & Features */}
               <motion.div 
-                className="order-1 lg:order-2 space-y-8"
+                className="order-1 lg:order-2 lg:col-span-1 space-y-8"
                 variants={itemVariants}
               >
                 <motion.div 
@@ -231,7 +231,7 @@ export function LoanCalculatorSection({
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
-                  <span>15 states covered</span>
+                  <span>48 states covered</span>
                 </motion.div>
               </div>
             </motion.div>

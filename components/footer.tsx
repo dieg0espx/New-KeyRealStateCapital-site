@@ -1,53 +1,102 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Instagram, ExternalLink, Loader2, CheckCircle, AlertCircle, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, ExternalLink, Linkedin, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
+// Extend Window interface to include Typeform
+declare global {
+  interface Window {
+    tf: any
+  }
+}
+
 export function Footer() {
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const [submitMessage, setSubmitMessage] = useState("")
+  const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false)
+  const [modalKey, setModalKey] = useState(0)
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!email.trim()) {
-      setSubmitStatus("error")
-      setSubmitMessage("Please enter your email address")
-      return
-    }
-
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-    
-    try {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      })
-
-      if (response.ok) {
-        setSubmitStatus("success")
-        setSubmitMessage("Thank you! You've been subscribed to our newsletter.")
-        setEmail("")
-      } else {
-        const errorData = await response.json()
-        setSubmitStatus("error")
-        setSubmitMessage(errorData.message || "Failed to subscribe. Please try again.")
+  useEffect(() => {
+    // Load Typeform embed script only once
+    const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
+    if (!existingScript) {
+      console.log('Loading Typeform script...')
+      const script = document.createElement('script')
+      script.src = 'https://embed.typeform.com/next/embed.js'
+      script.async = true
+      script.onload = () => {
+        console.log('Typeform script loaded successfully')
+        console.log('window.tf available:', !!window.tf)
+        if (window.tf) {
+          console.log('window.tf methods:', Object.keys(window.tf))
+        }
       }
-    } catch (error) {
-      setSubmitStatus("error")
-      setSubmitMessage("Network error. Please check your connection and try again.")
-    } finally {
-      setIsSubmitting(false)
+      script.onerror = () => {
+        console.error('Failed to load Typeform script')
+      }
+      document.head.appendChild(script)
+    } else {
+      console.log('Typeform script already loaded')
     }
+  }, [])
+
+  // Handle Typeform initialization when modal opens
+  useEffect(() => {
+    if (isNewsletterModalOpen) {
+      console.log('Modal opened, modalKey:', modalKey)
+      
+      // Inject the Typeform script when modal opens
+      const script = document.createElement('script')
+      script.src = 'https://embed.typeform.com/next/embed.js'
+      script.async = true
+      script.onload = () => {
+        console.log('Typeform script loaded in modal')
+      }
+      document.head.appendChild(script)
+      
+      // Wait for the DOM to be ready, then trigger Typeform initialization
+      const timer = setTimeout(() => {
+        console.log('Attempting to initialize Typeform embed...')
+        
+        // Check if Typeform div exists
+        const typeformDiv = document.querySelector('[data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"]')
+        console.log('Typeform div found:', !!typeformDiv)
+        
+        // Force the Typeform to initialize by removing and re-adding the data attribute
+        if (typeformDiv) {
+          const formId = typeformDiv.getAttribute('data-tf-live')
+          typeformDiv.removeAttribute('data-tf-live')
+          
+          // Re-add the attribute to trigger initialization
+          setTimeout(() => {
+            if (typeformDiv) {
+              typeformDiv.setAttribute('data-tf-live', formId || '')
+              console.log('Re-added data-tf-live attribute')
+            }
+          }, 100)
+        }
+      }, 300)
+      
+      return () => {
+        clearTimeout(timer)
+        // Clean up the script when modal closes
+        const scriptToRemove = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
+        if (scriptToRemove) {
+          document.head.removeChild(scriptToRemove)
+        }
+      }
+    }
+  }, [isNewsletterModalOpen, modalKey])
+
+  const openNewsletterModal = () => {
+    console.log('Button clicked - opening newsletter modal')
+    setModalKey(prev => prev + 1) // Force re-render of Typeform
+    setIsNewsletterModalOpen(true)
+  }
+
+  const closeNewsletterModal = () => {
+    setIsNewsletterModalOpen(false)
   }
 
   return (
@@ -60,46 +109,14 @@ export function Footer() {
             <p className="text-white font-light mb-6 max-w-2xl mx-auto">
               Get the latest market insights, investment strategies, and financing updates delivered to your inbox.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
-              {/* Status Messages */}
-              {submitStatus === "success" && (
-                <div className="w-full bg-green-50 border border-green-200 rounded-lg p-4 flex items-center mb-4">
-                  <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                  <p className="text-green-800 text-sm">{submitMessage}</p>
-                </div>
-              )}
-              
-              {submitStatus === "error" && (
-                <div className="w-full bg-red-50 border border-red-200 rounded-lg p-4 flex items-center mb-4">
-                  <AlertCircle className="h-5 w-5 text-red-600 mr-3 flex-shrink-0" />
-                  <p className="text-red-800 text-sm">{submitMessage}</p>
-                </div>
-              )}
-              
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white text-gray-700 placeholder-gray focus:outline-none focus:ring-2 focus:ring-light-green focus:border-transparent"
-                required
-                disabled={isSubmitting}
-              />
+            <div className="flex justify-center">
               <Button 
-                type="submit" 
-                className="bg-light-green hover:bg-white text-white hover:text-perry font-light px-6 py-3 h-[52px] disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={isSubmitting}
+                onClick={openNewsletterModal}
+                className="bg-light-green hover:bg-white text-white hover:text-perry font-light px-8 py-4 text-lg"
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Subscribing...
-                  </>
-                ) : (
-                  "Subscribe"
-                )}
+                Join Our Newsletter
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -126,21 +143,6 @@ export function Footer() {
                  Sophisticated financing solutions for real estate investors nationwide. We empower your success with
                  flexible lending options and expert guidance.
                </p>
-               
-                               {/* Account Executive Info */}
-                <div className="max-w-xs mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-light-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <div className="text-light-green text-sm font-semibold">DF</div>
-                    </div>
-                    <div>
-                      <h5 className="text-white font-medium text-sm">Daniel Frank</h5>
-                      <p className="text-gray-400 text-xs">Senior Vice President</p>
-                      <p className="text-gray-300 text-xs">(619) 649-6933</p>
-                      <p className="text-gray-300 text-xs">daniel@keyrealestatecapital.com</p>
-                    </div>
-                  </div>
-                </div>
                
                <div className="flex space-x-4">
                  <a 
@@ -302,7 +304,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white font-light text-sm mb-4 md:mb-0">
-              &copy; 2024 Key Real Estate Capital. All rights reserved.
+              &copy; 2025 Key Real Estate Capital. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <a 
@@ -329,6 +331,32 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Newsletter Modal */}
+      {isNewsletterModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-xl font-medium text-gray-900">Join Our Newsletter</h3>
+              <button
+                onClick={closeNewsletterModal}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="p-4">
+              {isNewsletterModalOpen && (
+                <div 
+                  key={modalKey}
+                  data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
+                  className="w-full h-[500px] rounded-lg overflow-hidden"
+                ></div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   )
 }

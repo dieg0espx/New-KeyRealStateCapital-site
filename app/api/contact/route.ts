@@ -1,3 +1,7 @@
+// NOTE: This API route is no longer used since the contact form has been replaced with Typeform
+// The Typeform submissions will go directly to their CRM system
+// This file can be removed if no other forms use this endpoint
+
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
