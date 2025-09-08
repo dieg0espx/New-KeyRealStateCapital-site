@@ -1,0 +1,326 @@
+"use client"
+
+import { Card, CardContent } from "@/components/ui/card"
+import { CheckCircle, DollarSign, Calendar, TrendingUp, Users, Building, Hammer, Zap, Shield, FileText, Percent, Clock } from "lucide-react"
+import LoanHeroSection from "@/components/loan-hero-section"
+import SuccessStoryCard from "@/components/success-story-card"
+import LoanParameterCards from "@/components/loan-parameter-cards"
+import QuoteModal from "@/components/quote-modal"
+import { useState } from "react"
+
+interface FixAndFlipSectionProps {
+  onSecondaryClick: () => void
+}
+
+export default function FixAndFlipSection({ onSecondaryClick }: FixAndFlipSectionProps) {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false)
+
+  const openQuoteModal = () => {
+    setIsQuoteModalOpen(true)
+  }
+
+  const closeQuoteModal = () => {
+    setIsQuoteModalOpen(false)
+  }
+
+  return (
+    <>
+      {/* Fix & Flip Section */}
+      <LoanHeroSection
+        title="Fix & Flip Loans"
+        description="Short-term financing to purchase (or refinance) and renovate an investment property."
+        image="/loan-products/fixAndFlip.jpg"
+        primaryCta={{
+          text: "Get a Quote",
+          href: "#",
+          onClick: openQuoteModal
+        }}
+        secondaryCta={{
+          text: "Schedule Consultation",
+          href: "#"
+        }}
+        onSecondaryClick={onSecondaryClick}
+        badges={[
+          {
+            title: "Quick Turnaround",
+            subtitle: "7-14 Days",
+            icon: <Zap className="h-6 w-6 text-white" />,
+            position: "top-left"
+          },
+          {
+            title: "Maximum Leverage",
+            subtitle: "95% Purchase Price",
+            icon: <Hammer className="h-6 w-6 text-white" />,
+            position: "bottom-right"
+          }
+        ]}
+      />
+
+      {/* First-time investor message */}
+      <Card className="mb-8 border-0 shadow-lg bg-gradient-to-r from-light-green/10 to-perry/10">
+        <CardContent className="p-6 text-center">
+          <p className="text-lg text-gray-800 font-medium">
+            First-time investor or seasoned pro – we're at your side.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Rates & Terms */}
+      <Card className="mb-12 border-0 shadow-lg">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-medium text-gray-900 mb-6">Rates & Terms</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex items-center space-x-3">
+              <Percent className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Rates starting at 7.75%</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <DollarSign className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Up to 95% of purchase price</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Calendar className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Loan term: 6 / 9 / 12 / 18 / 24 months</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <DollarSign className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Loans from $75K – $10M</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Building className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Eligible Property Types: SFR / Condo / Multi-Family</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Users className="h-6 w-6 text-light-green" />
+              <div>
+                <p className="font-semibold text-gray-900">Minimum FICO: 600 – lower on exception</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Additional Perks */}
+      <Card className="mb-12 border-0 shadow-lg bg-gradient-to-r from-light-green/5 to-perry/5">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-medium text-gray-900 mb-8 text-center">Additional Perks</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Shield className="h-8 w-8 text-light-green" />
+              </div>
+              <h3 className="font-semibold text-gray-900 text-lg mb-2">No Up Front Fees</h3>
+              <p className="text-gray-600 font-light text-sm">Start your project without any upfront costs or hidden charges</p>
+            </div>
+            <div className="text-center group">
+              <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <FileText className="h-8 w-8 text-light-green" />
+              </div>
+              <h3 className="font-semibold text-gray-900 text-lg mb-2">No Appraisal</h3>
+              <p className="text-gray-600 font-light text-sm">Skip the traditional appraisal process and move faster</p>
+            </div>
+            <div className="text-center group">
+              <div className="bg-light-green/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Users className="h-8 w-8 text-light-green" />
+              </div>
+              <h3 className="font-semibold text-gray-900 text-lg mb-2">No Income Verification</h3>
+              <p className="text-gray-600 font-light text-sm">Focus on the property value, not personal income requirements</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Key Stats */}
+      <LoanParameterCards
+        columns={4}
+        parameters={[
+          {
+            icon: DollarSign,
+            value: "$75K - $10M",
+            label: "Loan Amount"
+          },
+          {
+            icon: Calendar,
+            value: "6-24 Months",
+            label: "Loan Term"
+          },
+          {
+            icon: TrendingUp,
+            value: "7.75%",
+            label: "Starting Rate"
+          },
+          {
+            icon: Clock,
+            value: "7-14 Days",
+            label: "Close Time"
+          }
+        ]}
+      />
+
+      <Card className="mb-12 border-0 shadow-lg">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-medium text-gray-900 mb-6">Program Details</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Loan Features</h3>
+              <ul className="space-y-3">
+                {[
+                  "Loans from $75K – $10M",
+                  "Eligible Property Types: SFR / Condo / Multi-Family",
+                  "Loan term: 6 / 9 / 12 / 18 / 24 months",
+                  "Loan to Cost (LTC): up to 100% of purchase + 100% of rehab",
+                  "Loan to After Repair Value (LTARV): up to 75%",
+                  "Minimum FICO: 600 – lower on exception",
+                  "Rapid Close | No Appraisal | Advanced Rehab Draws",
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-700">
+                    <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Requirements</h3>
+              <ul className="space-y-3">
+                {[
+                  "No income verification",
+                  "No appraisal",
+                  "No up front fees",
+                  "No experience required",
+                  "Detailed renovation budget",
+                  "Planned exit strategy",
+                ].map((requirement, index) => (
+                  <li key={index} className="flex items-center text-gray-700">
+                    <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
+                    {requirement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* How It Works */}
+      <Card className="mb-12 border-0 shadow-lg">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-medium text-gray-900 mb-6">How Fix-and-Flip Financing Works</h2>
+          <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Property Acquisition</h4>
+                    <p className="text-gray-600 font-light">
+                      Purchase distressed properties below market value using our acquisition financing.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Renovation Phase</h4>
+                    <p className="text-gray-600 font-light">
+                      Access renovation funds through scheduled draws as work progresses and milestones are met.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Property Sale or Refinance</h4>
+                    <p className="text-gray-600 font-light">
+                      List and sell the renovated property or easily refinance and hold it as a cash-flowing rental – with cash-out.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-light-green text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1 flex-shrink-0">
+                    4
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Loan Repayment</h4>
+                    <p className="text-gray-600 font-light">
+                      Pay off the loan with proceeds from the sale and keep your profit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Success Story */}
+      <SuccessStoryCard
+        title="Success Story"
+        name="Sarah & Mike Johnson"
+        testimonial="We purchased a distressed 3-bedroom home for $180,000 and secured a $220,000 fix-and-flip loan covering both acquisition and renovation costs. After 4 months of renovations, we sold the property for $360,000, netting a $95,000 profit after all costs and loan repayment."
+        metrics={[
+          { label: "Purchase Price", value: "$180,000" },
+          { label: "Renovation Cost", value: "$58,000" },
+          { label: "Sale Price", value: "$360,000" }
+        ]}
+      />
+
+      {/* FAQ Section */}
+      <Card className="mb-16 border-0 shadow-lg">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-medium text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {[
+              {
+                question: "What is the maximum loan amount for fix-and-flip projects?",
+                answer: "We offer fix-and-flip loans up to $2 million, with loan amounts typically based on the After Repair Value (ARV) of the property."
+              },
+              {
+                question: "How quickly can I close on a fix-and-flip loan?",
+                answer: "Our streamlined process allows for closings in 7-14 days, depending on the complexity of your project and documentation completeness."
+              },
+              {
+                question: "Do I need renovation experience to qualify?",
+                answer: "While renovation experience is preferred, we work with both experienced flippers and those new to the business. We'll review your team and project plan."
+              },
+              {
+                question: "How are renovation funds disbursed?",
+                answer: "Renovation funds are disbursed through scheduled draws based on completed milestones. We work with your contractor to ensure timely funding."
+              },
+              {
+                question: "What happens if the property doesn't sell as quickly as expected?",
+                answer: "We offer loan extensions and can work with you to adjust the timeline. However, it's important to have a realistic exit strategy in place."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="border-b border-gray-200 pb-4">
+                <h4 className="font-medium text-gray-900 mb-2">{faq.question}</h4>
+                <p className="text-gray-600 font-light">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isQuoteModalOpen} onClose={closeQuoteModal} />
+    </>
+  )
+}

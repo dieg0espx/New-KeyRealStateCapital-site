@@ -18,79 +18,16 @@ export function Footer() {
   const [modalKey, setModalKey] = useState(0)
 
   useEffect(() => {
-    // Load Typeform embed script only once
-    const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
-    if (!existingScript) {
-      console.log('Loading Typeform script...')
-      const script = document.createElement('script')
-      script.src = 'https://embed.typeform.com/next/embed.js'
-      script.async = true
-      script.onload = () => {
-        console.log('Typeform script loaded successfully')
-        console.log('window.tf available:', !!window.tf)
-        if (window.tf) {
-          console.log('window.tf methods:', Object.keys(window.tf))
-        }
-      }
-      script.onerror = () => {
-        console.error('Failed to load Typeform script')
-      }
-      document.head.appendChild(script)
-    } else {
-      console.log('Typeform script already loaded')
-    }
-  }, [])
-
-  // Handle Typeform initialization when modal opens
-  useEffect(() => {
     if (isNewsletterModalOpen) {
-      console.log('Modal opened, modalKey:', modalKey)
-      
-      // Inject the Typeform script when modal opens
+      // Load Typeform embed script
       const script = document.createElement('script')
       script.src = 'https://embed.typeform.com/next/embed.js'
       script.async = true
-      script.onload = () => {
-        console.log('Typeform script loaded in modal')
-      }
       document.head.appendChild(script)
-      
-      // Wait for the DOM to be ready, then trigger Typeform initialization
-      const timer = setTimeout(() => {
-        console.log('Attempting to initialize Typeform embed...')
-        
-        // Check if Typeform div exists
-        const typeformDiv = document.querySelector('[data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"]')
-        console.log('Typeform div found:', !!typeformDiv)
-        
-        // Force the Typeform to initialize by removing and re-adding the data attribute
-        if (typeformDiv) {
-          const formId = typeformDiv.getAttribute('data-tf-live')
-          typeformDiv.removeAttribute('data-tf-live')
-          
-          // Re-add the attribute to trigger initialization
-          setTimeout(() => {
-            if (typeformDiv) {
-              typeformDiv.setAttribute('data-tf-live', formId || '')
-              console.log('Re-added data-tf-live attribute')
-            }
-          }, 100)
-        }
-      }, 300)
-      
-      return () => {
-        clearTimeout(timer)
-        // Clean up the script when modal closes
-        const scriptToRemove = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
-        if (scriptToRemove) {
-          document.head.removeChild(scriptToRemove)
-        }
-      }
     }
-  }, [isNewsletterModalOpen, modalKey])
+  }, [isNewsletterModalOpen])
 
   const openNewsletterModal = () => {
-    console.log('Button clicked - opening newsletter modal')
     setModalKey(prev => prev + 1) // Force re-render of Typeform
     setIsNewsletterModalOpen(true)
   }
@@ -345,14 +282,15 @@ export function Footer() {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <div className="p-4">
-              {isNewsletterModalOpen && (
-                <div 
-                  key={modalKey}
-                  data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
-                  className="w-full h-[500px] rounded-lg overflow-hidden"
-                ></div>
-              )}
+            <div className="p-0">
+              <div 
+                key={modalKey}
+                data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
+                data-tf-source="localhost"
+                data-tf-medium="embed-sdk"
+                data-tf-medium-version="next"
+                className="w-full h-[600px] rounded-lg overflow-hidden"
+              ></div>
             </div>
           </div>
         </div>

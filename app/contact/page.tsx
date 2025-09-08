@@ -8,6 +8,7 @@ import Link from "next/link"
 import { useEffect } from "react"
 import CalendlyModal from "@/components/calendly-modal"
 import { useCalendlyModal } from "@/hooks/use-calendly-modal"
+import { getTypeformAttributes } from "@/lib/typeform-config"
 
 export default function ContactPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
@@ -46,7 +47,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="p-0">
               <div 
-                data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
+                {...getTypeformAttributes({ style: { height: '600px' } })}
                 className="w-full h-[600px] rounded-lg overflow-hidden"
               ></div>
             </CardContent>

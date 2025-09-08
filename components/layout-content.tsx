@@ -11,10 +11,11 @@ interface LayoutContentProps {
 export function LayoutContent({ children }: LayoutContentProps) {
   const pathname = usePathname()
   const isHomePage = pathname === "/"
+  const isComprehensiveLoanPage = pathname === "/loan-products-comprehensive"
 
   return (
     <>
-      <Header isHomePage={isHomePage} />
+      {!isComprehensiveLoanPage && <Header isHomePage={isHomePage} />}
       <main>{children}</main>
       <Footer />
     </>

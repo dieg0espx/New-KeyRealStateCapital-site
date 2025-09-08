@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Home, Building, Hammer, TrendingUp, MapPin, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { useCalendlyModal } from "@/hooks/use-calendly-modal"
+import CalendlyModal from "@/components/calendly-modal"
 
 interface LoanProduct {
   icon: React.ReactNode
@@ -82,6 +84,7 @@ export function LoanProductsSection({
   products = defaultProducts
 }: LoanProductsSectionProps) {
   const { ref, isInView } = useScrollAnimation()
+  const { isOpen, openModal, closeModal } = useCalendlyModal()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -143,30 +146,31 @@ export function LoanProductsSection({
                   <h3 className="text-2xl font-medium text-gray-900 mb-4">{product.title}</h3>
                   <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
                   
-                  {product.hasButton ? (
+                  <div className="flex flex-col gap-2 mt-4">
+                    {product.link ? (
+                      <Link href={product.link}>
+                        <Button variant="ghost" className="p-0 text-perry font-light">
+                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    ) : null}
                     <Button 
                       variant="ghost" 
-                      className="mt-4 p-0 text-perry font-light"
-                      onClick={() => {
-                        // Button click handler - no navigation
-                        console.log(`Clicked on ${product.title}`)
-                      }}
+                      className="p-0 text-light-green font-light"
+                      onClick={openModal}
                     >
-                      {product.buttonText || "Learn More"} <ArrowRight className="ml-2 h-4 w-4" />
+                      Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                  ) : product.link ? (
-                    <Link href={product.link}>
-                      <Button variant="ghost" className="mt-4 p-0 text-perry font-light">
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  ) : null}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      
+      {/* Calendly Modal */}
+      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
     </section>
   )
 } 
