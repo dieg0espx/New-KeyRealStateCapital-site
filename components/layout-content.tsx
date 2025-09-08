@@ -17,7 +17,7 @@ export function LayoutContent({ children }: LayoutContentProps) {
     <>
       {!isComprehensiveLoanPage && <Header isHomePage={isHomePage} />}
       <main>{children}</main>
-      <Footer />
+      {!isComprehensiveLoanPage && <Footer />}
     </>
   )
 } 

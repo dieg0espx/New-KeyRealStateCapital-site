@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Export Example with html2pdf.js</title>
+    
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- html2pdf.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <style>
+        /* PDF-specific styles */
+        @media print {
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            
+            .pdf-content {
+                max-width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            .pdf-content img {
+                max-width: 100% !important;
+                height: auto !important;
+                display: block;
+                margin: 10px auto;
+            }
+            
+            .pdf-content table {
+                width: 100% !important;
+                max-width: 100% !important;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            
+            .pdf-content th,
+            .pdf-content td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                word-wrap: break-word;
+            }
+            
+            .pdf-content th {
+                background-color: #f5f5f5;
+                font-weight: bold;
+            }
+            
+            .pdf-content h1,
+            .pdf-content h2,
+            .pdf-content h3 {
+                page-break-after: avoid;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .pdf-content p {
+                margin-bottom: 10px;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .pdf-content .page-break {
+                page-break-before: always;
+            }
+            
+            /* Hide elements that shouldn't appear in PDF */
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* Regular screen styles */
+        .pdf-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .pdf-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pdf-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pdf-content th,
+        .pdf-content td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .pdf-content th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        
+        .pdf-content tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header with PDF Export Button -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold text-gray-900">Loan Products Comprehensive</h1>
+                <button 
+                    id="btnPDF" 
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center gap-2"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content to be exported to PDF -->
+    <div id="contentToExport" class="pdf-content">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Comprehensive Loan Products</h1>
+            <p class="text-xl text-gray-600 mb-8">Detailed financing solutions tailored to your real estate investment strategy and goals</p>
+            
+            <!-- Feature badges -->
+            <div class="flex justify-center gap-6 mb-8">
+                <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg">
+                    <div class="font-semibold">Fast Approval</div>
+                    <div class="text-sm">7-14 Days</div>
+                </div>
+                <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
+                    <div class="font-semibold">Expert Support</div>
+                    <div class="text-sm">Dedicated Team</div>
+                </div>
+                <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-lg">
+                    <div class="font-semibold">Flexible Terms</div>
+                    <div class="text-sm">Tailored Solutions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Image -->
+        <div class="mb-8">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop" alt="Real Estate Investment" class="w-full rounded-lg">
+        </div>
+
+        <!-- Loan Products Table -->
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Available Loan Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Loan Type</th>
+                        <th>Loan Amount</th>
+                        <th>Interest Rate</th>
+                        <th>Term</th>
+                        <th>LTV</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fix & Flip</strong></td>
+                        <td>$50K - $5M</td>
+                        <td>8.5% - 12%</td>
+                        <td>6-18 months</td>
+                        <td>Up to 90%</td>
+                        <td>Quick approval, renovation funds</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Single Rental</strong></td>
+                        <td>$100K - $2M</td>
+                        <td>6.5% - 9%</td>
+                        <td>30 years</td>
+                        <td>Up to 80%</td>
+                        <td>Long-term financing, cash flow based</td>
+                    </tr>
+                    <tr>
+                        <td><strong>New Construction</strong></td>
+                        <td>$200K - $10M</td>
+                        <td>7% - 10%</td>
+                        <td>12-24 months</td>
+                        <td>Up to 85%</td>
+                        <td>Construction draws, flexible terms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rental Portfolio</strong></td>
+                        <td>$500K - $20M</td>
+                        <td>6% - 8.5%</td>
+                        <td>30 years</td>
+                        <td>Up to 75%</td>
+                        <td>Portfolio underwriting, bulk pricing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bridge Loans</strong></td>
+                        <td>$100K - $15M</td>
+                        <td>7.5% - 11%</td>
+                        <td>6-24 months</td>
+                        <td>Up to 80%</td>
+                        <td>Quick closing, flexible exit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Commercial</strong></td>
+                        <td>$1M - $50M</td>
+                        <td>5.5% - 8%</td>
+                        <td>5-30 years</td>
+                        <td>Up to 80%</td>
+                        <td>Stabilized properties, competitive rates</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Page break for PDF -->
+        <div class="page-break"></div>
+
+        <!-- Detailed Loan Information -->
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Loan Product Details</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Fix & Flip Loans</h3>
+                    <p class="text-gray-600 mb-4">
+                        Perfect for investors looking to purchase, renovate, and sell properties quickly. 
+                        Our fix & flip loans provide the capital you need with flexible terms and fast approval.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Quick approval in 7-14 days</li>
+                        <li>Up to 90% loan-to-value ratio</li>
+                        <li>Renovation funds included</li>
+                        <li>Interest-only payments during renovation</li>
+                        <li>Flexible exit strategies</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Rental Property Loans</h3>
+                    <p class="text-gray-600 mb-4">
+                        Long-term financing solutions for rental property investments. 
+                        We offer competitive rates and terms for both single properties and portfolios.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>30-year amortization available</li>
+                        <li>Cash flow based underwriting</li>
+                        <li>Portfolio loan programs</li>
+                        <li>Non-recourse options</li>
+                        <li>Interest rate locks available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Another sample image -->
+        <div class="mb-8">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=300&fit=crop" alt="Investment Properties" class="w-full rounded-lg">
+        </div>
+
+        <!-- Contact Information -->
+        <div class="bg-blue-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Get Started Today</h2>
+            <p class="text-gray-600 mb-6">
+                Ready to secure financing for your next real estate investment? 
+                Contact our team of experts to discuss your specific needs and get pre-approved.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-blue-600 font-semibold">Phone</div>
+                    <div class="text-gray-600">(555) 123-4567</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-blue-600 font-semibold">Email</div>
+                    <div class="text-gray-600">loans@keyrealstatecapital.com</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-blue-600 font-semibold">Website</div>
+                    <div class="text-gray-600">www.keyrealstatecapital.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for PDF Generation -->
+    <script>
+        document.getElementById('btnPDF').addEventListener('click', function() {
+            // Get the element to export
+            const element = document.getElementById('contentToExport');
+            
+            // Configure html2pdf options
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5], // top, right, bottom, left (in inches)
+                filename: 'loan-products-comprehensive.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff',
+                    logging: false
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'letter', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.page-break'
+                }
+            };
+
+            // Show loading state
+            const button = document.getElementById('btnPDF');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Generating PDF...';
+            button.disabled = true;
+
+            // Generate and download PDF
+            html2pdf().set(opt).from(element).save().then(function() {
+                // Reset button state
+                button.innerHTML = originalText;
+                button.disabled = false;
+                console.log('PDF generated successfully');
+            }).catch(function(error) {
+                console.error('Error generating PDF:', error);
+                // Reset button state even on error
+                button.innerHTML = originalText;
+                button.disabled = false;
+                alert('Error generating PDF. Please try again.');
+            });
+        });
+
+        // Optional: Add some interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for any internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading animation for images
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>
