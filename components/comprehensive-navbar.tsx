@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
+import QuoteModal from '@/components/quote-modal'
 
 export default function ComprehensiveNavbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,9 +70,9 @@ export default function ComprehensiveNavbar() {
             <Button
               size="sm"
               className="bg-light-green hover:bg-perry text-white font-medium px-4 py-2"
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => setIsQuoteModalOpen(true)}
             >
-              Contact
+              Get in Touch
             </Button>
           </div>
 
@@ -102,15 +104,24 @@ export default function ComprehensiveNavbar() {
                 <Button
                   size="sm"
                   className="w-full bg-light-green hover:bg-perry text-white font-medium"
-                  onClick={() => scrollToSection('#contact')}
+                  onClick={() => {
+                    setIsQuoteModalOpen(true)
+                    setIsMobileMenuOpen(false)
+                  }}
                 >
-                  Contact
+                  Get in Touch
                 </Button>
               </div>
             </div>
           </div>
         )}
       </div>
+      
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </nav>
   )
 }

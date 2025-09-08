@@ -33,7 +33,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden">
         <div className="flex justify-between items-center p-4 border-b">
-          <h3 className="text-xl font-medium text-gray-900">Get a Quote</h3>
+          <h3 className="text-xl font-medium text-gray-900">Get in Touch</h3>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"

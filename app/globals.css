@@ -237,3 +237,119 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Print styles to fix navbar overlap */
+@media print {
+  /* Hide the fixed navbar during print */
+  nav[class*="fixed"] {
+    display: none !important;
+  }
+  
+  /* Remove top padding from content when printing */
+  .print-content {
+    padding-top: 0 !important;
+  }
+  
+  /* Ensure content starts at the top of the page */
+  .print-content > div {
+    padding-top: 0 !important;
+  }
+  
+  /* Hide any fixed elements that might overlap */
+  .fixed {
+    display: none !important;
+  }
+  
+  /* Ensure everything stays on one page */
+  .print-content {
+    page-break-inside: avoid;
+  }
+  
+  /* Page break control for loan product sections */
+  .page-break-before {
+    page-break-before: always !important;
+  }
+  
+  /* Ensure sections don't break awkwardly */
+  [id*="fix-and-flip"],
+  [id*="single-rental"],
+  [id*="new-construction"],
+  [id*="rental-portfolio"],
+  [id*="bridge-loans"],
+  [id*="commercial"] {
+    page-break-inside: avoid !important;
+  }
+  
+  /* Allow only natural breaks for sections */
+  .print-content > div {
+    page-break-inside: auto;
+  }
+  
+  /* Ensure badges are visible in PDF */
+  [class*="badge"],
+  [class*="absolute"],
+  [class*="top-"],
+  [class*="bottom-"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure all content sections are visible */
+  [id*="fix-and-flip"],
+  [id*="single-rental"],
+  [id*="new-construction"],
+  [id*="rental-portfolio"],
+  [id*="bridge-loans"],
+  [id*="commercial"] {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Hide buttons and interactive elements that shouldn't appear in print */
+  button,
+  [role="button"],
+  .btn,
+  a[class*="button"],
+  button[data-pdf-button],
+  .no-print,
+  footer {
+    display: none !important;
+  }
+  
+  /* Ensure images and tables scale properly */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  table {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure text is readable */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+  }
+  
+  /* Preserve background graphics and colors for PDF */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Keep background colors and images */
+  .bg-gradient-to-r,
+  .bg-gradient-to-b,
+  .bg-gradient-to-br,
+  .bg-gradient-to-tr,
+  [class*="bg-"] {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

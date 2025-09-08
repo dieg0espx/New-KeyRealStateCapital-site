@@ -121,3 +121,59 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* PDF Generation Styles */
+@layer utilities {
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+  
+  .no-page-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Print-specific styles */
+  @media print {
+    .print-content {
+      padding-top: 0 !important;
+    }
+    
+    .page-break-before {
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+    
+    .page-break-after {
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+    
+    .no-page-break {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+    
+    /* Hide elements that shouldn't appear in PDF */
+    .no-print,
+    nav,
+    footer,
+    button,
+    [role="button"],
+    .btn,
+    a[class*="button"] {
+      display: none !important;
+    }
+    
+    /* Ensure proper spacing */
+    .print-content > div {
+      min-height: 100vh;
+    }
+  }
+}
