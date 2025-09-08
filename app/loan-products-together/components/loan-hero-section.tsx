@@ -19,7 +19,6 @@ interface LoanHeroSectionProps {
   primaryCta: {
     text: string
     href: string
-    onClick?: () => void
   }
   secondaryCta: {
     text: string
@@ -83,21 +82,11 @@ export default function LoanHeroSection({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {primaryCta.onClick ? (
-            <Button 
-              onClick={primaryCta.onClick}
-              size="lg" 
-              className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto"
-            >
+          <Link href={primaryCta.href} className="w-full sm:w-auto">
+            <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
               {primaryCta.text}
             </Button>
-          ) : (
-            <Link href={primaryCta.href} className="w-full sm:w-auto">
-              <Button size="lg" className="bg-light-green hover:bg-perry text-white font-light px-8 py-4 text-lg w-full sm:w-auto">
-                {primaryCta.text}
-              </Button>
-            </Link>
-          )}
+          </Link>
           <Button
             onClick={onSecondaryClick}
             size="lg"

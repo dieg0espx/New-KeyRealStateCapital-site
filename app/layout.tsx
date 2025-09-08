@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LayoutContent } from "@/components/layout-content"
 import { BlogProvider } from "@/contexts/blog-context"
+import "@/lib/error-handler"
 
 const inter = Inter({
   subsets: ["latin"],
