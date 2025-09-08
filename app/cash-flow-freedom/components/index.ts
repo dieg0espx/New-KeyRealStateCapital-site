@@ -1,0 +1,7 @@
+export { default as HeroSection } from './HeroSection'
+export { default as CaseStudiesSection } from './CaseStudiesSection'
+export { default as CallForYouSection } from './CallForYouSection'
+export { default as TestimonialsSection } from './TestimonialsSection'
+export { default as GuaranteeSection } from './GuaranteeSection'
+export { default as CallBenefitsSection } from './CallBenefitsSection'
+export { default as ContactFormSection } from './ContactFormSection'
