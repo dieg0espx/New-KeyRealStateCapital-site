@@ -63,7 +63,7 @@ export default function SingleRentalPage() {
               <div className="flex items-center space-x-3">
                 <DollarSign className="h-6 w-6 text-light-green" />
                 <div>
-                  <p className="font-semibold text-gray-900">Loans from $75K – $4M (up to $10M on exception)</p>
+                  <p className="font-semibold text-gray-900">Loans from $50k - $5M (up to $10M on exception)</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -110,7 +110,7 @@ export default function SingleRentalPage() {
           parameters={[
             {
               icon: DollarSign,
-              value: "$75K - $4M",
+              value: "$50k - $5M",
               label: "Loan Amount"
             },
             {
@@ -135,7 +135,7 @@ export default function SingleRentalPage() {
                 <ul className="space-y-3">
                   {[
                     "Rates starting at 6.00%",
-                    "Loans from $75K – $4M (up to $10M on exception)",
+                    "Loans from $50k - $5M (up to $10M on exception)",
                     "Eligible Property Types: SFR / Multi-Family / Condo / Commercial",
                     "Purchase / Rate-Term Refinance: up to 85% LTV",
                     "Cash-out Refinance: up to 80% LTV",
