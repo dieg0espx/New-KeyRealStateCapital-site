@@ -140,9 +140,9 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
-                href="/#calculator"
+                href="/calculator"
                 className={`transition-colors font-light ${
-                  pathname === "/#calculator" 
+                  pathname === "/calculator" 
                     ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
                     : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
                 }`}
@@ -279,7 +279,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 transition={{ delay: 0.5 }}
               >
                 <Link
-                  href="/#calculator"
+                  href="/calculator"
                   className="block px-3 py-2 text-gray-700 hover:text-light-green hover:bg-sky-50 transition-colors font-light"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
