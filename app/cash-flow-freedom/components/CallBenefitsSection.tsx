@@ -1,10 +1,12 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 
-export default function CallBenefitsSection() {
-  const { openModal } = useCalendlyModal()
+interface CallBenefitsSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CallBenefitsSection({ onOpenModal }: CallBenefitsSectionProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-[#F2F2F2]">
@@ -18,9 +20,9 @@ export default function CallBenefitsSection() {
             {/* CTA Button - Hidden on mobile, shown on desktop */}
             <div className="hidden lg:block">
               <Button
-                onClick={openModal}
+                onClick={onOpenModal}
                 size="lg"
-                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-6 sm:px-8 lg:px-16 py-3 sm:py-4 lg:py-6 text-base sm:text-lg lg:text-2xl rounded-lg w-auto"
+                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
               >
                 Book Free Investor Qualifying Call →
               </Button>
@@ -62,9 +64,9 @@ export default function CallBenefitsSection() {
         {/* CTA Button - Mobile only */}
         <div className="text-center mt-12 sm:mt-16 lg:hidden">
           <Button
-            onClick={openModal}
+            onClick={onOpenModal}
             size="lg"
-            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg w-auto max-w-sm sm:max-w-none"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
           >
             Book Free Investor Qualifying Call →
           </Button>

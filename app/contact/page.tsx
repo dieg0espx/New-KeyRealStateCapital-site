@@ -50,7 +50,8 @@ export default function ContactPage() {
                 data-tf-source="localhost"
                 data-tf-medium="embed-sdk"
                 data-tf-medium-version="next"
-                className="w-full h-[600px] rounded-lg overflow-hidden"
+                className="w-full min-h-[600px] rounded-lg overflow-hidden"
+                style={{ height: 'auto' }}
               ></div>
             </CardContent>
           </Card>

@@ -1,10 +1,12 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 
-export default function CallForYouSection() {
-  const { openModal } = useCalendlyModal()
+interface CallForYouSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CallForYouSection({ onOpenModal }: CallForYouSectionProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-gray-50/30">
@@ -22,25 +24,25 @@ export default function CallForYouSection() {
           {/* Left side - Text boxes */}
           <div className="space-y-6">
             <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 lg:p-8">
-              <p className="text-lg sm:text-xl lg:text-2xl font-normal text-gray-900 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-900 leading-relaxed">
                 Know that investing in real estate is the path to freedom you're looking for, but you don't know how to get started with little to no risk.
               </p>
             </div>
             
             <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 lg:p-8">
-              <p className="text-lg sm:text-xl lg:text-2xl font-normal text-gray-900 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-900 leading-relaxed">
                 Want to get into one or more high cash-flowing investment properties guaranteed within the next 90 days, all done for you
               </p>
             </div>
             
             <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 lg:p-8">
-              <p className="text-lg sm:text-xl lg:text-2xl font-normal text-gray-900 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-900 leading-relaxed">
                 Have between $30k - $100k+ sitting in the bank, ready to deploy into one or more cash-flowing investment properties
               </p>
             </div>
             
             <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 lg:p-8">
-              <p className="text-lg sm:text-xl lg:text-2xl font-normal text-gray-900 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-900 leading-relaxed">
                 You're a current investor who wants to add an additional 10-50+ high cash-flowing properties to their portfolio within the next 6 months
               </p>
             </div>
@@ -61,9 +63,9 @@ export default function CallForYouSection() {
          {/* CTA Button */}
          <div className="text-center mt-12 sm:mt-16">
            <Button
-             onClick={openModal}
+             onClick={onOpenModal}
              size="lg"
-             className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 sm:px-8 lg:px-16 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg lg:text-2xl rounded-lg w-full sm:w-auto"
+             className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
            >
              Book Free Investor Qualifying Call →
            </Button>

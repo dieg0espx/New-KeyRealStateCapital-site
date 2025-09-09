@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from 'react'
 import CalendlyModal from '@/components/calendly-modal'
 import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 import { Button } from '@/components/ui/button'
@@ -16,9 +17,12 @@ import {
 
 export default function CashFlowFreedomPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
+  
+  
+  // Modal state is managed by the useCalendlyModal hook
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden" style={{ transition: 'none' }}>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200'
       }`}>
@@ -38,13 +42,15 @@ export default function CashFlowFreedomPage() {
         </div>
       </nav>
       
-      <HeroSection />
-      <CaseStudiesSection />
-      <CallForYouSection />
-      <TestimonialsSection />
-      <GuaranteeSection />
-      <CallBenefitsSection />
+
+      <HeroSection onOpenModal={openModal} />
+      <CaseStudiesSection onOpenModal={openModal} />
+      <CallForYouSection onOpenModal={openModal} />
+      <TestimonialsSection onOpenModal={openModal} />
+      <GuaranteeSection onOpenModal={openModal} />
+      <CallBenefitsSection onOpenModal={openModal} />
       <ContactFormSection />
+
 
       {/* Calendly Modal */}
       <CalendlyModal isOpen={isOpen} onClose={closeModal} />

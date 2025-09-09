@@ -1,10 +1,24 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
+import { useEffect } from 'react'
 
 export default function ContactFormSection() {
-  const { openModal } = useCalendlyModal()
+  
+  useEffect(() => {
+    // Load Typeform embed script
+    const script = document.createElement('script')
+    script.src = 'https://embed.typeform.com/next/embed.js'
+    script.async = true
+    document.head.appendChild(script)
+
+    return () => {
+      // Cleanup script on component unmount
+      const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
+      if (existingScript) {
+        document.head.removeChild(existingScript)
+      }
+    }
+  }, [])
 
   return (
     <section className="py-12 sm:py-16 lg:py-24">
@@ -17,45 +31,16 @@ export default function ContactFormSection() {
                 If you've made it this far, you're obviously serious about this…
               </h2>
               
-              {/* Contact Form */}
-              <div className="space-y-4 sm:space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#02736D]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#02736D]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#02736D]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-6 py-4 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#02736D] resize-none"
-                  />
-                </div>
-                <div>
-                  <Button
-                    onClick={openModal}
-                    size="lg"
-                    className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 sm:px-8 lg:px-16 py-3 sm:py-4 text-sm sm:text-lg lg:text-xl w-full rounded-lg"
-                  >
-                    Book Free Investor Qualifying Call →
-                  </Button>
-                </div>
+              {/* Typeform Contact Form */}
+              <div>
+                <div 
+                  data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
+                  data-tf-source="localhost"
+                  data-tf-medium="embed-sdk"
+                  data-tf-medium-version="next"
+                  className="w-full min-h-[500px] rounded-lg overflow-hidden bg-white"
+                  style={{ height: 'auto' }}
+                ></div>
               </div>
             </div>
 
