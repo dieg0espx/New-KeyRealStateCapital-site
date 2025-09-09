@@ -99,7 +99,7 @@ export default function CalculatorPage() {
             {/* Company Info */}
             <div className="md:col-span-2">
               <img 
-                src="/logo-white.png" 
+                src="/logo-transparent.png" 
                 alt="New Key Real Estate Capital" 
                 className="h-12 w-auto mb-6"
               />
