@@ -1,12 +1,6 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-
-interface CallBenefitsSectionProps {
-  onOpenModal: () => void
-}
-
-export default function CallBenefitsSection({ onOpenModal }: CallBenefitsSectionProps) {
+export default function CallBenefitsSection() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-[#F2F2F2]">
@@ -17,16 +11,6 @@ export default function CallBenefitsSection({ onOpenModal }: CallBenefitsSection
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 sm:mb-8 leading-tight">
               What You'll Walk Away From The Call With
             </h2>
-            {/* CTA Button - Hidden on mobile, shown on desktop */}
-            <div className="hidden lg:block">
-              <Button
-                onClick={onOpenModal}
-                size="lg"
-                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
-              >
-                Book Free Investor Qualifying Call →
-              </Button>
-            </div>
           </div>
 
           {/* Right side - 2x2 Grid of Benefits */}
@@ -61,16 +45,6 @@ export default function CallBenefitsSection({ onOpenModal }: CallBenefitsSection
           </div>
         </div>
         
-        {/* CTA Button - Mobile only */}
-        <div className="text-center mt-12 sm:mt-16 lg:hidden">
-          <Button
-            onClick={onOpenModal}
-            size="lg"
-            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
-          >
-            Book Free Investor Qualifying Call →
-          </Button>
-        </div>
       </div>
     </section>
   )

@@ -1,12 +1,6 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-
-interface GuaranteeSectionProps {
-  onOpenModal: () => void
-}
-
-export default function GuaranteeSection({ onOpenModal }: GuaranteeSectionProps) {
+export default function GuaranteeSection() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24">
@@ -34,13 +28,6 @@ export default function GuaranteeSection({ onOpenModal }: GuaranteeSectionProps)
             <p className="text-lg sm:text-xl text-gray-600 font-light mb-6 sm:mb-8">
               When you sign up for our complete done-for-you service, we guarantee to place you into a cash-flowing investment property within 90 days, or we will contractually buy back the property from you, leaving you with no liability or responsibility thereafter.
             </p>
-            <Button
-              onClick={onOpenModal}
-              size="lg"
-              className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
-            >
-              Book Free Investor Qualifying Call →
-            </Button>
           </div>
         </div>
       </div>

@@ -27,28 +27,65 @@ export default function CashFlowFreedomPage() {
         'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-start items-center h-14 sm:h-16">
+          {/* Mobile Layout - Vertical */}
+          <div className="flex flex-col items-center py-4 sm:hidden">
+            {/* Logo */}
+            <div className="flex items-center mb-3">
+              <Link href="/" className="flex items-center">
+                <img 
+                  src="/logo-white.png" 
+                  alt="New Key Real Estate" 
+                  className="h-8 w-auto"
+                />
+              </Link>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="flex items-center">
+              <Button
+                onClick={openModal}
+                size="sm"
+                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 py-2 text-sm rounded-lg"
+              >
+                Book Free Investor Qualifying Call →
+              </Button>
+            </div>
+          </div>
+          
+          {/* Desktop Layout - Horizontal */}
+          <div className="hidden sm:flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <img 
                   src="/logo-white.png" 
                   alt="New Key Real Estate" 
-                  className="h-8 sm:h-10 w-auto"
+                  className="h-10 w-auto"
                 />
               </Link>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="flex items-center">
+              <Button
+                onClick={openModal}
+                size="sm"
+                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-6 py-2 text-base rounded-lg"
+              >
+                Book Free Investor Qualifying Call →
+              </Button>
             </div>
           </div>
         </div>
       </nav>
       
 
-      <HeroSection onOpenModal={openModal} />
-      <CaseStudiesSection onOpenModal={openModal} />
-      <CallForYouSection onOpenModal={openModal} />
-      <TestimonialsSection onOpenModal={openModal} />
-      <GuaranteeSection onOpenModal={openModal} />
-      <CallBenefitsSection onOpenModal={openModal} />
+      <HeroSection />
+      <CaseStudiesSection />
+      <CallForYouSection />
+      <TestimonialsSection />
+      <GuaranteeSection />
+      <CallBenefitsSection />
       <ContactFormSection />
 
 
