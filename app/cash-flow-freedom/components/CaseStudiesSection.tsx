@@ -1,11 +1,13 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 import { useAutoScroll } from '../hooks/useAutoScroll'
 
-export default function CaseStudiesSection() {
-  const { openModal } = useCalendlyModal()
+interface CaseStudiesSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CaseStudiesSection({ onOpenModal }: CaseStudiesSectionProps) {
   const { scrollContainerRef } = useAutoScroll()
 
   return (
@@ -169,9 +171,9 @@ export default function CaseStudiesSection() {
          {/* CTA Button */}
          <div className="text-center">
            <Button
-             onClick={openModal}
+             onClick={onOpenModal}
              size="lg"
-             className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 sm:px-8 lg:px-16 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg lg:text-2xl rounded-lg w-full sm:w-auto"
+             className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
            >
              Book Free Investor Qualifying Call →
            </Button>

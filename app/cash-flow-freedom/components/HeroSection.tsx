@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 
-export default function HeroSection() {
-  const { openModal } = useCalendlyModal()
+interface HeroSectionProps {
+  onOpenModal: () => void
+}
+
+export default function HeroSection({ onOpenModal }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   // Ensure video auto-plays
@@ -55,7 +57,7 @@ export default function HeroSection() {
         
         {/* Call-to-Action Button */}
         <Button
-          onClick={openModal}
+          onClick={onOpenModal}
           size="lg"
           className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
         >

@@ -98,9 +98,9 @@ export function FAQSection() {
                   We're here to help.
                 </p>
                 <div className="flex justify-center">
-                  <Link href="/apply">
+                  <Link href="/contact">
                     <Button className="bg-light-green hover:bg-perry text-white font-light px-8 py-3">
-                      Apply Now
+                      Contact Us
                     </Button>
                   </Link>
                 </div>

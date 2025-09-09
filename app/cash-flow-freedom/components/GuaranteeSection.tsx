@@ -1,10 +1,12 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 
-export default function GuaranteeSection() {
-  const { openModal } = useCalendlyModal()
+interface GuaranteeSectionProps {
+  onOpenModal: () => void
+}
+
+export default function GuaranteeSection({ onOpenModal }: GuaranteeSectionProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24">
@@ -33,9 +35,9 @@ export default function GuaranteeSection() {
               When you sign up for our complete done-for-you service, we guarantee to place you into a cash-flowing investment property within 90 days, or we will contractually buy back the property from you, leaving you with no liability or responsibility thereafter.
             </p>
             <Button
-              onClick={openModal}
+              onClick={onOpenModal}
               size="lg"
-              className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 sm:px-8 lg:px-16 py-3 sm:py-4 lg:py-6 text-sm sm:text-lg lg:text-2xl rounded-lg w-full sm:w-auto"
+              className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
             >
               Book Free Investor Qualifying Call →
             </Button>
