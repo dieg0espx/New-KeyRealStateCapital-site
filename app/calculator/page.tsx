@@ -69,7 +69,9 @@ export default function CalculatorPage() {
       </nav>
       
       {/* Calculator Section */}
-      <LoanCalculatorSection />
+      <div className="[&_section]:pb-16">
+        <LoanCalculatorSection />
+      </div>
 
       {/* Calendly Modal */}
       <CalendlyModal isOpen={isOpen} onClose={closeModal} />
