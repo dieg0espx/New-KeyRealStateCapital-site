@@ -5,21 +5,10 @@ import CalendlyModal from '@/components/calendly-modal'
 import { useCalendlyModal } from '@/hooks/use-calendly-modal'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import {
-  HeroSection,
-  CaseStudiesSection,
-  CallForYouSection,
-  TestimonialsSection,
-  GuaranteeSection,
-  CallBenefitsSection,
-  ContactFormSection
-} from './components'
+import { LoanCalculatorSection } from '@/components/loan-calculator-section'
 
-export default function CashFlowFreedomPage() {
+export default function CalculatorPage() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
-  
-  
-  // Modal state is managed by the useCalendlyModal hook
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ transition: 'none' }}>
@@ -79,15 +68,8 @@ export default function CashFlowFreedomPage() {
         </div>
       </nav>
       
-
-      <HeroSection />
-      <CaseStudiesSection />
-      <CallForYouSection />
-      <TestimonialsSection />
-      <GuaranteeSection />
-      <CallBenefitsSection />
-      <ContactFormSection />
-
+      {/* Calculator Section */}
+      <LoanCalculatorSection />
 
       {/* Calendly Modal */}
       <CalendlyModal isOpen={isOpen} onClose={closeModal} />
@@ -145,6 +127,7 @@ export default function CashFlowFreedomPage() {
                 </a>
               </div>
             </div>
+
 
             {/* Contact Info */}
             <div>
