@@ -1,13 +1,8 @@
 "use client"
 
 import { useEffect, useRef } from 'react'
-import { Button } from '@/components/ui/button'
 
-interface HeroSectionProps {
-  onOpenModal: () => void
-}
-
-export default function HeroSection({ onOpenModal }: HeroSectionProps) {
+export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   // Ensure video auto-plays
@@ -19,7 +14,7 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
   }, [])
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 pt-24 sm:pt-28 lg:pt-32">
+    <section className="py-12 sm:py-16 lg:py-24 pt-36 sm:pt-28 lg:pt-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Top Sub-heading */}
         <p className="text-[#02736D] text-lg sm:text-xl lg:text-[22px] font-normal mb-6 sm:mb-8 leading-relaxed">
@@ -55,14 +50,6 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
           From <span className="font-semibold text-[#02736D]">Real Estate Millionaire</span> <span className="text-black">Keyan Chang</span>
         </p>
         
-        {/* Call-to-Action Button */}
-        <Button
-          onClick={onOpenModal}
-          size="lg"
-          className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 sm:px-12 lg:px-16 py-4 sm:py-6 text-lg sm:text-xl lg:text-[20px] rounded-lg w-full sm:w-auto"
-        >
-          Book Free Investor Qualifying Call →
-        </Button>
       </div>
     </section>
   )
