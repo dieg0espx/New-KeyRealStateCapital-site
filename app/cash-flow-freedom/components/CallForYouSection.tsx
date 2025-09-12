@@ -1,6 +1,12 @@
 "use client"
 
-export default function CallForYouSection() {
+import { Button } from '@/components/ui/button'
+
+interface CallForYouSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CallForYouSection({ onOpenModal }: CallForYouSectionProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-gray-50/30">
@@ -52,6 +58,17 @@ export default function CallForYouSection() {
               />
             </div>
           </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <Button
+            onClick={onOpenModal}
+            size="lg"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+          >
+            Book Free Investor Qualifying Call →
+          </Button>
         </div>
 
       </div>

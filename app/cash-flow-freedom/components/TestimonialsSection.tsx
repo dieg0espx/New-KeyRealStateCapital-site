@@ -1,8 +1,13 @@
 "use client"
 
 import { useAutoScroll } from '../hooks/useAutoScroll'
+import { Button } from '@/components/ui/button'
 
-export default function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  onOpenModal: () => void
+}
+
+export default function TestimonialsSection({ onOpenModal }: TestimonialsSectionProps) {
   const { scrollContainerRef } = useAutoScroll()
 
   return (
@@ -123,6 +128,16 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <Button
+            onClick={onOpenModal}
+            size="lg"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+          >
+            Book Free Investor Qualifying Call →
+          </Button>
+        </div>
 
       </div>
     </section>

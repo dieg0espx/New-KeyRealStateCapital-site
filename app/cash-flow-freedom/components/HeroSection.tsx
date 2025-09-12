@@ -1,8 +1,13 @@
 "use client"
 
 import { useEffect, useRef } from 'react'
+import { Button } from '@/components/ui/button'
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onOpenModal: () => void
+}
+
+export default function HeroSection({ onOpenModal }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   // Ensure video auto-plays
@@ -49,6 +54,17 @@ export default function HeroSection() {
         <p className="text-black text-base sm:text-lg lg:text-[20px] font-normal mb-8 sm:mb-12 leading-relaxed">
           From <span className="font-semibold text-[#02736D]">Real Estate Millionaire</span> <span className="text-black">Keyan Chang</span>
         </p>
+        
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <Button
+            onClick={onOpenModal}
+            size="lg"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+          >
+            Book Free Investor Qualifying Call →
+          </Button>
+        </div>
         
       </div>
     </section>

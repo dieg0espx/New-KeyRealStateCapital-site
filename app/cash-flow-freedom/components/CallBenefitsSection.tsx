@@ -1,6 +1,12 @@
 "use client"
 
-export default function CallBenefitsSection() {
+import { Button } from '@/components/ui/button'
+
+interface CallBenefitsSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CallBenefitsSection({ onOpenModal }: CallBenefitsSectionProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-[#F2F2F2]">
@@ -11,6 +17,17 @@ export default function CallBenefitsSection() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 sm:mb-8 leading-tight">
               What You'll Walk Away From The Call With
             </h2>
+            
+            {/* CTA Button - Desktop only */}
+            <div className="hidden lg:block">
+              <Button
+                onClick={onOpenModal}
+                size="lg"
+                className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+              >
+                Book Free Investor Qualifying Call →
+              </Button>
+            </div>
           </div>
 
           {/* Right side - 2x2 Grid of Benefits */}
@@ -43,6 +60,17 @@ export default function CallBenefitsSection() {
               </p>
             </div>
           </div>
+        </div>
+        
+        {/* CTA Button - Mobile and Tablet only */}
+        <div className="flex justify-center mt-12 lg:hidden">
+          <Button
+            onClick={onOpenModal}
+            size="lg"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+          >
+            Book Free Investor Qualifying Call →
+          </Button>
         </div>
         
       </div>
