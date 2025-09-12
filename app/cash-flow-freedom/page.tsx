@@ -80,12 +80,12 @@ export default function CashFlowFreedomPage() {
       </nav>
       
 
-      <HeroSection />
-      <CaseStudiesSection />
-      <CallForYouSection />
-      <TestimonialsSection />
-      <GuaranteeSection />
-      <CallBenefitsSection />
+      <HeroSection onOpenModal={openModal} />
+      <CaseStudiesSection onOpenModal={openModal} />
+      <CallForYouSection onOpenModal={openModal} />
+      <TestimonialsSection onOpenModal={openModal} />
+      <GuaranteeSection onOpenModal={openModal} />
+      <CallBenefitsSection onOpenModal={openModal} />
       <ContactFormSection />
 
 
@@ -94,23 +94,6 @@ export default function CashFlowFreedomPage() {
       
       {/* Footer */}
       <footer className="bg-black text-white">
-        {/* Newsletter Section */}
-        <div className="border-b border-light-green/20 bg-perry">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center">
-              <h3 className="text-2xl font-light mb-4">Stay Informed</h3>
-              <p className="text-white font-light mb-6 max-w-2xl mx-auto">
-                Get the latest market insights, investment strategies, and financing updates delivered to your inbox.
-              </p>
-              <div className="flex justify-center">
-                <button className="bg-light-green hover:bg-white text-white hover:text-perry font-light px-8 py-4 text-lg transition-colors">
-                  Join Our Newsletter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

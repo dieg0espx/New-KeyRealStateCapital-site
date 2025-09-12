@@ -37,24 +37,16 @@ export default function TeamPage() {
       image: "/team/danielFrank.jpeg",
     },
     {
-      name: "Michelle Gusov",
-      title: "Lead Processor",
-      bio: "Michelle manages our loan processing division, ensuring smooth and efficient loan closings for all our clients.",
-      phone: "(555) 123-4570",
-      email: "michelle@keyrealestatecapital.com",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
       name: "Tommy Loutzenheiser",
       title: "Chief Technology Officer",
       bio: "Tommy drives growth at Key Real Estate Capital by blending strategic lending knowledge with efficient technology integration and automation. His work focuses on building marketing systems, streamlining workflows, and creating messaging that converts—helping the company scale efficiently while facilitating smooth deal flow. By combining tech with clear communication, Tommy ensures Key Real Estate Capital operates at its highest level. Away from work, Tommy enjoys surfing, hitting the gym and spending time outdoors.",
       phone: "(555) 123-4571",
       email: "tommy@keyrealestatecapital.com",
-      image: "/team/tommyLoutzenheiser.jpeg",
+      image: "/team/tommyLoutzenheiser.png",
     },
 
     {
-      name: "Sebastian Muendo",
+      name: "Sebastian Muenda",
       title: "Account Executive",
       bio: "At Key Real Estate Capital, Sebastian blends his passion for financial empowerment with a client-first philosophy rooted in empathy, overdelivering, and unwavering commitment. He believes that clear communication and affordable financing solutions are the foundation for helping individuals and families achieve true financial freedom. Sebastian cares deeply about people growing their wealth, not just for the sake of money, but to create a life filled with more time, joy, and connection with loved ones.",
       phone: "(555) 123-4573",
@@ -112,7 +104,9 @@ export default function TeamPage() {
                     height={300}
                     className={`w-full h-full object-cover transition-transform duration-300 ${
                       member.name === "Tommy Loutzenheiser" 
-                        ? "object-center scale-150" 
+                        ? "object-top scale-150" 
+                        : member.name === "Lindsay Milano"
+                        ? "object-center"
                         : "object-top"
                     }`}
                   />

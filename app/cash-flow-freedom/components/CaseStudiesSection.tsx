@@ -1,8 +1,13 @@
 "use client"
 
 import { useAutoScroll } from '../hooks/useAutoScroll'
+import { Button } from '@/components/ui/button'
 
-export default function CaseStudiesSection() {
+interface CaseStudiesSectionProps {
+  onOpenModal: () => void
+}
+
+export default function CaseStudiesSection({ onOpenModal }: CaseStudiesSectionProps) {
   const { scrollContainerRef } = useAutoScroll()
 
   return (
@@ -155,6 +160,16 @@ export default function CaseStudiesSection() {
           </div>
         </div>
 
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <Button
+            onClick={onOpenModal}
+            size="lg"
+            className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-8 py-4 text-lg rounded-lg"
+          >
+            Book Free Investor Qualifying Call →
+          </Button>
+        </div>
 
       </div>
     </section>
