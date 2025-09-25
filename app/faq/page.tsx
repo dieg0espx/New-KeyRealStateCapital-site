@@ -137,26 +137,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="py-16 bg-gray-50/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "7-14", label: "Days to Close" },
-              { number: "15", label: "States Covered" },
-              { number: "680+", label: "Min Credit Score" },
-              { number: "500+", label: "Loans Funded" },
-            ].map((stat, index) => (
-              <div key={index} className="group">
-                <div className="text-3xl md:text-4xl font-light text-light-green mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-light">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
