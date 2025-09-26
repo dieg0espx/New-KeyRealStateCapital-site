@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 
 interface HeroSectionProps {
@@ -9,17 +9,77 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenModal }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
-  // Ensure video auto-plays
+  // Handle video loading and initial play
   useEffect(() => {
     const video = videoRef.current
-    if (video) {
-      video.play().catch(console.error)
+    if (!video) return
+
+    const handleLoadedData = () => {
+      setIsVideoLoaded(true)
+      // Try to play the video when it's loaded
+      video.play().catch((error) => {
+        console.log('Autoplay failed:', error)
+        // If autoplay fails, we'll handle it in the intersection observer
+      })
+    }
+
+    const handleCanPlay = () => {
+      // Video is ready to play
+      video.play().catch((error) => {
+        console.log('Video play failed:', error)
+      })
+    }
+
+    video.addEventListener('loadeddata', handleLoadedData)
+    video.addEventListener('canplay', handleCanPlay)
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData)
+      video.removeEventListener('canplay', handleCanPlay)
     }
   }, [])
 
+  // Handle video play/pause based on section visibility
+  useEffect(() => {
+    const video = videoRef.current
+    const section = sectionRef.current
+    
+    if (!video || !section) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Section is visible, play video
+            console.log('Section visible - playing video')
+            video.play().catch((error) => {
+              console.log('Play failed:', error)
+            })
+          } else {
+            // Section is not visible, pause video
+            console.log('Section not visible - pausing video')
+            video.pause()
+          }
+        })
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '0px 0px 0px 0px'
+      }
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [isVideoLoaded])
+
   return (
-    <section className="py-12 sm:py-16 lg:py-24 pt-36 sm:pt-28 lg:pt-32">
+    <section ref={sectionRef} className="py-12 sm:py-16 lg:py-24 pt-36 sm:pt-28 lg:pt-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Top Sub-heading */}
         <p className="text-[#02736D] text-lg sm:text-xl lg:text-[22px] font-normal mb-6 sm:mb-8 leading-relaxed">
@@ -43,8 +103,9 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
               loop
               playsInline
               controls
+              preload="auto"
             >
-              <source src="https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dhuhpf3wq/video/upload/v1758821244/Vsl_1_tvmcxh.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

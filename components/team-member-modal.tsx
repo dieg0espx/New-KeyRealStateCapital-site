@@ -1,6 +1,6 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, Linkedin, Calendar, X } from "lucide-react"
+import { Phone, Mail, Linkedin, Calendar, X, Smartphone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -8,7 +8,9 @@ interface TeamMember {
   name: string
   title: string
   bio: string
-  phone: string
+  phone?: string
+  officePhone?: string
+  cellPhone?: string
   email: string
   image: string
 }
@@ -53,16 +55,21 @@ export function TeamMemberModal({ member, isOpen, onClose }: TeamMemberModalProp
           </div>
           
           {/* Bio */}
-          <div className="text-gray-600 font-light leading-relaxed text-base">
-            {member.bio}
+          <div className="text-gray-600 font-light leading-relaxed text-base" dangerouslySetInnerHTML={{ __html: member.bio }}>
           </div>
           
           {/* Contact Info */}
           <div className="space-y-3">
             <div className="flex items-center text-gray-600 text-base">
               <Phone className="h-5 w-5 mr-3 text-light-green" />
-              {member.phone}
+              {member.officePhone || member.phone}
             </div>
+            {member.cellPhone && (
+              <div className="flex items-center text-gray-600 text-base">
+                <Smartphone className="h-5 w-5 mr-3 text-light-green" />
+                {member.cellPhone}
+              </div>
+            )}
             <div className="flex items-center text-gray-600 text-base">
               <Mail className="h-5 w-5 mr-3 text-light-green" />
               {member.email}

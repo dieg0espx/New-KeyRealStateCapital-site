@@ -13,12 +13,14 @@ export function LayoutContent({ children }: LayoutContentProps) {
   const isHomePage = pathname === "/"
   const isComprehensiveLoanPage = pathname === "/loan-products-comprehensive"
   const isCashFlowFreedomPage = pathname === "/cash-flow-freedom"
+  const isCalendlyPage = pathname === "/calendly-book-a-call"
+  const isThankYouPage = pathname === "/thank-you"
 
   return (
     <>
-      {!isComprehensiveLoanPage && !isCashFlowFreedomPage && <Header isHomePage={isHomePage} />}
+      {!isComprehensiveLoanPage && !isCashFlowFreedomPage && !isCalendlyPage && !isThankYouPage && <Header isHomePage={isHomePage} />}
       <main>{children}</main>
-      {!isComprehensiveLoanPage && !isCashFlowFreedomPage && <Footer />}
+      {!isComprehensiveLoanPage && !isCashFlowFreedomPage && !isCalendlyPage && !isThankYouPage && <Footer />}
     </>
   )
 } 

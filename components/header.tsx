@@ -24,7 +24,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
     }
     
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 1024)
     }
     
     // Set initial mobile state
@@ -84,8 +84,76 @@ export function Header({ isHomePage = false }: HeaderProps) {
             </motion.div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Medium Desktop Navigation (md to lg) */}
+          <div className="hidden md:flex lg:hidden items-center space-x-4">
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
+              <Link
+                href="/"
+                className={`transition-colors font-light text-sm ${
+                  pathname === "/" 
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                }`}
+              >
+                Home
+              </Link>
+            </motion.div>
+
+            <div className="relative group">
+              <button 
+                className={`flex items-center transition-colors font-light text-sm ${
+                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white"
+                }`}
+              >
+                Loans <ChevronDown className="ml-1 h-3 w-3" />
+              </button>
+              <div 
+                className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+              >
+                <div className="py-2">
+                  {loanTypes.slice(0, 4).map((type) => (
+                    <div key={type.href}>
+                      <Link
+                        href={type.href}
+                        className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-perry transition-colors font-light text-sm"
+                      >
+                        {type.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
+              <Link
+                href="/team"
+                className={`transition-colors font-light text-sm ${
+                  pathname === "/team" 
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                }`}
+              >
+                About
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
+              <Link
+                href="/calculator"
+                className={`transition-colors font-light text-sm ${
+                  pathname === "/calculator" 
+                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
+                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                }`}
+              >
+                Calculator
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Full Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-6">
             <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.4 }}>
               <Link
                 href="/"
@@ -185,7 +253,18 @@ export function Header({ isHomePage = false }: HeaderProps) {
               whileTap={{ scale: 0.98 }}
             >
               <Link href="/contact">
-                <Button className="hidden md:inline-flex font-light transition-all duration-300 bg-light-green hover:bg-perry text-white">
+                <Button className="hidden md:inline-flex lg:hidden font-light transition-all duration-300 bg-light-green hover:bg-perry text-white text-sm px-4 py-2">
+                  Contact
+                </Button>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link href="/contact">
+                <Button className="hidden lg:inline-flex font-light transition-all duration-300 bg-light-green hover:bg-perry text-white">
                   Contact
                 </Button>
               </Link>
@@ -193,7 +272,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
             {/* Mobile menu button */}
             <motion.button
-              className={`md:hidden p-2 transition-colors ${
+              className={`lg:hidden p-2 transition-colors ${
                 isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white hover:text-sky-200"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -210,7 +289,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="md:hidden bg-white border-t border-gray-100 shadow-lg"
+            className="lg:hidden bg-white border-t border-gray-100 shadow-lg"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

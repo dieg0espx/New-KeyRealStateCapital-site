@@ -201,32 +201,6 @@ export function WhereWeLendSection({
                     }}
                   />
                   
-                  {/* Headquarters Dots */}
-                  {/* San Diego, CA - Moved up */}
-                  <div 
-                    className="absolute w-6 h-6 bg-green-600 rounded-full border-3 border-white shadow-xl z-30 cursor-pointer"
-                    style={{
-                      left: '20%',
-                      top: '65%',
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                    title="San Diego Headquarters"
-                  >
-                    <div className="absolute inset-0 bg-green-600 rounded-full animate-pulse"></div>
-                  </div>
-                  
-                  {/* Delray Beach, FL - Moved further down */}
-                  <div 
-                    className="absolute w-6 h-6 bg-green-600 rounded-full border-3 border-white shadow-xl z-30 cursor-pointer"
-                    style={{
-                      left: '74%',
-                      top: '90%',
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                    title="Delray Beach Office"
-                  >
-                    <div className="absolute inset-0 bg-green-600 rounded-full animate-pulse"></div>
-                  </div>
                   
                   {/* Tooltip */}
                   {hoveredState && (

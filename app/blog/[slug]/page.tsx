@@ -49,7 +49,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-white pt-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-16">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -71,13 +71,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <Badge variant="secondary" className="bg-sky-100 text-sky-800 mb-4">
+            <Badge variant="secondary" className="bg-light-green/10 text-light-green mb-4">
               {post.category}
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6">
               {post.title}
             </h1>
-            <p className="text-xl text-gray-600 font-light mb-8">
+            <p className="text-lg sm:text-xl text-gray-600 font-light mb-8">
               {post.excerpt}
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-500 mb-8">
@@ -109,10 +109,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Article Content */}
           <motion.div 
             variants={itemVariants}
-            className="prose prose-lg max-w-none mb-12"
+            className="mb-12"
           >
-            <div className="text-gray-700 font-light leading-relaxed">
-              {post.content}
+            <div 
+              className="text-gray-700 font-light leading-relaxed text-base sm:text-lg max-w-none w-full"
+              dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br>') }}
+            >
             </div>
           </motion.div>
 
@@ -128,7 +130,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag, index) => (
-                  <Badge key={index} variant="outline" className="text-xs">
+                  <Badge key={index} variant="outline" className="text-xs border-light-green text-light-green hover:bg-light-green/10">
                     {tag}
                   </Badge>
                 ))}

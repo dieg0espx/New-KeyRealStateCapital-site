@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from 'react'
-import CalendlyModal from '@/components/calendly-modal'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
+import TypeformModal from '@/components/typeform-modal'
+import { useTypeformModal } from '@/hooks/use-typeform-modal'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import {
@@ -16,10 +16,10 @@ import {
 } from './components'
 
 export default function CashFlowFreedomPage() {
-  const { isOpen, openModal, closeModal } = useCalendlyModal()
+  const { isOpen, openModal, closeModal } = useTypeformModal()
   
   
-  // Modal state is managed by the useCalendlyModal hook
+  // Modal state is managed by the useTypeformModal hook
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ transition: 'none' }}>
@@ -89,8 +89,12 @@ export default function CashFlowFreedomPage() {
       <ContactFormSection />
 
 
-      {/* Calendly Modal */}
-      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
+      {/* Typeform Modal */}
+      <TypeformModal 
+        isOpen={isOpen} 
+        onClose={closeModal} 
+        typeformUrl={process.env.NEXT_PUBLIC_TYPEFORM_URL}
+      />
       
       {/* Footer */}
       <footer className="bg-black text-white">
