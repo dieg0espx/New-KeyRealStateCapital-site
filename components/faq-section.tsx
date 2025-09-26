@@ -19,7 +19,7 @@ export function FAQSection() {
   }
 
   return (
-    <section className="py-[100px] lg:py-[200px] bg-white">
+    <section className="py-[100px] lg:py-[200px] bg-white relative z-20 faq-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
@@ -89,7 +89,7 @@ export function FAQSection() {
         ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 ready-to-go-section">
             <h3 className="text-2xl font-medium text-gray-900 mb-4">Ready to go?</h3>
             <p className="text-gray-600 font-light mb-6">
               We're here to help.

@@ -1,8 +1,6 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, Linkedin, Calendar, X, Smartphone } from "lucide-react"
+import { Phone, Mail, Smartphone } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 
 interface TeamMember {
   name: string
@@ -62,39 +60,29 @@ export function TeamMemberModal({ member, isOpen, onClose }: TeamMemberModalProp
           <div className="space-y-3">
             <div className="flex items-center text-gray-600 text-base">
               <Phone className="h-5 w-5 mr-3 text-light-green" />
-              {member.officePhone || member.phone}
+              <a href={`tel:${member.officePhone || member.phone}`} className="hover:text-light-green transition-colors">
+                {member.officePhone || member.phone}
+              </a>
             </div>
             {member.cellPhone && (
               <div className="flex items-center text-gray-600 text-base">
                 <Smartphone className="h-5 w-5 mr-3 text-light-green" />
-                {member.cellPhone}
+                <a href={`tel:${member.cellPhone}`} className="hover:text-light-green transition-colors">
+                  {member.cellPhone}
+                </a>
               </div>
             )}
             <div className="flex items-center text-gray-600 text-base">
               <Mail className="h-5 w-5 mr-3 text-light-green" />
-              {member.email}
+              <a href={`mailto:${member.email}`} className="hover:text-light-green transition-colors">
+                {member.email}
+              </a>
             </div>
           </div>
           
-          {/* Action Buttons */}
-          <div className="flex space-x-3 pt-4">
-            <div className="flex-1">
-              <Link href="/contact">
-                <Button className="bg-light-green hover:bg-perry text-white font-light w-full">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Book a Call
-                </Button>
-              </Link>
-            </div>
-            <Button
-              variant="outline"
-              className="border-light-green text-light-green hover:bg-perry/50 bg-transparent"
-            >
-              <Linkedin className="h-4 w-4" />
-            </Button>
-          </div>
         </div>
       </DialogContent>
     </Dialog>
   )
 }
+

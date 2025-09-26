@@ -70,7 +70,7 @@ export default function NewConstructionSection({ onSecondaryClick }: NewConstruc
             <div className="flex items-center space-x-3">
               <DollarSign className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Loan to Cost (LTC): Up to 90% of Total Cost Basis</p>
+                <p className="font-semibold text-gray-900">Loan to Cost (LTC): Up to 92.5% of Total Cost Basis</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -94,7 +94,7 @@ export default function NewConstructionSection({ onSecondaryClick }: NewConstruc
             <div className="flex items-center space-x-3">
               <Users className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Minimum Credit Score: 660 FICO</p>
+                <p className="font-semibold text-gray-900">Minimum Credit Score: 600 FICO</p>
               </div>
             </div>
           </div>

@@ -3,11 +3,9 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Home, Building, Hammer, TrendingUp, MapPin, ArrowRight } from "lucide-react"
+import { Home, Building, Hammer, TrendingUp, MapPin, ArrowRight, Building2 } from "lucide-react"
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { useCalendlyModal } from "@/hooks/use-calendly-modal"
-import CalendlyModal from "@/components/calendly-modal"
 
 interface LoanProduct {
   icon: React.ReactNode
@@ -50,7 +48,7 @@ const defaultProducts: LoanProduct[] = [
     link: "/loan-products/rental-portfolio"
   },
   {
-    icon: <MapPin className="h-8 w-8" />,
+    icon: <Building2 className="h-8 w-8" />,
     title: "Bridge",
     description: "Quick, temporary financing to get you to the next step.",
     link: "/loan-products/stabilized-bridge"
@@ -84,7 +82,6 @@ export function LoanProductsSection({
   products = defaultProducts
 }: LoanProductsSectionProps) {
   const { ref, isInView } = useScrollAnimation()
-  const { isOpen, openModal, closeModal } = useCalendlyModal()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -138,39 +135,29 @@ export function LoanProductsSection({
                 transition: { duration: 0.4 }
               }}
             >
-              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full">
-                <CardContent className="p-8">
+              <Card className="group hover:shadow-custom transition-all duration-300 border-0 shadow-md bg-white h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-grow">
                   <div className="text-light-green mb-6">
                     {product.icon}
                   </div>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-4">{product.title}</h3>
-                  <p className="text-gray-600 font-light leading-relaxed">{product.description}</p>
+                  <h3 className="text-xl font-medium text-gray-900 mb-3">{product.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed text-sm flex-grow">{product.description}</p>
                   
-                  <div className="flex flex-col gap-2 mt-4">
-                    {product.link ? (
+                  {product.link && (
+                    <div className="mt-4">
                       <Link href={product.link}>
                         <Button variant="ghost" className="p-0 text-perry font-light">
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
-                    ) : null}
-                    <Button 
-                      variant="ghost" 
-                      className="p-0 text-light-green font-light"
-                      onClick={openModal}
-                    >
-                      Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </motion.div>
       </div>
-      
-      {/* Calendly Modal */}
-      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
     </section>
   )
 } 

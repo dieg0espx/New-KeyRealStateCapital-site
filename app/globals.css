@@ -97,79 +97,53 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
-/* Custom Slick Carousel Styles */
-.testimonials-carousel .slick-slide {
-  padding: 0 8px;
-}
+/* Custom Slick Carousel Styles - Removed conflicting styles for better swipe functionality */
 
-.testimonials-carousel .slick-dots {
-  bottom: -40px;
-}
-
-.testimonials-carousel .slick-dots li button:before {
-  font-size: 12px;
-  color: #cbd5e1;
-}
-
-.testimonials-carousel .slick-dots li.slick-active button:before {
-  color: #0ea5e9;
-}
-
-.testimonials-carousel .slick-prev,
-.testimonials-carousel .slick-next {
+/* Hide headquarters dots from USAMap component */
+.usa-map-container *[class*="dot"],
+.usa-map-container *[class*="circle"],
+.usa-map-container *[class*="pin"],
+.usa-map-container *[class*="headquarters"],
+.usa-map-container *[class*="marker"],
+.usa-map-container svg *[class*="dot"],
+.usa-map-container svg *[class*="circle"],
+.usa-map-container svg *[class*="pin"],
+.usa-map-container svg *[class*="headquarters"],
+.usa-map-container svg *[class*="marker"] {
   display: none !important;
 }
 
-/* Custom navigation arrows */
-.testimonials-carousel .custom-nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.testimonials-carousel .custom-nav-button:hover {
-  background: #f9fafb;
-  transform: translateY(-50%) scale(1.1);
-}
-
-/* Enable touch gestures for swipe */
-.testimonials-carousel {
-  touch-action: pan-x;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Ensure swipe functionality works */
-.testimonials-carousel .slick-track {
-  cursor: grab;
-  touch-action: pan-x;
-}
-
-.testimonials-carousel .slick-track:active {
-  cursor: grabbing;
-}
-
-.testimonials-carousel .slick-slide {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  touch-action: pan-x;
+/* Fix mobile blur issues between sections */
+@media (max-width: 768px) {
+  /* Prevent blur effects on mobile */
+  * {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Ensure clean section transitions */
+  section {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+  
+  /* Fix FAQ section blur specifically */
+  .faq-section {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Fix Ready to go section blur */
+  .ready-to-go-section {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
 
 /* Hide scrollbars globally */

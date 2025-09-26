@@ -93,7 +93,6 @@ export default function CashFlowFreedomPage() {
       <TypeformModal 
         isOpen={isOpen} 
         onClose={closeModal} 
-        typeformUrl={process.env.NEXT_PUBLIC_TYPEFORM_URL}
       />
       
       {/* Footer */}

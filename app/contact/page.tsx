@@ -40,7 +40,7 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Typeform Contact Form */}
-          <Card className="border-0 shadow-lg">
+          <Card className="border-0 shadow-lg bg-white">
             <CardHeader>
               <CardTitle className="text-2xl font-medium text-gray-900">Get in Touch</CardTitle>
             </CardHeader>
@@ -59,16 +59,21 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Office Locations */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg bg-light-green/30">
               <CardContent className="p-8">
-                <h3 className="text-xl font-medium text-gray-900 mb-6">Office Location</h3>
+                <div className="flex items-center mb-6">
+                  <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                    <MapPin className="h-6 w-6 text-black" />
+                  </div>
+                  <h3 className="text-xl font-medium text-black">Office Location</h3>
+                </div>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <MapPin className="h-6 w-6 text-light-green mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-gray-900">San Diego Office</h4>
-                      <p className="text-gray-600 mt-1">
-                        123 Business District<br />
+                      <h4 className="font-medium text-black">San Diego Office</h4>
+                      <p className="text-black/80 mt-1">
+                        401 W A St Ste 200<br />
                         San Diego, CA 92101
                       </p>
                     </div>
@@ -78,33 +83,38 @@ export default function ContactPage() {
             </Card>
 
             {/* Contact Methods */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg bg-light-green/30">
               <CardContent className="p-8">
-                <h3 className="text-xl font-medium text-gray-900 mb-6">Contact Methods</h3>
+                <div className="flex items-center mb-6">
+                  <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                    <Phone className="h-6 w-6 text-black" />
+                  </div>
+                  <h3 className="text-xl font-medium text-black">Contact Methods</h3>
+                </div>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <p className="font-medium text-gray-900">Phone</p>
-                      <Link href="tel:(555) 123-4567" className="text-gray-600 hover:text-light-green">
-                        (555) 123-4567
+                      <p className="font-medium text-black">Phone</p>
+                      <Link href="tel:(619) 649-6933" className="text-black/80 hover:text-black">
+                        (619) 649-6933
                       </Link>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <p className="font-medium text-gray-900">Email</p>
-                      <Link href="mailto:info@keyrealstatecapital.com" className="text-gray-600 hover:text-light-green">
-                        info@keyrealstatecapital.com
+                      <p className="font-medium text-black">Email</p>
+                      <Link href="mailto:loans@keyrealestatecapital.com" className="text-black/80 hover:text-black">
+                        loans@keyrealestatecapital.com
                       </Link>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 text-light-green mr-3" />
                     <div>
-                      <p className="font-medium text-gray-900">Business Hours</p>
-                      <p className="text-gray-600">Mon-Fri: 9:00 AM - 6:00 PM PST</p>
+                      <p className="font-medium text-black">Business Hours</p>
+                      <p className="text-black/80">Mon-Fri: 9:00 AM - 6:00 PM PST</p>
                     </div>
                   </div>
                 </div>
@@ -112,24 +122,22 @@ export default function ContactPage() {
             </Card>
 
             {/* Quick Actions */}
-            <Card className="border-0 shadow-lg bg-white">
+            <Card className="border-0 shadow-lg bg-light-green/30">
               <CardContent className="p-8">
-                <h3 className="text-xl font-medium text-gray-900 mb-4">Need Immediate Assistance?</h3>
-                <p className="text-gray-600 font-light mb-6">
+                <div className="flex items-center mb-4">
+                  <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                    <Clock className="h-6 w-6 text-black" />
+                  </div>
+                  <h3 className="text-xl font-medium text-black">Need Immediate Assistance?</h3>
+                </div>
+                <p className="text-black/80 font-light mb-6">
                   Schedule a call with one of our loan specialists to discuss your project in detail.
                 </p>
                 <div className="space-y-3">
-                  <Button 
-                    onClick={openModal}
-                    className="w-full bg-light-green hover:bg-perry text-white font-light"
-                  >
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Free Consultation
-                  </Button>
                   <Link href="tel:(619) 649-6933">
                     <Button
                       variant="outline"
-                      className="w-full border-light-green text-light-green hover:bg-perry hover:text-perry bg-transparent"
+                      className="w-full border-black text-black hover:bg-light-green hover:text-white hover:border-light-green bg-transparent"
                     >
                       <Phone className="h-4 w-4 mr-2" />
                       Call Now

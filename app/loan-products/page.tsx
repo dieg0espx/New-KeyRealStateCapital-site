@@ -30,7 +30,7 @@ export default function LoanProductsPage() {
       features: ["Up to $2M loan amounts", "6-18 month terms", "Interest-only payments", "Fast 7-14 day closings"],
       loanRange: "$100K - $2M",
       term: "6-18 months",
-      rate: "Starting at 8.5%",
+      rate: "Starting at 7.75%",
       href: "/loan-products/fix-and-flip",
       popular: true,
     },
