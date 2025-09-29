@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 interface TypeformModalProps {
   isOpen: boolean
@@ -11,12 +12,43 @@ interface TypeformModalProps {
 
 export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
   const [modalKey, setModalKey] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     if (isOpen) {
       setModalKey(prev => prev + 1)
     }
   }, [isOpen])
+
+  // Handle Typeform completion
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleTypeformSubmit = (event: MessageEvent) => {
+      // Check if the message is from Typeform
+      if (event.origin !== 'https://form.typeform.com' && event.origin !== 'https://embed.typeform.com') return
+      
+      // Handle different Typeform completion events
+      if (
+        event.data.type === 'form-submit' || 
+        event.data.type === 'form-complete' ||
+        event.data.type === 'form-submitted' ||
+        (event.data.event && event.data.event.includes('form-submit'))
+      ) {
+        console.log('Typeform completed, redirecting to Calendly...', event.data)
+        // Close modal and redirect to Calendly page
+        onClose()
+        router.push('/calendly-book-a-call')
+      }
+    }
+
+    // Listen for Typeform completion events
+    window.addEventListener('message', handleTypeformSubmit)
+
+    return () => {
+      window.removeEventListener('message', handleTypeformSubmit)
+    }
+  }, [isOpen, onClose, router])
 
   useEffect(() => {
     if (isOpen) {
@@ -64,12 +96,26 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
         </div>
         
         {/* Typeform Content */}
-        <div className="flex-1 h-full overflow-hidden">
+        <div className="flex-1 h-full overflow-hidden relative">
           <div 
             key={modalKey}
             className="w-full h-full"
             data-tf-live="01K61N3M1E95RKBX7R2A8VNTFH"
           />
+          
+          {/* Manual completion button as fallback */}
+          <div className="absolute bottom-4 right-4">
+            <Button
+              onClick={() => {
+                console.log('Manual completion triggered')
+                onClose()
+                router.push('/calendly-book-a-call')
+              }}
+              className="bg-[#02736D] hover:bg-[#025a54] text-white text-sm px-4 py-2"
+            >
+              Continue to Booking →
+            </Button>
+          </div>
         </div>
       </div>
     </div>
