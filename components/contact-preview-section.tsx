@@ -22,7 +22,7 @@ export function ContactPreviewSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Contact Information */}
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
@@ -63,26 +63,6 @@ export function ContactPreviewSection() {
             </CardContent>
           </Card>
 
-          {/* Schedule Consultation */}
-          <Card className="border-0 shadow-lg">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <div className="bg-light-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Calendar className="h-8 w-8 text-white" />
-                </div>
-                                 <h3 className="text-xl font-medium text-gray-900 mb-4">Schedule a Call</h3>
-                <p className="text-gray-600 font-light mb-4">
-                  Book a consultation with our team
-                </p>
-                <Button 
-                  onClick={openModal}
-                  className="bg-light-green hover:bg-perry text-white font-light w-full"
-                >
-                  Schedule Now
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Office Information */}

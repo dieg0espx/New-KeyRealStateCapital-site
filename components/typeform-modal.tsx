@@ -3,15 +3,16 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 interface TypeformModalProps {
   isOpen: boolean
   onClose: () => void
-  typeformUrl?: string
 }
 
-export default function TypeformModal({ isOpen, onClose, typeformUrl }: TypeformModalProps) {
+export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
   const [modalKey, setModalKey] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     if (isOpen) {
@@ -19,17 +20,47 @@ export default function TypeformModal({ isOpen, onClose, typeformUrl }: Typeform
     }
   }, [isOpen])
 
+  // Handle Typeform completion
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleTypeformSubmit = (event: MessageEvent) => {
+      // Check if the message is from Typeform
+      if (event.origin !== 'https://form.typeform.com' && event.origin !== 'https://embed.typeform.com') return
+      
+      // Handle different Typeform completion events
+      if (
+        event.data.type === 'form-submit' || 
+        event.data.type === 'form-complete' ||
+        event.data.type === 'form-submitted' ||
+        (event.data.event && event.data.event.includes('form-submit'))
+      ) {
+        console.log('Typeform completed, redirecting to Calendly...', event.data)
+        // Close modal and redirect to Calendly page
+        onClose()
+        router.push('/calendly-book-a-call')
+      }
+    }
+
+    // Listen for Typeform completion events
+    window.addEventListener('message', handleTypeformSubmit)
+
+    return () => {
+      window.removeEventListener('message', handleTypeformSubmit)
+    }
+  }, [isOpen, onClose, router])
+
   useEffect(() => {
     if (isOpen) {
       // Load Typeform embed script
       const script = document.createElement('script')
-      script.src = 'https://embed.typeform.com/next/embed.js'
+      script.src = '//embed.typeform.com/next/embed.js'
       script.async = true
       document.head.appendChild(script)
 
       return () => {
         // Clean up script when component unmounts
-        const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
+        const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]')
         if (existingScript) {
           document.head.removeChild(existingScript)
         }
@@ -65,37 +96,26 @@ export default function TypeformModal({ isOpen, onClose, typeformUrl }: Typeform
         </div>
         
         {/* Typeform Content */}
-        <div className="flex-1 h-full overflow-hidden">
-          {typeformUrl ? (
-            <div 
-              key={modalKey}
-              className="w-full h-full"
-              data-tf-live={typeformUrl}
-              data-tf-source="website"
-              data-tf-medium="embed-sdk"
-              data-tf-medium-version="next"
-            />
-          ) : (
-            <div className="flex items-center justify-center h-full bg-gray-50">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 bg-[#02736D]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-[#02736D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-medium text-[#02736D] mb-2">Typeform Placeholder</h3>
-                <p className="text-gray-600 mb-4">
-                  Ready to integrate your Typeform embed. Just provide the URL and it will work seamlessly.
-                </p>
-                <div className="bg-[#02736D]/10 border border-[#02736D]/20 rounded-lg p-4 text-sm text-gray-700">
-                  <p className="font-medium mb-1">Integration Instructions:</p>
-                  <p>1. Get your Typeform embed URL</p>
-                  <p>2. Pass it as the <code className="bg-gray-200 px-1 rounded">typeformUrl</code> prop</p>
-                  <p>3. The form will automatically load and be styled to match your brand</p>
-                </div>
-              </div>
-            </div>
-          )}
+        <div className="flex-1 h-full overflow-hidden relative">
+          <div 
+            key={modalKey}
+            className="w-full h-full"
+            data-tf-live="01K61N3M1E95RKBX7R2A8VNTFH"
+          />
+          
+          {/* Manual completion button as fallback */}
+          <div className="absolute bottom-4 right-4">
+            <Button
+              onClick={() => {
+                console.log('Manual completion triggered')
+                onClose()
+                router.push('/calendly-book-a-call')
+              }}
+              className="bg-[#02736D] hover:bg-[#025a54] text-white text-sm px-4 py-2"
+            >
+              Continue to Booking →
+            </Button>
+          </div>
         </div>
       </div>
     </div>

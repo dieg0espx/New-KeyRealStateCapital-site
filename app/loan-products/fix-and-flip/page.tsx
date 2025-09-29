@@ -326,7 +326,7 @@ export default function FixAndFlipPage() {
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Competitive Rates</h4>
                 <p className="text-gray-600 font-light">
-                  Starting at 8.5% with flexible terms and no hidden fees or prepayment penalties.
+                  Starting at 7.75% with flexible terms and no hidden fees or prepayment penalties.
                 </p>
               </div>
               <div>

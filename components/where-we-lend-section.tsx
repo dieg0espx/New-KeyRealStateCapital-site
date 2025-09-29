@@ -134,7 +134,7 @@ export function WhereWeLendSection({
             {/* Interactive US Map */}
             <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
               <div className="overflow-hidden rounded-lg">
-                <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] xl:h-[650px]">
+                <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] xl:h-[650px] usa-map-container">
                   <USAMap
                     defaultState={{
                       fill: '#f3f4f6',
@@ -239,7 +239,7 @@ export function WhereWeLendSection({
                   <span className="text-gray-700">Not Available (ND, SD)</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-perry rounded-full border border-white shadow-md"></div>
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-perry border border-white shadow-md"></div>
                   <span className="text-gray-700">Headquarters</span>
                 </div>
               </div>

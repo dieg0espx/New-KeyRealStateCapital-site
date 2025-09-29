@@ -18,7 +18,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
-  title = "Unlock Freedom",
+  title = "Unlock Freedom.",
   subtitle = "",
   description = "Flexible, creative lending to help you scale.",
   primaryButtonText = "Explore our loan programs",

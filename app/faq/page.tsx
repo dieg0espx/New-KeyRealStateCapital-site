@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Clock, CheckCircle, Building, Home, Calculator } from "lucide-react"
 import { faqCategories } from "@/data/faq-data"
+import { StatsSection } from "@/components/stats-section"
 
 export default function FAQPage() {
 
@@ -107,6 +108,16 @@ export default function FAQPage() {
           ))}
         </div>
       </section>
+
+      {/* Stats Section */}
+      <StatsSection 
+        stats={[
+          { number: "3-25", label: "Days to Close" },
+          { number: "47", label: "States Covered" },
+          { number: "500+", label: "Min Credit Score" },
+          { number: "1.6k+", label: "Loans Funded" }
+        ]}
+      />
 
       {/* Contact Section */}
       <section className="py-24 bg-white">

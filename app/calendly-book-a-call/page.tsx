@@ -3,8 +3,34 @@
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import CalendlyModal from '@/components/calendly-modal'
+import { useCalendlyModal } from '@/hooks/use-calendly-modal'
+import { useRouter } from 'next/navigation'
 
 export default function CalendlyBookACallPage() {
+  const { isOpen, openModal, closeModal } = useCalendlyModal()
+  const router = useRouter()
+
+  // Handle Calendly completion
+  useEffect(() => {
+    const handleCalendlyEvent = (event: MessageEvent) => {
+      // Check if the message is from Calendly
+      if (event.origin !== 'https://calendly.com') return
+      
+      if (event.data.event && event.data.event.indexOf('calendly.event_scheduled') === 0) {
+        console.log('Calendly event scheduled, redirecting to thank-you page...')
+        router.push('/thank-you')
+      }
+    }
+
+    // Listen for Calendly events
+    window.addEventListener('message', handleCalendlyEvent)
+
+    return () => {
+      window.removeEventListener('message', handleCalendlyEvent)
+    }
+  }, [router])
+
   useEffect(() => {
     // Load Calendly embed script
     const script = document.createElement('script')
@@ -63,7 +89,7 @@ export default function CalendlyBookACallPage() {
               Book Your Free Investor Qualifying Call
             </h1>
             <p className="text-xl text-white/90 font-light max-w-2xl mx-auto">
-              Schedule a 30-minute consultation to discuss your real estate investment goals and how we can help you achieve cash flow freedom.
+              Schedule a 15-minute consultation to discuss your real estate investment goals and how we can help you achieve cash flow freedom.
             </p>
           </div>
         </div>
@@ -96,7 +122,7 @@ export default function CalendlyBookACallPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium text-[#02736D] mb-2">30 Minutes</h3>
+                <h3 className="text-lg font-medium text-[#02736D] mb-2">15 Minutes</h3>
                 <p className="text-gray-600 text-sm">Quick and focused consultation to understand your needs</p>
               </div>
               
@@ -124,6 +150,9 @@ export default function CalendlyBookACallPage() {
           </div>
         </div>
       </div>
+      
+      {/* Calendly Modal */}
+      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
     </div>
   )
 }

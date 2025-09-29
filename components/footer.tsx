@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Instagram, ExternalLink, Linkedin, X } from "lucide-react"
+import { Phone, Mail, MapPin, ExternalLink, Linkedin, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -74,24 +74,15 @@ export function Footer() {
                 />
               </div>
               <p className="text-white font-light leading-relaxed mb-2 max-w-md">
-                Unlock Freedom
+                Unlock Freedom.
               </p>
                              <p className="text-white font-light leading-relaxed mb-6 max-w-md">
-                 Sophisticated financing solutions for real estate investors nationwide. We empower your success with
-                 flexible lending options and expert guidance.
+                 Creative financing solutions for real estate investors nationwide. Let's build together.
                </p>
                
                <div className="flex space-x-4">
                  <a 
-                   href="https://www.instagram.com/investwithkey/?hl=en" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   className="text-white hover:text-white transition-colors"
-                 >
-                   <Instagram className="h-5 w-5" />
-                 </a>
-                 <a 
-                   href="https://www.linkedin.com/company/keyswag/" 
+                   href="https://www.linkedin.com/company/key-real-estate-capital/" 
                    target="_blank" 
                    rel="noopener noreferrer"
                    className="text-white hover:text-white transition-colors"
