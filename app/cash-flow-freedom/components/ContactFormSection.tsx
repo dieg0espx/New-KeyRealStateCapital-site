@@ -3,16 +3,14 @@
 import { useEffect } from 'react'
 
 export default function ContactFormSection() {
-  
+
   useEffect(() => {
-    // Load Typeform embed script
     const script = document.createElement('script')
     script.src = 'https://embed.typeform.com/next/embed.js'
     script.async = true
     document.head.appendChild(script)
 
     return () => {
-      // Cleanup script on component unmount
       const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]')
       if (existingScript) {
         document.head.removeChild(existingScript)
@@ -31,15 +29,11 @@ export default function ContactFormSection() {
                 If you've made it this far, you're obviously serious about this…
               </h2>
               
-              {/* Typeform Contact Form */}
+              {/* Inline Typeform embed using the same CTA form */}
               <div>
-                <div 
-                  data-tf-live="01K1BX3QEFS7RAQYWRJR1KJV9X"
-                  data-tf-source="localhost"
-                  data-tf-medium="embed-sdk"
-                  data-tf-medium-version="next"
+                <div
+                  data-tf-live="01K61N3M1E95RKBX7R2A8VNTFH"
                   className="w-full min-h-[500px] rounded-lg overflow-hidden bg-white"
-                  style={{ height: 'auto' }}
                 ></div>
               </div>
             </div>

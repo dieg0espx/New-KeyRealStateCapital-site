@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   creator: 'Key Real Estate Capital',
   publisher: 'Key Real Estate Capital',
 
-  metadataBase: new URL('https://new-key-real-state-capital-site.vercel.app'),
+  metadataBase: new URL('https://keyrealestatecapital.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://keyrealestatecapital.com/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://new-key-real-state-capital-site.vercel.app',
+    url: 'https://keyrealestatecapital.com',
     siteName: 'Key Real Estate Capital',
     title: 'Key Real Estate Capital - Luxury Real Estate Financing',
     description: 'Capital Solutions for Real Estate Investors',
