@@ -85,8 +85,8 @@ export function WhereWeLendSection({
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-light-green/40 to-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-light-green/40 to-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 w-full">
         <motion.div 
           className="text-center mb-8 sm:mb-12 lg:mb-16"
           ref={ref}

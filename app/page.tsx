@@ -17,7 +17,7 @@ import { ContactPreviewSection } from "@/components/contact-preview-section"
 export default function HomePage() {
   return (
     <motion.div 
-      className="min-h-screen bg-white overflow-x-hidden"
+      className="min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

@@ -93,9 +93,7 @@ html {
 }
 
 /* Smooth transitions for all interactive elements */
-* {
-  transition: all 0.3s ease-in-out;
-}
+/* Removed global transition to prevent layout issues */
 
 /* Custom Slick Carousel Styles - Removed conflicting styles for better swipe functionality */
 

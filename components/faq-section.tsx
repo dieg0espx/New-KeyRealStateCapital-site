@@ -19,8 +19,8 @@ export function FAQSection() {
   }
 
   return (
-    <section className="py-[100px] lg:py-[200px] bg-white relative z-20 faq-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-[100px] lg:py-[200px] bg-white relative z-20 faq-section overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
             You've got questions – we've got answers.

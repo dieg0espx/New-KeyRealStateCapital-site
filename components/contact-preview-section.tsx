@@ -11,8 +11,8 @@ export function ContactPreviewSection() {
   const { isOpen, openModal, closeModal } = useCalendlyModal()
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
                      <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
             Ready to Get Started?
@@ -22,7 +22,7 @@ export function ContactPreviewSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {/* Contact Information */}
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
@@ -74,7 +74,7 @@ export function ContactPreviewSection() {
                 <div className="text-center">
                   <h3 className="text-3xl font-medium text-gray-900 mb-8">Visit Our Office</h3>
                   
-                  <div className="grid md:grid-cols-3 gap-8 mb-12">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12">
                     <div className="flex flex-col items-center">
                       <div className="bg-light-green w-12 h-12 rounded-full flex items-center justify-center mb-4">
                         <MapPin className="h-6 w-6 text-white" />

@@ -61,16 +61,6 @@ export default function TeamPage() {
     },
     // Senior Account Executives (alphabetical by last name)
     {
-      name: "Jeremiah Ibrahim",
-      title: "Senior Account Executive",
-      bio: "Jeremiah Ibrahim brings a wealth of experience and dedication to his role as Senior Account Executive at Key Real Estate Capital. With a strong background in real estate financing and client relations, Jeremiah is committed to providing exceptional service and innovative lending solutions to help investors achieve their financial goals. His approach combines deep market knowledge with personalized attention, ensuring each client receives the support and guidance they need to succeed in their real estate ventures.",
-      officePhone: "619-649-6933",
-      cellPhone: "760-900-6116",
-      email: "jeremiah@keyrealestatecapital.com",
-      image: "/team/jeremiahIbrahim.png",
-      linkedin: "https://www.linkedin.com/company/key-real-estate-capital/",
-    },
-    {
       name: "Raj Vora",
       title: "Senior Account Executive",
       bio: "Raj Vora is a versatile professional who has successfully transitioned from leadership in the alternative healthcare industry to the realm of hard money lending in real estate. With a strong background in business management and client relations, Raj brings a wealth of experience and expertise to his position at Key Real Estate Capital.<br/><br/>Driven by his passion for real estate investing and a deep commitment to community service, Raj is dedicated to providing innovative and reliable lending solutions to real estate investors and developers. His unique perspective, honed through years in alternative healthcare, allows him to offer personalized and tailored financing options that cater to the specific needs of his clients.<br/><br/>Raj's core values of integrity, transparency, and exceptional customer service set him apart in the competitive landscape of hard money lending. His goal is to establish enduring relationships with his clients, guiding them towards success in their real estate ventures with confidence and ease. With a fresh outlook, strong business acumen, and a genuine desire to help others succeed, Raj Vora is making a significant impact in the world of hard money lending.<br/><br/>In his personal time, Raj enjoys creating a fulfilling life with his girlfriend and their beloved goldendoodle, Biscuit. Together, they embrace new adventures, cherish lasting memories, and prioritize the simple joys of everyday life. Raj's commitment to fostering strong relationships extends beyond his professional endeavors, emphasizing the importance of balance, connection, and happiness in all aspects of his life.",
