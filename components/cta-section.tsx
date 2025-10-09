@@ -66,9 +66,9 @@ export function CTASection({
   }
 
   return (
-    <section className={`py-24 ${backgroundColor} relative z-10`}>
+    <section className={`py-24 ${backgroundColor} relative z-10 overflow-hidden`}>
       <motion.div 
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full"
         ref={ref}
         variants={containerVariants}
         initial="hidden"

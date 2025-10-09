@@ -78,7 +78,7 @@ export function HeroSection({
 
   return (
     <Gradient direction="bottom">
-      <section className="relative min-h-screen h-screen lg:h-[calc(100vh+200px)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0"
           initial={{ scale: 1.05, opacity: 0 }}

@@ -107,8 +107,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true}>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={`${inter.className} overflow-x-hidden`} suppressHydrationWarning={true}>
         <BlogProvider>
           <LayoutContent>{children}</LayoutContent>
         </BlogProvider>

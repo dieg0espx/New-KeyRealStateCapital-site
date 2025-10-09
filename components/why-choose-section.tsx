@@ -79,8 +79,8 @@ export function WhyChooseSection({
   }
 
   return (
-    <section className="py-40 bg-gradient-to-b from-white via-light-green/10 to-white ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-40 bg-gradient-to-b from-white via-light-green/10 to-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div 
           className="text-center mb-16"
           ref={ref}
@@ -94,7 +94,7 @@ export function WhyChooseSection({
           </p>
         </motion.div>
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}

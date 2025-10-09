@@ -170,8 +170,8 @@ export function TestimonialsSection({
 
 
   return (
-    <section className="py-24 bg-gray-50/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gray-50/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div 
           className="text-center mb-16"
           ref={ref}
@@ -184,20 +184,20 @@ export function TestimonialsSection({
           {/* Navigation arrows */}
           <button
             onClick={prevSlide}
-            className="absolute -left-4 lg:-left-16 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+            className="absolute left-0 lg:-left-16 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute -right-4 lg:-right-16 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+            className="absolute right-0 lg:-right-16 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
           >
-            <ChevronRight className="h-6 w-6 text-gray-600" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
           </button>
 
           {/* Carousel */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden px-8 sm:px-12 lg:px-0">
             <div className={`flex ${slidesToShow === 1 ? 'justify-center' : 'gap-6'}`}>
               {getVisibleTestimonials().map((testimonial, index) => (
                 <div
