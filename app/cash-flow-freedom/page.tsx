@@ -18,6 +18,21 @@ import {
 export default function CashFlowFreedomPage() {
   const { isOpen, openModal, closeModal } = useTypeformModal()
   
+  const handleCTAClick = () => {
+    // Check if we're on mobile (screen width < 640px which is Tailwind's 'sm' breakpoint)
+    const isMobile = window.innerWidth < 640
+    
+    if (isMobile) {
+      // On mobile, scroll to the form section
+      const formSection = document.getElementById('contact-form')
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      // On desktop, open the modal
+      openModal()
+    }
+  }
   
   // Modal state is managed by the useTypeformModal hook
 
@@ -43,7 +58,7 @@ export default function CashFlowFreedomPage() {
             {/* CTA Button */}
             <div className="flex items-center">
               <Button
-                onClick={openModal}
+                onClick={handleCTAClick}
                 size="sm"
                 className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-4 py-2 text-sm rounded-lg"
               >
@@ -68,7 +83,7 @@ export default function CashFlowFreedomPage() {
             {/* CTA Button */}
             <div className="flex items-center">
               <Button
-                onClick={openModal}
+                onClick={handleCTAClick}
                 size="sm"
                 className="bg-[#02736D] hover:bg-[#025a54] text-white font-normal px-6 py-2 text-base rounded-lg"
               >
@@ -80,12 +95,12 @@ export default function CashFlowFreedomPage() {
       </nav>
       
 
-      <HeroSection onOpenModal={openModal} />
-      <CaseStudiesSection onOpenModal={openModal} />
-      <CallForYouSection onOpenModal={openModal} />
-      <TestimonialsSection onOpenModal={openModal} />
-      <GuaranteeSection onOpenModal={openModal} />
-      <CallBenefitsSection onOpenModal={openModal} />
+      <HeroSection onOpenModal={handleCTAClick} />
+      <CaseStudiesSection onOpenModal={handleCTAClick} />
+      <CallForYouSection onOpenModal={handleCTAClick} />
+      <TestimonialsSection onOpenModal={handleCTAClick} />
+      <GuaranteeSection onOpenModal={handleCTAClick} />
+      <CallBenefitsSection onOpenModal={handleCTAClick} />
       <ContactFormSection />
 
 

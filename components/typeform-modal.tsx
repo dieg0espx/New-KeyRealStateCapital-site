@@ -14,9 +14,26 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
   const [modalKey, setModalKey] = useState(0)
   const router = useRouter()
 
+  // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       setModalKey(prev => prev + 1)
+      // Save current scroll position
+      const scrollY = window.scrollY
+      // Lock body scroll
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+      document.body.style.overflow = 'hidden'
+      
+      return () => {
+        // Restore scroll position
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.width = ''
+        document.body.style.overflow = ''
+        window.scrollTo(0, scrollY)
+      }
     }
   }, [isOpen])
 
@@ -25,10 +42,8 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
     if (!isOpen) return
 
     const handleTypeformSubmit = (event: MessageEvent) => {
-      // Check if the message is from Typeform
       if (event.origin !== 'https://form.typeform.com' && event.origin !== 'https://embed.typeform.com') return
       
-      // Handle different Typeform completion events
       if (
         event.data.type === 'form-submit' || 
         event.data.type === 'form-complete' ||
@@ -36,30 +51,24 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
         (event.data.event && event.data.event.includes('form-submit'))
       ) {
         console.log('Typeform completed, redirecting to Calendly...', event.data)
-        // Close modal and redirect to Calendly page
         onClose()
         router.push('/calendly-book-a-call')
       }
     }
 
-    // Listen for Typeform completion events
     window.addEventListener('message', handleTypeformSubmit)
-
-    return () => {
-      window.removeEventListener('message', handleTypeformSubmit)
-    }
+    return () => window.removeEventListener('message', handleTypeformSubmit)
   }, [isOpen, onClose, router])
 
+  // Load Typeform embed script
   useEffect(() => {
     if (isOpen) {
-      // Load Typeform embed script
       const script = document.createElement('script')
       script.src = '//embed.typeform.com/next/embed.js'
       script.async = true
       document.head.appendChild(script)
 
       return () => {
-        // Clean up script when component unmounts
         const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]')
         if (existingScript) {
           document.head.removeChild(existingScript)
@@ -71,7 +80,21 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center"
+      style={{ 
+        backgroundColor: 'rgba(0,0,0,0.5)', 
+        zIndex: 99999,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/50"
@@ -79,10 +102,10 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
       />
       
       {/* Modal */}
-      <div className="relative bg-white rounded-lg shadow-xl w-full max-w-4xl h-[85vh] mx-4 overflow-hidden">
+      <div className="relative bg-white rounded-lg shadow-xl w-full max-w-4xl h-[85vh] mx-4 overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
-          <h2 className="text-2xl font-medium text-[#02736D]">
+        <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 bg-white">
+          <h2 className="text-lg md:text-2xl font-medium text-[#02736D]">
             Answer a Few Short Questions Before Booking Your Call
           </h2>
           <Button
@@ -104,7 +127,7 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
           />
           
           {/* Manual completion button as fallback */}
-          <div className="absolute bottom-4 right-4">
+          <div className="absolute bottom-4 right-4 z-20">
             <Button
               onClick={() => {
                 console.log('Manual completion triggered')

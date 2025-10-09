@@ -19,7 +19,7 @@ export default function ContactFormSection() {
   }, [])
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24">
+    <section id="contact-form" className="py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#F2F2F2] rounded-2xl p-4 sm:p-6 lg:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
