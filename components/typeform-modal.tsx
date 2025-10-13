@@ -125,20 +125,6 @@ export default function TypeformModal({ isOpen, onClose }: TypeformModalProps) {
             className="w-full h-full"
             data-tf-live="01K61N3M1E95RKBX7R2A8VNTFH"
           />
-          
-          {/* Manual completion button as fallback */}
-          <div className="absolute bottom-4 right-4 z-20">
-            <Button
-              onClick={() => {
-                console.log('Manual completion triggered')
-                onClose()
-                router.push('/calendly-book-a-call')
-              }}
-              className="bg-[#02736D] hover:bg-[#025a54] text-white text-sm px-4 py-2"
-            >
-              Continue to Booking →
-            </Button>
-          </div>
         </div>
       </div>
     </div>
