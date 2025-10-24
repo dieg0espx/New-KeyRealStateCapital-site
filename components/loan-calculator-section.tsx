@@ -97,7 +97,7 @@ export function LoanCalculatorSection({
   }
 
   return (
-    <section id="calculator" className="py-[200px] bg-gradient-to-b from-white via-light-green/30 to-perry scroll-mt-16 overflow-hidden">
+    <section id="calculator" className="pt-24 pb-[200px] bg-gradient-to-b from-white via-light-green/30 to-perry scroll-mt-16 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div 
               className="text-center mb-16"

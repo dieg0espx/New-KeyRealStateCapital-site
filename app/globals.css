@@ -174,6 +174,176 @@ html {
 }
 */
 
+/* Ensure loan calculator is visible */
+#calculator {
+  position: relative !important;
+  z-index: 10 !important;
+  background: white !important;
+}
+
+#calculator .loan-calculator {
+  position: relative !important;
+  z-index: 10 !important;
+  background: white !important;
+}
+
+/* Ensure dropdowns are visible and functional */
+.loan-calculator .relative {
+  overflow: visible !important;
+}
+
+.loan-calculator .absolute {
+  z-index: 50 !important;
+}
+
+/* Enhanced dropdown functionality for both mobile and desktop */
+.loan-calculator button {
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.loan-calculator button:hover {
+  background-color: #f9fafb !important;
+}
+
+/* Ensure proper z-index stacking */
+.loan-calculator {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Mobile portal dropdown - maximum priority */
+.mobile-portal-dropdown {
+  z-index: 9999999 !important;
+  position: fixed !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 8px !important;
+}
+
+/* Mobile-specific dropdown fixes */
+@media (max-width: 768px) {
+  /* Ensure parent containers don't clip dropdowns on mobile */
+  .loan-calculator .grid {
+    overflow: visible !important;
+  }
+  
+  .loan-calculator .flex {
+    overflow: visible !important;
+  }
+  
+  .loan-calculator .card {
+    overflow: visible !important;
+  }
+  
+  .loan-calculator .card-content {
+    overflow: visible !important;
+  }
+  
+  /* Fix any potential clipping issues */
+  .loan-calculator section {
+    overflow: visible !important;
+  }
+  
+  .loan-calculator .space-y-6 {
+    overflow: visible !important;
+  }
+  
+  /* Ensure portal dropdowns are above everything */
+  .mobile-portal-dropdown {
+    z-index: 9999999 !important;
+    position: fixed !important;
+  }
+}
+
+/* Ensure navbar is always on top */
+nav[class*="fixed"] {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+/* Ensure parent containers don't clip dropdowns */
+.loan-calculator {
+  overflow: visible !important;
+}
+
+.loan-calculator .grid {
+  overflow: visible !important;
+}
+
+.loan-calculator .flex {
+  overflow: visible !important;
+}
+
+.loan-calculator .card {
+  overflow: visible !important;
+}
+
+.loan-calculator .card-content {
+  overflow: visible !important;
+}
+
+/* Enhanced Mobile-Friendly Select Dropdowns */
+.loan-calculator select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 12px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 16px !important;
+  padding-right: 40px !important;
+}
+
+.loan-calculator select option {
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+  background-color: white !important;
+  border: none !important;
+}
+
+.loan-calculator select option:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.loan-calculator select option:checked {
+  background-color: #10b981 !important;
+  color: white !important;
+}
+
+/* Mobile-specific enhancements */
+@media (max-width: 768px) {
+  .loan-calculator select {
+    font-size: 16px !important;
+    padding: 16px 20px !important;
+    padding-right: 50px !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .loan-calculator select option {
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Ensure proper width on mobile */
+  .loan-calculator .grid {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .loan-calculator .flex.flex-col {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* Custom scrollbar for team member bios */
 .custom-scrollbar::-webkit-scrollbar {
   display: block;

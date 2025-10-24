@@ -8,6 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { useBlog } from "@/contexts/blog-context"
+import { useRouter } from "next/navigation"
 
 interface BlogPostPageProps {
   params: {
@@ -17,6 +18,7 @@ interface BlogPostPageProps {
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const { getPostBySlug, getRecentPosts } = useBlog()
+  const router = useRouter()
   const post = getPostBySlug(params.slug)
   
   if (!post) {
@@ -24,6 +26,23 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedPosts = getRecentPosts(3).filter(p => p.id !== post.id)
+
+  // Handle navigation with scroll position preservation
+  const handleRelatedPostClick = (e: React.MouseEvent, slug: string) => {
+    e.preventDefault()
+    e.stopPropagation()
+    
+    // Store current scroll position
+    const currentScrollY = window.scrollY
+    
+    // Navigate to the new post
+    router.push(`/blog/${slug}`)
+    
+    // Restore scroll position after navigation
+    setTimeout(() => {
+      window.scrollTo(0, currentScrollY)
+    }, 100)
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,12 +75,28 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/blog">
-            <Button variant="ghost" className="mb-8 text-light-green hover:text-perry font-light">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
-            </Button>
-          </Link>
+          <Button 
+            variant="ghost" 
+            className="mb-8 text-light-green hover:text-perry font-light"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              
+              // Store current scroll position
+              const currentScrollY = window.scrollY
+              
+              // Navigate back to blog
+              router.push('/blog')
+              
+              // Restore scroll position after navigation
+              setTimeout(() => {
+                window.scrollTo(0, currentScrollY)
+              }, 100)
+            }}
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Blog
+          </Button>
         </motion.div>
 
         {/* Article Header */}
@@ -155,25 +190,26 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <Link href={`/blog/${relatedPost.slug}`}>
-                    <div className="group">
-                      <div className="aspect-video overflow-hidden rounded-lg mb-4">
-                        <Image
-                          src={relatedPost.image || "/placeholder.svg"}
-                          alt={relatedPost.title}
-                          width={300}
-                          height={200}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        {relatedPost.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 font-light line-clamp-2">
-                        {relatedPost.excerpt}
-                      </p>
+                  <div 
+                    className="group cursor-pointer"
+                    onClick={(e) => handleRelatedPostClick(e, relatedPost.slug)}
+                  >
+                    <div className="aspect-video overflow-hidden rounded-lg mb-4">
+                      <Image
+                        src={relatedPost.image || "/placeholder.svg"}
+                        alt={relatedPost.title}
+                        width={300}
+                        height={200}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                  </Link>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {relatedPost.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 font-light line-clamp-2">
+                      {relatedPost.excerpt}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

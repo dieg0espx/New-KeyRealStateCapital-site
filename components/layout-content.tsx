@@ -18,7 +18,7 @@ export function LayoutContent({ children }: LayoutContentProps) {
 
   return (
     <>
-      {!isComprehensiveLoanPage && !isCashFlowFreedomPage && !isCalendlyPage && !isThankYouPage && <Header isHomePage={isHomePage} />}
+      <Header isHomePage={isHomePage} />
       <main>{children}</main>
       {!isComprehensiveLoanPage && !isCashFlowFreedomPage && !isCalendlyPage && !isThankYouPage && <Footer />}
     </>
