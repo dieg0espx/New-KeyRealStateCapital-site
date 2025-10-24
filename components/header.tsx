@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, Phone } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
@@ -248,6 +248,16 @@ export function Header({ isHomePage = false }: HeaderProps) {
           </div>
 
           <div className="flex items-center space-x-4">
+            {/* Phone Number - Desktop */}
+            <div className="hidden lg:flex items-center space-x-2">
+              <Phone className={`h-4 w-4 ${
+                isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700" : "text-white/90"
+              }`} />
+              <span className={`text-sm font-light ${
+                isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700" : "text-white/90"
+              }`}>619-649-6933</span>
+            </div>
+
             <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -395,8 +405,21 @@ export function Header({ isHomePage = false }: HeaderProps) {
                 </div>
               </motion.div>
 
+              {/* Phone Number - Mobile */}
               <motion.div 
-                className="pt-4 pb-2"
+                className="pt-2 pb-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                <div className="flex items-center justify-center space-x-2 px-3 py-2">
+                  <Phone className="h-4 w-4 text-gray-700" />
+                  <span className="text-sm font-light text-gray-700">619-649-6933</span>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="pt-2 pb-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
