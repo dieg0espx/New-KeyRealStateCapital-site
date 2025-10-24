@@ -97,7 +97,7 @@ export function LoanCalculatorSection({
   }
 
   return (
-    <section id="calculator" className="py-[200px] bg-gradient-to-b from-white via-light-green/30 to-perry scroll-mt-16 overflow-hidden">
+    <section id="calculator" className="pt-24 pb-[200px] bg-gradient-to-b from-white via-light-green/30 to-perry scroll-mt-16 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div 
               className="text-center mb-16"
@@ -113,7 +113,7 @@ export function LoanCalculatorSection({
             </motion.div>
 
             <motion.div 
-              className="grid lg:grid-cols-3 gap-12 items-stretch"
+              className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-stretch"
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -217,21 +217,21 @@ export function LoanCalculatorSection({
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
-                  <span>No application fees</span>
+                  <span className="text-gray-500">No application fees</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
-                  <span>Pre-qualification in 24 hours</span>
+                  <span className="text-gray-500">Pre-qualification in 24 hours</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="w-2 h-2 bg-light-green rounded-full mr-2"></div>
-                  <span>48 states covered</span>
+                  <span className="text-gray-500">48 states covered</span>
                 </motion.div>
               </div>
             </motion.div>

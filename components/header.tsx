@@ -20,7 +20,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      setIsScrolled(window.scrollY > 50)
     }
     
     const handleResize = () => {
@@ -56,13 +56,11 @@ export function Header({ isHomePage = false }: HeaderProps) {
   ]
 
   return (
-    <motion.nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage || isMobileMenuOpen ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
+    <nav
+      className={`fixed top-0 w-full z-[999999] transition-all duration-300 ${
+        isHomePage && !isScrolled ? "bg-transparent" : "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
       }`}
-      initial={{ y: isMobile ? 0 : -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8 }}
+      style={{ zIndex: 999999 }}
     >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -73,11 +71,11 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               <Link href="/" className="flex items-center">
                 <Image
-                  src={isScrolled || !isHomePage || isMobileMenuOpen ? "/logo-white.png" : "/logo-transparent.png"}
+                  src={isHomePage && !isScrolled ? "/logo-transparent.png" : "/logo-white.png"}
                   alt="Key Real Estate Capital"
                   width={180}
                   height={40}
-                  className="h-10 w-auto"
+                  className={`h-10 w-auto ${isHomePage && !isScrolled ? "drop-shadow-lg" : ""}`}
                   priority
                 />
               </Link>
@@ -90,9 +88,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               <Link
                 href="/"
                 className={`transition-colors font-light text-sm ${
-                  pathname === "/" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                  isHomePage && !isScrolled ? "text-white drop-shadow-lg hover:text-white" : "text-gray-700 hover:text-light-green"
                 }`}
               >
                 Home
@@ -102,7 +98,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
             <div className="relative group">
               <button 
                 className={`flex items-center transition-colors font-light text-sm ${
-                  isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white"
+                  isHomePage && !isScrolled ? "text-white drop-shadow-lg hover:text-white" : "text-gray-700 hover:text-light-green"
                 }`}
               >
                 Loans <ChevronDown className="ml-1 h-3 w-3" />
@@ -129,9 +125,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               <Link
                 href="/team"
                 className={`transition-colors font-light text-sm ${
-                  pathname === "/team" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                  isHomePage && !isScrolled ? "text-white drop-shadow-lg hover:text-white" : "text-gray-700 hover:text-light-green"
                 }`}
               >
                 About
@@ -142,9 +136,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               <Link
                 href="/calculator"
                 className={`transition-colors font-light text-sm ${
-                  pathname === "/calculator" 
-                    ? (isScrolled || !isHomePage || isMobileMenuOpen ? "text-light-green" : "text-white") 
-                    : (isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700 hover:text-light-green" : "text-white/90 hover:text-white")
+                  isHomePage && !isScrolled ? "text-white drop-shadow-lg hover:text-white" : "text-gray-700 hover:text-light-green"
                 }`}
               >
                 Calculator
@@ -432,6 +424,6 @@ export function Header({ isHomePage = false }: HeaderProps) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   )
 }
