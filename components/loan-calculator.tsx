@@ -82,12 +82,40 @@ export function LoanCalculator() {
     const st = formData.state.trim().toUpperCase()
     const propertyType = formData.propertyType
     const dscrVal = parseFloat(formData.dscr) || 0
+    
+    // Validate DSCR
+    if (isNaN(dscrVal) || dscrVal <= 0) {
+      setError("Invalid DSCR value. Please select a valid debt service coverage ratio.")
+      setShowResults(true)
+      return
+    }
     const loanPurpose = formData.loanType
     const purchasePrice = parseFloat(formData.purchasePrice) || 0
+    
+    // Validate purchase price
+    if (isNaN(purchasePrice) || purchasePrice <= 0) {
+      setError("Invalid purchase price. Please enter a valid amount.")
+      setShowResults(true)
+      return
+    }
     const ltvStr = formData.ltv.replace('%', '')
     const LTV = parseFloat(ltvStr) / 100
+    
+    // Validate LTV
+    if (isNaN(LTV) || LTV <= 0 || LTV > 1) {
+      setError("Invalid LTV value. Please select a valid loan-to-value ratio.")
+      setShowResults(true)
+      return
+    }
     const pppVal = formData.ppp
     const FICO = parseInt(formData.fico, 10) || 0
+    
+    // Validate FICO score
+    if (isNaN(FICO) || FICO < 300 || FICO > 850) {
+      setError("Invalid FICO score. Please enter a score between 300 and 850.")
+      setShowResults(true)
+      return
+    }
 
     // Compute initial loanAmount
     const loanAmount = purchasePrice * LTV
