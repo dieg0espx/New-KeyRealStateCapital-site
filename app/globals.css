@@ -256,6 +256,49 @@ html {
   }
 }
 
+
+/* Mobile calculator page fixes */
+@media (max-width: 768px) {
+  /* Prevent horizontal scrolling */
+  #calculator {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  
+  #calculator .max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Fix calculator card on mobile */
+  .loan-calculator .card {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0.5rem !important;
+  }
+  
+  .loan-calculator .card-content {
+    padding: 1rem !important;
+  }
+  
+  /* Ensure grid items don't overflow */
+  .loan-calculator .grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Fix form inputs on mobile */
+  .loan-calculator input,
+  .loan-calculator button {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* Ensure navbar is always on top */
 nav[class*="fixed"] {
   z-index: 999999 !important;

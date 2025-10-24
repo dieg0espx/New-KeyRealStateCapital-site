@@ -478,7 +478,7 @@ Rate based on information above. Subject to change.
   ]
 
   return (
-    <Card className="w-full max-w-4xl mx-auto border-0 shadow-lg h-full flex flex-col relative z-10 bg-white">
+    <Card className="w-full max-w-4xl mx-auto border-0 shadow-lg h-full flex flex-col relative z-10 bg-white overflow-hidden">
       <CardHeader className="bg-perry text-white">
         <CardTitle className="flex items-center text-2xl font-light">
           <Calculator className="w-6 mr-3" />
@@ -493,7 +493,7 @@ Rate based on information above. Subject to change.
             <p className="text-gray-600 mb-4 text-sm">
               Rates vary per state and property type. Supported hard money options are available in the dropdowns below.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="flex flex-col">
                 <Label htmlFor="state" className="text-gray-700 font-medium mb-2 block">
                   Property State
@@ -515,7 +515,7 @@ Rate based on information above. Subject to change.
                 />
               </div>
               <div className="flex flex-col">
-                <Label htmlFor="dscr" className="text-gray-700 font-medium mb-2 block whitespace-nowrap">
+                <Label htmlFor="dscr" className="text-gray-700 font-medium mb-2 block">
                   Debt Service Coverage Ratio (DSCR)
                 </Label>
                 <CustomSelect
@@ -533,7 +533,7 @@ Rate based on information above. Subject to change.
             <p className="text-gray-600 mb-4 text-sm">
               Used to help determine the rate. Provide more details about how the loan will be used and the amount of money that will be put down.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="flex flex-col">
                 <Label htmlFor="loanType" className="text-gray-700 font-medium mb-2 block">
                   Loan Purpose
@@ -584,7 +584,7 @@ Rate based on information above. Subject to change.
           <div>
             <h3 className="text-lg font-medium text-gray-900 mb-4">Borrower Information</h3>
             <p className="text-gray-600 mb-4 text-sm">Used to help determine the rate.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="flex flex-col">
                 <Label htmlFor="fico" className="text-gray-700 font-medium mb-2 block">
                   Estimated Credit Score (FICO)
@@ -655,7 +655,7 @@ Rate based on information above. Subject to change.
             <p className="text-gray-600 mb-4 text-sm">
               To secure your rate, please provide the following information:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div>
                 <Label htmlFor="name" className="text-gray-700 font-medium mb-2 block">
                   Name
