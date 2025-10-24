@@ -101,7 +101,7 @@ export function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div>
+            <div className="md:-ml-12">
               <h4 className="text-lg font-semibold mb-6">Contact</h4>
               <div className="space-y-4">
                 <Link href="tel:(619) 649-6933" className="flex items-start">
@@ -114,7 +114,7 @@ export function Footer() {
                 <Link href="mailto:loans@keyrealestatecapital.com" className="flex items-start">
                   <Mail className="h-5 w-5 mr-3 mt-0.5 text-light-green flex-shrink-0" />
                   <div className="min-w-0 flex-1">
-                    <div className="text-gray-300 font-light break-words">loans@keyrealestatecapital.com</div>
+                    <div className="text-gray-300 font-light whitespace-nowrap">loans@keyrealestatecapital.com</div>
                     <div className="text-white text-sm">24/7 support</div>
                   </div>
                 </Link>
