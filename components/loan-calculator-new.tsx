@@ -78,7 +78,7 @@ export function LoanCalculator() {
     setError("")
     setResults(null)
 
-    let baseRate = 5.875
+    let baseRate = 5.75
     const st = formData.state.trim().toUpperCase()
     const propertyType = formData.propertyType
     const dscrVal = parseFloat(formData.dscr) || 0
