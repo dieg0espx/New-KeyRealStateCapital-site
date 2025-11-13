@@ -27,7 +27,7 @@ export default function TeamPage() {
       bio: "A Boston native now based in Miami, Lindsay Milano brings over 7 years of expertise in the private lending space. She combines deep industry knowledge with a hands-on approach, guiding clients through every step of the lending process with clarity and care. Lindsay is passionate about building strong relationships, delivering tailored financing solutions, and helping real estate investors achieve lasting success. Her well-rounded background ensures clients benefit from both strategic insight and seamless execution.",
       cellPhone: "(781) 258-4794",
       email: "lindsay@keyrealestatecapital.com",
-      image: "/team/lindsayMilano.png",
+      image: "/team/Lindsay-New.png",
       linkedin: "https://www.linkedin.com/in/lindsay-milano-838a2772/",
     },
     {
