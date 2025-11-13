@@ -111,7 +111,7 @@ export default function TeamPage() {
       image: "/team/alex.png",
       linkedin: "https://www.linkedin.com/company/key-real-estate-capital/",
     },
-    {
+ /*   {
       name: "Adam Lucart",
       title: "Account Executive",
       bio: "Meet Adam Lucart. His seasoned background in the financial industry as a series 7 and 66 licensed investment advisor has positioned him as a trusted ally in the hard money real estate sector, where he not only delivers expertise but fosters trust and client relationships focused on mutual prosperity. He is dedicated to providing his clients with personalized support at every stage of the process whether they're seasoned investors or first-time borrowers.<br/><br/>Driven by his passion for real estate investing, Adam is dedicated to providing innovative and reliable lending solutions to real estate investors and developers. His unique perspective, honed through 14 years in investment real estate, allows him to offer personalized and tailored financing options that cater to the specific needs of his clients.",
@@ -121,6 +121,7 @@ export default function TeamPage() {
       image: "/team/adamLucart.jpeg",
       linkedin: "https://www.linkedin.com/in/adam-lucart-784454357/",
     },
+    */
     {
       name: "Jennifer Myers",
       title: "Account Executive",
