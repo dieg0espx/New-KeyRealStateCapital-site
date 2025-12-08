@@ -12,7 +12,14 @@ import { useToast } from "@/hooks/use-toast"
 
 // Configuration
 const MIN_LOAN_AMOUNT = 50000
+const MAX_LOAN_AMOUNT = 2000000
+const MIN_LOAN_AMOUNT_5_PLUS_UNITS = 250000
+const MIN_PROPERTY_VALUE = 75000
+const MIN_PROPERTY_VALUE_5_PLUS_UNITS = 350000
+// States with special adjustments (if FICO >= 680 and Min. 1.00x DSCR = 0, otherwise +0.375)
 const stateList = ["AL","GA","KS","ME","MO","MS","NE","SD","WI","WY"]
+// Ineligible states - ND, NV, and SD
+const ineligibleStates = ["ND","NV","SD"]
 
 interface FormData {
   state: string
@@ -78,7 +85,7 @@ export function LoanCalculator() {
     setError("")
     setResults(null)
 
-    let baseRate = 6
+    let baseRate = 5.875
     const st = formData.state.trim().toUpperCase()
     const propertyType = formData.propertyType
     const dscrVal = parseFloat(formData.dscr) || 0
@@ -121,13 +128,45 @@ export function LoanCalculator() {
     const loanAmount = purchasePrice * LTV
 
     // Validation checks
+
+    // Check ineligible states
+    if (ineligibleStates.includes(st)) {
+      setError(`Properties in ${st} are not eligible for this loan program.`)
+      setShowResults(true)
+      return
+    }
+
+    // Minimum property value check
+    if (propertyType === "5-8 unit" && purchasePrice < MIN_PROPERTY_VALUE_5_PLUS_UNITS) {
+      setError("Minimum property value for 5-8 unit properties is $350,000")
+      setShowResults(true)
+      return
+    }
+    if (purchasePrice < MIN_PROPERTY_VALUE) {
+      setError("Minimum property value is $75,000")
+      setShowResults(true)
+      return
+    }
+
+    // Loan amount validations
     if (loanAmount < MIN_LOAN_AMOUNT) {
       setError("Loan amount is too small, lender requires a minimum of $50k loan amount")
       setShowResults(true)
       return
     }
+    if (propertyType === "5-8 unit" && loanAmount < MIN_LOAN_AMOUNT_5_PLUS_UNITS) {
+      setError("Minimum loan amount for 5-8 unit properties is $250,000")
+      setShowResults(true)
+      return
+    }
+    if (loanAmount > MAX_LOAN_AMOUNT) {
+      setError("Maximum loan amount is $2,000,000. Contact us for larger loans.")
+      setShowResults(true)
+      return
+    }
+
     if (FICO < 660) {
-      setError("Credit is too low for a DSCR Loan")
+      setError("Credit is too low for a DSCR Loan. Minimum FICO is 660.")
       setShowResults(true)
       return
     }
@@ -136,115 +175,244 @@ export function LoanCalculator() {
       setShowResults(true)
       return
     }
+    // FICO 660-679 cannot do 75.01-80% LTV
+    if (FICO >= 660 && FICO < 680 && LTV > 0.75) {
+      setError("Max LTV for FICO 660-679 is 75%.")
+      setShowResults(true)
+      return
+    }
     if (loanPurpose === "Cashout Refinance" && propertyType === "5-8 unit" && FICO < 700) {
       setError("FICO must be 700+ for 5-8 Unit Cashout Refinance.")
       setShowResults(true)
       return
     }
-
-    // LTV-based adjustments
-    switch (LTV) {
-      case 0.8:
-        if (FICO >= 780) baseRate += 0.125
-        else if (FICO >= 760) baseRate += 0.25
-        else if (FICO >= 740) baseRate += 0.375
-        else if (FICO >= 720) baseRate += 0.5
-        else if (FICO >= 700) baseRate += 0.75
-        else if (FICO >= 680) baseRate += 0.875
-        break
-      case 0.75:
-        if (FICO >= 780) baseRate += 0
-        else if (FICO >= 760) baseRate += 0.125
-        else if (FICO >= 740) baseRate += 0.25
-        else if (FICO >= 720) baseRate += 0.5
-        else if (FICO >= 700) baseRate += 0.625
-        else if (FICO >= 680) baseRate += 0.75
-        break
-      case 0.7:
-        if (FICO >= 780) baseRate += 0
-        else if (FICO >= 740) baseRate += 0.125
-        else if (FICO >= 720) baseRate += 0.25
-        else if (FICO >= 700) baseRate += 0.5
-        else if (FICO >= 680) baseRate += 0.625
-        else if (FICO >= 660) baseRate += 0.75
-        break
-      case 0.65:
-        if (FICO >= 760) baseRate += 0
-        else if (FICO >= 720) baseRate += 0.125
-        else if (FICO >= 700) baseRate += 0.25
-        else if (FICO >= 680) baseRate += 0.5
-        else if (FICO >= 660) baseRate += 0.625
-        break
-      case 0.6:
-        if (FICO >= 740) baseRate += 0
-        else if (FICO >= 700) baseRate += 0.125
-        else if (FICO >= 680) baseRate += 0.25
-        else if (FICO >= 660) baseRate += 0.5
-        break
-      case 0.55:
-        if (FICO >= 700) baseRate += 0
-        else if (FICO >= 680) baseRate += 0.125
-        else if (FICO >= 660) baseRate += 0.5
-        break
+    // 5-8 unit cashout also requires minimum DSCR 1.30x
+    if (loanPurpose === "Cashout Refinance" && propertyType === "5-8 unit" && dscrVal < 1.3) {
+      setError("5-8 Unit Cashout Refinance requires minimum DSCR of 1.30x")
+      setShowResults(true)
+      return
     }
 
-    // State-based logic
-    if (stateList.includes(st) && FICO < 680) {
-      baseRate += 0.375
+    // LTV-based adjustments based on C2 Expanded Rate Sheet (effective 12/1/2025)
+    // Adjustments to Interest Rate by LTV and FICO Score
+    if (LTV <= 0.55) {
+      // <=55% LTV
+      if (FICO >= 780) baseRate += 0.000
+      else if (FICO >= 760) baseRate += 0.000
+      else if (FICO >= 740) baseRate += 0.000
+      else if (FICO >= 720) baseRate += 0.000
+      else if (FICO >= 700) baseRate += 0.000
+      else if (FICO >= 680) baseRate += 0.250
+      else if (FICO >= 660) baseRate += 0.625
+    } else if (LTV <= 0.60) {
+      // 55.01 - 60% LTV
+      if (FICO >= 780) baseRate += 0.000
+      else if (FICO >= 760) baseRate += 0.000
+      else if (FICO >= 740) baseRate += 0.000
+      else if (FICO >= 720) baseRate += 0.000
+      else if (FICO >= 700) baseRate += 0.000
+      else if (FICO >= 680) baseRate += 0.375
+      else if (FICO >= 660) baseRate += 0.750
+    } else if (LTV <= 0.65) {
+      // 60.01 - 65% LTV
+      if (FICO >= 780) baseRate += 0.000
+      else if (FICO >= 760) baseRate += 0.125
+      else if (FICO >= 740) baseRate += 0.250
+      else if (FICO >= 720) baseRate += 0.375
+      else if (FICO >= 700) baseRate += 0.500
+      else if (FICO >= 680) baseRate += 0.500
+      else if (FICO >= 660) baseRate += 0.875
+    } else if (LTV <= 0.70) {
+      // 65.01 - 70% LTV
+      if (FICO >= 780) baseRate += 0.000
+      else if (FICO >= 760) baseRate += 0.250
+      else if (FICO >= 740) baseRate += 0.375
+      else if (FICO >= 720) baseRate += 0.500
+      else if (FICO >= 700) baseRate += 0.625
+      else if (FICO >= 680) baseRate += 0.625
+      else if (FICO >= 660) baseRate += 1.000
+    } else if (LTV <= 0.75) {
+      // 70.01 - 75% LTV
+      if (FICO >= 780) baseRate += 0.125
+      else if (FICO >= 760) baseRate += 0.375
+      else if (FICO >= 740) baseRate += 0.500
+      else if (FICO >= 720) baseRate += 0.625
+      else if (FICO >= 700) baseRate += 0.875
+      else if (FICO >= 680) baseRate += 1.000
+      // 660-679 not eligible at this LTV (n/a)
+    } else if (LTV <= 0.80) {
+      // 75.01 - 80% LTV
+      if (FICO >= 780) baseRate += 0.500
+      else if (FICO >= 760) baseRate += 0.625
+      else if (FICO >= 740) baseRate += 0.750
+      else if (FICO >= 720) baseRate += 0.875
+      else if (FICO >= 700) baseRate += 1.000
+      else if (FICO >= 680) baseRate += 1.750
+      // 660-679 not eligible at this LTV (n/a)
     }
 
-    // Property
+    // State-based logic (AL, GA, KS, ME, MO, MS, NE, SD, WI, WY)
+    // If FICO >= 680 with Min. 1.00x DSCR: 0.000 adjustment
+    // If FICO < 680 or DSCR < 1.10x: +0.375 adjustment
+    if (stateList.includes(st)) {
+      if (FICO < 680 || dscrVal < 1.10) {
+        baseRate += 0.375
+      }
+      // else no adjustment (0.000)
+    }
+
+    // Property Type adjustments based on C2 Rate Sheet
     if (propertyType === "2-4 unit") {
-      if (LTV === 0.8) baseRate += 0.5
-      else if (LTV === 0.75) baseRate += 0.375
-      else if (LTV < 0.75) baseRate += 0.25
+      // 2-4 Unit Properties adjustments by LTV
+      if (LTV <= 0.55) baseRate += 0.125
+      else if (LTV <= 0.60) baseRate += 0.250
+      else if (LTV <= 0.65) baseRate += 0.250
+      else if (LTV <= 0.70) baseRate += 0.375
+      else if (LTV <= 0.75) baseRate += 0.375
+      else if (LTV <= 0.80) baseRate += 0.500
     }
     if (propertyType === "5-8 unit") {
-      if (LTV <= 0.75) baseRate += 1
-      else if (LTV >= 0.8) {
-        setError("5-8 Unit properties have a max LTV of 75%")
+      // 5-8 Unit Properties (Min. Note Rate 7.5%, Min. DSCR 1.30x)
+      if (dscrVal < 1.30) {
+        setError("5-8 Unit properties require minimum DSCR of 1.30x")
+        setShowResults(true)
+        return
+      }
+      // 5-8 units not available at 70.01-75% or 75.01-80% LTV (n/a in rate sheet)
+      if (LTV > 0.70) {
+        setError("5-8 Unit properties have a max LTV of 70%")
+        setShowResults(true)
+        return
+      }
+      // Adjustments by LTV
+      if (LTV <= 0.55) baseRate += 1.000
+      else if (LTV <= 0.60) baseRate += 1.125
+      else if (LTV <= 0.65) baseRate += 1.375
+      // 70% and above n/a
+    }
+
+    // DSCR adjustments based on C2 Rate Sheet
+    // Minimum DSCR requirements by LTV:
+    // <= 65% LTV: Minimum DSCR 0.75x
+    // 65.01 - 80% LTV: Minimum DSCR 1.00x
+    if (dscrVal < 0.75) {
+      setError("Minimum DSCR is 0.75x")
+      setShowResults(true)
+      return
+    }
+    if (dscrVal < 1.0 && LTV > 0.65) {
+      setError("Max LTV for DSCR below 1.00x is 65%.")
+      setShowResults(true)
+      return
+    }
+
+    // DSCR rate adjustments by LTV range
+    if (dscrVal >= 0.75 && dscrVal < 0.95) {
+      // 0.75 - 0.94 DSCR (FICO >= 720, Loan Amount >= 150K required)
+      if (FICO < 720) {
+        setError("DSCR 0.75-0.94 requires FICO >= 720")
+        setShowResults(true)
+        return
+      }
+      if (loanAmount < 150000) {
+        setError("DSCR 0.75-0.94 requires loan amount >= $150,000")
+        setShowResults(true)
+        return
+      }
+      if (LTV <= 0.55) baseRate += 1.000
+      else if (LTV <= 0.60) baseRate += 1.125
+      else if (LTV <= 0.65) baseRate += 1.250
+      // n/a for higher LTVs
+    } else if (dscrVal >= 0.95 && dscrVal < 1.0) {
+      // 0.95 - 0.99 DSCR
+      if (LTV <= 0.55) baseRate += 0.750
+      else if (LTV <= 0.60) baseRate += 0.750
+      else if (LTV <= 0.65) baseRate += 0.750
+      // n/a for higher LTVs
+    } else if (dscrVal >= 1.0 && dscrVal < 1.15) {
+      // 1.00 - 1.15 DSCR
+      if (LTV <= 0.55) baseRate += 0.000
+      else if (LTV <= 0.60) baseRate += 0.000
+      else if (LTV <= 0.65) baseRate += 0.125
+      else if (LTV <= 0.70) baseRate += 0.125
+      else if (LTV <= 0.75) baseRate += 0.125
+      else if (LTV <= 0.80) baseRate += 0.250
+    }
+    // 1.15+ DSCR: no additional adjustment (0.000 across all LTVs)
+
+    // Loan Type adjustments based on C2 Rate Sheet
+    // Purchase: 0.000 across all LTVs
+    // Rate/Term Refinance: 0.000 across all LTVs
+    // Purchase and Rate/Term Refi max LTV is 80%
+    if (loanPurpose === "Purchase" || loanPurpose === "Rate Term Refinance") {
+      // No additional rate adjustment, but validate max LTV
+      if (LTV > 0.80) {
+        setError("Max LTV for Purchase/Rate-Term Refinance is 80%")
         setShowResults(true)
         return
       }
     }
 
-    // DSCR
-    if (dscrVal < 1.0 && LTV > 0.65) {
-      setError("Max LTV for non-cashflowing properties is 65%.")
-      setShowResults(true)
-      return
-    } else if (dscrVal >= 1.0 && dscrVal <= 1.15) {
-      if (LTV > 0.6 && LTV <= 0.75) baseRate += 0.125
-      else if (LTV > 0.75) baseRate += 0.25
-    }
-
-    // Loan Purpose
-    if ((loanPurpose === "Rate Term Refinance" || loanPurpose === "Purchase") && LTV > 0.75) {
-      baseRate += 0.375
-    }
-    if (loanPurpose === "Cashout Refinance") {
-      if (LTV > 0.7 && LTV <= 0.75) baseRate += 0.5
-      else if (LTV <= 0.7) baseRate += 0.25
-      else if (LTV > 0.75) {
+    // Cashout Refinance adjustments by LTV (1-4 units)
+    if (loanPurpose === "Cashout Refinance" && propertyType !== "5-8 unit") {
+      // Max LTV for cashout is 75%
+      if (LTV > 0.75) {
         setError("Max LTV on a Cashout Refi is 75%")
         setShowResults(true)
         return
       }
+      // Cashout Refinance (<100,000 Loan Amount) adjustments
+      if (loanAmount < 100000) {
+        if (LTV <= 0.55) baseRate += 0.375
+        else if (LTV <= 0.60) baseRate += 0.375
+        else if (LTV <= 0.65) baseRate += 0.375
+        else if (LTV <= 0.70) baseRate += 0.375
+        else if (LTV <= 0.75) baseRate += 0.500
+      } else {
+        // Cashout Refinance (>=100,000 Loan Amount) adjustments
+        if (LTV <= 0.55) baseRate += 0.250
+        else if (LTV <= 0.60) baseRate += 0.250
+        else if (LTV <= 0.65) baseRate += 0.250
+        else if (LTV <= 0.70) baseRate += 0.250
+        else if (LTV <= 0.75) baseRate += 0.375
+      }
     }
 
-    // Loan amount adjustments
-    if (loanAmount < 100000) baseRate += 0.25
-    else if (loanAmount > 1500000) baseRate += 0.5
+    // Loan Amount adjustments based on C2 Rate Sheet
+    if (loanAmount > 1500000) {
+      // > $1,500,000
+      if (LTV <= 0.55) baseRate += 0.500
+      else if (LTV <= 0.60) baseRate += 0.500
+      else if (LTV <= 0.65) baseRate += 0.500
+      // n/a for higher LTVs (already blocked by max loan amount for STR)
+    } else if (loanAmount >= 100000 && loanAmount <= 149999) {
+      // $100,000 - $149,999
+      if (LTV <= 0.55) baseRate += 0.250
+      else if (LTV <= 0.60) baseRate += 0.250
+      else if (LTV <= 0.65) baseRate += 0.250
+      else if (LTV <= 0.70) baseRate += 0.250
+      else if (LTV <= 0.75) baseRate += 0.250
+      else if (LTV <= 0.80) baseRate += 0.250
+    } else if (loanAmount < 100000) {
+      // < $100,000
+      if (LTV <= 0.55) baseRate += 0.750
+      else if (LTV <= 0.60) baseRate += 0.750
+      else if (LTV <= 0.65) baseRate += 0.750
+      else if (LTV <= 0.70) baseRate += 0.750
+      else if (LTV <= 0.75) baseRate += 0.750
+      else if (LTV <= 0.80) baseRate += 0.750
+    }
 
-    // Prepay
+    // Prepayment Penalty adjustment
+    // 3yr PPP: +0.375 across all LTVs
     if (pppVal === "3 year") baseRate += 0.375
 
-    // Rate floor for 5-8 units
-    if (baseRate < 8.375 && propertyType === "5-8 unit") {
-      baseRate = 8.375
+    // Rate floor for 5-8 units: Minimum Note Rate 7.5%
+    if (baseRate < 7.5 && propertyType === "5-8 unit") {
+      baseRate = 7.5
     }
 
-    // Fees
+    // Fees based on C2 Rate Sheet (Lender Admin. Fees / Underwriting)
     let originationFee
     if (loanAmount * 0.0425 < 3750) {
       originationFee = loanAmount * 0.0425
@@ -254,12 +422,24 @@ export function LoanCalculator() {
       originationFee = 3750
     }
 
+    // Underwriting fees per property type from rate sheet
+    let underwritingFee
+    if (propertyType === "2-4 unit") {
+      // Multifamily 2-4 Family Property: $2,495/property
+      underwritingFee = 2495
+    } else if (propertyType === "5-8 unit") {
+      // Multifamily 5-8 Family Property: $3,995/property
+      underwritingFee = 3995
+    } else {
+      // SFR: $1,995/property
+      underwritingFee = 1995
+    }
+
+    // Processing fee (keeping existing structure)
     let processingFee
     if (propertyType === "2-4 unit") processingFee = 1295
     else if (propertyType === "5-8 unit") processingFee = 3995
     else processingFee = 995
-
-    const underwritingFee = 995
     const totalFee = originationFee + processingFee + underwritingFee
 
     // Monthly P&I
@@ -449,9 +629,10 @@ Rate based on information above. Subject to change.
 
   const dscrOptions = [
     { value: "", label: "--Select--" },
-    { value: "1.5", label: "Cashflowing" },
-    { value: "1", label: "Barely Cashflowing" },
-    { value: ".8", label: "Not Cashflowing" }
+    { value: "1.5", label: "1.15+ (Strong Cashflow)" },
+    { value: "1.1", label: "1.00 - 1.15 (Cashflowing)" },
+    { value: "0.97", label: "0.95 - 0.99 (Breakeven)" },
+    { value: "0.85", label: "0.75 - 0.94 (Below Breakeven)" }
   ]
 
   const loanTypeOptions = [

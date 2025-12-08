@@ -47,8 +47,8 @@ const defaultBenefits = [
 
 const defaultCtaFeatures = [
   "Quick 7-14 day closings",
-  "Competitive rates starting at 6.5%",
-  "Loans up to $20M available"
+  "Competitive rates starting at 5.875%",
+  "Loans up to $2M available"
 ]
 
 export function LoanCalculatorSection({
