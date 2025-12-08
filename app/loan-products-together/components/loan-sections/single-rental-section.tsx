@@ -51,49 +51,49 @@ export default function SingleRentalSection({ onSecondaryClick }: SingleRentalSe
             <div className="flex items-center space-x-3">
               <Percent className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Rates starting at 6.00%</p>
+                <p className="font-semibold text-gray-900">Rates starting at 5.875%</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <DollarSign className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Loans from $50k - $5M (up to $10M on exception)</p>
+                <p className="font-semibold text-gray-900">Loans from $50k - $2M</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Building className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Eligible Property Types: SFR / Multi-Family / Condo / Commercial</p>
+                <p className="font-semibold text-gray-900">Eligible Property Types: SFR / Multi-Family / Condo</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <TrendingUp className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Purchase / Rate-Term Refinance: up to 85% LTV</p>
+                <p className="font-semibold text-gray-900">Purchase / Rate-Term Refinance: up to 80% LTV</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <DollarSign className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Cash-out Refinance: up to 80% LTV</p>
+                <p className="font-semibold text-gray-900">Cash-out Refinance: up to 75% LTV</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Calendar className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Loan Terms: 30-year Fixed | Interest-only & ARM</p>
+                <p className="font-semibold text-gray-900">Loan Terms: 30-year Fixed | Interest-only (10/1 ARM)</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Users className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">Minimum FICO: 620</p>
+                <p className="font-semibold text-gray-900">Minimum FICO: 660</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Shield className="h-6 w-6 text-light-green" />
               <div>
-                <p className="font-semibold text-gray-900">No minimum DSCR | No seasoning required</p>
+                <p className="font-semibold text-gray-900">Minimum DSCR: 0.75x | No seasoning required</p>
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function SingleRentalSection({ onSecondaryClick }: SingleRentalSe
         parameters={[
           {
             icon: DollarSign,
-            value: "$50k - $5M",
+            value: "$50k - $2M",
             label: "Loan Amount"
           },
           {
@@ -114,7 +114,7 @@ export default function SingleRentalSection({ onSecondaryClick }: SingleRentalSe
           },
           {
             icon: TrendingUp,
-            value: "6.00%",
+            value: "5.875%",
             label: "Starting Rate"
           }
         ]}
@@ -128,14 +128,14 @@ export default function SingleRentalSection({ onSecondaryClick }: SingleRentalSe
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Features</h3>
               <ul className="space-y-3">
                 {[
-                  "Rates starting at 6.00%",
-                  "Loans from $50k - $5M (up to $10M on exception)",
-                  "Eligible Property Types: SFR / Multi-Family / Condo / Commercial",
-                  "Purchase / Rate-Term Refinance: up to 85% LTV",
-                  "Cash-out Refinance: up to 80% LTV",
-                  "Loan Terms: 30-year Fixed | Interest-only & ARM",
-                  "Minimum FICO: 620",
-                  "No minimum DSCR | No seasoning required",
+                  "Rates starting at 5.875%",
+                  "Loans from $50k - $2M",
+                  "Eligible Property Types: SFR / Multi-Family / Condo",
+                  "Purchase / Rate-Term Refinance: up to 80% LTV",
+                  "Cash-out Refinance: up to 75% LTV",
+                  "Loan Terms: 30-year Fixed | Interest-only (10/1 ARM)",
+                  "Minimum FICO: 660",
+                  "Minimum DSCR: 0.75x | No seasoning required",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-700">
                     <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />
@@ -148,13 +148,13 @@ export default function SingleRentalSection({ onSecondaryClick }: SingleRentalSe
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Requirements</h3>
               <ul className="space-y-3">
                 {[
-                  "Minimum 620 credit score",
-                  "No minimum DSCR requirement",
+                  "Minimum 660 credit score",
+                  "Minimum DSCR 0.75x (FICO 720+ for DSCR below 0.95)",
                   "No experience required",
-                  "Property valuation",
+                  "Property valuation (min $75,000)",
                   "Title and property insurance",
                   "Adequate cash reserves",
-                  "Exit strategy documentation",
+                  "Not available in ND, NV, or SD",
                 ].map((requirement, index) => (
                   <li key={index} className="flex items-center text-gray-700">
                     <CheckCircle className="h-5 w-5 text-light-green mr-3 flex-shrink-0" />

@@ -39,9 +39,9 @@ export default function LoanProductsPage() {
       title: "Single Property Rental",
       description: "Financing for individual rental property acquisitions",
       features: ["Up to 80% LTV", "30-year amortization", "Competitive rates", "Cash-out refinancing available"],
-      loanRange: "$75K - $1.5M",
+      loanRange: "$50K - $2M",
       term: "30 years",
-      rate: "Starting at 7.25%",
+      rate: "Starting at 5.875%",
       href: "/loan-products/single-rental",
     },
     {
