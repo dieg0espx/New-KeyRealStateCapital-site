@@ -58,7 +58,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
               if (widgetElement) {
                 try {
                   window.Calendly.initInlineWidget({
-                    url: 'https://calendly.com/helanerhae/30min',
+                    url: 'https://calendly.com/keyan-keyrealestatecapital/30min',
                     parentElement: widgetElement,
                     prefill: {},
                     utm: {}
@@ -87,7 +87,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
             if (widgetElement) {
               try {
                 window.Calendly.initInlineWidget({
-                  url: 'https://calendly.com/helanerhae/30min',
+                  url: 'https://calendly.com/keyan-keyrealestatecapital/30min',
                   parentElement: widgetElement,
                   prefill: {},
                   utm: {}
@@ -150,7 +150,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
           <div 
             key={isOpen ? 'calendly-open' : 'calendly-closed'}
             className="calendly-inline-widget h-full w-full"
-            data-url="https://calendly.com/helanerhae/30min"
+            data-url="https://calendly.com/keyan-keyrealestatecapital/30min"
             style={{ minWidth: '320px', height: '100%' }}
           />
         </div>
