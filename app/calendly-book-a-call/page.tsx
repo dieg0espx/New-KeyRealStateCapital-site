@@ -106,7 +106,7 @@ export default function CalendlyBookACallPage() {
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
             <div 
               className="calendly-inline-widget w-full"
-              data-url="https://calendly.com/keyan-keyrealestatecapital/30min"
+              data-url="https://calendly.com/helanerhae/30min"
               style={{ minWidth: '320px', height: '700px' }}
             />
           </div>
