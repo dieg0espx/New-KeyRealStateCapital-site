@@ -40,7 +40,6 @@ interface CalculationResults {
   loanAmount: number
   monthlyPI: number
   originationFee: number
-  processingFee: number
   underwritingFee: number
   totalFee: number
 }
@@ -435,12 +434,7 @@ export function LoanCalculator() {
       underwritingFee = 1995
     }
 
-    // Processing fee (keeping existing structure)
-    let processingFee
-    if (propertyType === "2-4 unit") processingFee = 1295
-    else if (propertyType === "5-8 unit") processingFee = 3995
-    else processingFee = 995
-    const totalFee = originationFee + processingFee + underwritingFee
+    const totalFee = originationFee + underwritingFee
 
     // Monthly P&I
     const monthlyInterestRate = baseRate / 100 / 12
@@ -455,7 +449,6 @@ export function LoanCalculator() {
       loanAmount,
       monthlyPI,
       originationFee,
-      processingFee,
       underwritingFee,
       totalFee
     })
@@ -521,7 +514,6 @@ Results:
 - Loan Amount: $${results.loanAmount.toFixed(2)}
 - Monthly P&I: $${results.monthlyPI.toFixed(2)}
 - Origination Fee: $${results.originationFee.toFixed(2)}
-- Processing Fee: $${results.processingFee.toFixed(2)}
 - Underwriting Fee: $${results.underwritingFee.toFixed(2)}
 - Total Fees: $${results.totalFee.toFixed(2)}
 
@@ -810,9 +802,6 @@ Rate based on information above. Subject to change.
                     <div className="space-y-3">
                       <p className="text-gray-700">
                         Origination Fee: ${results.originationFee.toLocaleString()}
-                      </p>
-                      <p className="text-gray-700">
-                        Processing Fee: ${results.processingFee.toLocaleString()}
                       </p>
                       <p className="text-gray-700">
                         Underwriting Fee: ${results.underwritingFee.toLocaleString()}

@@ -21,9 +21,12 @@ declare global {
 interface CalendlyModalProps {
   isOpen: boolean
   onClose: () => void
+  calendlyUrl?: string
 }
 
-export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
+const DEFAULT_CALENDLY_URL = 'https://calendly.com/keyan-keyrealestatecapital/30min'
+
+export default function CalendlyModal({ isOpen, onClose, calendlyUrl = DEFAULT_CALENDLY_URL }: CalendlyModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -58,7 +61,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
               if (widgetElement) {
                 try {
                   window.Calendly.initInlineWidget({
-                    url: 'https://calendly.com/keyan-keyrealestatecapital/30min',
+                    url: calendlyUrl,
                     parentElement: widgetElement,
                     prefill: {},
                     utm: {}
@@ -87,7 +90,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
             if (widgetElement) {
               try {
                 window.Calendly.initInlineWidget({
-                  url: 'https://calendly.com/keyan-keyrealestatecapital/30min',
+                  url: calendlyUrl,
                   parentElement: widgetElement,
                   prefill: {},
                   utm: {}
@@ -103,7 +106,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
         }, 500)
       }
     }
-  }, [isOpen])
+  }, [isOpen, calendlyUrl])
 
   if (!isOpen) return null
   return (
@@ -150,7 +153,7 @@ export default function CalendlyModal({ isOpen, onClose }: CalendlyModalProps) {
           <div 
             key={isOpen ? 'calendly-open' : 'calendly-closed'}
             className="calendly-inline-widget h-full w-full"
-            data-url="https://calendly.com/keyan-keyrealestatecapital/30min"
+            data-url={calendlyUrl}
             style={{ minWidth: '320px', height: '100%' }}
           />
         </div>
