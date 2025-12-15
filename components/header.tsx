@@ -241,14 +241,14 @@ export function Header({ isHomePage = false }: HeaderProps) {
 
           <div className="flex items-center space-x-4">
             {/* Phone Number - Desktop */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <Link href="tel:619-369-4444" className="hidden lg:flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Phone className={`h-4 w-4 ${
                 isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700" : "text-white/90"
               }`} />
               <span className={`text-sm font-light ${
                 isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700" : "text-white/90"
               }`}>619-369-4444</span>
-            </div>
+            </Link>
 
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -398,16 +398,16 @@ export function Header({ isHomePage = false }: HeaderProps) {
               </motion.div>
 
               {/* Phone Number - Mobile */}
-              <motion.div 
+              <motion.div
                 className="pt-2 pb-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <div className="flex items-center justify-center space-x-2 px-3 py-2">
+                <Link href="tel:619-369-4444" className="flex items-center justify-center space-x-2 px-3 py-2 hover:opacity-80 transition-opacity">
                   <Phone className="h-4 w-4 text-gray-700" />
                   <span className="text-sm font-light text-gray-700">619-369-4444</span>
-                </div>
+                </Link>
               </motion.div>
 
               <motion.div 
