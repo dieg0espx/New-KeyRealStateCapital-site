@@ -254,7 +254,7 @@ export default function PrivacyPage() {
                 
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <p className="text-gray-900 font-semibold mb-2">Keyswag Capital Inc. (DBA Key Real Estate Capital)</p>
-                  <p className="text-gray-700">Phone: (619) 649-6933</p>
+                  <p className="text-gray-700">Phone: (619) 369-4444</p>
                   <p className="text-gray-700">Address: 401 W A St Ste 200, San Diego, CA 92101</p>
                 </div>
               </section>

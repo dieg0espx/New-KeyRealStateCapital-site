@@ -14,7 +14,7 @@ export default function FAQPage() {
       title: "Call Us",
       description: "Speak with a loan officer",
       action: "Free Consultation",
-      href: "tel:(619) 649-6933",
+      href: "tel:(619) 369-4444",
     },
     {
       icon: <Mail className="h-5 w-5" />,

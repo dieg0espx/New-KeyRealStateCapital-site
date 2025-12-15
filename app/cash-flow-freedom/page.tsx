@@ -153,7 +153,7 @@ export default function CashFlowFreedomPage() {
               <div className="space-y-3">
                 <p className="text-gray-300 font-light">401 W A St Ste 200</p>
                 <p className="text-gray-300 font-light">San Diego, CA 92101</p>
-                <p className="text-gray-300 font-light">Phone: (619) 649-6933</p>
+                <p className="text-gray-300 font-light">Phone: (619) 369-4444</p>
                 <p className="text-gray-300 font-light">Email: loans@keyrealestatecapital.com</p>
                 <p className="text-gray-300 font-light">NMLS ID: #2676974</p>
               </div>

@@ -34,9 +34,9 @@ export function ContactPreviewSection() {
                 <p className="text-gray-600 font-light mb-4">
                   Speak directly with our loan specialists
                 </p>
-                <Link href="tel:(619) 649-6933">
+                <Link href="tel:(619) 369-4444">
                                       <Button className="bg-light-green hover:bg-perry text-white font-light w-full">
-                      (619) 649-6933
+                      (619) 369-4444
                   </Button>
                 </Link>
               </div>
