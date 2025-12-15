@@ -247,7 +247,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               }`} />
               <span className={`text-sm font-light ${
                 isScrolled || !isHomePage || isMobileMenuOpen ? "text-gray-700" : "text-white/90"
-              }`}>619-649-6933</span>
+              }`}>619-369-4444</span>
             </div>
 
             <motion.div
@@ -406,7 +406,7 @@ export function Header({ isHomePage = false }: HeaderProps) {
               >
                 <div className="flex items-center justify-center space-x-2 px-3 py-2">
                   <Phone className="h-4 w-4 text-gray-700" />
-                  <span className="text-sm font-light text-gray-700">619-649-6933</span>
+                  <span className="text-sm font-light text-gray-700">619-369-4444</span>
                 </div>
               </motion.div>
 

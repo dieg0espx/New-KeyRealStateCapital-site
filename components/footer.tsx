@@ -104,10 +104,10 @@ export function Footer() {
             <div className="md:-ml-12">
               <h4 className="text-lg font-semibold mb-6">Contact</h4>
               <div className="space-y-4">
-                <Link href="tel:(619) 649-6933" className="flex items-start">
+                <Link href="tel:(619) 369-4444" className="flex items-start">
                   <Phone className="h-5 w-5 mr-3 mt-0.5 text-light-green flex-shrink-0" />
                   <div>
-                    <div className="text-gray-300 font-light">(619) 649-6933</div>
+                    <div className="text-gray-300 font-light">(619) 369-4444</div>
                     <div className="text-white text-sm">Key Real Estate Capital</div>
                   </div>
                 </Link>

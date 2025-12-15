@@ -96,8 +96,8 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 text-light-green mr-3" />
                     <div>
                       <p className="font-medium text-black">Phone</p>
-                      <Link href="tel:(619) 649-6933" className="text-black/80 hover:text-black">
-                        (619) 649-6933
+                      <Link href="tel:(619) 369-4444" className="text-black/80 hover:text-black">
+                        (619) 369-4444
                       </Link>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   Schedule a call with one of our loan specialists to discuss your project in detail.
                 </p>
                 <div className="space-y-3">
-                  <Link href="tel:(619) 649-6933">
+                  <Link href="tel:(619) 369-4444">
                     <Button
                       variant="outline"
                       className="w-full border-black text-black hover:bg-light-green hover:text-white hover:border-light-green bg-transparent"
