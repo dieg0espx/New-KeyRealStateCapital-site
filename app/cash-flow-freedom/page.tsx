@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from 'react'
-import CalendlyModal from '@/components/calendly-modal'
-import { useCalendlyModal } from '@/hooks/use-calendly-modal'
+import TypeformModal from '@/components/typeform-modal'
+import { useTypeformModal } from '@/hooks/use-typeform-modal'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import {
@@ -15,10 +15,8 @@ import {
   ContactFormSection
 } from './components'
 
-const CASH_FLOW_CALENDLY_URL = 'https://calendly.com/helanerhae/30min'
-
 export default function CashFlowFreedomPage() {
-  const { isOpen, openModal, closeModal } = useCalendlyModal()
+  const { isOpen, openModal, closeModal } = useTypeformModal()
   
   const handleCTAClick = () => {
     // Check if we're on mobile (screen width < 640px which is Tailwind's 'sm' breakpoint)
@@ -106,11 +104,10 @@ export default function CashFlowFreedomPage() {
       <ContactFormSection />
 
 
-      {/* Calendly Modal */}
-      <CalendlyModal
+      {/* Typeform Modal */}
+      <TypeformModal
         isOpen={isOpen}
         onClose={closeModal}
-        calendlyUrl={CASH_FLOW_CALENDLY_URL}
       />
       
       {/* Footer */}
