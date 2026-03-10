@@ -3,21 +3,12 @@
 // This file can be removed if no other forms use this endpoint
 
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { sendEmail } from '@/lib/resend';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { firstName, lastName, email, phone, loanType, loanAmount, timeline, message } = body;
-
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
 
     // Email template
     const emailTemplate = `
@@ -198,7 +189,6 @@ export async function POST(request: NextRequest) {
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO || 'josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com',
       subject: `New Contact Form Submission - ${firstName} ${lastName}`,
       html: emailTemplate,
@@ -206,7 +196,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    await sendEmail(mailOptions);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
@@ -219,4 +209,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}

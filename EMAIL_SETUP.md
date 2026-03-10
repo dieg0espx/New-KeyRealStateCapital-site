@@ -1,27 +1,33 @@
 # Email Setup Guide
 
 ## Overview
-The contact form now sends emails using Nodemailer with a beautiful HTML template that matches the site's design.
+Email sending is powered by [Resend](https://resend.com), an API-based email service. All routes use the shared `lib/resend.ts` utility with automatic fallback if the configured domain is not yet verified.
 
 ## Setup Instructions
 
-### 1. Gmail Configuration
-1. **Enable 2-Factor Authentication** on your Gmail account
-2. **Generate an App Password**:
-   - Go to https://myaccount.google.com/apppasswords
-   - Select "Mail" and your device
-   - Copy the generated 16-character password
+### 1. Resend Configuration
+1. Sign up at https://resend.com
+2. Verify your sending domain (add DNS records: SPF, DKIM, DMARC)
+3. Create an API key at https://resend.com/api-keys
 
 ### 2. Environment Variables
-Update your `.env.local` file with your Gmail credentials:
+Add to your `.env.local`:
 
 ```env
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-16-character-app-password
+RESEND_API_KEY=re_xxxxxxxxxxxx
+EMAIL_FROM=Key Real Estate Capital <noreply@yourdomain.com>
+EMAIL_TO=josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com
 ```
 
-### 3. Email Template Features
-The email template includes:
+- `RESEND_API_KEY` - Required. Your Resend API key.
+- `EMAIL_FROM` - Optional. Sender address (must match a verified domain). Falls back to `noreply@comcreate.org`.
+- `EMAIL_TO` - Optional. Comma-separated recipient list.
+
+### 3. Testing
+Visit `/api/test-email` in your browser to send a test email and verify configuration.
+
+### 4. Email Template Features
+The email templates include:
 - **Professional HTML design** matching the site's aesthetic
 - **Contact information** from the form
 - **Loan details** and project information
@@ -29,51 +35,33 @@ The email template includes:
 - **Responsive design** that works on all devices
 - **Company contact information** in the footer
 
-### 4. Form Features
-The contact form now includes:
+### 5. Form Features
+The forms include:
 - **Form validation** using Zod schema
 - **Real-time error messages**
 - **Loading states** during submission
 - **Success/error feedback**
 - **Form reset** after successful submission
 
-### 5. Security Notes
-- Uses environment variables for sensitive data
-- Includes proper error handling
-- Validates all form inputs
-- Sanitizes user input
-
-### 6. Testing
-To test the email functionality:
-1. Fill out the contact form
-2. Submit the form
-3. Check your email at `loans@keyrealestatecapital.com`
-4. Verify the email template looks correct
+### 6. Domain Not Verified Fallback
+If `EMAIL_FROM` points to an unverified domain, the `sendEmail` utility automatically retries using the verified fallback address (`noreply@comcreate.org`). This prevents emails from failing while you set up a new domain.
 
 ### 7. Customization
-You can customize the email template by editing:
-- `app/api/contact/route.ts` - Email template HTML
-- `app/contact/page.tsx` - Form validation and styling
+You can customize the email templates by editing:
+- `lib/resend.ts` - Shared email utility (from address, retry logic)
+- `app/api/contact/route.ts` - Contact form email template
+- `app/api/newsletter/route.ts` - Newsletter subscription email template
+- `app/api/apply/route.ts` - Loan application email template
 
 ## Troubleshooting
 
 ### Common Issues:
-1. **"Failed to send email"** - Check your Gmail credentials
-2. **"Authentication failed"** - Ensure you're using an App Password, not your regular password
-3. **"Connection timeout"** - Check your internet connection
+1. **"RESEND_API_KEY is not configured"** - Add your API key to `.env.local`
+2. **"domain is not verified"** - Verify your domain in the Resend dashboard, or the fallback will be used
+3. **"Failed to send email"** - Check your API key is valid and not expired
 
-### Gmail Security:
-- Make sure 2FA is enabled
-- Use App Passwords, not regular passwords
-- Check Gmail's "Less secure app access" settings
-
-## Email Template Preview
-The email will include:
-- Professional header with company branding
-- Contact information section
-- Loan details section
-- Message content
-- Company contact information
-- NMLS ID in footer
-
-The template uses the same color scheme and styling as your website for brand consistency. 
+## API Routes
+- `POST /api/contact` - Contact form (deprecated, replaced by Typeform)
+- `POST /api/newsletter` - Newsletter subscription
+- `POST /api/apply` - Loan application
+- `GET /api/test-email` - Test email configuration

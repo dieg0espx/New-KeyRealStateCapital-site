@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { sendEmail } from "@/lib/resend"
 import * as z from "zod"
 
 // Form validation schema
@@ -24,18 +24,9 @@ const applicationFormSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    
+
     // Validate the form data
     const validatedData = applicationFormSchema.parse(body)
-    
-    // Configure email transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
 
     // Create HTML email content
     const emailHtml = `
@@ -62,12 +53,12 @@ export async function POST(request: NextRequest) {
             <h1 style="margin: 0; font-size: 28px; font-weight: 300;">New Loan Application</h1>
             <p style="margin: 10px 0 0 0; opacity: 0.9;">Key Real Estate Capital</p>
           </div>
-          
+
           <div class="content">
             <div class="highlight">
               <strong>Application submitted on:</strong> ${new Date().toLocaleString()}
             </div>
-            
+
             <div class="section">
               <div class="section-title">👤 Personal Information</div>
               <div class="field">
@@ -83,7 +74,7 @@ export async function POST(request: NextRequest) {
                 <div class="field-value">${validatedData.phone}</div>
               </div>
             </div>
-            
+
             <div class="section">
               <div class="section-title">💰 Loan Information</div>
               <div class="field">
@@ -105,7 +96,7 @@ export async function POST(request: NextRequest) {
               </div>
               ` : ''}
             </div>
-            
+
             ${validatedData.propertyAddress || validatedData.propertyValue || validatedData.purchasePrice || validatedData.downPayment ? `
             <div class="section">
               <div class="section-title">🏠 Property Information</div>
@@ -135,14 +126,14 @@ export async function POST(request: NextRequest) {
               ` : ''}
             </div>
             ` : ''}
-            
+
             ${validatedData.additionalInfo ? `
             <div class="section">
               <div class="section-title">📝 Additional Information</div>
               <div class="field-value">${validatedData.additionalInfo}</div>
             </div>
             ` : ''}
-            
+
             <div class="section">
               <div class="section-title">✅ Consents</div>
               <div class="field">
@@ -154,7 +145,7 @@ export async function POST(request: NextRequest) {
                 <div class="field-value">✅ Authorized</div>
               </div>
             </div>
-            
+
             <div class="footer">
               <p>This application was submitted through the Key Real Estate Capital website.</p>
               <p>Please contact the applicant within 24 hours to discuss their loan requirements.</p>
@@ -167,14 +158,13 @@ export async function POST(request: NextRequest) {
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO || "josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com",
       subject: `New Loan Application - ${validatedData.firstName} ${validatedData.lastName}`,
       html: emailHtml,
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    await sendEmail(mailOptions)
 
     return NextResponse.json(
       { message: "Application submitted successfully" },
@@ -182,17 +172,17 @@ export async function POST(request: NextRequest) {
     )
   } catch (error) {
     console.error("Error processing application:", error)
-    
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { message: "Invalid form data", errors: error.errors },
         { status: 400 }
       )
     }
-    
+
     return NextResponse.json(
       { message: "Failed to submit application" },
       { status: 500 }
     )
   }
-} 
+}

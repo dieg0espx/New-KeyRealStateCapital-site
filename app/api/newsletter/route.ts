@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { sendEmail } from "@/lib/resend"
 import * as z from "zod"
 
 // Form validation schema
@@ -10,18 +10,9 @@ const newsletterFormSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    
+
     // Validate the form data
     const validatedData = newsletterFormSchema.parse(body)
-    
-    // Configure email transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
 
     // Create HTML email content
     const emailHtml = `
@@ -49,12 +40,12 @@ export async function POST(request: NextRequest) {
             <h1 style="margin: 0; font-size: 28px; font-weight: 300;">New Newsletter Subscription</h1>
             <p style="margin: 10px 0 0 0; opacity: 0.9;">Key Real Estate Capital</p>
           </div>
-          
+
           <div class="content">
             <div class="highlight">
               <strong>Subscription received on:</strong> ${new Date().toLocaleString()}
             </div>
-            
+
             <div class="section">
               <div class="section-title">📧 Subscriber Information</div>
               <div class="field">
@@ -62,7 +53,7 @@ export async function POST(request: NextRequest) {
                 <div class="field-value">${validatedData.email}</div>
               </div>
             </div>
-            
+
             <div class="welcome-box">
               <h3 style="margin: 0 0 15px 0; color: #0ea5e9;">Welcome to Our Newsletter!</h3>
               <p style="margin: 0 0 15px 0; color: #374151;">
@@ -76,7 +67,7 @@ export async function POST(request: NextRequest) {
                 <li>Industry news and analysis</li>
               </ul>
             </div>
-            
+
             <div class="section">
               <div class="section-title">📊 What You'll Receive</div>
               <div class="field">
@@ -92,7 +83,7 @@ export async function POST(request: NextRequest) {
                 <div class="field-value">Available in every newsletter email</div>
               </div>
             </div>
-            
+
             <div class="footer">
               <p>This subscription was received through the Key Real Estate Capital website.</p>
               <p>Please add this subscriber to your email marketing list.</p>
@@ -106,14 +97,13 @@ export async function POST(request: NextRequest) {
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO || "josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com",
       subject: `New Newsletter Subscription - ${validatedData.email}`,
       html: emailHtml,
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    await sendEmail(mailOptions)
 
     return NextResponse.json(
       { message: "Newsletter subscription successful" },
@@ -121,17 +111,17 @@ export async function POST(request: NextRequest) {
     )
   } catch (error) {
     console.error("Error processing newsletter subscription:", error)
-    
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { message: "Invalid email address", errors: error.errors },
         { status: 400 }
       )
     }
-    
+
     return NextResponse.json(
       { message: "Failed to subscribe to newsletter" },
       { status: 500 }
     )
   }
-} 
+}
