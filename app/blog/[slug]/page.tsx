@@ -146,10 +146,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             variants={itemVariants}
             className="mb-12"
           >
-            <div 
-              className="text-gray-700 font-light leading-relaxed text-base sm:text-lg max-w-none w-full"
-              dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br>') }}
+            <div
+              className="text-gray-700 font-light leading-relaxed text-base sm:text-lg max-w-none w-full whitespace-pre-line"
             >
+              {post.content}
             </div>
           </motion.div>
 

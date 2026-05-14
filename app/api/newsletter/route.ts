@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { sendEmail } from "@/lib/resend"
+import { escapeHtml } from "@/lib/escape-html"
 import * as z from "zod"
 
 // Form validation schema
@@ -50,7 +51,7 @@ export async function POST(request: NextRequest) {
               <div class="section-title">📧 Subscriber Information</div>
               <div class="field">
                 <div class="field-label">Email Address:</div>
-                <div class="field-value">${validatedData.email}</div>
+                <div class="field-value">${escapeHtml(validatedData.email)}</div>
               </div>
             </div>
 
@@ -95,9 +96,17 @@ export async function POST(request: NextRequest) {
       </html>
     `
 
+    if (!process.env.EMAIL_TO) {
+      console.error("EMAIL_TO env var is not configured")
+      return NextResponse.json(
+        { message: "Email service is not configured" },
+        { status: 500 }
+      )
+    }
+
     // Email options
     const mailOptions = {
-      to: process.env.EMAIL_TO || "josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com",
+      to: process.env.EMAIL_TO,
       subject: `New Newsletter Subscription - ${validatedData.email}`,
       html: emailHtml,
     }
