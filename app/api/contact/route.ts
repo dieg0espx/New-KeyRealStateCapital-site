@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/resend';
+import { escapeHtml } from '@/lib/escape-html';
 
 export async function POST(request: NextRequest) {
   try {
@@ -123,15 +124,15 @@ export async function POST(request: NextRequest) {
             <div class="section-title">Contact Information</div>
             <div class="field">
               <span class="field-label">Name:</span>
-              <div class="field-value">${firstName} ${lastName}</div>
+              <div class="field-value">${escapeHtml(firstName)} ${escapeHtml(lastName)}</div>
             </div>
             <div class="field">
               <span class="field-label">Email:</span>
-              <div class="field-value">${email}</div>
+              <div class="field-value">${escapeHtml(email)}</div>
             </div>
             <div class="field">
               <span class="field-label">Phone:</span>
-              <div class="field-value">${phone}</div>
+              <div class="field-value">${escapeHtml(phone)}</div>
             </div>
           </div>
 
@@ -139,22 +140,22 @@ export async function POST(request: NextRequest) {
             <div class="section-title">Loan Details</div>
             <div class="field">
               <span class="field-label">Loan Type:</span>
-              <div class="field-value">${loanType}</div>
+              <div class="field-value">${escapeHtml(loanType)}</div>
             </div>
             <div class="field">
               <span class="field-label">Loan Amount:</span>
-              <div class="field-value">${loanAmount}</div>
+              <div class="field-value">${escapeHtml(loanAmount)}</div>
             </div>
             <div class="field">
               <span class="field-label">Timeline:</span>
-              <div class="field-value">${timeline}</div>
+              <div class="field-value">${escapeHtml(timeline)}</div>
             </div>
           </div>
 
           <div class="section">
             <div class="section-title">Message</div>
             <div class="message-box">
-              ${message}
+              ${escapeHtml(message)}
             </div>
           </div>
 
@@ -187,9 +188,17 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
+    if (!process.env.EMAIL_TO) {
+      console.error('EMAIL_TO env var is not configured');
+      return NextResponse.json(
+        { error: 'Email service is not configured' },
+        { status: 500 }
+      );
+    }
+
     // Email options
     const mailOptions = {
-      to: process.env.EMAIL_TO || 'josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com',
+      to: process.env.EMAIL_TO,
       subject: `New Contact Form Submission - ${firstName} ${lastName}`,
       html: emailTemplate,
       replyTo: email,

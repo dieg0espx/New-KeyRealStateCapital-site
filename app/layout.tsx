@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import "../styles/animations.css"
@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LayoutContent } from "@/components/layout-content"
 import { BlogProvider } from "@/contexts/blog-context"
+import { StructuredData } from "@/components/structured-data"
 import "@/lib/error-handler"
 
 const inter = Inter({
@@ -18,7 +19,6 @@ export const metadata: Metadata = {
   title: "Key Real Estate Capital - Luxury Real Estate Financing",
   description:
     "Capital Solutions for Real Estate Investors",
-  generator: 'v0.dev',
   keywords: ['real estate financing', 'fix and flip loans', 'rental property loans', 'construction loans', 'commercial real estate', 'investment financing'],
   authors: [{ name: 'Key Real Estate Capital' }],
   creator: 'Key Real Estate Capital',
@@ -54,8 +54,6 @@ export const metadata: Metadata = {
     images: ['/miniature.png'],
   },
   other: {
-    'facebook-domain-verification': 'your-facebook-domain-verification-code',
-    'google-site-verification': 'your-google-site-verification-code',
     'msapplication-TileColor': '#ffffff',
     'msapplication-config': '/favicon/browserconfig.xml',
     'theme-color': '#ffffff',
@@ -94,11 +92,12 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: 'Key Real Estate Capital',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -109,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={`${inter.className} overflow-x-hidden`} suppressHydrationWarning={true}>
+        <StructuredData />
         <BlogProvider>
           <LayoutContent>{children}</LayoutContent>
         </BlogProvider>

@@ -85,16 +85,17 @@ export function HeroSection({
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         >
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             webkit-playsinline="true"
             x5-playsinline="true"
             x5-video-player-type="h5"
             x5-video-player-fullscreen="true"
-            preload="auto"
+            preload="metadata"
+            poster="https://res.cloudinary.com/dku1gnuat/video/upload/so_0,f_auto,q_auto,w_1600/v1755631033/Untitled_design_2_qq6trg.jpg"
             className="w-full h-full object-cover object-center"
           >
             <source src={videoUrl} type="video/mp4" />

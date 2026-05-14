@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { sendEmail } from "@/lib/resend"
+import { escapeHtml } from "@/lib/escape-html"
 import * as z from "zod"
 
 // Form validation schema
@@ -63,15 +64,15 @@ export async function POST(request: NextRequest) {
               <div class="section-title">👤 Personal Information</div>
               <div class="field">
                 <div class="field-label">Name:</div>
-                <div class="field-value">${validatedData.firstName} ${validatedData.lastName}</div>
+                <div class="field-value">${escapeHtml(validatedData.firstName)} ${escapeHtml(validatedData.lastName)}</div>
               </div>
               <div class="field">
                 <div class="field-label">Email:</div>
-                <div class="field-value">${validatedData.email}</div>
+                <div class="field-value">${escapeHtml(validatedData.email)}</div>
               </div>
               <div class="field">
                 <div class="field-label">Phone:</div>
-                <div class="field-value">${validatedData.phone}</div>
+                <div class="field-value">${escapeHtml(validatedData.phone)}</div>
               </div>
             </div>
 
@@ -79,20 +80,20 @@ export async function POST(request: NextRequest) {
               <div class="section-title">💰 Loan Information</div>
               <div class="field">
                 <div class="field-label">Loan Type:</div>
-                <div class="field-value">${validatedData.loanType}</div>
+                <div class="field-value">${escapeHtml(validatedData.loanType)}</div>
               </div>
               <div class="field">
                 <div class="field-label">Requested Amount:</div>
-                <div class="field-value">${validatedData.loanAmount}</div>
+                <div class="field-value">${escapeHtml(validatedData.loanAmount)}</div>
               </div>
               <div class="field">
                 <div class="field-label">Funding Timeline:</div>
-                <div class="field-value">${validatedData.timeline}</div>
+                <div class="field-value">${escapeHtml(validatedData.timeline)}</div>
               </div>
               ${validatedData.experience ? `
               <div class="field">
                 <div class="field-label">Real Estate Experience:</div>
-                <div class="field-value">${validatedData.experience}</div>
+                <div class="field-value">${escapeHtml(validatedData.experience)}</div>
               </div>
               ` : ''}
             </div>
@@ -103,25 +104,25 @@ export async function POST(request: NextRequest) {
               ${validatedData.propertyAddress ? `
               <div class="field">
                 <div class="field-label">Property Address:</div>
-                <div class="field-value">${validatedData.propertyAddress}</div>
+                <div class="field-value">${escapeHtml(validatedData.propertyAddress)}</div>
               </div>
               ` : ''}
               ${validatedData.propertyValue ? `
               <div class="field">
                 <div class="field-label">Estimated Property Value:</div>
-                <div class="field-value">${validatedData.propertyValue}</div>
+                <div class="field-value">${escapeHtml(validatedData.propertyValue)}</div>
               </div>
               ` : ''}
               ${validatedData.purchasePrice ? `
               <div class="field">
                 <div class="field-label">Purchase Price:</div>
-                <div class="field-value">${validatedData.purchasePrice}</div>
+                <div class="field-value">${escapeHtml(validatedData.purchasePrice)}</div>
               </div>
               ` : ''}
               ${validatedData.downPayment ? `
               <div class="field">
                 <div class="field-label">Down Payment Amount:</div>
-                <div class="field-value">${validatedData.downPayment}</div>
+                <div class="field-value">${escapeHtml(validatedData.downPayment)}</div>
               </div>
               ` : ''}
             </div>
@@ -130,7 +131,7 @@ export async function POST(request: NextRequest) {
             ${validatedData.additionalInfo ? `
             <div class="section">
               <div class="section-title">📝 Additional Information</div>
-              <div class="field-value">${validatedData.additionalInfo}</div>
+              <div class="field-value">${escapeHtml(validatedData.additionalInfo)}</div>
             </div>
             ` : ''}
 
@@ -156,9 +157,17 @@ export async function POST(request: NextRequest) {
       </html>
     `
 
+    if (!process.env.EMAIL_TO) {
+      console.error("EMAIL_TO env var is not configured")
+      return NextResponse.json(
+        { message: "Email service is not configured" },
+        { status: 500 }
+      )
+    }
+
     // Email options
     const mailOptions = {
-      to: process.env.EMAIL_TO || "josh@comcreate.org,diego@comcreate.org,seth@boostwebresults.com,loans@keyrealestatecapital.com",
+      to: process.env.EMAIL_TO,
       subject: `New Loan Application - ${validatedData.firstName} ${validatedData.lastName}`,
       html: emailHtml,
     }

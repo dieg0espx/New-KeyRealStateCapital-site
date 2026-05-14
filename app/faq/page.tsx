@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent } from "@/components/ui/card"
@@ -5,6 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Phone, Mail, Clock, CheckCircle, Building, Home, Calculator } from "lucide-react"
 import { faqCategories } from "@/data/faq-data"
 import { StatsSection } from "@/components/stats-section"
+
+export const metadata: Metadata = {
+  title: "FAQ | Key Real Estate Capital",
+  description:
+    "Answers to common questions about hard money loans, fix-and-flip financing, DSCR rental loans, bridge loans, and the lending process at Key Real Estate Capital.",
+  alternates: { canonical: "https://keyrealestatecapital.com/faq" },
+}
 
 export default function FAQPage() {
 
