@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, ExternalLink, Linkedin, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { PoweredByComCreate } from "@/components/PoweredByComCreate"
 
 // Extend Window interface to include Typeform
 declare global {
@@ -257,6 +258,13 @@ export function Footer() {
               Disclaimer: The fictitious name "Key Real Estate Capital" is registered under Keyswag Capital Inc. and is used in all states where Keyswag Capital Inc. is licensed, except California.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Powered by ComCreate */}
+      <div className="border-t border-gray-800 py-6 bg-black text-white/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <PoweredByComCreate theme="dark" align="center" />
         </div>
       </div>
 
