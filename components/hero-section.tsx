@@ -25,7 +25,7 @@ export function HeroSection({
   primaryButtonLink = "/loan-products",
   secondaryButtonText = "Contact us",
   secondaryButtonLink = "/contact",
-  videoUrl = "https://res.cloudinary.com/dku1gnuat/video/upload/v1755631033/Untitled_design_2_qq6trg.mp4"
+  videoUrl = "https://pub-03d0831378df48bcbfee5305ab3fb0f5.r2.dev/Untitled_design_2_qq6trg.mp4"
 }: HeroSectionProps) {
   const scrollToNextSection = () => {
     const nextSection = document.querySelector('section:nth-of-type(2)')
@@ -95,7 +95,7 @@ export function HeroSection({
             x5-video-player-type="h5"
             x5-video-player-fullscreen="true"
             preload="metadata"
-            poster="https://res.cloudinary.com/dku1gnuat/video/upload/so_0,f_auto,q_auto,w_1600/v1755631033/Untitled_design_2_qq6trg.jpg"
+            poster="https://pub-03d0831378df48bcbfee5305ab3fb0f5.r2.dev/Untitled_design_2_qq6trg__t_so-0-f-auto-q-auto-w-1600.jpg"
             className="w-full h-full object-cover object-center"
           >
             <source src={videoUrl} type="video/mp4" />
