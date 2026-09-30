@@ -137,7 +137,7 @@ export default function ThankYouPage() {
                 controls
                 preload="auto"
               >
-                <source src="https://res.cloudinary.com/dhuhpf3wq/video/upload/v1758821243/Thank_you_page_1_w6rfqh.mp4" type="video/mp4" />
+                <source src="https://pub-03d0831378df48bcbfee5305ab3fb0f5.r2.dev/Thank_you_page_1_w6rfqh.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

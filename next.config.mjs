@@ -7,6 +7,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'pub-03d0831378df48bcbfee5305ab3fb0f5.r2.dev' }, // R2 public (migrated from Cloudinary)
+    ],
     unoptimized: true,
   },
   async redirects() {

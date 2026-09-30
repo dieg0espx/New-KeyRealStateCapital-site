@@ -105,7 +105,7 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
               controls
               preload="auto"
             >
-              <source src="https://res.cloudinary.com/dhuhpf3wq/video/upload/v1758821244/Vsl_1_tvmcxh.mp4" type="video/mp4" />
+              <source src="https://pub-03d0831378df48bcbfee5305ab3fb0f5.r2.dev/Vsl_1_tvmcxh.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
